@@ -1,0 +1,8 @@
+#+TITLE: Références Python
+#+AUTHOR: Edwin Elminster (eldwinster)
+* Table of Contents :toc:
+- [[#proof][proof]]
+
+* proof
+    Recueil de tous les assertions utilisées et de leurs démonstrations.
+    [[./proof]]
