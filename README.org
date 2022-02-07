@@ -1,4 +1,4 @@
-#+TITLE: Références Python
+#+TITLE: Mémoire sur les courbes elliptiques et leurs applications à la cryptographie
 #+AUTHOR: Edwin Elminster (eldwinster)
 * Table of Contents :toc:
 - [[#introduction][Introduction]]
