@@ -5,4 +5,4 @@
 
 * proof
     Recueil de tous les assertions utilisées et de leurs démonstrations.
-    [[./proof]]
+    [[./thesis_M1/proof]]
