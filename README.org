@@ -1,8 +1,18 @@
 #+TITLE: Références Python
 #+AUTHOR: Edwin Elminster (eldwinster)
 * Table of Contents :toc:
-- [[#proof][proof]]
+- [[#introduction][introduction]]
+- [[#démonstration][Démonstration]]
+- [[#mémoire][Mémoire]]
 
-* proof
+* introduction
+- explication mémoire?
+- raison de la création de ce repo?
+- d'autres idées?
+
+* Démonstration
     Recueil de tous les assertions utilisées et de leurs démonstrations.
     [[./thesis_M1/proof]]
+* Mémoire
+Mémoire manuscrit
+[[./thesis_M1/thesis]]
