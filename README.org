@@ -1,11 +1,11 @@
 #+TITLE: Références Python
 #+AUTHOR: Edwin Elminster (eldwinster)
 * Table of Contents :toc:
-- [[#introduction][introduction]]
+- [[#introduction][Introduction]]
 - [[#démonstration][Démonstration]]
 - [[#mémoire][Mémoire]]
 
-* introduction
+* Introduction
 - explication mémoire?
 - raison de la création de ce repo?
 - d'autres idées?
