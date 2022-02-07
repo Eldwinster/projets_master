@@ -64,8 +64,6 @@
 \DeclareMathOperator{\pgcd}{pgcd}
 \DeclareMathOperator{\ppcm}{ppcm}
 \DeclareMathOperator{\card}{Card}
-% \DeclareMathOperator{\ker}{Ker}
-% \DeclareMathOperator{\det}{det}
 \DeclareMathOperator{\trace}{trace}
 \DeclareMathOperator{\id}{Id}
 \DeclareMathOperator{\trans}{Trans}
@@ -93,8 +91,6 @@
 \let\epsilon\varepsilon
 \let\phi\varphi
 \let\vec\overrightarrow
-\let\ou\vee
-\let\et\wedge
 
 % Add \contra symbol to denote contradiction
 \usepackage{stmaryrd} % for \lightning
@@ -126,26 +122,27 @@
 \mdfsetup{skipabove=1em,skipbelow=0em}
 \theoremstyle{definition}
 % \newmdtheoremenv[nobreak=true]{definition}{Définition}
-\newtheorem{theoreme}{Théorème}[chapter]
-\newtheorem{definition}[theoreme]{Définition}
-\newtheorem{proposition}[theoreme]{Proposition}
-\newtheorem{propriete}[theoreme]{Propriété}
-\newtheorem{lemme}[theoreme]{Lemme}
-\newtheorem{corollaire}[theoreme]{Corollaire}
+\newtheorem{th}{Théorème}[chapter]
+\newtheorem{def}[theoreme]{Définition}
+\newtheorem{propo}[theoreme]{Proposition}
+\newtheorem{propri}[theoreme]{Propriété}
+\newtheorem{lm}[theoreme]{Lemme}
+\newtheorem{coro}[theoreme]{Corollaire}
 \newtheorem{defthm}[theoreme]{Définition et théorème}
 
 \newtheorem{exo}{Exercice}
 
+% without numbering
+\newtheorem*{demonstration}{Démonstration}
+\newtheorem*{preuve}{Preuve}
 \newtheorem*{but}{But}
 \newtheorem*{consequence}{Conséquence}
 \newtheorem*{rappel}{Rappel}
-\newtheorem*{regle}{Règle}
+\newtheorem*{regle}{Règle de calcul}
 \newtheorem*{postulat}{Postulat}
 \newtheorem*{conclusion}{Conclusion}
 \newtheorem*{bonus}{Bonus}
 \newtheorem*{conjecture}{Conjecture}
-\newtheorem*{demonstration}{Démonstration}
-\newtheorem*{preuve}{Preuve}
 \newtheorem*{recurrence}{Récurrence}
 \newtheorem*{intermede}{Intermède}
 \newtheorem*{observation}{Observation}
