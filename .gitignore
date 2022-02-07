@@ -1,0 +1,12 @@
+/thesis_M1/proof/*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.yaml
+*.dvi
+*.out
+*.pdf
+*.gz
+*.latexmain
+*.toc
+/thesis_M1/current_course

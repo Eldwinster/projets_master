@@ -1,0 +1,46 @@
+\lecture{5}{Mon 07 Feb 2022 21:04}{Proposition 7.1.} 
+
+\begin{proposition}
+    Soient $P$ et $Q$ des points de $E$. Soit $D$ la droite de $\mathbb{P}^2$ passant par $P$ et $Q$ si $P \neq Q$, ou bien la tangente à $E$ en $P$ si $P = Q$. On a
+    \[
+    D \cap E = \left\{ P, Q, f(P,Q) \right\}
+    ,\] 
+    où $f(P,Q)$ désigne le point de $E$ défini par les conditions suivantes.
+    \begin{description}
+        \item[1)] Supposons $P \neq Q, \ P \neq O$ et $Q \neq O$.
+            \begin{description}
+                \item[i)] Supposons $x_{P} \neq x_{Q}$. Posons
+                    \[
+                    \lambda = \frac{y_{P} - y{Q}}{x_{P} - x_{Q}} \text{ et } \nu = \frac{x_{P}y_{Q} - x_{Q}y_{P}}{x_{P} - x_{Q}}
+                    .\] 
+
+On a 
+\[
+f(P,Q) = \left[ \lambda - x_{P} - x_{Q}, \lambda \left( \lambda^2 - x_{P} - x_{Q} \right) + \nu, 1 \right]
+.\] 
+                \item[ii)] Si $x_{P} = x_{Q}$, on a $f(P,Q) = O$.
+            \end{description}
+        \item[2)] Supposons $P \neq O$ et $Q = O$. On a
+            \[
+            f(P,O) = \left[ x_{P}, -y_{P}, 1 \right]
+            .\] 
+            De même, si $P = O$ et $Q \neq O$, on a $f(O,Q) = \left[ x_{Q}, -y_{Q}, 1 \right]$
+        \item[3)] Si $P = Q = O$, on a $f(O,O) = O$.
+        \item[4)]  Supposons $P = Q$ et $P \neq O$.
+            \begin{description}
+                \item[i)] Si $y_{P} = 0$, on a $f(P,P) = O$.
+                \item[ii)] Supposons $y_{P} \neq 0$. Posons
+                    \[
+                    \lambda = \frac{3x_{P}^3 + a}{2y_{P}} \text{ et } \nu = \frac{-x_{P}^3 + ax_{P} + 2b}{2y_{P}}
+                    .\] 
+On a
+\[
+f(P,P) = \left[ \lambda^2 - 2 x_{P}, \lambda\left( \lambda^2 - 2x_{P} \right) + \nu, 1 \right]
+.\] 
+            \end{description}
+    \end{description}
+\end{proposition}
+
+\begin{demonstration}
+    
+\end{demonstration}

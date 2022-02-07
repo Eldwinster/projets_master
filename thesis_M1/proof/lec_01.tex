@@ -1,0 +1,109 @@
+\lecture{1}{Sun 06 Feb 2022 02:51}{Lemme 7.1.}
+
+\newpage
+\begin{lemme}
+    Soit $\Delta= -(4a^3 + 27b^2)$ le dircriminant $f : x^3 + ax + b$. 
+    Les racines de $f$ sont simples, si et seulment si $\Delta \neq 0$.
+\end{lemme}
+
+\begin{demonstration}
+    Montrons tout d'abord que le discriminant de $f$ est $\Delta= -(4a^3 + 27b^2)$.
+
+    Soit $\Delta$ le discriminant de $f$. Soient $\alpha \beta \gamma $ les racines de $f$ dans $\overline{K}$ et $f'$ le polynôme dérivé de $f$.
+
+    Tout d'abord montrons grâce au Lemme 1 que :
+    \begin{align*}
+        \Delta &= (-1) ( \alpha - \beta )^2 ( \alpha - \gamma )^2 ( \beta - \gamma )^2 \\
+          &= - f(\alpha)'f(\beta )'f(\gamma)'
+    .\end{align*}
+    D'après le théorème de d'Alembert on peut écrire $f$ sous la forme :
+    \[
+        f = \left( X - \alpha \right) \left( X - \beta \right) \left( X - \gamma \right) 
+    .\] 
+    En dérivant $f$ sous cette forme on obtient :
+    \begin{align*}
+        f &= ( X - \alpha ) \left( ( X - \beta ) ( X - \gamma ) \right)'  + ( X - \beta ) ( X - \gamma )\\
+          &= ( X - \alpha ) \left( ( X - \beta ) + ( X - \gamma ) \right) + ( X - \beta ) ( X - \gamma ) 
+    .\end{align*}
+
+    Donc  
+\[
+f' = ( X - \alpha ) ( X - \beta ) + ( X - \alpha ) ( X - \gamma ) + ( X - \beta ) ( X - \gamma )
+.\] 
+
+On a alors successivement : 
+\[
+    f(\alpha)' = ( \alpha - \beta) ( \alpha - \gamma ) \text{, } f(\beta )' = ( \beta - \alpha) ( \beta - \gamma) \text{ et } f(\gamma)' = ( \gamma - \alpha) ( \gamma - \beta)
+.\] 
+
+En multipliant ces trois expressions, on obtient :
+\begin{align*}
+    f(\alpha)' f(\beta )' f(\gamma)' &= ( \alpha - \beta ) ( \alpha - \gamma ) ( \beta - \alpha ) ( \beta - \gamma) ( \gamma - \alpha ) ( \gamma - \beta ) \\
+&= \left( X - \alpha \right) \left( \alpha - \gamma \right) \left( -1 \right) \left( \alpha - \beta  \right) \left( \beta - \gamma \right) \left( -1 \right) \left( \alpha - \gamma \right) \left( -1 \right) \left( \beta - \gamma \right) \\
+&= \left( -1 \right) ^3 \left( \alpha - \beta  \right) ^2 \left( \alpha - \gamma  \right) ^2 \left( \beta - \gamma \right) ^2\\
+ &= - \Delta
+.\end{align*}
+
+Et donc 
+
+\[
+\Delta = - f(\alpha)' f(\beta )' f(\gamma)
+.\] 
+En développent cet expression, on a :
+\begin{align*}
+    \Delta &=  \\
+      &= - \left( 3 \alpha^2 + a \right) \left( 3 \beta^2 + a \right) \left( 3 \gamma^2 + a \right) 
+.\end{align*}
+Ce qui donne :
+\begin{align*}
+    \Delta  &= - \left( ( 9 \alpha^2 \beta^2 + 3a ( \alpha^2 + \beta^2 ) + a^2 ) ( 3 \gamma^2 + a ) \right)  \\
+       &= - \left( 27 \left( \alpha \beta \gamma \right)^2  + 9a \left( \alpha^2 \beta^2 + \alpha^2 \gamma^2 + \beta^2 \gamma^2 \right) + 3a^2 \left( \alpha^2 + \beta^2 + \gamma^2 \right) + a^3 \right) 
+.\end{align*}
+D'après l'identité suivante :
+\[
+a^2 + b^2 = \left( a + b \right)^2 - 2ab 
+.\] 
+On peut écrire
+\[
+\alpha^2 + \beta^2 + \gamma^2 = \left( \alpha + \beta + \gamma \right)^2 - 2 \left( \alpha \beta + \alpha \gamma + \beta \gamma \right)
+,\] 
+\[
+\alpha^2 \beta^2 + \alpha^2 \gamma^2 + \beta^2 \gamma^2 = \left( \alpha \beta + \alpha \gamma + \beta \gamma \right)^2 - 2\alpha \beta \gamma \left( \alpha + \beta + \gamma \right)
+.\] 
+Donc d'après les relations entre cœfficients et racine (i.e relation de Viète), pour un polynôme de la forme $ax^3 + bx^2 + cx + d$, on a :
+\[
+\alpha + \beta + \gamma = - \frac{b}{a}
+,\] 
+\[
+\alpha \beta + \alpha \gamma + \beta \gamma = \frac{c}{a}
+,\] 
+\[
+\alpha \beta \gamma = - \frac{d}{a}
+.\] 
+Donc pour $f$ on a $a = 1$, $b = 0$, $c = a$ et $d = b$.
+
+D'où,
+\[
+\alpha + \beta + \gamma = 0 \text{, } \alpha \beta + \alpha \gamma + \beta \gamma = a \text{ et } \alpha \beta \gamma = - b
+.\] 
+Ce qui donne : 
+\begin{align*}
+    \alpha^2 + \beta^2 + \gamma^2 &= 0^2 - 2a = 2a \\
+    \alpha^2 \beta^2 + \alpha^2 \gamma^2 + \beta^2 \gamma^2 &= a^2 + 2b \times 0
+.\end{align*}
+
+Donc le discriminant vaut :
+\begin{align*}
+    \Delta &= - \left( 27b^2 + 9a^3 - 6a^3 + a^3  \right) \\
+        &= - \left( 4a^3 + 27b^2  \right)
+.\end{align*}
+
+Maintenant, supposons que $\Delta = 0$. On a alors :
+ \begin{align*}
+     - \left( 4a^3 + 27^2 \right) = 0 &\iff - f(\alpha)' f(\beta )' f(\gamma)' = 0 \\
+                                      & \iff \left( f(\alpha)' = 0 \right) \ou \left( f(\beta )' = 0 \right) \ou \left( f(\gamma)' = 0 \right) \\
+                                      &\iff \alpha \text{ ou } \beta \text{ ou } \gamma \text{ est une racine multiple}
+.\end{align*}
+
+D'où le résultat.
+\end{demonstration}

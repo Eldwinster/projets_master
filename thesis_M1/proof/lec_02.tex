@@ -1,0 +1,35 @@
+\lecture{2}{Mon 07 Feb 2022 10:28}{Lemme 7.2.}
+
+\begin{lemme}
+    Soient $P = \left[ a_1, a_2, a_3 \right]$ et $Q = \left[ b_1, b_2, b_3 \right]$ deux points distincts de $\mathbb{P}^2$.
+
+    Il existe une unique droite de $\mathbb{P}^2$ passant par $P$ et $Q$. C'est la droite $D$ d'équation $ux + vy + wz = 0$ avec $\left[ x, y, z \right] \in \mathbb{P}^2$ et 
+    \[
+    u = a_2 b_3 - a_3 b_2, \ v = a_3 b_1 - a_1 b_3, \ w = a_1 b_2 - a_2 b_2 
+    .\] 
+
+    Énoncé originel : 
+
+    Soient $P = \left[ a_1, a_2, a_3 \right]$ et $Q = \left[ b_1, b_2, b_3 \right]$ deux points distincs de $\mathbb{P}^2$. Il existe une unique droite de $\mathbb{P}^2$ passant par $P$ et $Q$. C'est l'ensemble des points $\left[ x, y, z \right] \in \mathbb{P}^2$ tels que le déterminant de la matrice
+    \[
+        M = 
+    \begin{pmatrix}
+        a_1 & b_1 & x \\ 
+        a_2 & b_2 & y \\
+        a_3 & b_3 & z
+    \end{pmatrix}
+    \] 
+    soit nul. Autrement dit, c'est la droite d'équation $ux + vy + wz = 0$, avec
+    \[
+    u = a_2b_3 - a_3b_2, \ v = a_3b_1 - a_1b_3, \ w = a_1b_2 - a_2b_2
+    .\] 
+\end{lemme}
+
+\begin{demonstration}
+    Montrons qu'il existe une droite $D$ passant par $P$ et $Q$.
+
+    Les éléments $u, \ v$ et $w$ ne sont pas tous nuls car $P$ et $Q$ sont distincts.
+
+    En effet, si $P = Q$ alors $a_1 = b_1, \ a_2 = b_2 $ et $a_3 = b_3$ donc $u = v = w =0$ or $P \neq Q$ donc il existe $x \in \left\{ u, v, w \right\}$ tel que $x \neq 0$.
+    
+\end{demonstration}
