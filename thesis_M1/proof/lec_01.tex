@@ -1,15 +1,24 @@
 \lecture{1}{Sun 06 Feb 2022 02:51}{Lemme 7.1.}
-
-\newpage
 \begin{lemme}
-    Soit $\Delta= -(4a^3 + 27b^2)$ le dircriminant $f : x^3 + ax + b$. 
-    Les racines de $f$ sont simples, si et seulment si $\Delta \neq 0$.
+    Soit $g$ un polynôme unitaire à coefficients dans $K$ de degré $n \ge 1$. Soient $\alpha_1,\ldots,\alpha_{n}$ ses racines dans $\overline{K}$ comptées avec multiplicités. Le discriminant $\Delta$ de $g$ est défini par l'égalité
+    \[
+    \Delta = \prod_{i < j}^{} \left( \alpha_{i} - \alpha_{j} \right)^2 
+    .\] 
+    C'est un élément de $K$.
+\end{lemme}
+
+\begin{demonstration}
+    
+\end{demonstration}
+\begin{lemme}
+    Soit $\Delta= -(4a^3 + 27b^2)$ le discriminant $f : x^3 + ax + b$. 
+    Les racines de $f$ sont simples, si et seulement si $\Delta \neq 0$.
 \end{lemme}
 
 \begin{demonstration}
     Montrons tout d'abord que le discriminant de $f$ est $\Delta= -(4a^3 + 27b^2)$.
 
-    Soit $\Delta$ le discriminant de $f$. Soient $\alpha \beta \gamma $ les racines de $f$ dans $\overline{K}$ et $f'$ le polynôme dérivé de $f$.
+    Soit $\Delta$ le discriminant de $f$. Soient $\alpha, \beta, \gamma $ les racines de $f$ dans $\overline{K}$ et $f'$ le polynôme dérivé de $f$.
 
     Tout d'abord montrons grâce au Lemme 1 que :
     \begin{align*}
@@ -47,11 +56,12 @@ En multipliant ces trois expressions, on obtient :
 Et donc 
 
 \[
-\Delta = - f(\alpha)' f(\beta )' f(\gamma)
+\Delta = - f'(\alpha) f'(\beta ) f'(\gamma)
 .\] 
-En développent cet expression, on a :
+
+En partant de la forme $f : x^3 + ax + b$, on remarque que $f' : 3x^2 + a$. Par suite on obtient,
 \begin{align*}
-    \Delta &=  \\
+    \Delta &= - f'(\alpha) f'(\beta ) f'(\gamma) \\
       &= - \left( 3 \alpha^2 + a \right) \left( 3 \beta^2 + a \right) \left( 3 \gamma^2 + a \right) 
 .\end{align*}
 Ce qui donne :
@@ -70,7 +80,7 @@ On peut écrire
 \[
 \alpha^2 \beta^2 + \alpha^2 \gamma^2 + \beta^2 \gamma^2 = \left( \alpha \beta + \alpha \gamma + \beta \gamma \right)^2 - 2\alpha \beta \gamma \left( \alpha + \beta + \gamma \right)
 .\] 
-Donc d'après les relations entre cœfficients et racine (i.e relation de Viète), pour un polynôme de la forme $ax^3 + bx^2 + cx + d$, on a :
+Donc d'après les relations entre coefficients et racine (i.e relation de Viète), pour un polynôme de la forme $ax^3 + bx^2 + cx + d$, on a :
 \[
 \alpha + \beta + \gamma = - \frac{b}{a}
 ,\] 
