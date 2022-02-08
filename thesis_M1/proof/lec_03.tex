@@ -28,7 +28,7 @@ F_{X} = - \left( 3X^2 + aZ^2 \right),  \ F_{Y} = 2YZ, \ F_{Z} = Y^2 - \left( 2aX
 \end{lemme}
 
 \begin{demonstration}
-   Supposons par l'absurde, qu'il existe un tel point $P \in E$. Remarquons que $F_{Z}(O) = 1 \neq 0 = F_{Z}(P)$ donc $P$ est disctinct de $O$.
+   Supposons par l'absurde, qu'il existe un tel point $P \in E$. Remarquons que $F_{Z}(O) = 1 \neq 0 = F_{Z}(P)$ donc par hypothèse $P$ est disctinct de $O$.
 
    Pour fixer les idées posons $P = [x,y,1]$.
 
@@ -47,22 +47,24 @@ F_{X} = - \left( 3X^2 + aZ^2 \right),  \ F_{Y} = 2YZ, \ F_{Z} = Y^2 - \left( 2aX
    .\] 
    
    \begin{itemize}
-       \item Supposons $a \neq 0$, on alors
+       \item Supposons $a \neq 0$, on alors à partir de $F_{Z}$
    \[
        X = - \frac{3b}{2a} 
    .\] 
 
-   Donc
+   Donc par $F_{X}$
 \begin{align*}
     - \left( 3 (- \frac{3b}{2a})^2 + a \right) &= 0 \\
     - \left( 27b^2 + 4a^3 \right) &= 0
 .\end{align*}
-Ce qui est absurde car $F$ est elliptique. (cite lemme)
+Ce qui est absurde car $F$ est elliptique. (cite lemme 7.1)
         \item Supposons que $a = 0$, alors
             \[
-                (3b = 0) \implies (b = 0) \text{ et } (3x^2 = 0) \implies (x = 0)
+                (3b = 0) \underbrace{\implies}_{\car(K) \neq 3} (b = 0)
             .\] 
 
-            Donc $P = [0,0,1]$
+            Donc on $a = b = 0$ donc $-\left( 27b^2 + 4a^3 \right) = 0$ absurde car $F$ est elliptique. (lem 7.1)
+
+            D'où le résultat.
    \end{itemize}
 \end{demonstration}
