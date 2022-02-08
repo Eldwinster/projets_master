@@ -11,5 +11,24 @@
 \end{lemme}
 
 \begin{demonstration}
+    \begin{description}
+        \item[1)] Soit  $O \in E$ le point à l'infini. D'après l'équation de la tangente à $E$ au point $O$. On a successivement 
+            \[
+            F_{X}(O) = 0, \ F_{Y}(O) = 0 \text{ et } F_{Z}(O) = 1
+            .\] 
+            Ainsi on retrouve bien $z = 0$.
+
+        \item[2)] Soit $P$ un tel point, d'après l'équation (cite? set up snippet -nommé + cité) de la tangente et de l'égalité $y_0^2 = x_0^3 + ax_0 + b$ on a,
+            \begin{align*}
+                F_{X}(P)x + F_{Y}(P)y + F_{Z}(P)z &= 0 \\
+                - \left( 3x_0^2 + a \right)x + \left( 2y_0 \right)y + \left( y_0^2 - \left( 2ax_0 + 3b \right) \right)z &= 0 \\
+                - 3x_0^2x - ax + 2y_0y + y_0^2z - 2ax_0z - 3bz &= 0 \\ 
+                - 3x_0^2x - ax + 2y_0y + y_0^2z - 2ax_0z - 3z\left( y_0^2 - x_0^3 - ax_0 \right) &= 0 \left( \text{i.e } b = y_0^2 - \left( x_0^3 + ax_0 \right) \right) \\
+                - 3x_0^2x -ax + 2y_0y + y_0^2z - 2ax_0z - 3y_0^2z + 3x_0^3z + 3ax_0z &= 0 \\
+                - \left( 3x_0^2 + a \right)x + 2y_0y - 2y_0^2z + \left( 3x_0^2 + a \right)x_0z &= 0\\
+                - \left( 3x_0^2 + a \right)\left( x - x_0 \right) + 2y_0\left( y - y_0z \right) &= 0
+            .\end{align*}
+            D'où le résultat.
+    \end{description}
     
 \end{demonstration}
