@@ -1,5 +1,25 @@
 \lecture{3}{Mon 07 Feb 2022 20:57}{Lemme 7.3.}
 
+Soit 
+\[
+y^2z = x^3 + axz^2 + bz^3
+,\] l'équation de $E$, où $a,b \in K$.
+
+Notons
+\[
+    F = Y^2Z - \left( X^3 + aXZ^2 + bZ^3 \right) \in K[X,Y,Z]
+,\] 
+
+\[
+F_{X} = \frac{\partial F}{\partial X}, \ F_{Y} = \frac{\partial F}{\partial Y}, \ F_{Z} = \frac{\partial F}{\partial Z}
+,\] 
+
+c'est-à-dire, 
+
+\[
+F_{X} = - \left( 3X^2 + aZ^2 \right),  \ F_{Y} = 2YZ, \ F_{Z} = Y^2 - \left( 2aXZ + 3bZ^2 \right)
+.\] 
+
 \begin{lemme}
     Il n'existe pas de point $P \in E$ tel que
     \[
@@ -8,5 +28,41 @@
 \end{lemme}
 
 \begin{demonstration}
-    
+   Supposons par l'absurde, qu'il existe un tel point $P \in E$. Remarquons que $F_{Z}(O) = 1 \neq 0 = F_{Z}(P)$ donc $P$ est disctinct de $O$.
+
+   Pour fixer les idées posons $P = [x,y,1]$.
+
+   Puisque $\car(K) \neq 2$, on a
+   \[
+       (F_{Y} = 0) \iff (2YZ = 0) \implies (Y = 0) 
+   ,\] 
+
+   donc $y = 0$.
+   
+   Donc $P$ serait de la forme $[x,0,1]$.
+   
+   On obtient alors
+   \[
+   F_{X} = - \left( 3X^2 + a \right) = 0 \text{ et } F_{Z} = -\left( 2aX + 3b \right) = 0
+   .\] 
+   
+   \begin{itemize}
+       \item Supposons $a \neq 0$, on alors
+   \[
+       X = - \frac{3b}{2a} 
+   .\] 
+
+   Donc
+\begin{align*}
+    - \left( 3 (- \frac{3b}{2a})^2 + a \right) &= 0 \\
+    - \left( 27b^2 + 4a^3 \right) &= 0
+.\end{align*}
+Ce qui est absurde car $F$ est elliptique. (cite lemme)
+        \item Supposons que $a = 0$, alors
+            \[
+                (3b = 0) \implies (b = 0) \text{ et } (3x^2 = 0) \implies (x = 0)
+            .\] 
+
+            Donc $P = [0,0,1]$
+   \end{itemize}
 \end{demonstration}
