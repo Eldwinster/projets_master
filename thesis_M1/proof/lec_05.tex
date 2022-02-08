@@ -1,5 +1,14 @@
 \lecture{5}{Mon 07 Feb 2022 21:04}{Proposition 7.1.} 
 
+Dans cette proposition à l'aide du comportement des points du plan $E$ et de la droite qui les intersectent. On a construit une loi de composition interne 
+\[
+\begin{align*}
+    \top : E \times E &\longrightarrow E \\
+    (P,Q) &\longmapsto P  \ \top  \ Q
+\end{align*}
+\] 
+Cette loi, comme on va le voir, n'est pas une loi de groupe. C'est ce qui va nous permettre cependant de donner, par la suite, une structure de groupe au plan $E$ à l'aide d'une symétrie bien choisie.
+
 \begin{proposition}
     Soient $P$ et $Q$ des points de $E$. Soit $D$ la droite de $\mathbb{P}^2$ passant par $P$ et $Q$ si $P \neq Q$, ou bien la tangente à $E$ en $P$ si $P = Q$. On a
     \[
@@ -41,6 +50,73 @@ f(P,P) = \left[ \lambda^2 - 2 x_{P}, \lambda\left( \lambda^2 - 2x_{P} \right) + 
     \end{description}
 \end{proposition}
 
+Dans cette démonstration, on étudie le comportement des points $P$ et $Q$ selon qu'ils soient distincts ou égaux. Que ce soit pour la droite ou la tangente tous les deux 
 \begin{demonstration}
-    
+    \begin{description}
+        Soient $P = \left[ x_{P}, y_{P}, 1 \right]$ et $Q = \left[ x_{Q}, y_{Q}, 1 \right]$ des points de $E$ tels qu'ils sont distincts. Alors il existe une droite $D \in \mathbb{P} ^2$ qui passe par $P$ et $Q$.
+        Étudions tout d'abord le cas où les deux points sont à la foi distinct entre eux et distinct avec le point à l'infini $O$.
+        \item[1)] Supposons $P \neq Q$, $P \neq O$ et $Q \neq O$. Dans comme $D$ existe, il existe un point $M \in D$ et on cherche donc à connaitre son comportement dans le plan $E$.
+        \item[i)] Supposons $x_{P} \neq x_{Q}$. D'après le lemme 7.2 l'équation de $D$ est
+            \[
+            y = \lambda  + \nu y
+            .\] 
+            Soit $M \in D \cap E$. Comme $P,Q \neq O$, le point à l'infini n'appartient pas à $D$. Il existe un point $M$ de la même forme que $P$ et $Q$.
+            Posons $M = \left[ x_0, y_0, 1 \right]$ avec $x_0$, $y_0$ des coordonnées sur $\overline{K}$.
+
+            Comme $M \in D \cap E$ donc avec $M \in E$ on a la première ègalité
+            \[
+            .\] 
+            \begin{align}
+                \label{eq:droite} 
+             y_0^2 = x_0^3 + ax_0 + b 
+            .\end{align}
+            Ensuite avec $M \in D$ d'après le lemme 7.2 on a
+            \[
+                \begin{pmatrix}
+                    x_P & x_Q & x_0 \\
+                    y_P & y_Q & y_0  \\
+                    1   & 1   & 1
+                \end{pmatrix}
+            ,\] 
+           qui nous permet d'obtenir une seconde égalité.
+           \begin{align*}
+               \left( y_P - y_Q \right)x_0 - \left( x_P - x_Q \right)y_0 + \left( x_P y_Q - x_Q y_P \right) &= 0 \\
+               y_0 = \frac{y_P - y_Q}{x_P - x_Q}x_0 + \frac{x_P y_Q - x_Q y_P}{x_P - x_Q}
+           .\end{align*}
+           Posons 
+           \[
+           \lambda = \frac{y_P - y_Q}{x_P - x_Q} \quad \text{et} \quad \nu = \frac{x_P y_Q - x_Q y_P}{x_P - x_Q}
+           .\] 
+           Donc l'équation de D est
+           \[
+           y_0 = \lambda x_0 + \nu
+           .\] 
+           En remplacent dans \eqref{eq:droite}, il vient
+           \begin{align*}
+               \left( \lambda x_0 + \nu  \right)^2 = x_0^3 + ax_0 + b \\
+               \lambda^2 x_0^2 + 2\lambda \nu x_0 + \nu^2 = x_0^3 + ax_0 + b \\
+               x_0^3 - \lambda^2 x_0^2 + \left( a - 2\lambda \nu  \right)x_0 + b - \nu^2 = 0
+           .\end{align*}
+           Donc $x_0$ est une racine du polynôme
+            \[
+           H = X^3 - \lambda X^2 + \left( a - 2\lambda\nu \right)X + b - \nu^2
+           .\] 
+           On remarque que $H(x_P) = H(x_Q) = 0$ donc $x_p$ et $x_q$ sont aussi des racines de $H$.
+           Par les relations coefficients racines obtient la valeur de $x_0$
+           \begin{align*}
+               x_0 + x_P + x_Q = - \left( - \lambda^2 \right) \\
+               x_0 = \lambda^2 - x_P - x_Q
+           .\end{align*} 
+           Ainsi les racines de $H$ sont
+           \[
+           x_P, \quad x_Q \quad \text{et} \quad \lambda^2 - x_P - x_Q
+           .\] 
+           Il en résulte que $D \cap E$ est formé de $P$, et du point $M = f(P,Q)$.
+           Donc  
+           \begin{align*}
+               f(P,Q) &= \left[ x_0, y_0, 1 \right] \\
+                      &= \left[ \lambda^2 - x_P - x_Q, \lambda x_0 + \nu, 1 \right] \\
+                      &= \left[ \lambda^2 - x_P - x_Q, \lambda\left( \lambda^2 - x_P - x_Q \right), 1\right]
+           .\end{align*}
+    \end{description}
 \end{demonstration}
