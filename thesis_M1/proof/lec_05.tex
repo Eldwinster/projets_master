@@ -1,6 +1,6 @@
 \lecture{5}{Mon 07 Feb 2022 21:04}{Proposition 7.1.} 
 
-Dans cette proposition à l'aide du comportement des points du plan $E$ et de la droite qui les intersectent. On a construit une loi de composition interne 
+Dans cette proposition à l'aide du comportement des points du plan $E$ et de la droite qui les intersectent. On a construit une loi de composition interne
 \[
 \begin{align*}
     \top : E \times E &\longrightarrow E \\
@@ -55,7 +55,8 @@ Dans cette démonstration, on étudie le comportement des points $P$ et $Q$ selo
     \begin{description}
         Soient $P = \left[ x_{P}, y_{P}, 1 \right]$ et $Q = \left[ x_{Q}, y_{Q}, 1 \right]$ des points de $E$ tels qu'ils sont distincts. Alors il existe une droite $D \in \mathbb{P} ^2$ qui passe par $P$ et $Q$.
         Étudions tout d'abord le cas où les deux points sont à la foi distinct entre eux et distinct avec le point à l'infini $O$.
-        \item[1)] Supposons $P \neq Q$, $P \neq O$ et $Q \neq O$. Dans comme $D$ existe, il existe un point $M \in D$ et on cherche donc à connaitre son comportement dans le plan $E$.
+        \item[1)] Supposons $P \neq Q$, $P \neq O$ et $Q \neq O$. Donc comme $D$ existe, il existe un point $M \in D$ et on cherche donc à connaitre son comportement dans le plan $E$.
+            \begin{description}
         \item[i)] Supposons $x_{P} \neq x_{Q}$. D'après le lemme 7.2 l'équation de $D$ est
             \[
             y = \lambda  + \nu y
@@ -63,14 +64,14 @@ Dans cette démonstration, on étudie le comportement des points $P$ et $Q$ selo
             Soit $M \in D \cap E$. Comme $P,Q \neq O$, le point à l'infini n'appartient pas à $D$. Il existe un point $M$ de la même forme que $P$ et $Q$.
             Posons $M = \left[ x_0, y_0, 1 \right]$ avec $x_0$, $y_0$ des coordonnées sur $\overline{K}$.
 
-            Comme $M \in D \cap E$ donc avec $M \in E$ on a la première ègalité
+            Comme $M \in D \cap E$ donc avec $M \in E$ on a la première égalité
             \[
             .\] 
             \begin{align}
                 \label{eq:droite} 
              y_0^2 = x_0^3 + ax_0 + b 
             .\end{align}
-            Ensuite avec $M \in D$ d'après le lemme 7.2 on a
+            Ensuite avec $M \in D$ d'après le lemme 7.2 on a la matrice suivante
             \[
                 \begin{pmatrix}
                     x_P & x_Q & x_0 \\
@@ -118,5 +119,47 @@ Dans cette démonstration, on étudie le comportement des points $P$ et $Q$ selo
                       &= \left[ \lambda^2 - x_P - x_Q, \lambda x_0 + \nu, 1 \right] \\
                       &= \left[ \lambda^2 - x_P - x_Q, \lambda\left( \lambda^2 - x_P - x_Q \right), 1\right]
            .\end{align*}
+           D'où l'assertion.
+           \item[ii] Supposons $x_P = x_Q$. Comme $P$ et $Q$ sont distinct, on a alors $y_P = - y_Q$.
+               D'après le lemme 7.2, la matrice suivante
+               \[
+                   \begin{pmatrix} x_P & x_Q & x \\
+                   y_P & - y_Q & y \\
+               1 & 1 & z
+           \end{pmatrix} 
+               .\] 
+
+               D'où l'équation de la droite suivante
+               \begin{align*}
+                   2y_Px - 2y_Px_Pz &= 0 \\
+                   x &= x_Pz
+               .\end{align*}
+               Donc le point $O$ est aussi un point de la droite $D$ donc de $D \cap E$.  Soit $M \in  D \cap E$ distincts de $O$. Si $M = \left[ 0,1,0 \right]$, d'après la situation on a $x_0 =
+               x_P$ et $y_0 = \pm y_P$, donc $M = P$ ou $M = Q$. Or on a $P,Q \neq O$. Donc on a nécessairement $M = O$. Ainsi on a bien $D \cap E = \left\{ P, Q, f(P,Q)= O \right\}$, d'où
+               l'assertion dans ce cas ci.
+            \end{description}
+        \item[2)] Supposons $P \neq O$ et $Q = O$. Donc d'après lemme 7.2, on a
+            \[
+            \begin{pmatrix}
+                x_P & 0 & x \\
+                y_P & 1 & y \\
+                1   & 0 & z
+            \end{pmatrix}
+            .\] 
+            À partir de la deuxième ligne on obtient l'équation de la droite suivante
+            \begin{align*}
+                x_Pz - x &= 0 \\
+                x &= x_Pz
+            .\end{align*}
+            Si $M = \left[ x_0, y_0, 1 \right]$ est un point de $D \cap E$, on a donc $x_0 = x_P$ d'où $y_0 = \pm y_P$.
+        On a ainsi $D \cap E = \left\{ P, O, f(P,O) \right\}$, où $f(P,O) = \left[ x_P, - y_P, 1 \right]$.
+    \item[3)] Supposons $P = Q = O$, par le lemme 7.4 la tangente $D$ à E au point $O$ à pour $z = 0$. Par suite, $O$ est le seul point de $D \cap E$, d'où $f(O,O) = O$.
+    \item[4)] Supposons $P = Q$ et $P \neq O$. L'équation de la tangente $D$ à $E$ en $P$ a donc pour équation 
+        \[
+        F_{X}(P)\left( x - x_Pz \right) + F_{Y}(P)\left( y - y_Pz \right) = 0
+        .\] 
+        \begin{description}
+            \item[i)] Si $y_P = 0$
+        \end{description}
     \end{description}
 \end{demonstration}
