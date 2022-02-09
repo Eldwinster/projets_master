@@ -26,6 +26,7 @@ Mémoire manuscrit
 - lemme 7.1
 - lemme 7.3
 - lemme 7.4
+- proposition 7.1 (en cours)
 * À faire
 ** démonstration
 - lemme 7.2
