@@ -1,13 +1,13 @@
 \lecture{5}{Mon 07 Feb 2022 21:04}{Proposition 7.1.} 
 
-Dans cette proposition à l'aide du comportement des points du plan $E$ et de la droite qui les intersectent. On a construit une loi de composition interne
+Dans cette proposition à l'aide du comportement de deux points du plan $E$ et de la droite qui les intersectent. On veut construit une loi de composition interne
 \[
 \begin{align*}
     \top : E \times E &\longrightarrow E \\
     (P,Q) &\longmapsto P  \ \top  \ Q
 \end{align*}
 \] 
-Cette loi, comme on va le voir, n'est pas une loi de groupe. C'est ce qui va nous permettre cependant de donner, par la suite, une structure de groupe au plan $E$ à l'aide d'une symétrie bien choisie.
+Cette loi, comme on va le voir, n'est pas une loi de groupe. C'est ce qui va nous permettre cependant de donner, par la suite, de donner une structure de groupe au plan $E$ à l'aide d'une symétrie bien choisie.
 
 \begin{proposition}
     Soient $P$ et $Q$ des points de $E$. Soit $D$ la droite de $\mathbb{P}^2$ passant par $P$ et $Q$ si $P \neq Q$, ou bien la tangente à $E$ en $P$ si $P = Q$. On a
@@ -20,7 +20,7 @@ Cette loi, comme on va le voir, n'est pas une loi de groupe. C'est ce qui va nou
             \begin{description}
                 \item[i)] Supposons $x_{P} \neq x_{Q}$. Posons
                     \[
-                    \lambda = \frac{y_{P} - y{Q}}{x_{P} - x_{Q}} \text{ et } \nu = \frac{x_{P}y_{Q} - x_{Q}y_{P}}{x_{P} - x_{Q}}
+                    \lambda = \frac{y_{P} - y_{Q}}{x_{P} - x_{Q}} \text{ et } \nu = \frac{x_{P}y_{Q} - x_{Q}y_{P}}{x_{P} - x_{Q}}
                     .\] 
 
 On a 
@@ -50,23 +50,20 @@ f(P,P) = \left[ \lambda^2 - 2 x_{P}, \lambda\left( \lambda^2 - 2x_{P} \right) + 
     \end{description}
 \end{proposition}
 
-Dans cette démonstration, on étudie le comportement des points $P$ et $Q$ selon qu'ils soient distincts ou égaux. Que ce soit pour la droite ou la tangente tous les deux 
+Dans cette démonstration, on étudie le comportement des points $P$ et $Q$ selon qu'ils soient distincts ou égaux. Que ce soit pour la droite ou la tangente tous les deux vont éventuellement, soit
+recouper la courbe elliptique et rester dans le plan $E$, soit "couper" le point à l'infini  $O$. C'est ce qu'on veut découvrir à l'aide du point que l'on a nommé $f(P,Q)$ qui désigne le comportement
+par rapport à $P$ et $Q$ de ce troisième point.
+
 \begin{demonstration}
     \begin{description}
         Soient $P = \left[ x_{P}, y_{P}, 1 \right]$ et $Q = \left[ x_{Q}, y_{Q}, 1 \right]$ des points de $E$ tels qu'ils sont distincts. Alors il existe une droite $D \in \mathbb{P} ^2$ qui passe par $P$ et $Q$.
-        Étudions tout d'abord le cas où les deux points sont à la foi distinct entre eux et distinct avec le point à l'infini $O$.
-        \item[1)] Supposons $P \neq Q$, $P \neq O$ et $Q \neq O$. Donc comme $D$ existe, il existe un point $M \in D$ et on cherche donc à connaitre son comportement dans le plan $E$.
+        \item[1)] Supposons $P \neq Q$, $P \neq O$ et $Q \neq O$. Donc comme $D$ existe, il existe un point $M \in D \cap E$ et on cherche donc à connaitre son comportement dans le plan $E$.
             \begin{description}
-        \item[i)] Supposons $x_{P} \neq x_{Q}$. D'après le lemme 7.2 l'équation de $D$ est
-            \[
-            y = \lambda  + \nu y
-            .\] 
-            Soit $M \in D \cap E$. Comme $P,Q \neq O$, le point à l'infini n'appartient pas à $D$. Il existe un point $M$ de la même forme que $P$ et $Q$.
+        \item[i)] Supposons $x_{P} \neq x_{Q}$. 
+            Comme $P,Q \neq O$, le point à l'infini n'appartient pas à $D$. Comme $M \in D$, il est de la même forme que $P$ et $Q$.
             Posons $M = \left[ x_0, y_0, 1 \right]$ avec $x_0$, $y_0$ des coordonnées sur $\overline{K}$.
 
-            Comme $M \in D \cap E$ donc avec $M \in E$ on a la première égalité
-            \[
-            .\] 
+            Comme $M \in E$, on a la première égalité
             \begin{align}
                 \label{eq:droite} 
              y_0^2 = x_0^3 + ax_0 + b 
@@ -88,7 +85,11 @@ Dans cette démonstration, on étudie le comportement des points $P$ et $Q$ selo
            \[
            \lambda = \frac{y_P - y_Q}{x_P - x_Q} \quad \text{et} \quad \nu = \frac{x_P y_Q - x_Q y_P}{x_P - x_Q}
            .\] 
-           Donc l'équation de D est
+           Donc l'équation de D est de la forme
+           \[
+           y = \lambda x + \nu z
+           ,\] 
+           c'est-à-dire dans notre cas on a
            \[
            y_0 = \lambda x_0 + \nu
            .\] 
@@ -120,7 +121,7 @@ Dans cette démonstration, on étudie le comportement des points $P$ et $Q$ selo
                       &= \left[ \lambda^2 - x_P - x_Q, \lambda\left( \lambda^2 - x_P - x_Q \right), 1\right]
            .\end{align*}
            D'où l'assertion.
-           \item[ii] Supposons $x_P = x_Q$. Comme $P$ et $Q$ sont distinct, on a alors $y_P = - y_Q$.
+       \item[ii)] Supposons $x_P = x_Q$. Comme $P$ et $Q$ sont distinct, on a alors $y_P = - y_Q$.
                D'après le lemme 7.2, la matrice suivante
                \[
                    \begin{pmatrix} x_P & x_Q & x \\
@@ -159,7 +160,52 @@ Dans cette démonstration, on étudie le comportement des points $P$ et $Q$ selo
         F_{X}(P)\left( x - x_Pz \right) + F_{Y}(P)\left( y - y_Pz \right) = 0
         .\] 
         \begin{description}
-            \item[i)] Si $y_P = 0$
+            \item[i)] Si $y_P = 0$, on a
+                \[
+                x_P^3 + ax_P + b = 0
+                .\] 
+                Donc $x_P$ est racine simple de ce polynôme. De plus, $F_{X}(P) \neq 0$.
+                En effet, si $F_{X}(P) = 0$ on a
+                \begin{align*}
+                    - \left( 3x_P^2 + a \right) &= 0 \\
+                    x_P^2 = - \frac{a}{3}
+                ,\end{align*}
+                ce qui est absurde.
+
+                Ainsi à partir de l'équation de la tangente $D$ on a
+                \begin{align*}
+                    F_{X}(P)\left( x - x_Pz \right) = 0 &\implies \left( F_{X}(P) \right) = 0 \ou \left( x - x_Pz \right) = 0 \\
+                                                        &\implies x - x_Pz = 0
+                .\end{align*}
+                Donc pour $D$ on a 
+                \[
+                D : x = x_Pz
+                .\] 
+                Le seul point de $D \cap E$ distinct de $P$ est donc le point $O$, d'où $D \cap E = \left( P,O \right)$, d'où l'assertion.
+            \item[ii)] Supposons $y_P \neq 0$. Du lemme 7.4 et de l'équation $b = y_P^2 - x_P^3 - ax_P$ on obtient
+                \begin{align*}
+                    - \left( 3x_P^2 + a \right) \left( x - x_Pz \right) + 2y_P\left( y - y_Pz \right) &= 0 \\
+                    - 3x_P^2x + 3 x_P^3z - ax + ax_Pz + 2y_Py - 2y_P^2z &= 0 \\
+                    2y_Py = 3x_P^2x - 3x_P^3z + ax - ax_Pz +2y_P^2z \\
+                    2y_Py - ax_Pz = 3x_P^2x + ax - x_P^3z + 2b \\
+                    y = \frac{3x_P^2 + a}{2y_P}x + \frac{- x_P^3 + ax_P + 2b}{2y_P}z
+                .\end{align*}
+                On pose $\lambda = \frac{3x_P^2 + a}{2y_P}$ et $\nu = \frac{- x_P^3 + ax_P + 2b}{2y_P}$ et on obtient l'équation de $D$, c'est-à-dire
+                \[
+                y = \lambda x + \nu z
+                .\] 
+                Le point $O$ n'est donc pas sur $D$. Soit $M = \left[ x_0, y_0, 1 \right]$ un point de $E \cap D$. On a par le même raisonnement que dans le cas (1-i) (utilise ref?) les deux équations suivantes
+                \[
+                y_0^2 = x_0^3 + ax_0 + b \quad \text{et} \quad y_0 = \lambda x_0 + \nu
+                .\] 
+                Par suite $x_0$ est une racine du polynôme
+                \[
+                G = X^3 - \lambda^2 X^2 + \left( a - 2\lambda\nu  \right)X + b - \nu^2
+                .\] 
+                Le polynôme dérivé de $G$ est
+                \[
+                G' = 3X^2 - 2\lambda^2 X + a - 2\lambda\nu
+                .\] 
         \end{description}
     \end{description}
 \end{demonstration}
