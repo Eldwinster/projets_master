@@ -26,9 +26,8 @@ Mémoire manuscrit
 - lemme 7.1
 - lemme 7.3
 - lemme 7.4
-- proposition 7.1 (jusqu'à 4-ii)
+- proposition 7.1
+- theoreme 7.1
 * À faire
 ** démonstration
 - lemme 7.2
-- proposition 7.1 (explication)
-- théorème 7.1
