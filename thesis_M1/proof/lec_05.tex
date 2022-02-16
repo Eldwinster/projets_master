@@ -24,15 +24,17 @@ Cette loi, comme on va le voir, n'est pas une loi de groupe. C'est ce qui va nou
                     .\] 
 
 On a 
-\[
+\begin{align}
+    \label{eq:interne1}
 f(P,Q) = \left[ \lambda - x_{P} - x_{Q}, \lambda \left( \lambda^2 - x_{P} - x_{Q} \right) + \nu, 1 \right]
-.\] 
+.\end{align}
                 \item[ii)] Si $x_{P} = x_{Q}$, on a $f(P,Q) = O$.
             \end{description}
         \item[2)] Supposons $P \neq O$ et $Q = O$. On a
-            \[
+            \begin{align}
+                \label{eq:interne2}
             f(P,O) = \left[ x_{P}, -y_{P}, 1 \right]
-            .\] 
+            .\end{align}
             De même, si $P = O$ et $Q \neq O$, on a $f(O,Q) = \left[ x_{Q}, -y_{Q}, 1 \right]$
         \item[3)] Si $P = Q = O$, on a $f(O,O) = O$.
         \item[4)]  Supposons $P = Q$ et $P \neq O$.
@@ -43,9 +45,10 @@ f(P,Q) = \left[ \lambda - x_{P} - x_{Q}, \lambda \left( \lambda^2 - x_{P} - x_{Q
                     \lambda = \frac{3x_{P}^3 + a}{2y_{P}} \text{ et } \nu = \frac{-x_{P}^3 + ax_{P} + 2b}{2y_{P}}
                     .\] 
 On a
-\[
+\begin{align}
+    \label{eq:interne3}
 f(P,P) = \left[ \lambda^2 - 2 x_{P}, \lambda\left( \lambda^2 - 2x_{P} \right) + \nu, 1 \right]
-.\] 
+.\end{align}
             \end{description}
     \end{description}
 \end{proposition}
@@ -206,6 +209,31 @@ par rapport à $P$ et $Q$ de ce troisième point.
                 \[
                 G' = 3X^2 - 2\lambda^2 X + a - 2\lambda\nu
                 .\] 
+                On a
+                \[
+                    \begin{cases}
+                G(x_P)=(0) \iff x_P^3-\lambda^2x_P^2+\left( a-2\lambda\nu \right)X+b-nu^2=0 \\
+                y_P^2=x_P^3+ax_P+b \implies b=y_P^2-x_P^3-ax_P \quad \text{et} \quad y_P=\lambda x_P + \nu \implies \nu = y_P - \lambda x_P
+                    \end{cases}
+                .\] 
+                Donc,
+                \begin{align*}
+                    G(x_P) &=x_P^3-\lambda^2x_P^2+\left( a-2\lambda\left( y_p-\lambda x_P \right)  \right) x_P + y_P^2-x_P^3-ax_P-\left( y_P -\lambda x_P \right) ^2\\
+                    &= x_P^3-\lambda^2 x_P^2+ax_P-2\lambda x_Py_P+2\lambda^2x_P^2+y_P^2-x_P^3-ax_P-y_P^2+2\lambda x_Py_P -\lambda^2x_P^2 \\
+                    &= 2\lambda^2x_p^2 
+                .\end{align*}
+                Par suite,
+                \begin{align*}
+                    G'(x_P)=0 &\iff 3x_P^2-G(x_P)+a-2\lambda\nu =0 \\
+                              & \iff G(x_P) = 3x_P^2+a-2\lambda\nu \\
+                              & \iff G(x_P)=0 \\
+                              & \iff x_P \text{ racine de G}
+                .\end{align*}
+Ainsi, $x_P$ est une racine d'ordre au moins $2$ de $G$. Les racines de $G$ sont donc 
+\[
+x_P \quad \text{et} \quad \lambda^2-2x_P
+.\] 
+On obtient donc par le même raisonnement que (1-i) la formule annoncé.
         \end{description}
     \end{description}
 \end{demonstration}
