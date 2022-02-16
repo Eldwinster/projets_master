@@ -1,0 +1,71 @@
+\lecture{6}{Wed 16 Feb 2022 01:44}{Théorème 7.1}
+Considérons comme précédemment $a$ et $b$ des éléments de $K$ tels que $4a^3+27b^2\neq 0$ et $E$ la courbe elliptique définie sur $K$ d'équation
+\[
+y^2=x^3+ax+b
+.\] 
+Notons $+$ la loi de composition interne sur $E$, définie pour tous $P$ et $Q$ dans $E$ par l'égalité
+\begin{align}
+    \label{eq:groupe}
+    P+Q=f(f(P,Q),O)
+.\end{align}
+Géométriquement, $P+Q$ s'obtient à partir de $f(P,Q)$ par symétrie par rapport à l'axe des abscisses. Cette loi de composition est une loi de groupe sur  $E$.
+
+\begin{theoreme}
+    Le couple $\left( E,+ \right) $ est un groupe abélien, d'élément neutre $O$. La loi interne $+$ est décrite explicitement par les formules suivantes.
+
+    Soient $P$ et $Q$ des points de $E$ distincts de $O$. Posons $P=\left( x_P,y_P \right) $ et $Q=\left( x_Q,y_Q \right) $.
+
+    \begin{description}
+        \item[1)] Supposons $x_P\neqx_Q$. Posons 
+            \[
+            \lambda=\frac{y_P-y_Q}{x_P-x_Q} \quad \text{et} \quad \nu=\frac{x_Py_Q=x_Qy_P}{x_P-x_Q}
+            .\] 
+            On a 
+            \begin{align}
+                \label{eq:add1}
+            P+Q=\left( \lambda^2-x_P-x_Q,-\lambda\left( \lambda^2-x_P-x_Q \right) -\nu  \right) 
+            .\end{align}
+            \item[2)] Si $x_P=x_Q$ et $P\neqQ$, on a $P+Q=O$.
+            \item[3)] Supposons $P=Q$ et $y_P\neq 0$. Posons 
+                \[
+                \lambda=\frac{3x_P^2+a}{2y_P} \quad \text{et} \quad \nu=\frac{-x_P^3+ax_P+b}{2y_P}
+                .\] 
+                On a 
+                \begin{align}
+                    \label{eq:add2}
+                2P=\left( \lambda^2-2x_P,\lambda\left( -\lambda^2-2x_P \right) -\nu \right) 
+                .\end{align}
+        \item[4)] Si $P=Q$ et $y_P=0$, on a $2P=O$.
+        \item[5)] L'opposé de $P$ est le point
+            \begin{align}
+                \label{eq:add3}
+                -P=\left( x_P,-y_P \right) 
+            .\end{align}
+    \end{description}
+\end{theoreme}
+
+\begin{demonstration}
+    \begin{description}
+        \item[1)] Supposons $x_P\neqx_Q$, compte tenu de \eqref{eq:groupe}, \eqref{eq:interne1} et \eqref{eq:interne2} on a
+            \[
+            \begin{cases}
+                \eqref{eq:interne1} \iff f(\left[ \lambda^2-x_P-x_Q,\lambda\left( \lambda^2-x_P-x_Q \right) +\nu,1 \right] , \left[ 0,1,0 \right] ) \\
+                \eqref{eq:interne2} \iff f(P,O)=\left[ x_P,-y_P,1 \right] 
+            \end{cases}
+            .\] 
+            On retrouve bien la formule \eqref{eq:add1}.
+        \item[2)] Supposons $x_P=x_Q$ et $P\neq Q$ c'est à dire $y_P\neqy_Q$.
+
+            D'après la proposition 7.1 (1-i), on a $f(P,Q)=O$ donc $f(f(P,Q),O)=f(O,O)=O$. D'où la formule énoncé.
+        \item[3)] Supposons $P=Q$ et $y_P\neq 0$, en prenant compte \eqref{eq:groupe} , \eqref{eq:interne2} et \eqref{eq:interne3} on obtient
+            \[
+            \begin{cases}
+                \eqref{eq:interne3} \iff f(\left[ \lambda^2-2_x_P,\lambda\left( \lambda^2-2x_P \right) +\nu,1 \right] ,\left[ 0,1,0 \right] )\\
+                \eqref{eq:interne2} \iff f(P,O)=\left[ x_P,-y_P,1 \right] 
+            \end{cases}
+            .\] 
+            Ce qui permet de retrouver la formule \eqref{eq:add2}. 
+        \item[4)] Supposons $P=Q$ et $y_P=0$, d'après l'assertion (4-i) de la proposition 7.1, on a $f(P,P)=O$ d'où $2P=f(f(P,P),O)=f(O,O)=O$. 
+        \item[5)] Pour l'opposer on cherche un point $M \in E$ tel que $P\neq M$ et $P,Q\neq O$ d'après le théorème énoncé assertion 2) on a donc $x_P = x_M$ et donc nécessairement $y_M=-y_P$ donc le point recherché est $M=\left( x_M,y_M \right) = \left( x_P,-y_P \right) =-P$. (j'avais invoqué avant notre rendez vous la prop 7.1 assertion 2 et procédé par analyse synthèse, i.e je trouve ce que je cherche et je montre que j'ai bien trouvé ce que je cherchais mais ici je ne pense pas que cela soit nécessaire puisque l'assertion 2 rempli ce rôle en fournissant un contexte suffisamment restreint pour trouver l'opposé)
+    \end{description}
+\end{demonstration}
