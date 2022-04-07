@@ -1,0 +1,65 @@
+\chapter{Le plan projectif $\mathbb{P}(\overline{K})$}
+
+Dans la totalité de ce qui suit la lettre $K$ désignera un corps de caractéristique $0$ ou un corps fini de caractéristique distincte de $2$ et $3$.
+
+On désignera la clôture algébrique de $K$ par la notation $\overline{K}$.
+
+Pour commencer, nous allons construire étape par étape le plan projectif $\mathbb{P}(\overline{K})$, ce qui nous permettra d'en donner une définition formel par la suite.
+
+\section{La droite projective $\mathbb{P}(\R)$}
+On commence par construire la droite projective, on se donne alors pour context, l'espace vectoriel $\R^2$. L'idée est de considérer l'ensemble de tous les droites vectorielles de ce dernier. C'est cette ensemble que l'on appelera la droite projective.
+
+En effet, si l'on considère la droite affine d'équation $y=1$, chaque droite vectorielle de $\R^2$ coupe cette droite en un seul point. Sauf bien entendu la droite d'équation $y=0$ qui est parallèle à cette dernière. On peut alors convenir que la droite d'équation $y=0$ "coupe" la droite d'équation $y=1$ en un point à l'infini. On peut alors dire que la droite projective est composé d'une droite affine et d'un point à l'infini.
+
+Plus formellement, on peut énoncer:
+
+\begin{definition}
+    Soit l'ensemble $\R^2-\left\{ (0,0) \right\} $ et soit la relation d'équivalence $ \sim$ sur ce plan tel que
+    \[
+        (x,y) \in\R^2- \left\{ (0,0) \right\} , (x,y) \sim (\lambda x, \lambda y) \text{ avec } \lambda \in \R^{*}
+    ,\] 
+    cette ensemble muni de sa relation d'équivalence, ainsi que du point à l'infini est un ensemble quotient appelé la droite projective $\mathbb{P}(\R)$.
+
+    On le note $\R^2-\left\{ (0,0) \right\} / \sim$.
+
+    Une classe d'équivalence est appelée un point projectif.
+\end{definition}
+
+\begin{remarque}
+    Si $y\neq 0$ les point $(x,y)$ on pour représentant de classe les points de la forme $(\frac{x}{y},1)$.
+
+    Si $y=0$, le point $(x,0)$ à pour représentant de classe $(1,0)$ c'est ce point que l'on appelle point à l'infini.
+\end{remarque}
+
+\section{Le plan projectif $\mathbb{P}^2(\R)$}
+
+En partant du même principe, pour construire le plan projectif $\mathbb{P}^2(\R)$, on se sert de l'espace vectoriel $\R^3$.
+
+On considère alors le plan affine d'équation $z=1$, ainsi tous les droites vectorielle de $\R^3$ coupe ce plan en un seul point, sauf les droites qui sont dans le plan $(O,x,y)$, où $O$ est l'origine du plan. Ainsi on peut convenir que les droites du plan $(O,x,y)$ coupe le plan $z=1$ en des points à l'infini. 
+
+On a donc le plan projectif qui est formé d'un plan affine et d'une droite projective à l'infini.
+
+On formalise algébriquement comme suit:
+
+\begin{definition}
+    Soit l'ensemble $\R^3-\left\{ (0,0,0) \right\} $ et soit la relation d'équivalence $\sim$ sur cet espace défini par
+    \[
+        (x,y,z) \in \R^3, \quad (x,y,z) \sim (\lambda x, \lambda y, \lambda z) \text{ avec } \lambda \in \R^{*}
+    ,\] 
+    cette ensemble muni de sa relation d'équivalence et de la droite projective à l'infini est appelé le plan projectif sur le corps $\R$.
+
+    On le note $\mathbb{P}^2(\R)=\R^3-\left\{ (0,0,0) \right\} / \sim$.
+\end{definition}
+
+\begin{remarque}
+    Si $z\neq_0$, les points (x,y,z) on pour représentant de classe les points de la forme $(\frac{x}{z},\frac{y}{z},1)$.
+
+    Si $z=0$:
+
+    Soit $y\neq 0$ et on prend pour représentant les point de la forme $(\frac{x}{y},1,0)$.
+
+    Soit $y=0$ et on peut choisir comme représentant de classe le point $(1,0,0)$ qui n'est d'autre que le point à l'infini.
+\end{remarque}
+
+\section{Le plan projectif $\mathbb{P}(\overline{K})$}
+

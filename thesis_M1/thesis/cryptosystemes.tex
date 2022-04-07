@@ -1,0 +1,112 @@
+\chapter{Cryptosystèmes}
+\section{context}
+En cryptographie parmis les deux types de cryptosystème à notre disposition. À savoir les cryptosytèmes symétriques (i.e. à clé secrète) et les cryptosystèmes asymétriques (i.e. à clé publique). On peut à l'aide de la théorie des courbes elliptique adapter les cryptosystèmes asymétriques dit classique à leur équivivalents, c'est-à-dire, les cryptosystèmes asymétriques dit elliptique.
+
+La force des cryptosytèmes asymétrique réside dans la difficulté, voir l'impossibilité actuel dans le cas elliptique, de résoudre le problème du logarithme discret que nous énoncerons par la suite.
+
+Dans le cas des cryptosystèmes à clé publique classique, on s'appuie sur le groupe multiplicatif d'un corps fini et de son groupe des inversibles. Ce qui réduit grandement notre choix comparé aux versions elliptique des algorithmes équivalent.
+
+En effet, dans le cas elliptique, on remplace le groupe multiplicatif sur un corps fini par le groupe des points rationnels d'une courbe elliptique. L'avantage de cette méthode est que pour un corps fini  $K$ donné, on dispose généralement de nombreux choix de courbes elliptiques $E$ sur $K$. Autrement dit, on a de nombreux groupes $E(K)$, pour utiliser efficacement un cryptosystème asymétrique élliptique contrairement aux versions classique comme énoncé plus haut où
+l'on ne dispose que du groupe des inversible $K^{*}$.
+
+
+Dans ce qui suit Alice et Bob sont deux personnes qui souhaite s'échanger soit un message, soit une clef secrète. Cependant, il faut bien comprendre qu'il peuvent également représenter deux entité qui souhaitent communiqué via des messages chiffrés ou bien s'échanger une clef secréte via cannaux publique. Par entité, j'entends soit des banques, des entreprises ou tout ce qui serait suceptible de vouloir communiqué secretement entre eux.
+
+De plus le choix des clés secret s'effectue de façon aléatoire dans le respect des conditions de chaque cas.
+\section{Cryptosystème version classique}
+
+\subsection{Algorithme d'El Gamal}
+Une personne Alice, souhaite envoyer à quiconque des messages confidentiels. Pour ce faire, elle choisit au départ un couple qui sera public (i.e. accessible à tout le monde). Ce couple est $(K,g)$ où $K$ est un corps fini et $g$ un générateur du groupe des inversibles de ce corps à savoir $K^{*}$. 
+
+Soit $q$ le cardinal de $K$.
+
+L'algorithme d'El Gamal est alors le suivant:
+
+\begin{description}
+    \item[1)] Alice choisit un entier $a$ tel que $1<a<q-1$, qui sera sa clé secrète.
+
+        Elle calcul alors $g^{a}$ qu'elle rend public, et qui sera considéré comme sa clé publique.
+
+        On a donc au départ le triplet $(K,g,g^{a})$ qui est connue de tous.
+
+    \item[2)] Pour qu'une personne Bob puisse envoyer un message $m \in K$ à Alice, il choisit un entier $b$ qui lui aussi est tel que $1<b<q-1$. Bob transmet alors à Alice le couple:
+        \[
+            (g^{b},mg^{ab})
+        ,\] 
+        où $g^{b}$ représente la clé publique de Bob.
+        C'est ce qu'on appelle la phase d'encryptage du message $m$.
+
+    \item[3)] Pour que Alice puisse déchiffrer le message reçu, elle passe par la phase dite de décryptage. C'est-à-dire, connaissant son entier secret $a$ et la clé publique de Bob, à savoir $g^{b}$, elle doit alors déterminer l'inverse de $(g^{b})^{a}$ dans $K$. C'est-à-dire l'entier $g^{-ab}$. 
+
+        Il lui suffit alors d'effectuer la multiplication de $g^{-ab}$ par $mg^{ab}$, qui nous donne alors:
+        \[
+        g^{-ab}\left( mg^{ab} \right)=m 
+        .\] 
+        Ce qui permet donc à Alice de retrouver le message clair $m$ et Alice et Bob on donc pu communiquer de façon publique en toute discrétion.
+\end{description}
+
+\subsection{Protocole de Diffie-Hellman}
+
+À la différence de l'agorithme d'El Gammal, ici deux personnes Alice et Bob souhaite se construire une clé secrete commune via cannaux public donc à la vue de tous, qui seront donc les seuls à connaître. Ceci leur permettra donc de pouvoir communiqué sur un canal non sûr en utilisant cette clé pour déchiffrer leur correspondance.
+
+Comme pour l'algorithme d'El Gamal, on se donne un corps fini $K$, ainsi qu'un générateur $g \in K^{*}$, qui seront tout deux public. Donc $(K,g)$ est connu de tous.
+
+Le procédé de construction de leur clé secret est ainsi le suivant:
+
+\begin{description}
+    \item[1)] Alice choisit sa clé secret qui est un entier $a$ tel que $1<a<q-1$, elle transmet ensuite publiquement à Bob l'entier $g^{a}$.
+
+    \item[2)] Bob choisit de la même manière un entier $b$, et il transmet lui aussi publiquement l'élément $g^{b}$ à Alice.
+
+    \item[3)] Alice pour sa part élève $g^{b}$ à la puissance $a$, ce qui lui permet d'obtenir l'élément $(g^{b})^{a}$.
+
+    \item[4)] Bob d'autre part, élève $g^{a}$ à la puissance $b$, et il obtient donc l'élément $(g^{a})^{b}$.
+
+        Ainsi Alice et Bob on pu se construire de façon public une clé secret commun qui est l'entier $g^{ab}$.
+\end{description}
+
+\section{Cryptosystème version elliptique}
+
+\subsection{Algorithme d'El Gamal}
+
+Alice souhaite envoyer un message chiffré à Bob. Pour se faire elle choisit un corps fini $K$, une courbe elliptique $E$ définie sur $K$ de sorte que le problème du logarithme discret soit difficile à résoudre dans le groupe $E(K)$. Elle choisit ensuite un point $P \in E(K)$. Enfin elle choisit sont entier naturel secret, non nul, $s$ et calcul et calcul le point $A=sP$.
+
+Elle rend ainsi public le quadruplet 
+\[
+    (K,E,P,A)
+.\] 
+
+C'est la base de ce qui va permettre à Alice et Bob de pouvoir communiquer de façon confidentiel entre eux.
+
+Ainsi, pour que Bob puisse envoyer un message chiffré $M \in E(K)$ à Alice, il choisit secrétement un entier non nul $k$ et calcules les points
+\[
+M_1=kP \quad \text{et} \quad M_2=M+kA
+.\] 
+Il transmet alors publiquement à Alice le couple $(M_1,M_2)$. C'est donc la phase d'encryptage du message $M$.
+
+Pour qu'Alice puisse déchiffrer le message $M$, elle doit calculer le point
+\[
+M_2-sM_1
+.\] 
+Ce qui lui permet grâce au calcul suivant de retrouver $M$:
+\[
+M_2-sM_1=M+kA-s(kP)=M+k(sP)-s(kP)=M+skP-skP=M
+.\] 
+
+\subsection{Protocol Diffie-Hellman}
+
+Alice et Bob souhaite s'échanger publiquement une clé secrète commune. Pour cela ils se mettent d'accord pour la construire selon le procédé suivant:
+
+\begin{description}
+    \item[1)] Ils choisissent un corps fini $K$ et une courbe elliptique $E$ définie sur $K$, pour que le problème du logaritme discret soit difficile à résoudre dans le groupe $E(K)$. Ils choisissent un point $P \in E(K)$. Ils rendent alors publique le triplet $(K,E,P)$.
+
+    \item[2)] Alice choisit un entier naturel secret non nun $a$ et calcul le point $P_a=aP$, qu'elle transmet publiquement à Bob.
+
+    \item[3)] Bob procède de la même façon en choisissant un entier naturel secret, non nul, $b$, et il calcul de son côté le point $P_b=bP$, qu'il transmet publiquement à Alice.
+
+    \item[4)] Alice calcul le point $aP_b=a(bP)$.
+
+    \item[5)] Bob calcul le point $bP_a=b(aP)$.
+\end{description}
+
+Ils ont ainsi construit leur clé secret commun qui est le point $abP$.

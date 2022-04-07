@@ -1,0 +1,53 @@
+\chapter{Les courbes elliptiques: histoire et liens avec la cryptographie}
+le cryptosystème RSA, inventé par Ronald \textbf{R}ivet, Adi
+\textbf{S}hamir et Leonard \textbf{A}dleman en 1977
+\section{Introduction}
+
+Dans ce mémoire, nous allons nous intéresser aux courbes elliptiques et plus particulièrement
+au groupe abélien des courbes elliptiques. Ce qui va nous permettre d'utiliser ce groupe en
+cryptographie et présenter une façon plus efficace d'utiliser l'algorithme d'El-Gamal (EG.) (date) et le
+protocol de Diffie-Hellman (D-H.) (date).
+
+Dans un monde en constant évolution, notamment technique. Il est crucial de pouvoir
+améliorer, réinventer, ou même changer, des principes qui ont révolutionner à leur époque.
+C'est pourquoi, en (date) Klobnitz, à présenter une façon concrète d'utiliser les courbes
+elliptiques dans le cadre de la cryptographie. Ceci a permit d'apporter une nouvelle façon
+de faire de la cryptographie, tout en conservant des concepts eprouvé basé sur le problème
+du logarithme discret. Cette nouvelle approche, que l'on nommera
+version elliptique, contrairement à la version dite classique de chiffrement, qui est basé
+sur le groupe multiplicatif $\left( \Z /p\Z \right) ^{*}$ et sa commutativité, celle ci
+présente une diversité et complexité non négligeable. 
+
+En effet, que ce soit l'algorithme d'El Gamal ou le protocol de Diffie-Hellman, leur version
+classique est basé sur le générateur du groupe $\left( \Z / p\Z \right) ^{*}$, alors que
+leur version elliptique est basé sur les courbes elliptiques qui comme on le verra sont en grand
+nombre pour leur part. De plus, par construction du groupe des courbes elliptiques, plus
+abstrait, la résolution du logarithme discret est quasiment impossible sans l'aide d'ordinateur
+quantique extremement puissant (ref article Mme Abdelatif).
+
+\section{plan ?}
+
+\begin{itemize}
+    \item explication cryptographie
+        \begin{itemize}
+            \item sym et asym
+            \item rsa
+            \item El Gamal et D-H
+        \end{itemize}
+    \item histoire des fonctions elliptiques 
+\end{itemize}
+
+\section{La cryptographie}
+L'application première de notre construction étant la cryptographie, il me semble nécessaire de
+poser les bases de cette branche des mathématiques. Ceci nous permettra d'avoir une idée clair
+des différents concepts et enjeux qui la compose.
+
+Tout d'abord, définition ce qu'est la cryptographie. Métaphysiquement, c'est le fait de vouloir
+communiquer des messages, entre diverses entités et ceci de façon à ce que seul ces dernières
+n'aient connaissances du contenue du message.
+
+Cette définition personnel et trivial est basé sur comment dans l'histoire la cryptographie est
+apparu.
+
+De nos jours, le concept c'est énormément diversifié. La transmission de message reste un élément
+majeur de ce qu'est la cryptographie mais 

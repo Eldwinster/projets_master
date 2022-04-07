@@ -1,0 +1,494 @@
+\chapter{Loi de groupe}
+
+Soit $E$ une courbe elliptique définie sur $K$. Pour toute extension $L$ de $K$ dans $\overline{K}$, on va munir $E(L)$ d'une structure naturelle de groupe abélien, d'élément neutre le point à l'infini.
+
+\section{Droites de $\mathbb{P}^2$}
+
+\begin{definition}
+    Une droite de $\mathbb{P}^2$ est une partie de $\mathbb{P}^2$ formée des points $[x,y,z]$ tels que 
+    \[
+    ux+vy+wz=0
+    ,\] 
+    où $u$, $v$ et $w$ sont des éléments non tous nuls de $\overline{K}$.
+\end{definition}
+
+On parle alors de la droite d'équation $ux+vy+wz=0$. Une droite d'équation $x=\lambda z$, où $\lambda$ est dans $\overline{K}$, est dite verticale. Une telle droite passe par le point $O = [0,1,0]$. En fait, toute droite passant par $O$ a une équation de la forme $ux+wz=0$. On dit souvent que la droite d'équation $z=0$ est la droite à l'infini. En identifiant la partie de $\mathbb{P}^2$ formée des points $[x,y,z]$ tels que $z \neq 0$ avec $\overline{K}^2$, le plan projectif s'interprète
+comme la reunion de $\overline{K}^2$ avec la droite à l'infini.
+\begin{lemme}
+    \label{lem:lemme2}
+    
+    Soient $P = \left[ a_1, a_2, a_3 \right]$ et $Q = \left[ b_1, b_2, b_3 \right]$ deux points distincts de $\mathbb{P}^2$.
+
+    Il existe une unique droite de $\mathbb{P}^2$ passant par $P$ et $Q$. C'est la droite $D$ d'équation $ux + vy + wz = 0$ avec $\left[ x, y, z \right] \in \mathbb{P}^2$ et 
+    \[
+    u = a_2 b_3 - a_3 b_2, \ v = a_3 b_1 - a_1 b_3, \ w = a_1 b_2 - a_2 b_2 
+    .\] 
+
+    Énoncé originel : 
+
+    Soient $P = \left[ a_1, a_2, a_3 \right]$ et $Q = \left[ b_1, b_2, b_3 \right]$ deux points distincs de $\mathbb{P}^2$. Il existe une unique droite de $\mathbb{P}^2$ passant par $P$ et $Q$. C'est l'ensemble des points $\left[ x, y, z \right] \in \mathbb{P}^2$ tels que le déterminant de la matrice
+    \[
+        M = 
+    \begin{pmatrix}
+        a_1 & b_1 & x \\ 
+        a_2 & b_2 & y \\
+        a_3 & b_3 & z
+    \end{pmatrix}
+    \] 
+    soit nul. Autrement dit, c'est la droite d'équation $ux + vy + wz = 0$, avec
+    \[
+    u = a_2b_3 - a_3b_2, \ v = a_3b_1 - a_1b_3, \ w = a_1b_2 - a_2b_2
+    .\] 
+\end{lemme}
+
+\begin{demonstration}
+    Montrons qu'il existe une droite $D$ passant par $P$ et $Q$.
+
+    Les éléments $u, \ v$ et $w$ ne sont pas tous nuls car $P$ et $Q$ sont distincts.
+
+    En effet, si $P = Q$ alors $a_1 = b_1, \ a_2 = b_2 $ et $a_3 = b_3$ donc $u = v = w =0$ or $P \neq Q$ donc il existe $x \in \left\{ u, v, w \right\}$ tel que $x \neq 0$.
+    
+\end{demonstration}
+
+\section{Tangente à $E$ en un point}
+
+Soit 
+\[
+y^2z = x^3 + axz^2 + bz^3
+,\] l'équation de $E$, où $a,b \in K$.
+
+Notons
+\[
+    F = Y^2Z - \left( X^3 + aXZ^2 + bZ^3 \right) \in K[X,Y,Z]
+,\] 
+
+\[
+F_{X} = \frac{\partial F}{\partial X},\quad F_{Y} = \frac{\partial F}{\partial Y},\quad F_{Z} = \frac{\partial F}{\partial Z}
+,\] 
+
+c'est-à-dire, 
+
+\[
+F_{X} = - \left( 3X^2 + aZ^2 \right),\quad F_{Y} = 2YZ,\quad F_{Z} = Y^2 - \left( 2aXZ + 3bZ^2 \right)
+.\] 
+
+\begin{lemme}
+    \label{lem:lemme3}
+    
+    Il n'existe pas de point $P \in E$ tel que
+    \[
+    F_{X}(P) = F_{Y}(P) = F_{Z}(P) = 0
+    .\] 
+\end{lemme}
+
+\begin{demonstration}
+   Supposons par l'absurde, qu'il existe un tel point $P \in E$. Remarquons que $F_{Z}(O) = 1 \neq 0 = F_{Z}(P)$ donc par hypothèse $P$ est disctinct de $O$.
+
+   Pour fixer les idées posons $P = [x,y,1]$.
+
+   Puisque $\car(K) \neq 2$, on a
+   \[
+       (F_{Y} = 0) \iff (2YZ = 0) \iff (Y = 0) 
+   ,\] 
+
+   donc $y = 0$.
+   
+   Donc $P$ serait de la forme $[x,0,1]$.
+   
+   On obtient alors
+   \[
+   F_{X} = - \left( 3X^2 + a \right) = 0 \text{ et } F_{Z} = -\left( 2aX + 3b \right) = 0
+   .\] 
+   
+   \begin{itemize}
+       \item Supposons $a \neq 0$, on alors à partir de $F_{Z}$
+   \[
+       X = - \frac{3b}{2a} 
+   .\] 
+
+   Donc par $F_{X}$
+\begin{align*}
+    - \left( 3 (- \frac{3b}{2a})^2 + a \right) &= 0 \\
+    - \left( 27b^2 + 4a^3 \right) &= 0
+.\end{align*}
+Ce qui est absurde car $F$ est elliptique. D'après le lemme \ref{lem:lemme1}
+        \item Supposons que $a = 0$, alors
+            \[
+                (3b = 0) \underbrace{\implies}_{\car(K) \neq 3} (b = 0)
+            .\] 
+
+            Donc on $a = b = 0$ donc $-\left( 27b^2 + 4a^3 \right) = 0$ absurde car $F$ est elliptique. (lem \ref{lem:lemme1})
+
+            D'où le résultat.
+   \end{itemize}
+\end{demonstration}
+
+
+\begin{lemme}
+    \label{lem:lemme4}
+    
+    \begin{description}
+        \item[1)] L'équation de la tangente à $E$ au point $O$ est z = 0.
+        \item[2)] Soit $P = \left[ x_0, y_0, 1 \right]$ un point de $E$ distinct de $O$. L'équation de la tangente à $E$ en $P$ est
+            \[
+            F_{X}(P)\left( x - x_0z \right) + F_{Y}(P)\left( y - y_0z \right) = 0
+            .\] 
+    \end{description}
+\end{lemme}
+
+\begin{demonstration}
+    \begin{description}
+        \item[1)] Soit  $O \in E$ le point à l'infini. D'après l'équation de la tangente à $E$ au point $O$. On a successivement 
+            \[
+            F_{X}(O) = 0, \ F_{Y}(O) = 0 \text{ et } F_{Z}(O) = 1
+            .\] 
+            Ainsi on retrouve bien $z = 0$.
+
+        \item[2)] Soit $P$ un tel point, d'après l'équation (cite? set up snippet -nommé + cité) de la tangente et de l'égalité $y_0^2 = x_0^3 + ax_0 + b$ on a,
+            \begin{align*}
+                F_{X}(P)x + F_{Y}(P)y + F_{Z}(P)z &= 0 \\
+                - \left( 3x_0^2 + a \right)x + \left( 2y_0 \right)y + \left( y_0^2 - \left( 2ax_0 + 3b \right) \right)z &= 0 \\
+                - 3x_0^2x - ax + 2y_0y + y_0^2z - 2ax_0z - 3bz &= 0 \\ 
+                - 3x_0^2x - ax + 2y_0y + y_0^2z - 2ax_0z - 3z\left( y_0^2 - x_0^3 - ax_0 \right) &= 0 \left( \text{i.e } b = y_0^2 - \left( x_0^3 + ax_0 \right) \right) \\
+                - 3x_0^2x -ax + 2y_0y + y_0^2z - 2ax_0z - 3y_0^2z + 3x_0^3z + 3ax_0z &= 0 \\
+                - \left( 3x_0^2 + a \right)x + 2y_0y - 2y_0^2z + \left( 3x_0^2 + a \right)x_0z &= 0\\
+                - \left( 3x_0^2 + a \right)\left( x - x_0 \right) + 2y_0\left( y - y_0z \right) &= 0
+            .\end{align*}
+            D'où le résultat.
+    \end{description}
+    
+\end{demonstration}
+
+
+\section{Loi de composition des cordes-tangentes}
+
+Dans cette proposition à l'aide du comportement de deux points du plan $E$ et de la droite qui les intersectent. On veut construit une loi de composition interne
+\[
+\begin{align*}
+    \top : E \times E &\longrightarrow E \\
+    (P,Q) &\longmapsto P  \ \top  \ Q
+\end{align*}
+\] 
+Cette loi, comme on va le voir, n'est pas une loi de groupe. C'est ce qui va nous permettre cependant de donner, par la suite, de donner une structure de groupe au plan $E$ à l'aide d'une symétrie bien choisie.
+
+\begin{proposition}
+    \label{prop:proposition1}
+    
+    Soient $P$ et $Q$ des points de $E$. Soit $D$ la droite de $\mathbb{P}^2$ passant par $P$ et $Q$ si $P \neq Q$, ou bien la tangente à $E$ en $P$ si $P = Q$. On a
+    \[
+    D \cap E = \left\{ P, Q, f(P,Q) \right\}
+    ,\] 
+    où $f(P,Q)$ désigne le point de $E$ défini par les conditions suivantes.
+    \begin{description}
+        \item[1)] Supposons $P \neq Q, \ P \neq O$ et $Q \neq O$.
+            \begin{description}
+                \item[i)] Supposons $x_{P} \neq x_{Q}$. Posons
+                    \[
+                    \lambda = \frac{y_{P} - y_{Q}}{x_{P} - x_{Q}} \text{ et } \nu = \frac{x_{P}y_{Q} - x_{Q}y_{P}}{x_{P} - x_{Q}}
+                    .\] 
+
+On a 
+\begin{align}
+    \label{eq:interne1}
+f(P,Q) = \left[ \lambda - x_{P} - x_{Q}, \lambda \left( \lambda^2 - x_{P} - x_{Q} \right) + \nu, 1 \right]
+.\end{align}
+                \item[ii)] Si $x_{P} = x_{Q}$, on a $f(P,Q) = O$.
+            \end{description}
+        \item[2)] Supposons $P \neq O$ et $Q = O$. On a
+            \begin{align}
+                \label{eq:interne2}
+            f(P,O) = \left[ x_{P}, -y_{P}, 1 \right]
+            .\end{align}
+            De même, si $P = O$ et $Q \neq O$, on a $f(O,Q) = \left[ x_{Q}, -y_{Q}, 1 \right]$
+        \item[3)] Si $P = Q = O$, on a $f(O,O) = O$.
+        \item[4)]  Supposons $P = Q$ et $P \neq O$.
+            \begin{description}
+                \item[i)] Si $y_{P} = 0$, on a $f(P,P) = O$.
+                \item[ii)] Supposons $y_{P} \neq 0$. Posons
+                    \[
+                    \lambda = \frac{3x_{P}^3 + a}{2y_{P}} \text{ et } \nu = \frac{-x_{P}^3 + ax_{P} + 2b}{2y_{P}}
+                    .\] 
+On a
+\begin{align}
+    \label{eq:interne3}
+f(P,P) = \left[ \lambda^2 - 2 x_{P}, \lambda\left( \lambda^2 - 2x_{P} \right) + \nu, 1 \right]
+.\end{align}
+            \end{description}
+    \end{description}
+\end{proposition}
+
+Dans cette démonstration, on étudie le comportement des points $P$ et $Q$ selon qu'ils soient distincts ou égaux. Que ce soit pour la droite ou la tangente tous les deux vont éventuellement, soit
+recouper la courbe elliptique et rester dans le plan $E$, soit "couper" le point à l'infini  $O$. C'est ce qu'on veut découvrir à l'aide du point que l'on a nommé $f(P,Q)$ qui désigne le comportement
+par rapport à $P$ et $Q$ de ce troisième point.
+
+\begin{demonstration}
+    \begin{description}
+        Soient $P = \left[ x_{P}, y_{P}, 1 \right]$ et $Q = \left[ x_{Q}, y_{Q}, 1 \right]$ des points de $E$ tels qu'ils sont distincts. Alors il existe une droite $D \in \mathbb{P} ^2$ qui passe par $P$ et $Q$.
+        \item[1)] Supposons $P \neq Q$, $P \neq O$ et $Q \neq O$. Donc comme $D$ existe, il existe un point $M \in D \cap E$ et on cherche donc à connaitre son comportement dans le plan $E$.
+            \begin{description}
+        \item[i)] Supposons $x_{P} \neq x_{Q}$. 
+            Comme $P,Q \neq O$, le point à l'infini n'appartient pas à $D$. Comme $M \in D$, il est de la même forme que $P$ et $Q$.
+            Posons $M = \left[ x_0, y_0, 1 \right]$ avec $x_0$, $y_0$ des coordonnées sur $\overline{K}$.
+
+            Comme $M \in E$, on a la première égalité
+            \begin{align}
+                \label{eq:droite} 
+             y_0^2 = x_0^3 + ax_0 + b 
+            .\end{align}
+            Ensuite avec $M \in D$ d'après le lemme \ref{lem:lemme2}  on a la matrice suivante
+            \[
+                \begin{pmatrix}
+                    x_P & x_Q & x_0 \\
+                    y_P & y_Q & y_0  \\
+                    1   & 1   & 1
+                \end{pmatrix}
+            ,\] 
+           qui nous permet d'obtenir une seconde égalité.
+           \begin{align*}
+               \left( y_P - y_Q \right)x_0 - \left( x_P - x_Q \right)y_0 + \left( x_P y_Q - x_Q y_P \right) &= 0 \\
+               y_0 = \frac{y_P - y_Q}{x_P - x_Q}x_0 + \frac{x_P y_Q - x_Q y_P}{x_P - x_Q}
+           .\end{align*}
+           Posons 
+           \[
+           \lambda = \frac{y_P - y_Q}{x_P - x_Q} \quad \text{et} \quad \nu = \frac{x_P y_Q - x_Q y_P}{x_P - x_Q}
+           .\] 
+           Donc l'équation de D est de la forme
+           \[
+           y = \lambda x + \nu z
+           ,\] 
+           c'est-à-dire dans notre cas on a
+           \[
+           y_0 = \lambda x_0 + \nu
+           .\] 
+           En remplacent dans \eqref{eq:droite}, il vient
+           \begin{align*}
+               \left( \lambda x_0 + \nu  \right)^2 = x_0^3 + ax_0 + b \\
+               \lambda^2 x_0^2 + 2\lambda \nu x_0 + \nu^2 = x_0^3 + ax_0 + b \\
+               x_0^3 - \lambda^2 x_0^2 + \left( a - 2\lambda \nu  \right)x_0 + b - \nu^2 = 0
+           .\end{align*}
+           Donc $x_0$ est une racine du polynôme
+            \[
+           H = X^3 - \lambda X^2 + \left( a - 2\lambda\nu \right)X + b - \nu^2
+           .\] 
+           On remarque que $H(x_P) = H(x_Q) = 0$ donc $x_p$ et $x_q$ sont aussi des racines de $H$.
+           Par les relations coefficients racines obtient la valeur de $x_0$
+           \begin{align*}
+               x_0 + x_P + x_Q = - \left( - \lambda^2 \right) \\
+               x_0 = \lambda^2 - x_P - x_Q
+           .\end{align*} 
+           Ainsi les racines de $H$ sont
+           \[
+           x_P, \quad x_Q \quad \text{et} \quad \lambda^2 - x_P - x_Q
+           .\] 
+           Il en résulte que $D \cap E$ est formé de $P$, et du point $M = f(P,Q)$.
+           Donc  
+           \begin{align*}
+               f(P,Q) &= \left[ x_0, y_0, 1 \right] \\
+                      &= \left[ \lambda^2 - x_P - x_Q, \lambda x_0 + \nu, 1 \right] \\
+                      &= \left[ \lambda^2 - x_P - x_Q, \lambda\left( \lambda^2 - x_P - x_Q \right), 1\right]
+           .\end{align*}
+           D'où l'assertion.
+       \item[ii)] Supposons $x_P = x_Q$. Comme $P$ et $Q$ sont distinct, on a alors $y_P = - y_Q$.
+               D'après le lemme \ref{lem:lemme2} , la matrice suivante
+               \[
+                   \begin{pmatrix} x_P & x_Q & x \\
+                   y_P & - y_Q & y \\
+               1 & 1 & z
+           \end{pmatrix} 
+               .\] 
+
+               D'où l'équation de la droite suivante
+               \begin{align*}
+                   2y_Px - 2y_Px_Pz &= 0 \\
+                   x &= x_Pz
+               .\end{align*}
+               Donc le point $O$ est aussi un point de la droite $D$ donc de $D \cap E$.  Soit $M \in  D \cap E$ distincts de $O$. Si $M = \left[ 0,1,0 \right]$, d'après la situation on a $x_0 =
+               x_P$ et $y_0 = \pm y_P$, donc $M = P$ ou $M = Q$. Or on a $P,Q \neq O$. Donc on a nécessairement $M = O$. Ainsi on a bien $D \cap E = \left\{ P, Q, f(P,Q)= O \right\}$, d'où
+               l'assertion dans ce cas ci.
+            \end{description}
+        \item[2)] Supposons $P \neq O$ et $Q = O$. Donc d'après lemme \ref{lem:lemme2} , on a
+            \[
+            \begin{pmatrix}
+                x_P & 0 & x \\
+                y_P & 1 & y \\
+                1   & 0 & z
+            \end{pmatrix}
+            .\] 
+            À partir de la deuxième ligne on obtient l'équation de la droite suivante
+            \begin{align*}
+                x_Pz - x &= 0 \\
+                x &= x_Pz
+            .\end{align*}
+            Si $M = \left[ x_0, y_0, 1 \right]$ est un point de $D \cap E$, on a donc $x_0 = x_P$ d'où $y_0 = \pm y_P$.
+        On a ainsi $D \cap E = \left\{ P, O, f(P,O) \right\}$, où $f(P,O) = \left[ x_P, - y_P, 1 \right]$.
+    \item[3)] Supposons $P = Q = O$, par le lemme \ref{lem:lemme4}  la tangente $D$ à E au point $O$ à pour $z = 0$. Par suite, $O$ est le seul point de $D \cap E$, d'où $f(O,O) = O$.
+    \item[4)] Supposons $P = Q$ et $P \neq O$. L'équation de la tangente $D$ à $E$ en $P$ a donc pour équation 
+        \[
+        F_{X}(P)\left( x - x_Pz \right) + F_{Y}(P)\left( y - y_Pz \right) = 0
+        .\] 
+        \begin{description}
+            \item[i)] Si $y_P = 0$, on a
+                \[
+                x_P^3 + ax_P + b = 0
+                .\] 
+                Donc $x_P$ est racine simple de ce polynôme. De plus, $F_{X}(P) \neq 0$.
+                En effet, si $F_{X}(P) = 0$ on a
+                \begin{align*}
+                    - \left( 3x_P^2 + a \right) &= 0 \\
+                    x_P^2 = - \frac{a}{3}
+                ,\end{align*}
+                ce qui est absurde.
+
+                Ainsi à partir de l'équation de la tangente $D$ on a
+                \begin{align*}
+                    F_{X}(P)\left( x - x_Pz \right) = 0 &\implies \left( F_{X}(P) \right) = 0 \ou \left( x - x_Pz \right) = 0 \\
+                                                        &\implies x - x_Pz = 0
+                .\end{align*}
+                Donc pour $D$ on a 
+                \[
+                D : x = x_Pz
+                .\] 
+                Le seul point de $D \cap E$ distinct de $P$ est donc le point $O$, d'où $D \cap E = \left( P,O \right)$, d'où l'assertion.
+            \item[ii)] Supposons $y_P \neq 0$. Du lemme \ref{lem:lemme4}  et de l'équation $b = y_P^2 - x_P^3 - ax_P$ on obtient
+                \begin{align*}
+                    - \left( 3x_P^2 + a \right) \left( x - x_Pz \right) + 2y_P\left( y - y_Pz \right) &= 0 \\
+                    - 3x_P^2x + 3 x_P^3z - ax + ax_Pz + 2y_Py - 2y_P^2z &= 0 \\
+                    2y_Py = 3x_P^2x - 3x_P^3z + ax - ax_Pz +2y_P^2z \\
+                    2y_Py - ax_Pz = 3x_P^2x + ax - x_P^3z + 2b \\
+                    y = \frac{3x_P^2 + a}{2y_P}x + \frac{- x_P^3 + ax_P + 2b}{2y_P}z
+                .\end{align*}
+                On pose $\lambda = \frac{3x_P^2 + a}{2y_P}$ et $\nu = \frac{- x_P^3 + ax_P + 2b}{2y_P}$ et on obtient l'équation de $D$, c'est-à-dire
+                \[
+                y = \lambda x + \nu z
+                .\] 
+                Le point $O$ n'est donc pas sur $D$. Soit $M = \left[ x_0, y_0, 1 \right]$ un point de $E \cap D$. On a par le même raisonnement que dans le cas (1-i) (utilise ref?) les deux équations suivantes
+                \[
+                y_0^2 = x_0^3 + ax_0 + b \quad \text{et} \quad y_0 = \lambda x_0 + \nu
+                .\] 
+                Par suite $x_0$ est une racine du polynôme
+                \[
+                G = X^3 - \lambda^2 X^2 + \left( a - 2\lambda\nu  \right)X + b - \nu^2
+                .\] 
+                Le polynôme dérivé de $G$ est
+                \[
+                G' = 3X^2 - 2\lambda^2 X + a - 2\lambda\nu
+                .\] 
+                On a
+                \[
+                    \begin{cases}
+                G(x_P)=(0) \iff x_P^3-\lambda^2x_P^2+\left( a-2\lambda\nu \right)X+b-nu^2=0 \\
+                y_P^2=x_P^3+ax_P+b \implies b=y_P^2-x_P^3-ax_P \quad \text{et} \quad y_P=\lambda x_P + \nu \implies \nu = y_P - \lambda x_P
+                    \end{cases}
+                .\] 
+                Donc,
+                \begin{align*}
+                    G(x_P) &=x_P^3-\lambda^2x_P^2+\left( a-2\lambda\left( y_p-\lambda x_P \right)  \right) x_P + y_P^2-x_P^3-ax_P-\left( y_P -\lambda x_P \right) ^2\\
+                    &= x_P^3-\lambda^2 x_P^2+ax_P-2\lambda x_Py_P+2\lambda^2x_P^2+y_P^2-x_P^3-ax_P-y_P^2+2\lambda x_Py_P -\lambda^2x_P^2 \\
+                    &= 2\lambda^2x_p^2 
+                .\end{align*}
+                Par suite,
+                \begin{align*}
+                    G'(x_P)=0 &\iff 3x_P^2-G(x_P)+a-2\lambda\nu =0 \\
+                              & \iff G(x_P) = 3x_P^2+a-2\lambda\nu \\
+                              & \iff G(x_P)=0 \\
+                              & \iff x_P \text{ racine de G}
+                .\end{align*}
+Ainsi, $x_P$ est une racine d'ordre au moins $2$ de $G$. Les racines de $G$ sont donc 
+\[
+x_P \quad \text{et} \quad \lambda^2-2x_P
+.\] 
+On obtient donc par le même raisonnement que (1-i) la formule annoncé.
+        \end{description}
+    \end{description}
+\end{demonstration}
+
+\section{Loi de groupe sur $E$}
+
+Considérons comme précédemment $a$ et $b$ des éléments de $K$ tels que $4a^3+27b^2\neq 0$ et $E$ la courbe elliptique définie sur $K$ d'équation
+\[
+y^2=x^3+ax+b
+.\] 
+Notons $+$ la loi de composition interne sur $E$, définie pour tous $P$ et $Q$ dans $E$ par l'égalité
+\begin{align}
+    \label{eq:groupe}
+    P+Q=f(f(P,Q),O)
+.\end{align}
+Géométriquement, $P+Q$ s'obtient à partir de $f(P,Q)$ par symétrie par rapport à l'axe des abscisses. Cette loi de composition est une loi de groupe sur  $E$.
+
+\begin{theoreme}
+    \label{th:theoreme1}
+    Le couple $\left( E,+ \right) $ est un groupe abélien, d'élément neutre $O$. La loi interne $+$ est décrite explicitement par les formules suivantes.
+
+    Soient $P$ et $Q$ des points de $E$ distincts de $O$. Posons $P=\left( x_P,y_P \right) $ et $Q=\left( x_Q,y_Q \right) $.
+
+    \begin{description}
+        \item[1)] Supposons $x_P\neqx_Q$. Posons 
+            \[
+            \lambda=\frac{y_P-y_Q}{x_P-x_Q} \quad \text{et} \quad \nu=\frac{x_Py_Q=x_Qy_P}{x_P-x_Q}
+            .\] 
+            On a 
+            \begin{align}
+                \label{eq:add1}
+            P+Q=\left( \lambda^2-x_P-x_Q,-\lambda\left( \lambda^2-x_P-x_Q \right) -\nu  \right) 
+            .\end{align}
+            \item[2)] Si $x_P=x_Q$ et $P\neqQ$, on a $P+Q=O$.
+            \item[3)] Supposons $P=Q$ et $y_P\neq 0$. Posons 
+                \[
+                \lambda=\frac{3x_P^2+a}{2y_P} \quad \text{et} \quad \nu=\frac{-x_P^3+ax_P+b}{2y_P}
+                .\] 
+                On a 
+                \begin{align}
+                    \label{eq:add2}
+                2P=\left( \lambda^2-2x_P,\lambda\left( -\lambda^2-2x_P \right) -\nu \right) 
+                .\end{align}
+        \item[4)] Si $P=Q$ et $y_P=0$, on a $2P=O$.
+        \item[5)] L'opposé de $P$ est le point
+            \begin{align}
+                \label{eq:add3}
+                -P=\left( x_P,-y_P \right) 
+            .\end{align}
+    \end{description}
+\end{theoreme}
+
+\begin{demonstration}
+    \begin{description}
+        \item[1)] Supposons $x_P\neqx_Q$, compte tenu de \eqref{eq:groupe}, \eqref{eq:interne1} et \eqref{eq:interne2} on a
+            \[
+            \begin{cases}
+                \eqref{eq:interne1} \iff f(\left[ \lambda^2-x_P-x_Q,\lambda\left( \lambda^2-x_P-x_Q \right) +\nu,1 \right] , \left[ 0,1,0 \right] ) \\
+                \eqref{eq:interne2} \iff f(P,O)=\left[ x_P,-y_P,1 \right] 
+            \end{cases}
+            .\] 
+            On retrouve bien la formule \eqref{eq:add1}.
+        \item[2)] Supposons $x_P=x_Q$ et $P\neq Q$ c'est à dire $y_P\neqy_Q$.
+
+            D'après la proposition \ref{prop:proposition1}  (1-i), on a $f(P,Q)=O$ donc $f(f(P,Q),O)=f(O,O)=O$. D'où la formule énoncé.
+        \item[3)] Supposons $P=Q$ et $y_P\neq 0$, en prenant compte \eqref{eq:groupe} , \eqref{eq:interne2} et \eqref{eq:interne3} on obtient
+            \[
+            \begin{cases}
+                \eqref{eq:interne3} \iff f(\left[ \lambda^2-2_x_P,\lambda\left( \lambda^2-2x_P \right) +\nu,1 \right] ,\left[ 0,1,0 \right] )\\
+                \eqref{eq:interne2} \iff f(P,O)=\left[ x_P,-y_P,1 \right] 
+            \end{cases}
+            .\] 
+            Ce qui permet de retrouver la formule \eqref{eq:add2}. 
+        \item[4)] Supposons $P=Q$ et $y_P=0$, d'après l'assertion (4-i) de la proposition \ref{prop:proposition1} , on a $f(P,P)=O$ d'où $2P=f(f(P,P),O)=f(O,O)=O$. 
+        \item[5)] Pour l'opposer on cherche un point $M \in E$ tel que $P\neq M$ et $P,Q\neq O$ d'après le théorème énoncé assertion 2) on a donc $x_P = x_M$ et donc nécessairement $y_M=-y_P$ donc le point recherché est $M=\left( x_M,y_M \right) = \left( x_P,-y_P \right) =-P$. (j'avais invoqué avant notre rendez vous la prop 7.1 assertion 2 et procédé par analyse synthèse, i.e je trouve ce que je cherche et je montre que j'ai bien trouvé ce que je cherchais mais ici je ne pense pas que cela soit nécessaire puisque l'assertion 2 rempli ce rôle en fournissant un contexte suffisamment restreint pour trouver l'opposé)
+    \end{description}
+\end{demonstration}
+
+\begin{exemple}
+    mettre exemple de calcul de $2P$ pour la suite
+\end{exemple} 
+
+\section{Morphisme de groupes de $E(\overline{K})$}
+
+Considérons un morphisme de groupes $f\ :\ E(\overline{K}) \to E(\overline{K})$. Soit $n$ un entier $\ge 2$ non divisible par $\car(K)$. Le groupe $E[n]$ est un $\Z / n\Z$-module libre de rang $2$. L'image par $f$ de $E[n]$ est contenue dans $E[n]$. Par suite, $f$ induit un endomorphisme du $\Z / n\Z$-module $E[n}$. Dans toute base $(P_1,P_2)$ de $E[n]$ sur $\Z / n\Z$, il est donc représenté par une matrice
+\[
+    \begin{pmatrix} a & b \\ c & d \end{pmatrix} 
+,\] 
+qui décrit l'action de $f$ sur $E[n]$.
+
+\begin{exemple}
+    mettre l'exemple 1 de morphisme de groupe
+\end{exemple}
+
