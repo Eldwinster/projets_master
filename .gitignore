@@ -10,3 +10,8 @@
 *.toc
 /thesis_M1/current_course
 *.pdf
+*.bcf
+*.xml
+*.aux
+*.bbl
+*.blg
