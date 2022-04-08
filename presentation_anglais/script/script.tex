@@ -1,246 +1,270 @@
 \begin{center}
-    \textbf{el\textbf{lip}tic \textbf{cur}ves cry\textbf{tog}raphy}
+    \textbf{el\textbf{lip}tic curves cry\textbf{tog}raphy}
 \end{center}
 \begin{itemize}
-    \item \textbf{Slide 1}: Hel\textbf{lo} \textbf{ev}eryone, let me \textbf{in}troduce
-        my\textbf{self} \textbf{quick}ly. I'm
+    \item \textbf{Slide 1}: Hel\textbf{lo} \textbf{eve}ryone, let me \textbf{in}tro\textbf{duce}
+        my\textbf{self} quicky. I'm
         Yann-Arby, I'm \textbf{stud}ying a \textbf{mas}ter de\textbf{gree} in
-        ma\textbf{the}matics at the Uni\textbf{ver}sity of Picardie Jules
-        Verne. To\textbf{day}, I'll speak about \hlred{el\textbf{lip}tic
-        \textbf{cur}ves} and their
-        appli\textbf{ca}tion in \textcolor{red}{cryp\textbf{tog}raphy}. It's a 10 min \textbf{pres}entation
-        \textcolor{teal}{so} please bear with
-        me until the end to ask any \textbf{ques}tion you might have during my speech. So let's just
+        \textbf{math}e\textbf{mat}ics at the Uni\textbf{ver}sity of Picardie Jules
+        Verne. To\textbf{day}, I'll speak a\textbf{bout} \hlred{el\textbf{lip}tic
+        curves} and their
+        \textbf{ap}pli\textbf{ca}tion in cryp\textbf{tog}raphy. It's a 10 min
+        \textbf{pres}en\textbf{ta}tion
+        \hlteal{so} please bear with
+        me until the end to ask any \textbf{ques}tion you might have during my speech.
+        So let's just
         dive into it.
     \item \textbf{Slide 2}: Through this beamer I'd like to \textbf{an}swer the
         \textbf{fol}lowing \textbf{ques}tions.
 
-        They are about to\textbf{day}'s topic \textcolor{teal}{which} is about the \textcolor{red}{group} of
-        \textcolor{red}{\textbf{rat}ionals points} of
-            an \textcolor{red}{el\textbf{lip}tic \textbf{cur}ves} defined over a \textcolor{red}{field} $K$. 
+        They are a\textbf{bout} to\textbf{day}'s \textbf{top}ic \hlteal{which} is a\textbf{bout} the \hlred{group} of
+        \hlred{\textbf{rat}ional points} of
+            an \hlred{el\textbf{lip}tic curve} de\textbf{fin}ed \textbf{o}ver a \hlred{field} $K$. 
 
-            In fact, \textcolor{red}{el\textbf{lip}tic \textbf{cur}ves} are to\textbf{day}'s
-            trend in \textcolor{red}{cry\textbf{tog}raphy}. They are \textcolor{green}{broadly} use in
-            \textcolor{red}{\textbf{sig}nature au\textbf{then}tification} and \textcolor{red}{key
+            In fact, \hlred{el\textbf{lip}tic curves} are to\textbf{day}'s
+            trend in cry\textbf{tog}raphy. They are \hlolive{broadly} use in
+            \hlred{\textbf{sig}nature au\textbf{then}tification} and \hlred{key
             sharing \textbf{pro}tocol}. 
 
-            \textcolor{brown}{Therefore}, I'd like to show you the underlying
-            mechanism of its con\textbf{struc}tion \textcolor{teal}{in \textbf{or}der to} give an ex\textbf{am}ple of one
-            \textcolor{green}{of the most} used
-            \textcolor{red}{key
-            sharing \textbf{pro}tocol} \textcolor{teal}{which} \textcolor{violet}{is known} as the \textcolor{red}{Diffie-Hellman
+            \hlbrown{\textbf{Therefore}}, I'd like to show you the \textbf{un}der\textbf{ly}ing
+            \textbf{mech}a\textbf{nis}m of its con\textbf{struc}tion \hlteal{in \textbf{or}der to} give an ex\textbf{am}ple of \hlgreen{one
+            of the most} used
+            \hlred{key
+            sharing \textbf{pro}tocol} \hlteal{which} \hlpink{is known} as the \hlred{Diffie-Hellman
                 \textbf{pro}tocol}. 
         \item \textbf{Slide 3}:
-            In this \textbf{pres}entation
+            In this \textbf{pres}en\textbf{ta}tion
             \begin{itemize}
                 \item I'll \textbf{an}swer the first \textbf{ques}tion in
-                    section 2 and 3.
-                \item \textcolor{brown}{Then} I'll de\textbf{scribe} the con\textbf{struc}tion of the \textcolor{red}{group} in section 4.
-                \item \textcolor{brown}{Finally} in section 5, I'll ex\textbf{plain} why it
-                    works, \textcolor{brown}{then} give an
-                    ap\textbf{pli}cation \textcolor{teal}{and} con\textbf{clude} by giving the \textbf{up}sides and \textbf{down}sides of the
+                    \textbf{sec}tion 2 and 3.
+                \item \hlbrown{Then} I'll de\textbf{scribe} the con\textbf{struc}tion of the \hlred{group} in \textbf{sec}tion 4.
+                \item \hlbrown{\textbf{Fi}naly} in \textbf{sec}tion 5, I'll ex\textbf{plain} why it
+                    works, \hlteal{then} I'll give an
+                    ap\textbf{pli}cation and con\textbf{clude} by giving a \hlolive{few} \textbf{up}sides and \textbf{down}sides of the
                     \textbf{the}ory.
-                % \item \textcolor{brown}{finally} I'll give the cons and pros of the model in section 7.
+                % \item \hlbrown{finally} I'll give the cons and pros of the model in \textbf{sec}tion 7.
             \end{itemize}
-        \item \textbf{Slide 3}: So first thing first, the study of the  \textcolor{red}{group} of
-            \textcolor{red}{\textbf{rat}ionals points} of an
-            el\textbf{lip}tic \textbf{cur}ves, aimed towards its ap\textbf{pli}cation in cry\textbf{tog}raphy, \textcolor{violet}{was
+        \item \textbf{Slide 3}: \hlbrown{So first thing first}, the study of the  \hlred{group} of
+            \hlred{\textbf{rat}ional points} of an
+            \hlred{el\textbf{lip}tic curve}, aimed to\textbf{wards} its ap\textbf{pli}cation in cry\textbf{tog}raphy, \hlpink{was
                 made} in
-            parallel be\textbf{tween} N. Koblitz and Victor S. Miller and \textcolor{violet}{was
-                published} in 1985.
-        \item \textbf{Slide 4}: To lay the foun\textbf{da}tion of the \textcolor{red}{group} we'd like to
-            build. We need a couple of tools.
+            parallel be\textbf{tween} N. Koblitz and Victor S. Miller and \hlpink{was
+                \textbf{pub}lished} in 1985.
+        \item \textbf{Slide 4}: To lay the foun\textbf{da}tion of the \hlred{group} we'd like to
+            build. We need a \hlolive{couple} of tools.
             Such as:
             \begin{itemize}
-                \item The \textcolor{red}{pro\textbf{jec}tive plane},
-                    indeed as we'll see by \textbf{def}initions \textcolor{red}{el\textbf{lip}tic \textbf{cur}ves} are
-                    \textcolor{red}{pro\textbf{jec}tive
+                \item The \hlred{pro\textbf{jec}tive plane},
+                    in\textbf{deed} as we'll see by \textbf{def}initions \hlred{el\textbf{lip}tic curves} are
+                    \hlred{pro\textbf{jec}tive
                     geometry}'s objects.
-                \item \textcolor{brown}{Then} we need to under\textbf{stand} \textcolor{red}{pro\textbf{jec}tive lines}
-                    \textcolor{teal}{in \textbf{or}der to} under\textbf{stand} the \textcolor{red}{pro\textbf{jec}tive
-                    plane} \textcolor{teal}{because}
-                    they are what \textbf{gen}erate the \textcolor{red}{pro\textbf{jec}tive plane}.
-                \item The next tools we need are \textcolor{red}{straight} and
-                    \textcolor{red}{tangent} lines.
-                    They are  the two \textcolor{red}{lines} \textcolor{teal}{that} we need to under\textbf{stand}
-                    \textcolor{teal}{in \textbf{or}der to} treat
-                    each case we would \textbf{stum}ble up\textbf{on} \textbf{stud}ying the \textcolor{red}{\textbf{a}belian \textbf{bi}nary
-                        \textbf{op}eration} of the \textcolor{red}{group}.
-                \item \textcolor{brown}{Finally} the last tool is the \textcolor{red}{\textbf{rat}ionals
+                \item \hlbrown{Then} we need to under\textbf{stand} \hlred{pro\textbf{jec}tive lines}
+                    \hlteal{in \textbf{or}der to} under\textbf{stand} the \hlred{pro\textbf{jec}tive
+                    plane} \hlteal{be\textbf{cause}}
+                    they are what \textbf{gen}erate the \hlred{pro\textbf{jec}tive plane}.
+                \item The next tools we need are \hlred{straight} and
+                    \hlred{\textbf{tan}gent} lines.
+                    They are  the two lines \hlteal{that} we need to under\textbf{stand}
+                    \hlteal{in \textbf{or}der to} treat
+                    each case we would \textbf{stum}ble up\textbf{on} \textbf{stud}ying the \hlred{\textbf{a}belian \textbf{bi}nary
+                        \textbf{op}eration} of the \hlred{group}.
+                \item \hlbrown{\textbf{Fi}naly} the last tool is the \hlred{\textbf{rat}ional
                     points}.
-                    They will be the \textcolor{red}{\textbf{el}ements} of our
-                    \textcolor{red}{group} \textcolor{teal}{thanks to} them we can com\textbf{pute}
-                    \textcolor{red}{ad\textbf{di}tions} and \textcolor{red}{doubles}
-                    \textcolor{teal}{which} is the heart of our con\textbf{struc}tion.
+                    They will be the \hlred{\textbf{el}ements} of our
+                    \hlred{group} \hlteal{thanks to} them we can com\textbf{pute}
+                    \hlred{ad\textbf{di}tions} and \hlred{\textbf{dou}bles}
+                    \hlteal{which} is the heart of our con\textbf{struc}tion.
             \end{itemize}
-        \item \textbf{Slide 5}: The \textcolor{red}{pro\textbf{jec}tive plane} is a
-            \textcolor{red}{quotient-set} defined over a
-            \textcolor{red}{\textbf{vec}tor space} without its \textcolor{red}{origin},
-            \textcolor{teal}{and} by an
-            \textcolor{red}{e\textbf{quiv}alence re\textbf{la}tion} \textcolor{teal}{which} let
-            two \textcolor{red}{\textbf{vec}tors} be the same if there are on the same
-            \textcolor{red}{line}.
+        \item \textbf{Slide 5}: The \hlred{pro\textbf{jec}tive plane} is a
+            \hlred{\textbf{quo}tient-set} de\textbf{fin}ed \textbf{o}ver a
+            \hlred{\textbf{vec}tor space} with\textbf{out} its \hlred{\textbf{or}igin},
+            and by an
+            \hlred{e\textbf{quiv}alence re\textbf{la}tion} \hlteal{which} let
+            two \hlred{\textbf{vec}tors} be the same if there are on the same
+            line.
 
-            More precisely the \textcolor{red}{pro\textbf{jec}tive plane} is the reunion be\textbf{tween} the
-            \textcolor{red}{af\textbf{fine} plane}
-            and the \textcolor{red}{in\textbf{fin}ity line}.
+            More pre\textbf{cise}ly the \hlred{pro\textbf{jec}tive plane} is the
+            re\textbf{un}ion be\textbf{tween} the
+            \hlred{af\textbf{fine} plane}
+            and the \hlred{in\textbf{fin}ity line}.
 
-            The \textcolor{red}{af\textbf{fine} plane} \textcolor{violet}{is \textbf{gen}erated by} the \textcolor{red}{pro\textbf{jec}tive
+            The \hlred{af\textbf{fine} plane} \hlpink{is \textbf{gen}erated by} the \hlred{pro\textbf{jec}tive
                 line}. We can see an ex\textbf{am}ple of a
-            \textcolor{red}{pro\textbf{jec}tive line} on the figure 2. 
+            \hlred{pro\textbf{jec}tive line} on the \textbf{fig}ure 2. 
 
-            The \textcolor{blue}{red line} is the \textcolor{red}{pro\textbf{jec}tive line} \textcolor{teal}{which} \textcolor{violet}{is
-                \textbf{gen}erated by} the in\textbf{ter}section be\textbf{tween}
-            each \textcolor{blue}{\textbf{vec}tor lines}
-            of the \textcolor{red}{\textbf{vec}tor space} and in this case the \textcolor{blue}{line} $y=1$.
-        % \item \textbf{Slide 6}: Over the \textcolor{red}{\textbf{vec}tor space} $\R^3$ we can see the
-        %     \textcolor{red}{pro\textbf{jec}tive line} as the \textcolor{red}{line} that \textbf{gen}erates the
-        %     \textcolor{red}{af\textbf{fine} plane}. As we can see in
-        %     the \textbf{fol}lowing figure 3. 
+            The red line is the \hlred{pro\textbf{jec}tive line} \hlteal{which} \hlpink{is
+                \textbf{gen}erated by} the \textbf{in}ter\textbf{sec}tion be\textbf{tween}
+            each \hlred{\textbf{vec}tor lines}
+            of the \hlred{\textbf{vec}tor space} and in this case the line $y=1$.
+        % \item \textbf{Slide 6}: Over the \hlred{\textbf{vec}tor space} $\R^3$ we can see the
+        %     \hlred{pro\textbf{jec}tive line} as the \hlred{line} that \textbf{gen}erates the
+        %     \hlred{af\textbf{fine} plane}. As we can see in
+        %     the \textbf{fol}lowing \textbf{fig}ure 3. 
 
-        %     Here the \textcolor{blue}{red plane} is the \textcolor{red}{pro\textbf{jec}tive line}
-        %     \textcolor{teal}{which}
-        %     \textcolor{violet}{is
-        %     \textbf{gen}erated by} the in\textbf{ter}section be\textbf{tween} \textbf{ev}ery \textcolor{blue}{\textbf{vec}tor lines} of the
-        %     \textcolor{red}{\textbf{vec}tor space} and
-        %     the \textcolor{blue}{plane} of equation $z=1$.
-        \item \textbf{Slide 6}: So to re\textbf{sume} what I've said since the be\textbf{gin}ning, the
-            \textcolor{red}{pro\textbf{jec}tive plane} is a \textcolor{blue}{sphere} of radius
-            1 where we cut a
-            \textcolor{red}{slice} of the \textbf{vec}tor space on top of it, in general at $z=1$.
-            \textcolor{brown}{Therefore} the projection of the \textcolor{blue}{sphere} on this plane gives us the
-            \textcolor{red}{af\textbf{fine} slice}
-            \textcolor{teal}{which} is a \textcolor{blue}{circle}.
-             \textcolor{brown}{Moreover} thanks to the
-            \textcolor{red}{e\textbf{quiv}alence re\textbf{la}tion} and \textcolor{red}{\textbf{lim}its}, we have that the
-            \textcolor{red}{in\textbf{fin}ity
-            point} $\mathcal{O}$ is the in\textbf{ter}section of \textbf{ev}ery \textcolor{red}{\textbf{ver}tical line} of the
-            \textcolor{red}{af\textbf{fine} slice} and the \textcolor{blue}{$y$-inter\textbf{cept}}
-            \textcolor{teal}{which} is the perimeter of the \textcolor{blue}{circle}. \textcolor{brown}{Henceforth}
-            the \textcolor{red}{in\textbf{fin}ity point} is the \textcolor{red}{\textbf{neu}tral
-            \textbf{el}ement} of the \textcolor{red}{group}.
-        \item \textbf{Slide 7}: Here is the \textbf{def}inition of \textcolor{red}{el\textbf{lip}tic \textbf{cur}ves}.
+        %     Here the \hlblue{red plane} is the \hlred{pro\textbf{jec}tive line}
+        %     \hlteal{which}
+        %     \hlpink{is
+        %     \textbf{gen}erated by} the \textbf{in}ter\textbf{sec}tion be\textbf{tween} \textbf{ev}ery \hlblue{\textbf{vec}tor lines} of the
+        %     \hlred{\textbf{vec}tor space} and
+        %     the \hlblue{plane} of equation $z=1$.
+        \item \textbf{Slide 6}: So to re\textbf{sume} \hlteal{what} I've said since the be\textbf{gin}ning, the
+            \hlred{pro\textbf{jec}tive plane} is a \hlblue{sphere} of \textbf{ra}dius
+            one \hlteal{where} we cut a
+            \hlred{slice} of the \textbf{vec}tor space on top of it, in general at $z=1$.
+            \hlbrown{\textbf{Therefore}} the projection of the \hlblue{sphere} on this plane gives us the
+            \hlred{af\textbf{fine} slice}
+            \hlteal{which} is a \hlblue{circle}.
+             \hlbrown{More\textbf{o}ver} thanks to the
+            \hlred{e\textbf{quiv}alence re\textbf{la}tion} and \hlred{\textbf{lim}its}, we have that the
+            \hlred{in\textbf{fin}ity
+            point} is the \textbf{in}ter\textbf{sec}tion of \textbf{ev}ery \hlred{\textbf{ver}tical line} of the
+            \hlred{af\textbf{fine} slice} and the \hlblue{$y$-inter\textbf{cept}}
+            \hlteal{which} is the perimeter of the \hlblue{circle}. \hlbrown{Hence\textbf{forth}}
+            the \hlred{in\textbf{fin}ity point} is the \hlred{\textbf{neu}tral
+            \textbf{el}ement} of the \hlred{group}.
+        \item \textbf{Slide 7}: Here is the \textbf{def}inition of \hlred{el\textbf{lip}tic curves}.
 
-            The condition 2 guaranty us that our \textcolor{red}{\textbf{cur}ve} is
-            \textcolor{red}{smooth} \textcolor{teal}{which} simply means that
-            there is only one \textcolor{red}{tangent} per \textcolor{red}{point}.
+            The con\textbf{di}tion 2 \textbf{guar}an\textbf{ty} us that our \hlred{curve} is
+            \hlred{smooth} \hlteal{which} simply means that
+            there is only one \hlred{\textbf{tan}gent} per \hlred{point}.
 
-            On the figure 5 we can see a re\textbf{pres}entation of an \textcolor{blue}{el\textbf{lip}tic \textbf{cur}ves}
-            on the \textcolor{blue}{af\textbf{fine}
-            slice} \textcolor{teal}{where} the \textcolor{red}{discriminant} is negative \textcolor{teal}{hence} there is only one
-            \textcolor{blue}{root}.
-        \item \textbf{Slide 8}: The \textcolor{red}{Weierstrass normal
-                equation} give use \textcolor{red}{el\textbf{lip}tic
-            \textbf{cur}ves} \textcolor{teal}{that} are \textcolor{red}{sym\textbf{met}ric} around the
-            \textcolor{blue}{$x$-inter\textbf{cept}}.
+            On the \textbf{fig}ure 5 we can see a \textbf{rep}resen\textbf{ta}tion of an \hlred{el\textbf{lip}tic curve}
+            on the \hlred{af\textbf{fine}
+            slice} \hlteal{where} the \hlred{dis\textbf{crim}inant} is
+            \textbf{neg}ative \hlteal{thus} there is only one
+            \hlblue{root}.
+        \item \textbf{Slide 8}: The \hlred{\textbf{Wei}erstrass
+                \textbf{nor}mal
+                e\textbf{qua}tion} give use \hlred{el\textbf{lip}tic
+            curve} \hlteal{that} are \hlred{sym\textbf{met}ric} around the
+            \hlblue{$x$-inter\textbf{cept}}.
 
-            By \textbf{def}inition \textcolor{red}{\textbf{rat}ionals points} of an \textcolor{red}{el\textbf{lip}tic
-                \textbf{cur}ves} are the \textcolor{red}{pro\textbf{jec}tive points}
-            \textcolor{teal}{that} are \textcolor{red}{so\textbf{lu}tions} of the \textcolor{red}{Weierstrass normal
-                equation}.
+            \hlbrown{Be\textbf{sides}} by \textbf{def}inition \hlred{\textbf{rat}ional points} of an \hlred{el\textbf{lip}tic
+                curve} are the \hlred{pro\textbf{jec}tive points}
+            \hlteal{that} are \hlred{so\textbf{lu}tions} of the \hlred{\textbf{Wei}erstrass
+                \textbf{nor}mal
+                e\textbf{qua}tion}.
 
-            Here is the \textcolor{red}{coordinates} of the \textcolor{red}{in\textbf{fin}ity point} $\mathcal{O}$.
-        \item \textbf{Slide 9}: \textcolor{brown}{So} to build our \textcolor{red}{\textbf{a}belian \textbf{bi}nary
-                \textbf{op}eration}, \textcolor{teal}{which} we'll call
-            \textcolor{red}{ad\textbf{di}tion} \textcolor{brown}{henceforth}.
+            Here are the \hlred{coordinates} of the \hlred{in\textbf{fin}ity point}.
+        \item \textbf{Slide 9}: So to build our \hlred{\textbf{a}belian \textbf{bi}nary
+                \textbf{op}eration}, \hlteal{which} we'll call
+            \hlred{ad\textbf{di}tion} hence\textbf{forth}.
 
             We first need to
-            look \textcolor{magenta}{what will happen} \textcolor{teal}{when} we take the \textcolor{red}{chords} be\textbf{tween}
+            look \hlmagenta{what will \textbf{hap}pen} \hlteal{when} we take the \hlred{chord} be\textbf{tween}
             two
-            \textcolor{red}{points} of the \textcolor{red}{\textbf{cur}ve} or
-            the \textcolor{red}{tangent} of a \textcolor{red}{point} ?
-            \textcolor{brown}{While} asking ourselves
-            \textcolor{magenta}{are these lines} always giving us a third
-            \textcolor{red}{point} on the \textcolor{red}{\textbf{cur}ve} ? The \textbf{an}swer is yes thanks to
-            the \textcolor{red}{pro\textbf{jec}tive plane} and the
-            \textcolor{red}{in\textbf{fin}ity point}.
+            \hlred{points} of the \hlred{curve} or
+            the \hlred{\textbf{tan}gent} of a \hlred{point} ? \hlmagenta{Are these lines
+                \textbf{al}ways
+                giving} us a third
+            point on the curve ?
+            % \hlbrown{While} asking ourselves
+            % \hlmagenta{are these lines} always giving us a third
+            % \hlred{point} on the \hlred{curve} ?
+             The \textbf{an}swer is yes thanks to
+            the \hlred{pro\textbf{jec}tive plane} and the
+            \hlred{in\textbf{fin}ity point}.
 
-            \textcolor{brown}{Therefore} this \textcolor{red}{non as\textbf{so}ciative \textbf{bi}nary \textbf{op}eration}
+            \hlbrown{\textbf{Therefore}} this \hlred{non as\textbf{so}ciative \textbf{bi}nary \textbf{op}eration}
             give use the foun\textbf{da}tion
-            to build the \textcolor{red}{ad\textbf{di}tion} \textcolor{teal}{that} we're looking for.
-        \item \textbf{Slide 10}: Here is the \textcolor{red}{ad\textbf{di}tion} that we obtain
-            thanks to a smart \textcolor{red}{sym\textbf{met}ry}. Indeed if we take the
-            \textcolor{red}{opposite} of the \textcolor{red}{point} we've
-            obtained
-            through our \textcolor{red}{non as\textbf{so}ciative \textbf{bi}nary \textbf{op}eration}. We obtain the result
-            of the \textcolor{red}{ad\textbf{di}tion} be\textbf{tween} two
-            \textcolor{red}{points} of the \textcolor{red}{group}.
-        \item \textbf{Slide 11}: \textcolor{red}{Modern cry\textbf{tog}raphy}'s foun\textbf{da}tion are
-            build up\textbf{on} a tested \textcolor{red}{hy\textbf{poth}esis} and others as\textbf{sump}tions
-            \textcolor{teal}{which} are still
+            to build the \hlred{ad\textbf{di}tion} \hlteal{that} we're looking for.
+        \item \textbf{Slide 10}: Here is the \hlred{ad\textbf{di}tion} that we ob\textbf{tain}
+            thanks to a smart \hlred{sym\textbf{met}ry}. In\textbf{deed} if we take the
+            \hlred{\textbf{op}posite} of the \hlred{point} we've
+            ob\textbf{tain}ed
+            through our \hlred{non as\textbf{so}ciative \textbf{bi}nary \textbf{op}eration}. We ob\textbf{tain} the result
+            of the \hlred{ad\textbf{di}tion} be\textbf{tween} two
+            \hlred{points} of the \hlred{group}.
+        \item \textbf{Slide 11}: \hlred{\textbf{Mod}ern cry\textbf{tog}raphy}'s foun\textbf{da}tion
+            \hlpink{are
+            built} up\textbf{on} a tested \hlred{hy\textbf{poth}esis} and \textbf{oth}er as\textbf{sump}tions
+            \hlteal{which} are still
             holding to\textbf{day}.
             
-            In our case their is the \textbf{fol}lowing as\textbf{sump}tions \textcolor{teal}{that} are important:
+            In our case there is the \textbf{fol}lowing as\textbf{sump}tions \hlteal{that} are
+            im\textbf{por}tant:
             \begin{itemize}
-                \item \textcolor{red}{One-way functions} exist and the
-                    \textcolor{red}{ad\textbf{di}tion}, we've built, is one of them.
-                \item The \textcolor{red}{discrete logarithm} problem is unsolvable in a
-                    \textcolor{red}{polynomial time}.
-                \item There is no other way to solve \textcolor{red}{Diffie-Hellman's
-                        problem} without solving
-                    the \textcolor{red}{discrete logarithm problem}.
+                \item \hlred{One-way \textbf{func}tions} exist and the
+                    \hlred{ad\textbf{di}tion}, we've built, is one of them.
+                \item The \hlred{dis\textbf{crete} \textbf{lo}ga\textbf{rith}m}
+                    \textbf{prob}lem is un\textbf{sol}vable in a
+                    \hlred{\textbf{pol}y\textbf{no}mial time}.
+                \item There is no \textbf{oth}er way to solve \hlred{Diffie-Hellman's
+                        \textbf{prob}lem} \hlteal{with\textbf{out}} solving
+                    the \hlred{dis\textbf{crete} \textbf{lo}ga\textbf{rith}m \textbf{prob}lem}.
             \end{itemize}
-        \item \textbf{Slide 12}: Here is the \textcolor{red}{Diffie-Hellman
-                \textbf{pro}tocol} \textcolor{teal}{which} is the
-            basis of to\textbf{day}'s online transaction.
+        \item \textbf{Slide 12}: Here is the \hlred{Diffie-Hellman
+                \textbf{pro}tocol} \hlteal{which} is the
+            basis of to\textbf{day}'s \textbf{online} tran\textbf{sac}tion.
 
-            Two person Alice and Bob would like to share a \textcolor{red}{\textbf{se}cret key
-                publicly}. \textcolor{brown}{Hence} they
-            proceed as followed:
+            Two \textbf{per}son Alice and Bob would like to share a \hlred{\textbf{se}cret key
+                \textbf{pub}licly} \hlteal{hence} they
+            \textbf{pro}ceed as followed:
             \begin{itemize}
-                \item They choose a \textcolor{red}{finite field} $K$, an
-                    \textcolor{red}{el\textbf{lip}tic \textbf{cur}ves} $E$, a base
-                    \textcolor{red}{point} $P$ and publish this \textcolor{red}{triplet}.
-                \item \textcolor{brown}{Then} they both chose a \textcolor{red}{\textbf{se}cret \textbf{in}teger} and
-                    \textcolor{red}{com\textbf{pute}} this \textcolor{red}{\textbf{in}teger} times
-                    the \textcolor{red}{base point}. \textcolor{brown}{Then} they respectively send their
-                    result to the other.
-                \item \textcolor{brown}{Lastly} they com\textbf{pute} again their \textcolor{red}{\textbf{se}cret
-                    \textbf{in}teger} times \textcolor{teal}{what} \textcolor{violet}{they've
-                    received}. Which give them their shared \textcolor{red}{\textbf{se}cret key}.
+                \item They choose a \hlred{\textbf{finite} field} $K$, an
+                    \hlred{el\textbf{lip}tic curve} $E$, a base
+                    \hlred{point} $P$ and \textbf{pub}lish this \hlred{\textbf{trip}let}.
+                \item \hlbrown{Then} they both choose a \hlred{\textbf{se}cret \textbf{in}teger} and
+                    \hlred{com\textbf{pute}} this \hlred{\textbf{in}teger} times
+                    the \hlred{base point}. \hlbrown{Then} they re\textbf{spec}tively send their
+                    re\textbf{sult} to the \textbf{oth}er.
+                \item \hlbrown{Lastly} they com\textbf{pute} again their \hlred{\textbf{se}cret
+                    \textbf{in}teger} times \hlteal{what} \hlpink{they've
+                    re\textbf{ceived}} \hlteal{which} give them their shared \hlred{\textbf{se}cret key}.
             \end{itemize}
 
-            \textcolor{brown}{Hence} the \textcolor{red}{Diffie-Hellman \textbf{pro}tocol} is a se\textbf{cure} way to share a
-            \textcolor{red}{key} publicly.
+            \hlbrown{Hence} the \hlred{Diffie-Hellman \textbf{pro}tocol} is a se\textbf{cure} way to share a
+            \hlred{key} \textbf{pub}licly.
 
-        \item \textbf{Slide 13}: The \textcolor{red}{group} of \textcolor{red}{\textbf{rat}ionals
-                point} of an \textcolor{red}{el\textbf{lip}tic
-            \textbf{cur}ve} have \textcolor{olive}{many} benefits
-            \textcolor{green}{\textbf{com}pared to} the \textcolor{red}{\textbf{mul}tiplicative
+        \item \textbf{Slide 13}: The \hlred{group} of \hlred{\textbf{rat}ional
+                points} of an \hlred{el\textbf{lip}tic
+            curve} have \hlolive{\textbf{man}y} benefits
+            \hlgreen{\textbf{com}pared to} the \hlred{\textbf{mul}tiplicative
                 group} of the
-            \textcolor{red}{invertible} of a \textcolor{red}{finite field} $K$. Among them there is:
+            \hlred{in\textbf{vert}ible} of a \hlred{\textbf{finite} field} $K$.
+            A\textbf{mong} them there is:
             \begin{itemize}
-                \item The \textcolor{red}{structure} that is more \textcolor{red}{abstract}.
-                \item The \textcolor{red}{keys}' length is way shorter for
-                    \textcolor{olive}{e\textbf{quiv}alent}
-                    \textcolor{red}{se\textbf{cu}rity} \textcolor{green}{\textbf{com}pared to} \textcolor{red}{RSA}.
-                \item It can be use on \textcolor{red}{low resources systems}.
-                \item It can be implemented in an \textcolor{red}{hybrid
-                        cry\textbf{pto}system} \textcolor{teal}{which} is the
-                    combination be\textbf{tween} a \textcolor{red}{sym\textbf{met}ric
-                        cry\textbf{pto}system} to \textcolor{red}{encrypt data}
-                        \textcolor{teal}{and}
-                    an \textcolor{red}{asym\textbf{met}ric cry\textbf{pto}system} to share
-                    \textcolor{red}{\textbf{se}cret key}.
+                \item The \hlred{\textbf{struc}ture} that is \hlgreen{way more}
+                    \hlred{ab\textbf{stract}}.
+                \item The \hlred{keys}' length is way \hlgreen{shorter} for
+                    \hlolive{e\textbf{quiv}alent}
+                    \hlred{se\textbf{cu}rity} \hlgreen{\textbf{com}pared to} \hlred{RSA}.
+                \item It can be use on \hlred{low re\textbf{source} \textbf{sys}tems}.
+                \item It can be \textbf{im}plemented in an \hlred{\textbf{hy}brid
+                        cry\textbf{pto}system} \hlteal{which} is the
+                    \textbf{com}bi\textbf{na}tion be\textbf{tween} a \hlred{sym\textbf{met}ric
+                        cry\textbf{pto}system} to \hlred{en\textbf{crypt} data}
+                        and
+                    an \hlred{asym\textbf{met}ric cry\textbf{pto}system} to share
+                    \hlred{\textbf{se}cret key}.
             \end{itemize}
 
-            \textcolor{brown}{However}, as anything else there is always \textbf{down}sides. For ex\textbf{am}ple:
+            \hlbrown{How\textbf{ev}er}, as \textbf{an}y\textbf{thing} else there is \textbf{al}ways \textbf{down}sides. For ex\textbf{am}ple:
             \begin{itemize}
-                \item There \textcolor{violet}{is} already a \textcolor{olive}{lot} of \textbf{cur}ves
-                    \textcolor{violet}{patented} by companies.
-                \item There is \textbf{al}ways hazards \textcolor{teal}{and} in our case \textcolor{teal}{if} the \textcolor{red}{triplet}
-                    we're
-                    using isn't 
-                    \textbf{prop}erly, ef\textbf{fi}ciently and \textbf{ran}domly selected there \textcolor{teal}{will
-                        always be} the
-                    risks of premeditated 
-                    use of a \textcolor{red}{back door}. 
+                \item There \hlpink{is} al\textbf{read}y a \hlolive{lot} of curves
+                    \hlpink{\textbf{pat}ented} by \textbf{com}panies.
+                \item There is \textbf{al}ways \textbf{haz}ard \hlteal{which} in our case
+                    comes from the
+                    \textbf{trip}let \hlteal{which} \hlpink{is chosen} by Alice and Bob. \hlteal{If} the \hlred{\textbf{trip}let}
+                     \hlpink{isn't} 
+                    \textbf{prop}erly, ef\textbf{fi}ciently and \textbf{ran}domly
+                    \hlpink{se\textbf{lect}ed},
+                    \hlteal{there is} the
+                    risk of a pre\textbf{med}i\textbf{tated} 
+                    use of \hlred{back doors}. 
             \end{itemize}
 \end{itemize}
 
-Which let's me con\textbf{clude} with the \textbf{fol}lowing statement ...
+\hlbrown{Which} let's me con\textbf{clude} with the \textbf{fol}lowing \textbf{stat}ement
+of Serge Lang in his book \underline{\textsl{Elliptic curve: Diophantine analysis}},
+\hlteal{which} \hlpink{was published} in 1978:
 
-Thank you \textbf{ev}eryone for your at\textbf{ten}tion. My \textbf{pres}entation \textcolor{violet}{is done} and now is \textbf{ques}tion time's.
+\begin{quote}
+    "It is possible to write endlessly on elliptic curves. (This is not a threat)"
+\end{quote}
+
+Thank you \textbf{ev}eryone for your at\textbf{ten}tion. My \textbf{pres}en\textbf{ta}tion
+\hlpink{is done} and now it's \textbf{ques}tion time's.
 
 \setlength{\arrayrulewidth}{0.5mm}
 % \setlength{\tabcolsep}{2pt}
@@ -251,21 +275,21 @@ Thank you \textbf{ev}eryone for your at\textbf{ten}tion. My \textbf{pres}entatio
     \label{tab:AssessmenttGrid}
     \begin{tabular}{|l|m{10cm}|}
         \hline
-        \textcolor{blue}{voc-graph} & \\
+        \hlblue{voc-graph} & \\
         \hline
-        \textcolor{red}{voc-your-field-of-research} & \\
+        \hlred{voc-your-field-of-research} & \\
         \hline
-        \textcolor{green}{Gram-com/sup} & \\
+        \hlgreen{Gram-com/sup} & \\
         \hline
-        \textcolor{magenta}{Gram-questions} & \\
+        \hlmagenta{Gram-questions} & \\
         \hline
-        \textcolor{violet}{Gram-passive} & \\
+        \hlpink{Gram-passive} & \\
         \hline
-        \textcolor{olive}{Gram-quantity} & \\
+        \hlolive{Gram-quantity} & \\
         \hline
-        \textcolor{brown}{Syntax-link-words} & \\
+        \hlbrown{Syntax-link-words} & \\
         \hline
-        \textcolor{teal}{Syntax-condition and complex-sentences} & \\
+        \hlteal{Syntax-condition and complex-sentences} & \\
         \hline
         Word \textbf{stress}  & \\
         \hline

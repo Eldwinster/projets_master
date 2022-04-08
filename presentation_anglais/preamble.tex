@@ -38,8 +38,11 @@
 % Highlighting text
 \usepackage{soul}
 % https://tex.stackexchange.com/questions/260566/how-to-reliably-switch-the-highlighting-color-with-soul
-\DeclareRobustCommand{\hlblue}[1]{{\sethlcolor{blue}\hl{#1}}}
-\DeclareRobustCommand{\hlred}[1]{{\sethlcolor{red}\hl{#1}}}
+\definecolor{coralred}{rgb}{1.0, 0.25, 0.25}
+\definecolor{cornflowerblue}{rgb}{0.39, 0.58, 0.93}
+\definecolor{lavenderblue}{rgb}{0.8,0.8,1.0}
+\DeclareRobustCommand{\hlblue}[1]{{\sethlcolor{cornflowerblue}\hl{#1}}}
+\DeclareRobustCommand{\hlred}[1]{{\sethlcolor{coralred}\hl{#1}}}
 \DeclareRobustCommand{\hlgreen}[1]{{\sethlcolor{green}\hl{#1}}}
 \DeclareRobustCommand{\hlmagenta}[1]{{\sethlcolor{magenta}\hl{#1}}}
 \DeclareRobustCommand{\hlviolet}[1]{{\sethlcolor{violet}\hl{#1}}}
@@ -47,7 +50,7 @@
 \DeclareRobustCommand{\hlpink}[1]{{\sethlcolor{pink}\hl{#1}}}
 \DeclareRobustCommand{\hlolive}[1]{{\sethlcolor{olive}\hl{#1}}}
 \DeclareRobustCommand{\hlbrown}[1]{{\sethlcolor{brown}\hl{#1}}}
-\DeclareRobustCommand{\hlteal}[1]{{\sethlcolor{teal}\hl{#1}}}
+\DeclareRobustCommand{\hlteal}[1]{{\sethlcolor{lavenderblue}\hl{#1}}}
 
 
 % Other font I sometimes use.
