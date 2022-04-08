@@ -19,7 +19,7 @@
     [[./thesis_M1/proof]]
 * Mémoire
 Mémoire manuscrit
-[[./thesis_M1/thesis]]
+[[./thesis_M1/thesis/master.pdf][thesis]]
 
 * Fait
 ** démonstration
