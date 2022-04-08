@@ -1,24 +1,40 @@
 \chapter{Définitions générales}
-
+Dans tout ce qui suit, je vais prendre pour fil rouge les cours de Mr Alain Kraus
+\cite{KrausCP} et \cite{KrausCE}. Dans cette optique, je vais essayer de completer ces cours,
+en y ajoutant soit des détails supplémentaires lors des différentes démonstration, soit
+en explicitant des concepts où je juge cela nécéssaire.
 \section{Définition}
-Pour définition d'une courbe elliptique nous utiliserons la suivante:
+Dans cette partie, je vais définir le contexte autour duquel la théorie est construite.
+
+Dans la totalité de ce qui suit la lettre $K$ désignera un corps de caractéristique $0$ ou un corps fini de caractéristique distincte de $2$ et $3$.
+
+On désignera la clôture algébrique de $K$ par la notation $\overline{K}$.
+
+Tout d'abord, pour définition d'une courbe elliptique nous utiliserons la suivante:
 
 \begin{definition}
+    \label{def:ell}
     Une courbe elliptique définie sur $K$ est une courbe projective plane d'équation
-    \[
-    ,\] 
     \begin{align}
         \label{eq:ell}
     y^2z=x^3+axz^3+bz^2
     .\end{align}
     où $a$ et $b$ sont des éléments de $K$ vérifiant la condition
     \begin{align}
-        \label{eq:dis}
+        \label{eq:delta}
     4a^3+27b^2\neq 0
     .\end{align}
 \end{definition}
 
-Dans l'anneau des polynômes $K\left[ X,Y,Z \right] $, posons 
+\begin{remarque}
+    Il existe une autre définition plus général, mais dans notre cas cette dernière n'est
+    pas nécéssaire pour construire le groupe des courbes elliptique.
+\end{remarque}
+
+Comme l'on raisonne dans la clotûre algébrique de $K$, il est donc intéréssant de raisonner en
+termes de polynôme pour pouvoir ce servir de la définition \ref{def:ell}.
+
+C'est pourquoi, dans l'anneau des polynômes $K\left[ X,Y,Z \right] $, posons 
 \[
 F=Y^2Z-\left( X^3+aXZ^2+bZ^3 \right) 
 .\] 
@@ -32,7 +48,7 @@ Si $(x,y,z)$ est un élément non nul de $\overline{K}^3$, la condition $F(x,y,z
     Un point $P=\left[ x,y,z \right] $ de $\mathbb{P}^2(\overline{K})$ est un zéro de $F$ dans $\overline{K}$, ou plus simplement un zéro de $F$, si l'on a $F(x,y,z)=0$.
 \end{remarque}
 
-La condition \eqref{eq:dis} signifie que les racines dans $\overline{K}$ du polynôme
+La condition \eqref{eq:delta} signifie que les racines dans $\overline{K}$ du polynôme
 \[
 f=X^3+aX+b
 \] 

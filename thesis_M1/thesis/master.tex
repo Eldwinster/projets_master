@@ -1,17 +1,16 @@
 \documentclass[a4paper]{report}
 \input{../preamble.tex}
 \addbibresource{../library.bib}
-\title{Mémoire}
+% \title{Mémoire}
 \begin{document}
-    \maketitle
     \tableofcontents
     % start lectures
     \input{introduction.tex}
-    \input{plan_projectif.tex}
+    % \input{plan_projectif.tex}
     \input{definition_generales.tex}
     \input{loi_de_groupe.tex}
     \input{cryptosystemes.tex}
     \input{exemples.tex}
-    \printbibliography
+    \printbibliography[heading=bibintoc,title={Références}]
     % end lectures
 \end{document}

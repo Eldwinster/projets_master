@@ -2,9 +2,12 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
-\usepackage[english]{babel}
+\usepackage[french]{babel}
 \usepackage{url}
+
 \usepackage{graphicx}
+\graphicspath{ {../images/} }
+
 \usepackage{float}
 \usepackage{booktabs}
 \usepackage{enumitem}
@@ -16,7 +19,7 @@
 	colorlinks=true,
 	linkcolor=black,
 	filecolor=magenta,
-	urlcolor=cyan,
+	urlcolor=purple,
 	% pdftitle={pdftitle}, title of the window
 	bookmarks=true,
 	pdfpagemode=FullScreen,
@@ -37,8 +40,11 @@
 % \usepackage{cmbright}
 
 % References stuff
-\usepackage{biblatex}
-% \addbibresource{library.bib}
+\usepackage[
+backend=biber,
+style=alphabetic,
+sorting=nyt
+]{biblatex}
 
 % Math stuff
 \usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb, wasysym}
@@ -71,12 +77,6 @@
 \DeclareMathOperator{\car}{Car}
 \DeclareMathOperator{\trace}{trace}
 \DeclareMathOperator{\id}{Id}
-\DeclareMathOperator{\trans}{Trans}
-\DeclareMathOperator{\bij}{Bij}
-\DeclareMathOperator{\vect}{Vect}
-\DeclareMathOperator{\aff}{Aff}
-\DeclareMathOperator{\affeuclid}{AffEuclid}
-\DeclareMathOperator{\simp}{Sim^+}
 
 % Standard math operator
 \DeclareMathOperator{\dx}{dx}
@@ -245,15 +245,15 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 
-\fancyhead[LE,RO]{Yann-Arby BEBBA}
+% \fancyhead[RO,LE]{\@lecture} % Right odd,  Left even
+% \fancyhead[RO,LE]{\@td} % Right odd,  Left even
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\rightmark}
+\fancyhead[C]{}
 
-\fancyhead[RO,LE]{\@lecture} % Right odd,  Left even
-\fancyhead[RO,LE]{\@td} % Right odd,  Left even
-\fancyhead[RE,LO]{}          % Right even, Left odd
-
-\fancyfoot[RO,LE]{\thepage}  % Right odd,  Left even
-\fancyfoot[RE,LO]{}          % Right even, Left odd
-\fancyfoot[C]{\leftmark}     % Center
+\fancyfoot[L]{Yann-Arby BEBBA}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{Mémoire master 1}
 
 \makeatother
 
@@ -313,4 +313,35 @@
 
 
 % My name
-\author{Yann-Arby BEBBA}
+% \author{Yann-Arby BEBBA}
+
+% title page layout from
+% https://latexref.xyz/titlepage.html
+\begin{titlepage}
+\vspace*{\stretch{1}}
+\begin{center}
+  % {\huge\bfseries Mémoire \\[1ex] 
+  %                 Le groupe des courbes elliptiques et applications dans la
+  %             cryptographie}                  \\[6.5ex]
+  {\huge\bfseries Mémoire \\[1ex] 
+                  Courbes elliptiques \\
+              et \\ [1ex]
+          cryptographie}                  \\[6.5ex]
+  {\large\bfseries Bebba Yann-Arby}           \\
+  \vspace{4ex}
+  Mémoire rendu à                    \\[5pt]
+  \textit{l'Université Picardie Jules Verne}                \\[1ex]
+  dirigé par Mme R.Abdelatif \\ [2cm]
+  dans le cadre de la première année de  \\[1ex]
+  \textsc{\Large Master Mathématiques}    \\[6ex]
+  % \textsc{\large Mathématique}             \\[6ex]
+  \includegraphics[scale=0.1]{logoUPJV_Bleu}
+  \vfill
+  Département de Mathématiques               \\
+  LAMFA \\
+  CNRS 33 Rue Saint-Leu, 80000 Amiens, France                                 \\
+  \today \\
+  \vfill
+\end{center}
+\vspace{\stretch{2}}
+\end{titlepage}
