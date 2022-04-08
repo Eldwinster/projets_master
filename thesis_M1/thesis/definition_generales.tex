@@ -31,6 +31,100 @@ Tout d'abord, pour définition d'une courbe elliptique nous utiliserons la suiva
     pas nécéssaire pour construire le groupe des courbes elliptique.
 \end{remarque}
 
+Avec cette définition il est important d'expliquer ce qu'une courbe projective plane signifie.
+
+Pour cela, il est important d'expliquer la notion de plan projectif.
+
+\subsection{Le plan projectif $\mathbb{P}^2(\overline{K})$}
+Notons dans un premier temps que le plan projectif $\mathbb{P}^2(\overline{K})$ peut
+également se noter $\mathbb{P}^2$ pour simplifier la notation.
+
+Pour expliciter cette notion commençons par expliquer ce qu'est une droite projective, en
+prenant l'exemple de la droite projective $\mathbb{P}(\R)$.
+
+Il suffit de ce munir de l'espace vectoriel $\R^2$ et l'idée est de prendre l'ensemble
+de tous les droites vectorielles de cette espace.
+
+Toutes ces droites
+s'intersectent alors en un unique point avec la droite affine d'équation $y=1$. Sauf bien
+entendu la droite d'équation $y=0$ qui elle est parallèle à la droite affine.
+
+Ce qui nous permet d'introduire la notion de point à l'infini, que nous
+formaliserons par la suite. Son rôle étant essentiel pour la construction du groupe des
+courbes elliptiques.
+
+En effet, on peut considérer que ces deux droites parallèle se coupe en un point
+à l'infini.
+
+On peut alors définir la droite projective comme étant formé de l'ensemble des points qui
+intersectent la droite affine et de ce point à l'infini.
+
+Plus formellement, on a 
+
+\begin{definition}
+   La droite projective $\mathbb{P}(\R)$ est l'ensemble quotient 
+   \[
+   \R^2 - \left\{ (0,0) \right\} / \sim
+   ,\] 
+   où la relation d'équivalence est définie par
+   \[
+   \forall (x,y),(x',y') \in (\R^2)^{*},\ (x,y) \sim (x',y') \iff \exists \lambda \in \R,\ (x,y)=(\lambda
+   x',\lambda y')
+   .\] 
+\end{definition}
+
+En s'appuyant sur cette construction on peut aller un peu plus loin et construire
+le plan projectif $\mathbb{P}^2$ en prenant l'exemple de
+$\mathbb{P}^2(\R)$.
+
+Cette fois ci, à partir de l'espace vectoriel $\R^3$. 
+
+On prendre l'ensemble de tous les droites vectorielles qui
+s'intersectent avec le plan affine $z=1$.
+
+Tous ces droites s'intersectent donc en un
+unique point avec ce plan affine.
+
+De nouveau, il reste une partie des droites
+vectorielles qui sont parallèles à ce plan. Ce sont tous les droites dans le plan
+$(\mathcal{O},\vec{x},\vec{y})$, où $\mathcal{O}$ est l'origine.
+
+On peut donc une nouvelle fois s'entendre sur le fait
+que ces deux plan s'intersectent en un point à l'infini.
+
+Ainsi, on peut définir le plan projectif comme étant formé du plan affine et du point à
+l'inifini.
+
+Algébriquement, on a pour définition
+
+\begin{definition}
+    Le plan projectif $\mathbb{P}^2(\R)$ est l'ensemble quotient
+    \[
+    \R^3 - \left\{ (0,0,0) \right\} / \sim
+    ,\] 
+    où $\sim$ est une relation d'équivalence définie par
+    \[
+    \forall x,\ y \in (\R^3)^{*},\ x \sim y \iff \exists \lambda \in \R,\ x=\lambda y
+    .\] 
+\end{definition}
+
+Finalement, on peut énoncer la définition du plan projectif $\mathbb{P}^2(\overline{K})$.
+
+\begin{definition}
+    Le plan projectif $\mathbb{P}^2(\overline{K})$ est l'ensemble quotitent
+    \[
+    \overline{K}^3 - \left\{ (0,0,0) \right\} / \sim
+    ,\] 
+    où $\sim$ est la relation d'équivalence qui pour tous $(x_1,y_1,z_1)$ et
+    $(x_2,y_2,z_2)$, non nuls de $\overline{K}^3$ on a
+    \[
+        (x_1,y_1,z_1) \sim (x_2,y_2,z_2) \iff \exists \lambda \in \overline{K},\
+        (x_1,y_1,z_1)=(\lambda x_2, \lambda y_2, \lambda z_2)
+    .\] 
+    Pour tous $(x,y,z) \in \overline{K}^3$, non nul, on notera alors $\left[ x,y,z \right] $ sa
+    classe d'équivalence.
+\end{definition}
+
 Comme l'on raisonne dans la clotûre algébrique de $K$, il est donc intéréssant de raisonner en
 termes de polynôme pour pouvoir ce servir de la définition \ref{def:ell}.
 
