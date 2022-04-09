@@ -125,8 +125,18 @@ Finalement, on peut énoncer la définition du plan projectif $\mathbb{P}^2(\ove
     classe d'équivalence.
 \end{definition}
 
+\begin{remarque}
+    Dans la définition, on signifie donc par courbe projective plane d'équation \eqref{eq:ell},
+l'ensemble des zéros de $F$ dans $\overline{K}$. Autrement dit, une courbe elliptique est
+l'intersection de la courbe dans l'espace avec le plan $z=1$ plus le point à l'infini. 
+
+    Un point $P=\left[ x,y,z \right] $ de $\mathbb{P}^2(\overline{K})$ est un zéro de $F$ dans $\overline{K}$, ou plus simplement un zéro de $F$, si l'on a $F(x,y,z)=0$.
+\end{remarque}
+
+\subsection{Simplicité des racines d'une courbe elliptique}
+
 Comme l'on raisonne dans la clotûre algébrique de $K$, il est donc intéréssant de raisonner en
-termes de polynôme pour pouvoir ce servir de la définition \ref{def:ell}.
+termes de polynôme pour pouvoir se servir de la définition \ref{def:ell}.
 
 C'est pourquoi, dans l'anneau des polynômes $K\left[ X,Y,Z \right] $, posons 
 \[
@@ -136,11 +146,6 @@ C'est un polynôme homogène de degrè $3$. Autrement dit, tous ses monômes non
 
 Si $(x,y,z)$ est un élément non nul de $\overline{K}^3$, la condition $F(x,y,z)=0$, ne dépend que de sa classe dans $\mathbb{P}^2(\overline{K})$.
 
-\begin{remarque}
-    Dans la définition, on signifie par courbe projective plane d'équation \eqref{eq:ell}, l'ensemble des zéros de $F$ dans $\overline{K}$. Dit de façon plus terre à terre cela signifie qu'une courbe elliptique est l'intersection de la courbe dans l'espace avec le plan $z=1$. 
-
-    Un point $P=\left[ x,y,z \right] $ de $\mathbb{P}^2(\overline{K})$ est un zéro de $F$ dans $\overline{K}$, ou plus simplement un zéro de $F$, si l'on a $F(x,y,z)=0$.
-\end{remarque}
 
 La condition \eqref{eq:delta} signifie que les racines dans $\overline{K}$ du polynôme
 \[
@@ -152,7 +157,7 @@ Ce que nous prouvons dans le lemme suivant:
 
 \begin{lemme}
     \label{lem:lemme1}
-    Soit $\Delta= -(4a^3 + 27b^2)$ le discriminant $f : x^3 + ax + b$. 
+    Soit $\Delta= -(4a^3 + 27b^2)$ le discriminant $f = x^3 + ax + b$. 
     Les racines de $f$ sont simples, si et seulement si $\Delta \neq 0$.
 \end{lemme}
 
@@ -262,17 +267,17 @@ Maintenant, supposons que $\Delta = 0$. On a alors :
 D'où le résultat.
 \end{demonstration}
 
-\begin{remarque}
-    Si $(X,Y,Z)$ un point de $\overline{K}$ avec $Z\neq 0$ vérifie $F(X,Y,Z)=0$ alors de façon équivalente $(x,y)$ un point de $\overline{K}$ vérifie $f(x,y)=0$.
-
-    En effet, il suffit dans l'équation $y^2=x^3+ax+b$ de remplacer $x$ par $\frac{X}{Z}$ et $y$ par $\frac{Y}{Z}$ et de multiplier par la puissance de $Z$ qu'il faut pour obtenir l'équation polynômiale en terme de $(X,Y,Z)$.
-\end{remarque}
-
 \section{Partie affine et point à l'infini}
+
+Si $(X,Y,Z)$ un point de $\overline{K}$ avec $Z\neq 0$ vérifie $F(X,Y,Z)=0$ alors de façon équivalente $(x,y)$ un point de $\overline{K}$ vérifie $f(x,y)=0$.
+
+En effet, il suffit dans l'équation $y^2=x^3+ax+b$ de remplacer $x$ par $\frac{X}{Z}$ et $y$ par $\frac{Y}{Z}$ et de multiplier par la puissance de $Z$ qu'il faut pour obtenir l'équation polynômiale en terme de $(X,Y,Z)$.
+
+Formalisons ce qu'est le point à l'infini, ainsi que ce qui vient d'être dit.
 
 Posons 
 \[
-U = \left\{ [x,y,z] \in \mathbb{P}^2(\overline{K}) | z \neq 0 \right\} 
+U = \left\{ [x,y,z] \in \mathbb{P}^2(\overline{K}) \mid z \neq 0 \right\} 
 .\] 
 
 On dispose de l'application $\phi : U \to \overline{K}^2$ définie par
@@ -290,20 +295,25 @@ Considérons des éléments $a$ et $b$ de $K$ tels que $4a^3+27b^2 \neq 0$. Soit
 y^2z=x^3+axz^2+bz^3
 .\] 
 
-L'ensemble des points $[x.y.z] \in E$ tels que $z=0$ est réduit au singleton $\left\{ O \right\} $ où
+L'ensemble des points $[x,y,z] \in E$ tels que $z=0$ est réduit au singleton $\left\{ O \right\} $ où
 \[
 O = [0,1,0]
 .\] 
 
-Par ailleurs, $E \cap U$ s'identifie via $\phi$ à l'ensemble des éléments $(x,y)$ de $\overline{K}^2$ vérifiant l'égalité
+En effet, dans l'équation \eqref{eq:ell}, il vient
 \[
-.\] 
+y^2\times 0 = x^3 + ax \times 0^2 + b \times 0^3
+,\] 
+donc $x=0$, ainsi on peut prendre pour représentant de classe de cet élément la classe de $O$.
+
+Par ailleurs, $E \cap U$ s'identifie via $\phi$ à l'ensemble des éléments $(x,y)$ de $\overline{K}^2$ vérifiant l'égalité
+
 \begin{align}
     \label{eq:ell1}
 y^2 = x^3 + ax + b
 .\end{align}
 
-On dira que $E \cap U$ est la partie affine de $E$ et que $O$ est le point à la l'infinie de $E$.
+On dira que $E \cap U$ est la partie affine de $E$ et que $O$ est le point à la l'infini de $E$.
 
 Dans toute la suite, on identifira $E \cap U$ et le sous-ensemble de $\overline{K}^2$ formé des éléments $(x,y)$ vérifiant \eqref{eq:ell1}. Avec cette identification, on a 
 \[
@@ -313,10 +323,21 @@ E = \left\{ (x,y) \in \overline{K} \times \overline{K} \mid y^2=x^3+ax+b \right\
 Ainsi, $E$ est la courbe affine d'équation \eqref{eq:ell1} à laquelle on adjoint le point à l'infini $O$. C'est pourquoi on définira souvent une courbe elliptique par sa partie affine, sans préciser le point $O$. Cela étant, il ne faudra pas perdre de vue l'importance du point à l'infini, comme on s'en rendra compte notamment dans la définition de la loi de groupe sur $E$ que l'on verra plus loin.
 
 \begin{remarque}
-    On retiendra qu'une courbe affine d'équation de la forme \eqref{eq:ell1} est une courbe elliptique si et seulement si, par définition, la condition \eqref{eq:dis} est satisfaite.
+    On retiendra qu'une courbe affine d'équation de la forme \eqref{eq:ell1} est une courbe
+    elliptique si et seulement si, par définition, la condition \eqref{eq:delta} est satisfaite.
 \end{remarque}
 
 \section{Points rationnels d'une courbe elliptique}
+Comme on va le voir par la suite par la construction d'une loi de composition interne sur l'ensemble des
+courbes elliptique, dans un premier temps, et par la construction de la loi de groupe
+sur les courbes elliptique, dans un second temps.
+
+Les points construits à l'aide de ces deux
+loi bien qu'au départ peuvent être des entiers deviennent, par construction trés vite des
+rationnels. C'est pourquoi, il est important de définir que ces points sont toujours des
+points de la courbe.
+
+\textbf{(détail un peu la suite en reprennant les explications de Mme Abdelatif)}
 
 Soit $L$ une extension de $K$ dans $\overline{K}$.
 
