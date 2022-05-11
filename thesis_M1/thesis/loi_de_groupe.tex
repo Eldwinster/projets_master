@@ -1,8 +1,11 @@
 \chapter{Loi de groupe}
+% \section{Loi de groupe}
 
 Soit $E$ une courbe elliptique définie sur $K$. Pour toute extension $L$ de $K$ dans $\overline{K}$, on va munir $E(L)$ d'une structure naturelle de groupe abélien, d'élément neutre le point à l'infini.
 
 \section{Droites de $\mathbb{P}^2$}
+Le première objet dont l'on a besoin pour construire notre groupe et que le l'on va
+manipuler tout on l'on du processus est la droite projective.
 
 \begin{definition}
     Une droite de $\mathbb{P}^2$ est une partie de $\mathbb{P}^2$ formée des points $[x,y,z]$ tels que 
@@ -12,19 +15,23 @@ Soit $E$ une courbe elliptique définie sur $K$. Pour toute extension $L$ de $K$
     où $u$, $v$ et $w$ sont des éléments non tous nuls de $\overline{K}$.
 \end{definition}
 
-On parle alors de la droite d'équation $ux+vy+wz=0$. Une droite d'équation $x=\lambda z$, où $\lambda$ est dans $\overline{K}$, est dite verticale. Une telle droite passe par le point $O = [0,1,0]$. En fait, toute droite passant par $O$ a une équation de la forme $ux+wz=0$. On dit souvent que la droite d'équation $z=0$ est la droite à l'infini. En identifiant la partie de $\mathbb{P}^2$ formée des points $[x,y,z]$ tels que $z \neq 0$ avec $\overline{K}^2$, le plan projectif s'interprète
-comme la reunion de $\overline{K}^2$ avec la droite à l'infini.
+\textbf{reformule moi ça avec tes propres mots}
+% On parle alors de la droite d'équation $ux+vy+wz=0$. Une droite d'équation $x=\lambda z$, où $\lambda$ est dans $\overline{K}$, est dite verticale. Une telle droite passe par le point $O = [0,1,0]$. En fait, toute droite passant par $O$ a une équation de la forme $ux+wz=0$. On dit souvent que la droite d'équation $z=0$ est la droite à l'infini. En identifiant la partie de $\mathbb{P}^2$ formée des points $[x,y,z]$ tels que $z \neq 0$ avec $\overline{K}^2$, le plan projectif s'interprète
+% comme la reunion de $\overline{K}^2$ avec la droite à l'infini.
+
+\textbf{ce lemme garantit l'unicité et l'existence d'une droite qui passe par deux points
+de la courbe}
 \begin{lemme}
     \label{lem:lemme2}
     
-    Soient $P = \left[ a_1, a_2, a_3 \right]$ et $Q = \left[ b_1, b_2, b_3 \right]$ deux points distincts de $\mathbb{P}^2$.
+    % Soient $P = \left[ a_1, a_2, a_3 \right]$ et $Q = \left[ b_1, b_2, b_3 \right]$ deux points distincts de $\mathbb{P}^2$.
 
-    Il existe une unique droite de $\mathbb{P}^2$ passant par $P$ et $Q$. C'est la droite $D$ d'équation $ux + vy + wz = 0$ avec $\left[ x, y, z \right] \in \mathbb{P}^2$ et 
-    \[
-    u = a_2 b_3 - a_3 b_2, \ v = a_3 b_1 - a_1 b_3, \ w = a_1 b_2 - a_2 b_2 
-    .\] 
+    % Il existe une unique droite de $\mathbb{P}^2$ passant par $P$ et $Q$. C'est la droite $D$ d'équation $ux + vy + wz = 0$ avec $\left[ x, y, z \right] \in \mathbb{P}^2$ et 
+    % \[
+    % u = a_2 b_3 - a_3 b_2, \ v = a_3 b_1 - a_1 b_3, \ w = a_1 b_2 - a_2 b_2 
+    % .\] 
 
-    Énoncé originel : 
+    % Énoncé originel : 
 
     Soient $P = \left[ a_1, a_2, a_3 \right]$ et $Q = \left[ b_1, b_2, b_3 \right]$ deux points distincs de $\mathbb{P}^2$. Il existe une unique droite de $\mathbb{P}^2$ passant par $P$ et $Q$. C'est l'ensemble des points $\left[ x, y, z \right] \in \mathbb{P}^2$ tels que le déterminant de la matrice
     \[
@@ -53,9 +60,8 @@ comme la reunion de $\overline{K}^2$ avec la droite à l'infini.
 \end{demonstration}
 
 \section{Tangente à $E$ en un point}
-\textbf{Peut-être que la partie où Klaus parle de courbe lisse est nécéssaire puisqu'on en
-parle la non? De plus il me semble que Koblitz aussi en parle donc relit, rerelit, rererelit,
-re$\to \infty$lit son papier}
+
+Le deuxième objet, dont l'on est amené à utilisé est la tangente.
 
 Soit 
 \[
@@ -77,6 +83,7 @@ c'est-à-dire,
 F_{X} = - \left( 3X^2 + aZ^2 \right),\quad F_{Y} = 2YZ,\quad F_{Z} = Y^2 - \left( 2aXZ + 3bZ^2 \right)
 .\] 
 
+\textbf{comprend à quoi y sert ce lemme}
 \begin{lemme}
     \label{lem:lemme3}
     
@@ -128,6 +135,15 @@ Ce qui est absurde car $F$ est elliptique. D'après le lemme \ref{lem:lemme1}
    \end{itemize}
 \end{demonstration}
 
+\begin{definition}
+    Pour tout $P \in E$, la tangente à $E$ en $P$ est la droite d'équation
+    \[
+    F_{X}(P)x+F_{Y}(P)y+F_{Z}(P)z=0
+    .\] 
+\end{definition}
+
+\textbf{c'est le lemme qui nous permet de traiter les cas de la tangente en $E$ vertical et
+non vertical}
 
 \begin{lemme}
     \label{lem:lemme4}
@@ -167,15 +183,9 @@ Ce qui est absurde car $F$ est elliptique. D'après le lemme \ref{lem:lemme1}
 
 \section{Loi de composition des cordes-tangentes}
 
-Dans cette proposition à l'aide du comportement de deux points du plan $E$ et de la droite qui les intersectent. On veut construit une loi de composition interne
+Ainsi munie de la droite et de la tangente, on a tous les armes pour se confronter aux
+différentes situation.
 \[
-\begin{align*}
-    \top : E \times E &\longrightarrow E \\
-    (P,Q) &\longmapsto P  \ \top  \ Q
-\end{align*}
-\] 
-Cette loi, comme on va le voir, n'est pas une loi de groupe. C'est ce qui va nous permettre cependant de donner, par la suite, de donner une structure de groupe au plan $E$ à l'aide d'une symétrie bien choisie.
-
 \begin{proposition}
     \label{prop:proposition1}
     
@@ -221,10 +231,6 @@ f(P,P) = \left[ \lambda^2 - 2 x_{P}, \lambda\left( \lambda^2 - 2x_{P} \right) + 
             \end{description}
     \end{description}
 \end{proposition}
-
-Dans cette démonstration, on étudie le comportement des points $P$ et $Q$ selon qu'ils soient distincts ou égaux. Que ce soit pour la droite ou la tangente tous les deux vont éventuellement, soit
-recouper la courbe elliptique et rester dans le plan $E$, soit "couper" le point à l'infini  $O$. C'est ce qu'on veut découvrir à l'aide du point que l'on a nommé $f(P,Q)$ qui désigne le comportement
-par rapport à $P$ et $Q$ de ce troisième point.
 
 \begin{demonstration}
     \begin{description}
@@ -477,26 +483,11 @@ Géométriquement, $P+Q$ s'obtient à partir de $f(P,Q)$ par symétrie par rappo
             .\] 
             Ce qui permet de retrouver la formule \eqref{eq:add2}. 
         \item[4)] Supposons $P=Q$ et $y_P=0$, d'après l'assertion (4-i) de la proposition \ref{prop:proposition1} , on a $f(P,P)=O$ d'où $2P=f(f(P,P),O)=f(O,O)=O$. 
-        \item[5)] Pour l'opposer on cherche un point $M \in E$ tel que $P\neq M$ et $P,Q\neq O$ d'après le théorème énoncé assertion 2) on a donc $x_P = x_M$ et donc nécessairement $y_M=-y_P$ donc le point recherché est $M=\left( x_M,y_M \right) = \left( x_P,-y_P \right) =-P$. (j'avais invoqué avant notre rendez vous la prop 7.1 assertion 2 et procédé par analyse synthèse, i.e je trouve ce que je cherche et je montre que j'ai bien trouvé ce que je cherchais mais ici je ne pense pas que cela soit nécessaire puisque l'assertion 2 rempli ce rôle en fournissant un contexte suffisamment restreint pour trouver l'opposé)
+        \item[5)] Pour l'opposer on cherche un point $M \in E$ tel que $P\neq M$ et $P,Q\neq O$ d'après le théorème énoncé assertion 2) on a donc $x_P = x_M$ et donc nécessairement $y_M=-y_P$ donc le point recherché est $M=\left( x_M,y_M \right) = \left( x_P,-y_P \right) =-P$. 
     \end{description}
 \end{demonstration}
 
 \begin{exemple}
     mettre exemple de calcul de $2P$ pour la suite
 \end{exemple} 
-
-\section{Morphisme de groupes de $E(\overline{K})$}
-\textbf{Est-ce vraiment nécessaire d'introduire les morphismes de groupes alors que
-je ne m'en sert pas du tout par la suite? Surtout que depuis les explications de Mme Abdelatif
-je n'ai toujours pas pris le temps de comprendre..}
-
-Considérons un morphisme de groupes $f\ :\ E(\overline{K}) \to E(\overline{K})$. Soit $n$ un entier $\ge 2$ non divisible par $\car(K)$. Le groupe $E[n]$ est un $\Z / n\Z$-module libre de rang $2$. L'image par $f$ de $E[n]$ est contenue dans $E[n]$. Par suite, $f$ induit un endomorphisme du $\Z / n\Z$-module $E[n}$. Dans toute base $(P_1,P_2)$ de $E[n]$ sur $\Z / n\Z$, il est donc représenté par une matrice
-\[
-    \begin{pmatrix} a & b \\ c & d \end{pmatrix} 
-,\] 
-qui décrit l'action de $f$ sur $E[n]$.
-
-\begin{exemple}
-    mettre l'exemple 1 de morphisme de groupe
-\end{exemple}
 

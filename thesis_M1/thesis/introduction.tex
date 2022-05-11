@@ -1,53 +1,273 @@
-\chapter{Les courbes elliptiques: histoire et liens avec la cryptographie}
-le cryptosystème RSA, inventé par Ronald \textbf{R}ivet, Adi
-\textbf{S}hamir et Leonard \textbf{A}dleman en 1977
+\chapter{}
+% le cryptosystème RSA, inventé par Ronald \textbf{R}ivet, Adi
+% \textbf{S}hamir et Leonard \textbf{A}dleman en 1977
+
+% \textbf{plan}
+% \begin{itemize}
+%     \item De quoi je veux parler ?
+
+%         Du groupe des courbes elliptique et application, plan?,
+%     \item Pourquoi je veux en parler ?
+
+%         intéret, Ordi quantique, algo, enjeux.
+%     \item intro crypto
+
+%         sym/asym. RSA, El, DH
+%     \item histoire elliptique? (très bref)
+%     \item retire context dans la partie crypto
+%     \item
+% \end{itemize}
 \section{Introduction}
 
-Dans ce mémoire, nous allons nous intéresser aux courbes elliptiques et plus particulièrement
-au groupe abélien des courbes elliptiques. Ce qui va nous permettre d'utiliser ce groupe en
-cryptographie et présenter une façon plus efficace d'utiliser l'algorithme d'El-Gamal (EG.) (date) et le
-protocol de Diffie-Hellman (D-H.) (date).
+Dans ce mémoire, je vais m'intéresser au groupe des courbes elliptiques et son application dans le
+domaine de la cryptographie.
 
-Dans un monde en constant évolution, notamment technique. Il est crucial de pouvoir
-améliorer, réinventer, ou même changer, des principes qui ont révolutionner à leur époque.
-C'est pourquoi, en (date) Klobnitz, à présenter une façon concrète d'utiliser les courbes
-elliptiques dans le cadre de la cryptographie. Ceci a permit d'apporter une nouvelle façon
-de faire de la cryptographie, tout en conservant des concepts eprouvé basé sur le problème
-du logarithme discret. Cette nouvelle approche, que l'on nommera
-version elliptique, contrairement à la version dite classique de chiffrement, qui est basé
-sur le groupe multiplicatif $\left( \Z /p\Z \right) ^{*}$ et sa commutativité, celle ci
-présente une diversité et complexité non négligeable. 
-
-En effet, que ce soit l'algorithme d'El Gamal ou le protocol de Diffie-Hellman, leur version
-classique est basé sur le générateur du groupe $\left( \Z / p\Z \right) ^{*}$, alors que
-leur version elliptique est basé sur les courbes elliptiques qui comme on le verra sont en grand
-nombre pour leur part. De plus, par construction du groupe des courbes elliptiques, plus
-abstrait, la résolution du logarithme discret est quasiment impossible sans l'aide d'ordinateur
-quantique extremement puissant (ref article Mme Abdelatif).
-
-\section{plan ?}
-
-\begin{itemize}
-    \item explication cryptographie
-        \begin{itemize}
-            \item sym et asym
-            \item rsa
-            \item El Gamal et D-H
-        \end{itemize}
-    \item histoire des fonctions elliptiques 
-\end{itemize}
-
-\section{La cryptographie}
 L'application première de notre construction étant la cryptographie, il me semble nécessaire de
 poser les bases de cette branche des mathématiques. Ceci nous permettra d'avoir une idée clair
 des différents concepts et enjeux qui la compose.
 
-Tout d'abord, définition ce qu'est la cryptographie. Métaphysiquement, c'est le fait de vouloir
-communiquer des messages, entre diverses entités et ceci de façon à ce que seul ces dernières
-n'aient connaissances du contenue du message.
+\section{Cryptographie}
 
-Cette définition personnel et trivial est basé sur comment dans l'histoire la cryptographie est
-apparu.
+La cryptographie trouve ses origines avec l'invention de l'écriture, en effet on en
+retrouve des traces dés l'époque des Égyptiens vers 2000 a.v. J.C.
 
-De nos jours, le concept c'est énormément diversifié. La transmission de message reste un élément
-majeur de ce qu'est la cryptographie mais 
+Elle a longtemps été considéré comme un art. Un art bien souvent en relation avec l'art de
+la guerre.
+
+À ce stade, on est en droit de ce demander ce que signifie la cryptographie. C'est un mot
+d'étymologie d'origine grec. On peut le traduire par le fait de cacher ce qui est écrit.
+
+On peut donc en conclure que c'est l'intention de transmettre un message de façon secret.
+Autrement dit, on souhaiterai transmettre par écrit un message dont seul le déstinataire
+et l'expéditeur connaisse la signification du dit "message secret". 
+
+On comprend donc tout l'importance de la cryptographie et son rôle important avec la
+guerre.
+
+Un première exemple bien connu de cryptographie est appelé le chiffrement de César. 
+
+Cette méthode consiste à
+prendre les lettres de l'aphabet et d'éffectuer une transposition $n \in \N$, on peut
+ainsi définir sur $\Z / 26\Z$ une bijection entre les lettres de l'alphabet et ce groupe.
+L'entier $n$ est alors ce que l'on appelle la clé secrète, qui va permettre à la fois de
+chiffrer et de déchiffrer un éventuel message.
+
+il a d'autres exemples, comme le chiffrement de Végenère, inventé par Blaise de Vigenère en
+1586 dans traité des chiffre paru en 1586 (on retrouve cependant une méthode analogue
+dans un court traité de Giovan Battista Bellano paru en 1553), le chiffrement de Vegenère repose sur le même principe que
+le chiffrement de César. À ceci prés que que la transposition $n$ est remplacé explicitement
+par une clé secret que l'on peut noter $k$, qui est un mot secret ou bien une suite de lettre.
+Ainsi on effectue la même opération que pour le chiffrement de César à la différence prés que
+notre $n$ cette fois ci varie dans $\Z / 26\Z$ selon les lettres qui compose notre clé secrète $k$.
+
+C'est deux exemples ne sont plus sûr. En effet, bien que le chiffrement de Vegenère essaye de
+contourner le problème de l'analyse de fréquence d'apparition des lettres, qui permet de rendre
+innéficace les chiffrement du type chiffrement de César avec un seul alphabet. 3
+siècle aprés son apparition en 1863 le major prussien Friedrich Kasiski à publié une
+méthode pour percé le chiffrement de Vegenère.
+
+Cependant encore récemment, la machine enigma utilisé par les Allemands lors de la seconde
+guerre mondial utilisé encore le principe liés au chiffrement Vigenère que le nomme chiffrement
+par substitution polyalphabétique.
+
+On retiendra que ces méthodes non pas résisté à l'analyse de leurs
+fonctionnement.
+
+Ceci m'amène donc à parler d'un principes fondateur sur lequel est basé la cryptographie
+moderne, qui repose essentiellement sur l'avènement de l'informatique qui à permit à la
+cryptographie un renouveau historique. En effet, aujourd'hui elle n'est plus considérer comme
+un art mais une vrai science avec tout le formalise que l'on est en droit d'attendre.
+
+On appelle ce principe, le principe de Kerckhoffs, énoncé par Augustus Kerckhoffs en 1883 dans
+un article en deux parties, "La cryptographie millitaire". Ce principe nous dit que la sécurité
+ne dépend pas de la méthode de chiffrement mais sur le secret de la clé. Autrement dit, d'aprés
+Kerckhoffs, une bonne méthode de chiffrement, ne doit pas se reposer sur le secret de sa
+méthode mais sur le fait que même si elle est connue tant que l'on ne peut pas à partir de
+celle-ci en déduire une méthode efficace pour retrouver la clé. Notre cryptosystème, pour
+utiliser un terme plus précis, est considérer comme sûr. 
+
+Un cryptosystème est la méthode de chiffrement et de dechiffrement qui permet de
+transmettre ou recevoir des informations secrètes.
+ On peut en retrouver une description plus précise dans cette article cite culture maths
+
+C'est ainsi, qu'en 1976 Diffie et Hellman, lors de la National Computer Conference,
+énonce une nouvelle méthode basé sur le principe de Kerckhoffs, sans pouvoir
+cependant en fournir un exemple d'application.
+
+Cette nouvelle méthode est la pierre fondadrice de la cryptographie moderne basé sur le
+principe de clé publique et clé secret, qui sont deux clés disctinctes. On parle alors de cryptographie asymétrique ou
+cryptographie à clé publique.
+L'asymétrie, ici est une asymétrie de l'information entre les clé ou l'une est publique, donc
+connue, et l'autre non publique donc inconnue. De plus, chaque clé à sa propre fonction,
+c'est à dire que la clé publique sert au chiffrement et la clé secrete au déchiffrement.
+
+On peut se représenter le principe, en considérant deux personnes, traditionnelement
+nommées
+Alice, Bob.
+
+Soit $\mathcal{M}$ un ensemble de chiffrements. On prend souvent pour $\mathcal{M}$
+l'ensemble $\Z / n \Z$ ou bien un corps fini. Alice souhaite pouvoir se faire envoyer des
+messages chiffrés de $\mathcal{M}$ de façon privée. Elle choisit une bijection $f_{A}\ :\
+\mathcal{M}\to \mathcal{M}$ qui sera rendu publique, et elle seul en connaît la reciproque
+$f_{A}^{-1}$. Le principe repose sur la grande difficulté de trouver $f_{A}^{-1}$ à partir de
+$f_{A}$. 
+
+Dans la situation où Bob envoie un message $x \in \mathcal{M}$. Il lui suffit
+d'envoyer à Alice en clair l'élément $y = f_{A}(x)$. Pour déchiffrer le message Alice
+calcul donc $f_{A}^{-1}(y)$, et retrouve le message $x$ de Bob. On appel ce genre de
+fonction des fonctions à sens unique, car leurs reciproques sont difficiles à expliciter.
+
+L'enjeux de la cryptographie à clé publique est donc de trouver ce type de fonction.
+C'est à dire des opérations faciles à calculer mais dont le cheminement inverses est le plus
+difficiles possible.
+
+La cryptographie d'aujourd'hui est basé sur deux problèmes issu de la Théorie des nombres. À
+savoir le problème de la factorisation des entiers et celui du logarithme discret.
+
+\section{Les courbes elliptiques}
+
+En parallèle de l'histoire de la cryptographie. Se déroulait deux histoires tout aussi
+anciennes liées à deux problèmes qui trouve leurs sources dans l'Antiquité.
+
+
+diophante amener la question des points et des lignes
+decrire le plan projectif à l'aide des réelles pour comprendre les enjeux de la définition
+
+
+
+% \[
+% u = \int_{0}^{t} \frac{\dx}{\sqrt{1-x^2} }, \quad t \in ]-1,1[
+% .\] 
+
+% Qui n'est autre que la fonction $u = \arcsin(x)$. Or c'est plutôt la fonction inverse
+% $\sin(x)$ qui est intéressante.
+
+% Via la méthode de Jacobi, on peut montrer que la fonction
+% \[
+% t \to u = \int_{0}^{t} \frac{\dx}{\sqrt{1-x^2} }
+% ,\] 
+% admet une fonction réciproque $t(u)=\sin(u)$ définie sur tout le plan complexe, périodique de
+% période $2\pi$, solution de l'équation différentielle :
+% \[
+% \left( \frac{\dt}{\du} \right) ^2 = 1 - u^2
+% .\] 
+
+% Au XVIIème et XVIIIème siècles, les mathématiciens se sont attaqué à la généralisation du
+% problème précédent. En effet, ils ont cherché à déterminer la longueur d'un arc d'ellipse,
+% d'équation
+% \[
+% \frac{x^2}{a^2}+\frac{y^2}{b^2}= 1
+% .\] 
+
+% Ce qui revient à calculer l'intégral, en posant $e = \sqrt{1 - \left( \frac{b}{a} \right)
+% ^2} $, l'exentricité de l'ellipse :
+% \[
+% u = \int_{0}^{t} \frac{\sqrt{1-e^2x^2}}{\sqrt{1-x^2} } \dx, \quad t \in ]-1,1[
+% .\] 
+
+% La solution qui s'imposa fut de considérer cette intégrale comme une fonction à
+% part entière.
+
+% image
+
+% , c'est à dire, où l'abscisse peut prendre plusieurs valeurs en ordonné. Ce
+% qui ouvre l'étude à de nouvelle courbe comme le lemniscate de Benouilli. 
+
+Ainsi, Abel en 1827 et Jacobi en 1829 on indépendament attaqué la question de cette
+intégrale associée à une ellipse du point de vue des fonctions complexes, en
+considérant sa réciproque.
+
+
+% Si Alice souhaite envoyer un message à Bob, elle chiffre sont message avec la clé publique de
+% Bob, et ce dernier avec sa clé secrète, qu'il est le seul à connaître, peut déchiffrer le
+% message d'Alice. Alice et Bob peuvent donc s'échanger des messages chiffré, via un canal
+% non sécurisé, et ceux ci sans posséder de secret commun. Dans l'hypothèse qu'Eve interceptent
+% les communications sur le canal non sécurisé, il lui est impossible un en temps
+% raisonnable de déterminer la clé secrète à partir de la clé publique.
+
+% Quand on parle
+% de temps raisonnable ou d'efficacité, ceci est lié à la façon dont nos ordinateurs calcul. En effet, chaque
+% opération arithmétique possède un certain coût en temps de calcul. Quand on parle de
+% compléxité en temps, on calcul dans le pire des cas possible combien d'opération, il est
+% nécessaire d'effectuer dans un algorithme. C'est pourquoi, un algorithme efficace est un
+% algorithme qui coût peu cher en temps de calcul.
+
+
+% Il n'aurat pas fallut longtemps pour trouver un exemple basé sur le principe énoncé par Diffie
+% et Helman. En effet, dès 1977, Ronald \textbf{R}ivet, Adi \textbf{S}hamir et Leonard
+% \textbf{A}dleman invente le cryptosystème asymétrique RSA.
+
+% Il est basé sur le problème de la factorisation d'entier. En effet, pour trouver la clé
+% secrète il faut être capable de résoudre ce problème de façon efficace. 
+
+
+% À l'époque et encore jusqu'à récemment (source?) le problème de la factorisation des entiers
+% était diffile à résoudre mais ceci est de moins en moins vrai avec les années. (source)
+
+
+
+% En parallèle de l'histoire de la cryptographie. Une autre histoire fit son chemin de
+% l'antiquité à nos jours. C'est celle du problème de la longueur du cercle et en particulier la longueur d'un arc
+% de cercle.
+
+% problème facto
+% d-h log
+% Alice bob eve
+% fonction unique
+
+% cercle diophante
+% point ligne addition
+% internet
+% plan projectif
+
+% En effet, dans un monde en constant évolution, notamment technique \cite{Kachigar2018}. Il est crucial de pouvoir
+% améliorer, réinventer, ou même changer, des principes qui ont révolutionner à leur époque.
+% C'est pourquoi,Koblitz \cite{Koblitz1987}, à présenter une façon concrète d'utiliser les courbes
+% elliptiques dans le cadre de la cryptographie. Ceci a permit d'apporter une nouvelle façon
+% de faire de la cryptographie, tout en conservant des concepts eprouvé basé sur le problème
+% du logarithme discret \cite{Chabanol2021} et même le problème de la factorisation de entiers
+% \cite{bibfacent}. Cette nouvelle cryptographie est basé sur le groupe abéliens des courbes
+% elliptiques. Elle apporte bien évidemment ses lots d'avantages et d'inconvénients par rapport à
+% la méthode, plus classique, qui elle est basé sur le groupe multiplicatif $(\Z /n\Z^{*})$, où $n$ est un entier.
+
+% Tout d'abord, définition de ce qu'est la cryptographie. 
+
+% D'après l'étymologie, qui est d'origine grec, c'est le fait de cacher ce qui à été écrit.
+
+% On en déduit, ici que l'idée est de transmettre un éventuel message secret à une ou des
+% personnes et l'on veut qu'elles soient les seuls à pouvoir comprendre le message.
+
+% La première trace de la cryptographie dans l'histoire apparait déjà à l'époque des
+% Égyptiens vers 2000 av. J.-C. en effet, on retrouver un
+
+% Le premier exemple connue de cryptographie est appelé le chiffrement de César. Cette méthode consiste à
+% prendre les lettres de l'aphabet et d'éffectuer une transposition $n \in \N$, on peut
+% ainsi définir sur $\Z / 26\Z$ une bijection entre les lettres de l'alphabet et ce groupe.
+% L'entier $n$ est alors ce que l'on appelle la clé secrète, qui va permettre à la fois de
+% chiffrer et de déchiffrer un éventuel message. Quand la clé secrète a cette double utilité,
+% on parle alors de cryptographie symétrique.
+
+% La cryptographie symétrique à dominée une grande partie de notre histoire. En effet, il a fallu
+% attendre la National Computer Conference de 1976, pour que W.Diffie et M.Hellman présente le
+% concept de ce que l'on nomme aujourd'hui la cryptographie asymétrique. L'asymétrie ici
+% décrit le décalage entre les informations. En effet, ici il y a deux clé qui entre en jeu. La
+% clé publique et la clé secrete.
+
+% La cryptographie moderne repose sur le principe de Kerckhoffs, énoncé en 1883 par Augustus
+% Kerckhoffs
+
+% De nos jours, traditionnelement nous désignons ces deux personnes par Alice et Bob. Mais
+% il faut comprendre que Alice et Bob, sont comme deux variables dans l'ensemble de tous
+% les entitées suceptible de communiquer entre elles. Autrement dit, elles peuvent représenter
+% deux banques, une banque et un client, un ordinateur et un site internet, deux personnes qui
+% souhaite communiquer entre-elles. Les exemples sont légion mais un premier problème va trés vite
+% se poser et il faudra attendre les années 1970 avant que ce que l'on nomme aujourd'hui la
+% cryptographie moderne apparaisent. 
+
+% À notre epoque, on parle de cryptographie post-quantique qui comme on le verra va apporter
+% sont lots de changement.
+
+
+% Un des premiers problèmes que l'on rencontre est la transmission de la clé secrète
+% entre Alice et Bob. En effet, non seulement la clé sert à chiffrer et déchiffrer mais elle
+% doit être transmisse physiquement

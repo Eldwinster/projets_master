@@ -1,16 +1,14 @@
 \chapter{Définitions générales}
-Dans tout ce qui suit, je vais prendre pour fil rouge les cours de Mr Alain Kraus
-\cite{KrausCP} et \cite{KrausCE}. Dans cette optique, je vais essayer de completer ces cours,
+Dans tout ce qui suit, je vais prendre pour fil rouge le cours de Mr Alain Kraus \cite{KrausCE}. Dans cette optique, je vais essayer de completer ce cours,
 en y ajoutant soit des détails supplémentaires lors des différentes démonstration, soit
 en explicitant des concepts où je juge cela nécéssaire.
+
 \section{Définition}
 Dans cette partie, je vais définir le contexte autour duquel la théorie est construite.
 
 Dans la totalité de ce qui suit la lettre $K$ désignera un corps de caractéristique $0$ ou un corps fini de caractéristique distincte de $2$ et $3$.
 
-On désignera la clôture algébrique de $K$ par la notation $\overline{K}$.
-
-Tout d'abord, pour définition d'une courbe elliptique nous utiliserons la suivante:
+On désignera la clôture algébrique de $K$, choisi implicitement, par la notation $\overline{K}$.
 
 \begin{definition}
     \label{def:ell}
@@ -25,135 +23,53 @@ Tout d'abord, pour définition d'une courbe elliptique nous utiliserons la suiva
     4a^3+27b^2\neq 0
     .\end{align}
 \end{definition}
+% \subsection{Le plan projectif $\mathbb{P}^2(\overline{K})$}
+D'aprés la définition ci-dessus, une courbe elliptique est un objet de la géométrie projective,
+que l'on représente dans le plan projectif.
 
-\begin{remarque}
-    Il existe une autre définition plus général, mais dans notre cas cette dernière n'est
-    pas nécéssaire pour construire le groupe des courbes elliptique.
-\end{remarque}
-
-Avec cette définition il est important d'expliquer ce qu'une courbe projective plane signifie.
-
-Pour cela, il est important d'expliquer la notion de plan projectif.
-
-\subsection{Le plan projectif $\mathbb{P}^2(\overline{K})$}
-Notons dans un premier temps que le plan projectif $\mathbb{P}^2(\overline{K})$ peut
-également se noter $\mathbb{P}^2$ pour simplifier la notation.
-
-Pour expliciter cette notion commençons par expliquer ce qu'est une droite projective, en
-prenant l'exemple de la droite projective $\mathbb{P}(\R)$.
-
-Il suffit de ce munir de l'espace vectoriel $\R^2$ et l'idée est de prendre l'ensemble
-de tous les droites vectorielles de cette espace.
-
-Toutes ces droites
-s'intersectent alors en un unique point avec la droite affine d'équation $y=1$. Sauf bien
-entendu la droite d'équation $y=0$ qui elle est parallèle à la droite affine.
-
-Ce qui nous permet d'introduire la notion de point à l'infini, que nous
-formaliserons par la suite. Son rôle étant essentiel pour la construction du groupe des
-courbes elliptiques.
-
-En effet, on peut considérer que ces deux droites parallèle se coupe en un point
-à l'infini.
-
-On peut alors définir la droite projective comme étant formé de l'ensemble des points qui
-intersectent la droite affine et de ce point à l'infini.
-
-Plus formellement, on a 
-
+ D'abord donnons la définition de ce qu'est le plan projectif $\mathbb{P}^2$,
 \begin{definition}
-   La droite projective $\mathbb{P}(\R)$ est l'ensemble quotient 
-   \[
-   \R^2 - \left\{ (0,0) \right\} / \sim
-   ,\] 
-   où la relation d'équivalence est définie par
-   \[
-   \forall (x,y),(x',y') \in (\R^2)^{*},\ (x,y) \sim (x',y') \iff \exists \lambda \in \R,\ (x,y)=(\lambda
-   x',\lambda y')
-   .\] 
-\end{definition}
-
-En s'appuyant sur cette construction on peut aller un peu plus loin et construire
-le plan projectif $\mathbb{P}^2$ en prenant l'exemple de
-$\mathbb{P}^2(\R)$.
-
-Cette fois ci, à partir de l'espace vectoriel $\R^3$. 
-
-On prendre l'ensemble de tous les droites vectorielles qui
-s'intersectent avec le plan affine $z=1$.
-
-Tous ces droites s'intersectent donc en un
-unique point avec ce plan affine.
-
-De nouveau, il reste une partie des droites
-vectorielles qui sont parallèles à ce plan. Ce sont tous les droites dans le plan
-$(\mathcal{O},\vec{x},\vec{y})$, où $\mathcal{O}$ est l'origine.
-
-On peut donc une nouvelle fois s'entendre sur le fait
-que ces deux plan s'intersectent en un point à l'infini.
-
-Ainsi, on peut définir le plan projectif comme étant formé du plan affine et du point à
-l'inifini.
-
-Algébriquement, on a pour définition
-
-\begin{definition}
-    Le plan projectif $\mathbb{P}^2(\R)$ est l'ensemble quotient
-    \[
-    \R^3 - \left\{ (0,0,0) \right\} / \sim
-    ,\] 
-    où $\sim$ est une relation d'équivalence définie par
-    \[
-    \forall x,\ y \in (\R^3)^{*},\ x \sim y \iff \exists \lambda \in \R,\ x=\lambda y
-    .\] 
-\end{definition}
-
-Finalement, on peut énoncer la définition du plan projectif $\mathbb{P}^2(\overline{K})$.
-
-\begin{definition}
-    Le plan projectif $\mathbb{P}^2(\overline{K})$ est l'ensemble quotitent
+    Le plan projectif $\mathbb{P}^2(\overline{K})$ est l'ensemble quotient
     \[
     \overline{K}^3 - \left\{ (0,0,0) \right\} / \sim
-    ,\] 
+    \] 
     où $\sim$ est la relation d'équivalence qui pour tous $(x_1,y_1,z_1)$ et
     $(x_2,y_2,z_2)$, non nuls de $\overline{K}^3$ on a
     \[
         (x_1,y_1,z_1) \sim (x_2,y_2,z_2) \iff \exists \lambda \in \overline{K},\
-        (x_1,y_1,z_1)=(\lambda x_2, \lambda y_2, \lambda z_2)
+        (x_2,y_2,z_2)=\lambda(x_1,y_1,z_1)
     .\] 
     Pour tous $(x,y,z) \in \overline{K}^3$, non nul, on notera alors $\left[ x,y,z \right] $ sa
     classe d'équivalence.
 \end{definition}
 
-\begin{remarque}
-    Dans la définition, on signifie donc par courbe projective plane d'équation \eqref{eq:ell},
-l'ensemble des zéros de $F$ dans $\overline{K}$. Autrement dit, une courbe elliptique est
-l'intersection de la courbe dans l'espace avec le plan $z=1$ plus le point à l'infini. 
+\textbf{Parle des coordonnées homogène et droite projective}
+\textbf{Signe de delta}
+\textbf{Point de rebroussement}
+\textbf{homogénéité entre $f$ et $F$ des solutions}
 
-    Un point $P=\left[ x,y,z \right] $ de $\mathbb{P}^2(\overline{K})$ est un zéro de $F$ dans $\overline{K}$, ou plus simplement un zéro de $F$, si l'on a $F(x,y,z)=0$.
-\end{remarque}
-
-\subsection{Simplicité des racines d'une courbe elliptique}
-
-Comme l'on raisonne dans la clotûre algébrique de $K$, il est donc intéréssant de raisonner en
-termes de polynôme pour pouvoir se servir de la définition \ref{def:ell}.
-
-C'est pourquoi, dans l'anneau des polynômes $K\left[ X,Y,Z \right] $, posons 
+Donnons nous $a$ et $b$ des éléments de $K$. Dans l'anneau des polynômes $K\left[ X,Y,Z \right] $, posons 
 \[
 F=Y^2Z-\left( X^3+aXZ^2+bZ^3 \right) 
 .\] 
-C'est un polynôme homogène de degrè $3$. Autrement dit, tous ses monômes non nuls sont de même degré total.
 
-Si $(x,y,z)$ est un élément non nul de $\overline{K}^3$, la condition $F(x,y,z)=0$, ne dépend que de sa classe dans $\mathbb{P}^2(\overline{K})$.
+Comme $F$ est un polynôme homogène de degré $3$. Grâce à au plan projectif. Si $(x,y,z)$ est
+un élément non nul de $\overline{K}^3$, la condition $F(x,y,z) = 0$, ne dépend que de sa classe
+dans $\mathbb{P}^2(\overline{K})$.
 
+Soit $P = \left[ x,y,z \right] $ un point de $\mathbb{P}^2(\overline{K})$. On
+dit que $P$ est un zéro de $F$ dans $\overline{K}$, ou plus simplement un zéro de $F$, si
+l'on a $F(x,y,z)=0$. On signifie par, courbe projective plane d'équation \eqref{eq:ell},
+l'ensemble des zéros de $F$ dans $\overline{K}$.
 
-La condition \eqref{eq:delta} signifie que les racines dans $\overline{K}$ du polynôme
+Quant à la condition \eqref{eq:delta}, elle signifie que les racines dans $\overline{K}$ du
+polynôme
 \[
-f=X^3+aX+b
+f = X^3 + aX + b
 \] 
 sont simples.
 
-Ce que nous prouvons dans le lemme suivant:
+\textbf{lemme pour eviter les courbes non lisse}
 
 \begin{lemme}
     \label{lem:lemme1}
@@ -269,11 +185,7 @@ D'où le résultat.
 
 \section{Partie affine et point à l'infini}
 
-Si $(X,Y,Z)$ un point de $\overline{K}$ avec $Z\neq 0$ vérifie $F(X,Y,Z)=0$ alors de façon équivalente $(x,y)$ un point de $\overline{K}$ vérifie $f(x,y)=0$.
-
-En effet, il suffit dans l'équation $y^2=x^3+ax+b$ de remplacer $x$ par $\frac{X}{Z}$ et $y$ par $\frac{Y}{Z}$ et de multiplier par la puissance de $Z$ qu'il faut pour obtenir l'équation polynômiale en terme de $(X,Y,Z)$.
-
-Formalisons ce qu'est le point à l'infini, ainsi que ce qui vient d'être dit.
+\textbf{parle de $\mathbb{P}^2(\R)$}
 
 Posons 
 \[
@@ -319,8 +231,9 @@ Dans toute la suite, on identifira $E \cap U$ et le sous-ensemble de $\overline{
 \[
 E = \left\{ (x,y) \in \overline{K} \times \overline{K} \mid y^2=x^3+ax+b \right\} \cup \left\{ O \right\} 
 .\] 
+\textbf{les objets qui compose $\mathbb{P}^2(E)$}
 
-Ainsi, $E$ est la courbe affine d'équation \eqref{eq:ell1} à laquelle on adjoint le point à l'infini $O$. C'est pourquoi on définira souvent une courbe elliptique par sa partie affine, sans préciser le point $O$. Cela étant, il ne faudra pas perdre de vue l'importance du point à l'infini, comme on s'en rendra compte notamment dans la définition de la loi de groupe sur $E$ que l'on verra plus loin.
+Ainsi, $E$ est la courbe affine d'équation \eqref{eq:ell1} à laquelle on adjoint le point à l'infini $O$. C'est pourquoi on définira souvent une courbe elliptique par sa partie affine, sans préciser le point $O$.
 
 \begin{remarque}
     On retiendra qu'une courbe affine d'équation de la forme \eqref{eq:ell1} est une courbe
@@ -328,16 +241,7 @@ Ainsi, $E$ est la courbe affine d'équation \eqref{eq:ell1} à laquelle on adjoi
 \end{remarque}
 
 \section{Points rationnels d'une courbe elliptique}
-Comme on va le voir par la suite par la construction d'une loi de composition interne sur l'ensemble des
-courbes elliptique, dans un premier temps, et par la construction de la loi de groupe
-sur les courbes elliptique, dans un second temps.
-
-Les points construits à l'aide de ces deux
-loi bien qu'au départ peuvent être des entiers deviennent, par construction trés vite des
-rationnels. C'est pourquoi, il est important de définir que ces points sont toujours des
-points de la courbe.
-
-\textbf{(détail un peu la suite en reprennant les explications de Mme Abdelatif)}
+\textbf{pas encore bien clair}
 
 Soit $L$ une extension de $K$ dans $\overline{K}$.
 
@@ -368,5 +272,4 @@ E = \left\{ (x,y) \in L \times L \mid y^2 = x^3+ax+b \right\} \cup \left\{ O \ri
 .\] 
 
 \begin{exemple}
-    mettre l'exemple avec la courbe et le corps fini pour les exemples des cryptosystèmes
 \end{exemple}
