@@ -1,8 +1,61 @@
 \chapter{Le plan projectif $\mathbb{P}^2(\overline{K})$}
 
-La définition formel du plan projectif $\mathbb{P}^2$, est la suivante :
+La définition que nous allons utilisé pour les courbes elliptiques étant dans le plan
+projectif.
 
-\begin{def}
+Introduisons brièvement, ce qu'est un espace projectif, ainsi que les objets dont nous aurons
+besoin à savoir des points et des droites.
+
+Intuitivement, un espace projectif permet de rendre homogène un espace vectoriel. On entend
+par là, de raisonner indépendammenent des proportionalités pour ne plus considérer que les
+directions. L'idée nous vient de la formalisation mathématique de la perspective. 
+L'espace projectif nous permet d'identifier des droites à des points. Ce qui rend possible
+le fait de raisonner en termes de coordonnées et de pouvoir effectuer des calculs formel.
+
+Dans un premier temps pour comprendre les concepts liées aux espaces projectif. Partons de la
+droite projective qui est un espace projectif de dimension 1.
+
+\begin{definition}
+    La droite projective sur $\overline{K}$, que l'on note $\mathbb{P}^1(\overline{K})$ ou
+    $\mathbb{P}^1$, est l'ensemble quotient
+    \[
+    \overline{K}^2 - \left\{ (0,0) \right\} / \sim
+    \] 
+    où $\sim$ est la relation d'équivalence telle que pour tous $\left( x,y \right) $ et
+    $\left( x',y'\right) $ non nuls de $\overline{K}^2$,
+
+    \[
+    \left( x,y \right) \sim \left( x',y' \right) \iff \exists \lambda \in
+    \overline{K}^{*} \quad \left( x',y' \right) = \lambda \left( x,y \right) 
+    .\] 
+    Pour tous $\left( x,y \right) $ non nuls dans $\overline{K}^2$, on note $\left[ x,y
+    \right] $ sa classe d'équivalence appelée coordonnées homogènes.
+\end{definition}
+
+Un point de la droite projective est donc définie par les droites vectorielles privée de
+l'origine.
+
+On a alors deux types de point, les points de la forme $\left[ x,1 \right] $ et ceux de
+la forme $\left[ x,0 \right] $.
+
+Pour le premier type, comme $y \neq 0$ on a naturellement $\lambda = \frac{1}{y}$. On
+obtient alors l'intersection de tous les droites vectorielles avec la droite affine $y=1$, ceux
+qui forme la droite sur $K$.
+
+Le deuxième type correspond à l'ensemble des droites affines parallèle à l'ordonné, de plus
+pour tous $x \neq 0$, on a $\lambda = \frac{1}{x}$, donc peut importe la valeur de $x$ les
+droites s'intersectent au point $[1,0]$.
+
+Intuivement, la droite projective sur $K$ est une droite affine sur $K$ complétée par un
+point, appelé point à l'infini que l'on note $\mathcal{O}$. Ainsi dans l'espace projectif deux droites parallèles s'intersectent en
+un point à l'infini. Quand on parle de droite à l'infini, on désigne par cette droite
+l'ensemble des points à l'infini.
+
+Le point à l'infini étant l'intersection des droites paralléles 
+% On obtient donc l'ensemble $\mathbb{P}^1 = K \cup \mathcal{O}$, avec $\mathcal{O} = \left[ 1,0 \right] $, le point à
+% l'infini. 
+
+\begin{definition}
     Le plan projectif sur $\overline{K}$, que l'on note $\mathbb{P}^2(\overline{K})$ ou
     $\mathbb{P}^2$, est l'ensemble quotient
     \[
@@ -15,22 +68,43 @@ La définition formel du plan projectif $\mathbb{P}^2$, est la suivante :
     \left( x,y,z \right) \sim \left( x',y',z' \right) \iff \exists \lambda \in
     \overline{K}^{*} \quad \left( x',y',z' \right) = \lambda \left( x,y,z \right) 
     .\] 
-\end{def}
+\end{definition}
 
-Il permet d'introduire la notion d'homogénéisation des équations de courbes algébrique. C'est
-un procéder qui à partir d'une courbe usuel du plan, qui admet une équation de la forme
-$P(x,y)=0$, où $P \in K[X,Y]$.
+Donnons également, la définition de la droite projective espace projectif de dimension 1,
+
+
+
+L'espace projectif permet de formaliser et généraliser à toute dimension la notion de
+droite à l'infini dans le plan projectif.
+
+Le plan projectif permet d'introduire la notion d'homogénéisation des équations de courbes algébrique.
+Ce procédé permet à partir de l'équation initial d'une courbe algébrique du plan usuel,
+admettant une équation de la forme $P(x,y)=0$ où $P \in K[X,Y]$, d'obtenir une équation d'une courbe qui
+est dans le plan projectif, et donc de prolonge la courbe initiale à la droite à
+l'infini. Autrement dit, on définit un plan affine en choisissant une droite projective
+quelconque associée à ce plan, qui est la droite à l'infini 
+
+Pour bien comprendre ce qu'est le plan projectif, parlons d'abord de la droite projective
+$\mathbb{P}^{1}$, qui est un espace projectif de dimension 1.
+
+Si $K$ est le corps des nombres réels, alors la droite projective réelle est obtenue en
+intersectant les droites vectorielles de $\R^2$ avec le cercle unité.
+
+On a donc l'ensemble des droites vectorielles de $\R^2$ qui sont de la forme $\left[ x,y
+\right] $ avec $y\neq 0$.
+
 
 Ceci permet d'obtenir à partir de l'équation initiale, une nouvelle équation qui prolonge la
 courbe initiale à la droite infini. C'est ce qui nous permet de construire un élément neutre
-pour notre loi de groupe bien défini.
+qui soit bien définie pour la loi du groupe.
 
-Pour se donner une idée des parties que compose le plan projectif raisonnons avec les réels.
+Pour se donner une idée des parties qui compose le plan projectif raisonnons avec les réels.
 
 Pour $K=\R$, par définition le plan projectif $\mathbb{P}^2(\R)$, est l'ensemble quotient de
 tous les vecteurs colinéaire de $\R^3$ privée de l'origine. Ainsi, pour tous vecteurs $(x,y,z)
 \in \mathbb{P}^2$, un représentant de classe est de la forme $\left( \lambda x, \lambda y,
 \lambda z \right) $, et on note $\left[ x,y,z \right] $ sa classe d'équivalence. 
+
 
 Ainsi, on a les points de la forme $\left[ x,y,0 \right] $ qui forme la droite à l'infini et
 les autres points peuvent tous être écrit de la forme $\left[ x,y,1 \right] $ et il forme le
@@ -66,10 +140,42 @@ projective.
 
 Si l'on pose 
 \[
-U = \left\{ [x,y,z] \in \mathbb{P}^2(\R) \mid z \neq 0 \right\} 
+U_0 = \left\{ [x,y,z] \in \mathbb{P}^2(\R) \mid z \neq 0 \right\} 
 ,\] 
 
-On a une bijection qui nous permet d'identifier
-parle de la bijection entre le plan euclidien et le plan affine
+on a l'application $\phi : U_0 \to \R^2$ définie par :
+\[
+\phi([x,y,z]) = \left( \frac{x}{z},\frac{y}{z} \right)
+.\] 
+C'est une bijection dont la réciproque est donnée par :
+\[
+\phi^{-1}(x,y) = [x,y,1]
+.\] 
 
-fait le point continue
+Le plan affine dans l'espace projectif est donc une représentation du plan euclidien $\R^2$.
+L'image suivante permet de comprendre ce que l'on obtient.
+
+Par suite, si $z=0$, on a deux choix qui s'offre à nous à savoir $x \neq 0$ ou $y \neq 0$. Pour
+fixer les idées prennons $y = 1$. Ainsi, un point de la droite projective est de la forme
+$\left[ x,1,0 \right] $ tel que P(x,1,0)=P(x,1). Ainsi, le point $[x,1,0]$ est sur la droite
+projective si et seulement si le point $(x,1)$ est sur la droite affine initial. 
+
+
+
+
+bijection 
+
+image
+
+droite à l'infini
+
+droite et point les cas
+
+presente une courbe la canonique
+
+parle du determinant et de son influence sur la courbe
+
+parle de la forme normal de W
+
+
+
