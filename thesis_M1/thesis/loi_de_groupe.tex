@@ -3,6 +3,38 @@
 
 Soit $E$ une courbe elliptique définie sur $K$. Pour toute extension $L$ de $K$ dans $\overline{K}$, on va munir $E(L)$ d'une structure naturelle de groupe abélien, d'élément neutre le point à l'infini.
 
+\section{Point de vue géométrique}
+
+\begin{proposition}
+    \label{prop:secTanGeo}
+    
+    Soient une cubique irréductible non singulière $E$ et une droite $L$ définies sur
+    $K$. Si la cubique $E$ a au moins deux points d'intersection (comptés avec leur
+    multiplicité) avec la droite $L$, alors le nombre de points d'intersection (comptés avec
+    leur multiplicité) entre $E$ et $L$ est exactement $3$.
+\end{proposition}
+
+\begin{demonstration}
+   En effet, comme $E$ est irréductible, nous savons grâce à la proposition \textbf{ref} que le
+   nombre de points à l'intersection de $E$ et $D$ est fini. Soit la droite $D : aX + bY + cZ =
+   0$ où nous supposons $c \neq 0$. Les points $P = (X,Y,Z)$ sont racines du polynôme $F(X,Y,-
+   \frac{aX+bY}{c})$ où $F$ est le polynôme homogène de degré 3 qui définit $E$. 
+
+   Notons :
+   \[
+   q(X,Y)=F(X,Y,- \frac{aX + bY}{c})
+   ,\] 
+   et soient $P=(x_{P},y_{P},z_{P})$ et $Q=(x_{Q},y_{Q},z_{Q})$ deux point, non nécéssairement
+   disctinct, à l'intersection
+   entre $E$ et $D$. Comme $q(x_{P},y_{P}) = q(x_{Q},y_{Q})=0$, on peut écrire : 
+   \[
+   q(X,Y)=v(X,Y)(y_{P}X-x_{P}Y)(y_{Q}X-x_{Q}Y)
+   ,\] 
+   où $v$ est un polynôme homogène de degré 1. Il n'a donc qu'une racine que nous noterons
+   $(x_{R},y_{R})$. Le point $R=(x_{R},y_{R},- \frac{ax_{R}+by_{Q}}{c})$ est alors le troisième
+   point de l'intersection entre $E$ et $D$.
+\end{demonstration}
+
 \section{Droites de $\mathbb{P}^2$}
 Le première objet dont l'on a besoin pour construire notre groupe et que le l'on va
 manipuler tout on l'on du processus est la droite projective.
@@ -10,17 +42,26 @@ manipuler tout on l'on du processus est la droite projective.
 \begin{definition}
     Une droite de $\mathbb{P}^2$ est une partie de $\mathbb{P}^2$ formée des points $[x,y,z]$ tels que 
     \[
-    ux+vy+wz=0
+    D :\ ux+vy+wz=0
     ,\] 
     où $u$, $v$ et $w$ sont des éléments non tous nuls de $\overline{K}$.
 \end{definition}
 
 \textbf{reformule moi ça avec tes propres mots}
+On parle alors de la droite d'équation $D$. Une droite d'équation $x = \lambda z$, où
+$\lambda \in \overline{K}^*$, est dite vertical. Une telle droite passe par le point $O =
+\left[ 0,1,0 \right] $.
+
+En fait toute droite passant par le point $O$ a une équation de la forme $ux+wz=0$. 
+
+Comme on l'a vu avec le lien
 % On parle alors de la droite d'équation $ux+vy+wz=0$. Une droite d'équation $x=\lambda z$, où $\lambda$ est dans $\overline{K}$, est dite verticale. Une telle droite passe par le point $O = [0,1,0]$. En fait, toute droite passant par $O$ a une équation de la forme $ux+wz=0$. On dit souvent que la droite d'équation $z=0$ est la droite à l'infini. En identifiant la partie de $\mathbb{P}^2$ formée des points $[x,y,z]$ tels que $z \neq 0$ avec $\overline{K}^2$, le plan projectif s'interprète
 % comme la reunion de $\overline{K}^2$ avec la droite à l'infini.
 
-\textbf{ce lemme garantit l'unicité et l'existence d'une droite qui passe par deux points
-de la courbe}
+La première question que l'on se pose alors est de savoir s'il existe une droite qui passe
+par deux points du plan projectif et si elle existe est-elle unique ?
+
+La réponse à cette question est donné par le lemme suivant:
 \begin{lemme}
     \label{lem:lemme2}
     
@@ -63,9 +104,15 @@ de la courbe}
 
 Le deuxième objet, dont l'on est amené à utilisé est la tangente.
 
+En effet, il est naturel de se demander se qu'il se passe lorsque deux points du plan
+projectif ne sont pas distinct.
+
+Ceci, nous permet de traité les cas où un point de la courbe possède une tangente à la courbe
+$E$, qui intersecte la courbe en un deuxième point ou qui est vertical à la courbe.
+
 Soit 
 \[
-y^2z = x^3 + axz^2 + bz^3
+E:\ y^2z = x^3 + axz^2 + bz^3
 ,\] l'équation de $E$, où $a,b \in K$.
 
 Notons
@@ -83,7 +130,12 @@ c'est-à-dire,
 F_{X} = - \left( 3X^2 + aZ^2 \right),\quad F_{Y} = 2YZ,\quad F_{Z} = Y^2 - \left( 2aXZ + 3bZ^2 \right)
 .\] 
 
-\textbf{comprend à quoi y sert ce lemme}
+La première question que l'on doit se poser est de savoir si en tout point de la courbe il
+existe une tangente à la courbe en ce point.
+
+Comme vu dans la définition \ref{def:geneEll}, la courbe doit être lisse et par conséquent en
+tout point de la courbe il existe une tangente à la courbe $E$. 
+
 \begin{lemme}
     \label{lem:lemme3}
     
@@ -135,6 +187,8 @@ Ce qui est absurde car $F$ est elliptique. D'après le lemme \ref{lem:lemme1}
    \end{itemize}
 \end{demonstration}
 
+Voici l'équation de la tangente en un point de la courbe.
+
 \begin{definition}
     Pour tout $P \in E$, la tangente à $E$ en $P$ est la droite d'équation
     \[
@@ -142,8 +196,10 @@ Ce qui est absurde car $F$ est elliptique. D'après le lemme \ref{lem:lemme1}
     .\] 
 \end{definition}
 
-\textbf{c'est le lemme qui nous permet de traiter les cas de la tangente en $E$ vertical et
-non vertical}
+Maintenant que l'on sait qu'en tout point de la courbe il existe une tangente en ce point,
+et que l'on connait l'équation de cette dernière. On est amener à étudier le comportement
+de la tangente à un point de la courbe dans le plan projectif. Ainsi, soit la
+tangente est vertical, soit elle intersecte la courbe en un nouveau point.
 
 \begin{lemme}
     \label{lem:lemme4}
@@ -183,11 +239,31 @@ non vertical}
 
 \section{Loi de composition des cordes-tangentes}
 
-Ainsi munie de la droite et de la tangente, on a tous les armes pour se confronter aux
-différentes situation.
+La proposition \ref{prop:secTangeo} nous permet de définir la loi de composition des
+cordes-tangentes :
+
+\begin{enumerate}
+    \item Si $P,Q \in E$, distinct, nous pouvons définir la droite $D = (PQ)$ la corde
+        à la courbe passant par $P$ et $Q$. Grâce à la proposition \ref{prop:secTanGeo} on sait
+        que cette corde prolongé à une droite intersect la courbe $E$ en un unique troisième
+        point qui appartient à $E \cap D$. Nous noterons ce troisième point $f(P,Q)$.
+    \item Si $P \in E$, et que $Q=P$, on peut définir la tangente $D = (PP)$ à $E$ au point
+        $P$. De nouveau, la proposition \ref{prop:secTangeo} nous garantie l'existence d'un
+        troisième point unique en comptant les multiplicités qui appartient à $E \cap D$. On
+        notera ce dernier $f(P,P)$.
+\end{enumerate}
+
+\begin{proposition}
+    Pour tous points $P_1,P_2,Q_1$ et $Q_2$ de $E(K)$, on a :
+    \[
+    f(f(P_1,P_2),f(Q_1,Q_2)) = f(f(P_1,Q_1),f(P_2,Q_2))
+    .\] 
+
+    Pour une démonstration de ce résultat, voir 
+\end{proposition}
 \[
 \begin{proposition}
-    \label{prop:proposition1}
+    \label{prop:secTanGeo}
     
     Soient $P$ et $Q$ des points de $E$. Soit $D$ la droite de $\mathbb{P}^2$ passant par $P$ et $Q$ si $P \neq Q$, ou bien la tangente à $E$ en $P$ si $P = Q$. On a
     \[
@@ -413,7 +489,15 @@ On obtient donc par le même raisonnement que (1-i) la formule annoncé.
     \end{description}
 \end{demonstration}
 
-\section{Loi de groupe sur $E$}
+On obtient alors une loi de composition interne sur $E$, appelée loi de composition des
+cordes-tangentes, $f\ :\ E\times E \to E$ qui à tout couple de point $(P,Q)$ de la courbe
+associe le point d'intersection de la corde ou tangente associé $f(P,Q) \in E$ défini
+dans la proposition \ref{prop:secTanGeo} 
+
+\begin{exemple}
+\end{exemple}
+
+\section{Loi de groupe}
 
 Considérons comme précédemment $a$ et $b$ des éléments de $K$ tels que $4a^3+27b^2\neq 0$ et $E$ la courbe elliptique définie sur $K$ d'équation
 \[
@@ -424,7 +508,8 @@ Notons $+$ la loi de composition interne sur $E$, définie pour tous $P$ et $Q$ 
     \label{eq:groupe}
     P+Q=f(f(P,Q),O)
 .\end{align}
-Géométriquement, $P+Q$ s'obtient à partir de $f(P,Q)$ par symétrie par rapport à l'axe des abscisses. Cette loi de composition est une loi de groupe sur  $E$.
+Géométriquement, $P+Q$ s'obtient à partir de $f(P,Q)$, qui est le point d'intersection de la
+droite $(PQ)$ à la courbe, par symétrie par rapport à l'axe des abscisses. Cette loi de composition est une loi de groupe sur  $E$.
 
 \begin{theoreme}
     \label{th:theoreme1}
@@ -471,9 +556,9 @@ Géométriquement, $P+Q$ s'obtient à partir de $f(P,Q)$ par symétrie par rappo
             \end{cases}
             .\] 
             On retrouve bien la formule \eqref{eq:add1}.
-        \item[2)] Supposons $x_P=x_Q$ et $P\neq Q$ c'est à dire $y_P\neqy_Q$.
+        \item[2)] Supposons $x_P=x_Q$ et $P\neq Q$ c'est à dire $y_P\neq y_Q$.
 
-            D'après la proposition \ref{prop:proposition1}  (1-i), on a $f(P,Q)=O$ donc $f(f(P,Q),O)=f(O,O)=O$. D'où la formule énoncé.
+            D'après la proposition \ref{prop:secTanGeo}  (1-i), on a $f(P,Q)=O$ donc $f(f(P,Q),O)=f(O,O)=O$. D'où la formule énoncé.
         \item[3)] Supposons $P=Q$ et $y_P\neq 0$, en prenant compte \eqref{eq:groupe} , \eqref{eq:interne2} et \eqref{eq:interne3} on obtient
             \[
             \begin{cases}
@@ -482,8 +567,34 @@ Géométriquement, $P+Q$ s'obtient à partir de $f(P,Q)$ par symétrie par rappo
             \end{cases}
             .\] 
             Ce qui permet de retrouver la formule \eqref{eq:add2}. 
-        \item[4)] Supposons $P=Q$ et $y_P=0$, d'après l'assertion (4-i) de la proposition \ref{prop:proposition1} , on a $f(P,P)=O$ d'où $2P=f(f(P,P),O)=f(O,O)=O$. 
+        \item[4)] Supposons $P=Q$ et $y_P=0$, d'après l'assertion (4-i) de la proposition \ref{prop:secTanGeo} , on a $f(P,P)=O$ d'où $2P=f(f(P,P),O)=f(O,O)=O$. 
         \item[5)] Pour l'opposer on cherche un point $M \in E$ tel que $P\neq M$ et $P,Q\neq O$ d'après le théorème énoncé assertion 2) on a donc $x_P = x_M$ et donc nécessairement $y_M=-y_P$ donc le point recherché est $M=\left( x_M,y_M \right) = \left( x_P,-y_P \right) =-P$. 
+    \end{description}
+\end{demonstration}
+
+\begin{remarque}
+    Pour ce qui est de l'associativité de la loi de groupe, il faudrait traiter chaque cas et
+    montrer que les formules sont bien associative. Ce qui long et fastidieux. Cependant,
+    l'avantage de notre loi étant qu'elle a une interpretation géométrique on
+    peut donner une preuve géométrique que notre loi de composition est bien une loi de
+    groupe sur $E$.
+\end{remarque}
+
+\begin{demonstration}[géométrique du théorème \ref{th:theoreme1}]
+    \begin{description}
+        \item[1)] La loi $+$ défini par $P+Q = f(f(P,Q),O)$ est bien interne. 
+
+            En effet, c'est
+   l'intersection d'une droite et la courbe, c'est à dire un point de la courbe.
+   \item[2)] La loi $+$ est associative (cite Fig).
+
+       En effet, si $P,Q$ et $R$ sont trois points de la courbe, on a:
+
+       \begin{align*}
+           f(P,(Q+R) &= f(P,f(f(Q,R),O)) \\
+           &= f(f(f(P,Q),Q),f(f(Q,R),O)) \text{ car } P = f(f(P,Q),Q)  \\
+           &= f(f(f(P,Q),O),f(f(Q,R),O)) \\
+       .\end{align*}
     \end{description}
 \end{demonstration}
 

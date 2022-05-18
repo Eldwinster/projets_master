@@ -1,12 +1,40 @@
-\chapter{Définitions générales}
-Dans tout ce qui suit, je vais prendre pour fil rouge le cours de Mr Alain Kraus \cite{KrausCE}. Dans cette optique, je vais essayer de completer ce cours,
-en y ajoutant soit des détails supplémentaires lors des différentes démonstration, soit
-en explicitant des concepts où je juge cela nécéssaire.
+\chapter{Définitions générales sur les courbes elliptiques}
 
 \section{Définition}
-Dans cette partie, je vais définir le contexte autour duquel la théorie est construite.
 
-Dans la totalité de ce qui suit la lettre $K$ désignera un corps de caractéristique $0$ ou un corps fini de caractéristique distincte de $2$ et $3$.
+La définition générale d'une courbe est la suivante
+\begin{definition}
+    Soit un corps $K$. Une courbe elliptique sur $K$ est une cubique, non singulière,
+    définie comme l'ensemble des solutions du plan projectif $\mathbb{P}_{2}(K)$ de
+    l'équation de Weierstrass homogène suivante:
+\[
+\label{eq:geneEll}
+E: Y^2Z+a_1XYZ+a_3YZ^2 = X^3 +a_2X^2Z+a_4XZ^2+a_6Z^3
+\] 
+avec $a_1,a_2,a_3,a_4$ et $a_6$ dans $K$.
+\end{definition}
+Le terme non singulière, signifie que la courbe est lisse. Ce qui signifie que si on écrit
+l'équation précédente sous la forme d'une équation homogène $F(X,Y,Z)=0$, alors les dérivées
+partielles de $F$ ne doivent pas s'annuler simultanément en un point de la courbe.
+
+Autrement dit, il n'existe pas de point $P = \left[ x_0,y_0,z_0 \right] \in \mathbb{P}^2$ tel
+que, en posant
+\[
+F(x,y,z) = y^2z+a_1xyz+a_3yz^2 - x^3-a_2x^2z-a_4xz^2-a_6Z^3
+,\] 
+on ait
+\[
+F(x,y,z)=\frac{\partial{F}}{\partial{x}} = \frac{\partial{F}}{\partial{y}} =
+\frac{\partial{F}}{\partial{z}} = 0
+.\] 
+En d'autre termes, on peut définir une unique tangente à la courbe au point $P$.
+
+On peut par changement linéaire de variable lorsque $\car(K) \neq 2,3$ se ramener à la forme
+simplifié de l'équation de Weierstrass que l'on utilise dans la définition suivante.
+
+C'est pourquoi, dans la totalité de ce qui suit la lettre $K$ désignera un corps de caractéristique $0$ ou un
+corps fini de caractéristique distincte de $2$ et $3$. Autrement dit, on peut voir $K$
+comme étant l'un des corps commutatif suivant $\Q,\ \R,\ \C$ ou $\mathbb{F}_{q}$.
 
 On désignera la clôture algébrique de $K$, choisi implicitement, par la notation $\overline{K}$.
 
@@ -23,39 +51,23 @@ On désignera la clôture algébrique de $K$, choisi implicitement, par la notat
     4a^3+27b^2\neq 0
     .\end{align}
 \end{definition}
-% \subsection{Le plan projectif $\mathbb{P}^2(\overline{K})$}
-D'aprés la définition ci-dessus, une courbe elliptique est un objet de la géométrie projective,
-que l'on représente dans le plan projectif.
 
- D'abord donnons la définition de ce qu'est le plan projectif $\mathbb{P}^2$,
-\begin{definition}
-    Le plan projectif $\mathbb{P}^2(\overline{K})$ est l'ensemble quotient
-    \[
-    \overline{K}^3 - \left\{ (0,0,0) \right\} / \sim
-    \] 
-    où $\sim$ est la relation d'équivalence qui pour tous $(x_1,y_1,z_1)$ et
-    $(x_2,y_2,z_2)$, non nuls de $\overline{K}^3$ on a
-    \[
-        (x_1,y_1,z_1) \sim (x_2,y_2,z_2) \iff \exists \lambda \in \overline{K},\
-        (x_2,y_2,z_2)=\lambda(x_1,y_1,z_1)
-    .\] 
-    Pour tous $(x,y,z) \in \overline{K}^3$, non nul, on notera alors $\left[ x,y,z \right] $ sa
-    classe d'équivalence.
-\end{definition}
+Comme par définition, c'est une courbe sur le plan projectif, on dispose du polynôme homogène
+de degré $3$, $F(X,Y,Z)$ dans l'anneau de polynôme $K[X,Y,Z]$. Étant données $ a,b \in K$. 
 
-\textbf{Parle des coordonnées homogène et droite projective}
-\textbf{Signe de delta}
-\textbf{Point de rebroussement}
-\textbf{homogénéité entre $f$ et $F$ des solutions}
-
-Donnons nous $a$ et $b$ des éléments de $K$. Dans l'anneau des polynômes $K\left[ X,Y,Z \right] $, posons 
+Posons 
 \[
 F=Y^2Z-\left( X^3+aXZ^2+bZ^3 \right) 
 .\] 
 
-Comme $F$ est un polynôme homogène de degré $3$. Grâce à au plan projectif. Si $(x,y,z)$ est
-un élément non nul de $\overline{K}^3$, la condition $F(x,y,z) = 0$, ne dépend que de sa classe
-dans $\mathbb{P}^2(\overline{K})$.
+Comme $F$ est homogène de degré $3$. Par la définition \eqref{def:courbe}, on a donc
+$E$ la courbe sur le plan projectif $\mathbb{P}_{2}$ qui est l'ensemble des solutions de l'équation
+polynômiale
+\[
+E: \quad F(X,Y,Z) = 0
+,\] 
+Si $\left( x,y,z \right) $ est un éléments non nul de $\overline{K}^3$, cette condition
+ne dépend que de sa classe dans $\mathbb{P}_{2}(\overline{K})$.
 
 Soit $P = \left[ x,y,z \right] $ un point de $\mathbb{P}^2(\overline{K})$. On
 dit que $P$ est un zéro de $F$ dans $\overline{K}$, ou plus simplement un zéro de $F$, si
@@ -69,25 +81,40 @@ f = X^3 + aX + b
 \] 
 sont simples.
 
-\textbf{lemme pour eviter les courbes non lisse}
-
+Le lemme suivant nous garanti que la courbe est lisse.
 \begin{lemme}
     \label{lem:lemme1}
-    Soit $\Delta= -(4a^3 + 27b^2)$ le discriminant $f = x^3 + ax + b$. 
-    Les racines de $f$ sont simples, si et seulement si $\Delta \neq 0$.
+    Le discriminant de $f$ est $\Delta = -(4a^3 + 27b^2)$. En particulier, les racines de $f$ sont simples, si et seulement si $\Delta \neq 0$.
 \end{lemme}
+
+Pour demontrer ce lemme, on utilise la proposition suivante:
+\begin{proposition}
+    \label{prop:discriminant}
+    Soit $g$ un polynôme unitaire à coefficients dans $K$ de degré $n \ge 1$. Soient
+    $\alpha_1,\ldots,\alpha_{n}$ ses racines dans $\overline{K}$ comptées avec
+    multiplicités. Le discriminant $\Delta$ de $g$ est défini par l'égalité
+    \[
+    \Delta = \prod_{i<j}^{} \left( \alpha_{i} - \alpha_{j} \right) ^2 
+    .\] 
+    C'est un élément de $K$.
+\end{proposition}
 
 \begin{demonstration}
     Montrons tout d'abord que le discriminant de $f$ est $\Delta= -(4a^3 + 27b^2)$.
 
     Soit $\Delta$ le discriminant de $f$. Soient $\alpha, \beta, \gamma $ les racines de $f$ dans $\overline{K}$ et $f'$ le polynôme dérivé de $f$.
 
-    Tout d'abord montrons que :
+    À l'aide de la proposition \ref{prop:discriminant},on veut montrer que le discriminant est de la forme
+    suivante: 
     \begin{align*}
         \Delta &= (-1) ( \alpha - \beta )^2 ( \alpha - \gamma )^2 ( \beta - \gamma )^2 \\
           &= - f(\alpha)'f(\beta )'f(\gamma)'
     .\end{align*}
-    D'après le théorème de d'Alembert on peut écrire $f$ sous la forme :
+
+    Vérifions que c'est bien le cas.
+
+    D'aprés le théorème d'Alembert-Gauss comme $f \in \overline{K}$, on dispose de la
+    forme scindé de $f$.
     \[
         f = \left( X - \alpha \right) \left( X - \beta \right) \left( X - \gamma \right) 
     .\] 
@@ -155,7 +182,7 @@ Donc d'après les relations entre coefficients et racine (i.e relation de Viète
 \[
 \alpha \beta \gamma = - \frac{d}{a}
 .\] 
-Donc pour $f$ on a $a = 1$, $b = 0$, $c = a$ et $d = b$.
+Ici dans $f$ on a $a = 1$, $b = 0$, $c = a$ et $d = b$.
 
 D'où,
 \[
@@ -173,7 +200,12 @@ Donc le discriminant vaut :
         &= - \left( 4a^3 + 27b^2  \right)
 .\end{align*}
 
-Maintenant, supposons que $\Delta = 0$. On a alors :
+Montrons maitenant que les racines de $f$ sont simple, si et seulement si, $\Delta \neq 0$
+
+Raisonnons par contraposition et montrons que les racine de $f$ sont multiples, si et
+seulement si, $\Delta = 0$. 
+
+Supposons que $\Delta = 0$. On a alors :
  \begin{align*}
      - \left( 4a^3 + 27^2 \right) = 0 &\iff - f(\alpha)' f(\beta )' f(\gamma)' = 0 \\
                                       & \iff \left( f(\alpha)' = 0 \right) \ou \left( f(\beta )' = 0 \right) \ou \left( f(\gamma)' = 0 \right) \\
@@ -182,6 +214,13 @@ Maintenant, supposons que $\Delta = 0$. On a alors :
 
 D'où le résultat.
 \end{demonstration}
+
+    On dit que la courbe elliptique d'équation \ref{eq:ell} est définie sur $K$ pour préciser
+    que $a$ et $b$ sont dans $K$. Ceci pour $a$ et $b$ vérifiant la condition
+    \eqref{eq:delta}  
+
+\begin{remarque}
+\end{remarque}
 
 \section{Partie affine et point à l'infini}
 
@@ -248,23 +287,38 @@ Soit $L$ une extension de $K$ dans $\overline{K}$.
 \begin{definition}
     Soit $P=\left[ x,y,z \right] $ un point de $\mathbb{P}^2$. On dit que $P$ est rationnel sur $L$ s'il existe $\lambda \in \overline{K}^{*}$ tel que $\lambda x$, $\lambda y$ et $\lambda z$ soient dans $L$. On note $\mathbb{P}^2(L)$ l'ensemble des points de $\mathbb{P}^2$ rationnels sur $L$.
 
-    Cela justifie la notation $\mathbb{P}^2 = \mathbb{P}^2(\overline{K})$.
 \end{definition}
+
+D'aprés la définition, un point non nul $P$ est dans $\mathbb{P}_{2}(L)$, si sa classe est dans $L$. Autrement
+dit, 
+\[
+\mathbb{P}_{2}(L)=\left\{ P \in \overline{K}^{3} \mid \exists \lambda \in \overline{K}^{*}, P =
+\lambda P\right\} 
+.\] 
+
+Cela justifie la notation $\mathbb{P}^2 = \mathbb{P}^2(\overline{K})$.
 
 \begin{remarque}
     Étant donné un point $[x_1,x_2,x_3] \in \mathbb{P}^2$, le fait qu'il soit rationnel sur $L$ n'implique pas que les $x_{i}$ soient dans $L$. Cela signifie qu'il existe $i$ tel que $x_{i}$ soit non nul, et que chaque $\frac{x_{j}}{x_{i}}$ appartienne à $L$.
+
+    En effet, soit un point $P \in \mathbb{P}_{2}$ non nul. Si $P \in \mathbb{P}_{2}(L)$,
+    comme il est non nul, il existe $x \neq 0$, et pour $\lambda = x$, on a $P =
+    [1,\frac{y}{x},\frac{z}{x}]$ et on a bien $\frac{y}{x},\frac{z}{x} \in L$ et pourtant ce
+    sont des variables indéterminées de $\overline{K}$.
 \end{remarque}
 
 Soit $E$ une courbe elliptique définie sur $K$ d'équation \eqref{eq:ell}.
 
 \begin{definition}
     Un point de $E$ est dit rationnel sur $L$ s'il appartient à $E \cap \mathbb{P}^2(L)$. On note $E(L)$ l'ensemble des points de $E$ rationnels sur $L$.
-
-    Par définition, on a donc
-    \[
-    E = E(\overline{K})
-    .\] 
 \end{definition}
+
+
+
+Par définition, on a donc
+\[
+E = E(\overline{K})
+.\] 
 
 Le point $O = [0,1,0]$ appartient à $E(K)$. Soit $(x,y) \in \overline{K}^2$ un point de la partie affine de $E$. Par définition, il est rationnel sur $L$ si et seulement si $x$ et $y$ sont dans $L$. Il en résulte que l'on a 
 \[
@@ -272,4 +326,42 @@ E = \left\{ (x,y) \in L \times L \mid y^2 = x^3+ax+b \right\} \cup \left\{ O \ri
 .\] 
 
 \begin{exemple}
+    Soit la courbe $E$ définie sur $\mathbb{F}_{5}$ d'équation
+    \[
+    y^2 =x^3+x+1
+    .\] 
+
+    Cette courbe vérifie bien la condition \eqref{eq:delta}.
+    
+    En effet, on a $\Delta = -(4 \times 1^3 + 27 \times 1) = -31$.
+
+    L'ensemble des points de la courbe est le suivant:
+    \[
+    E(\mathbb{F}_{5})= \left\{ (0,1),(0,4),(2,1),(2,4),(3,1),(3,4),(4,2),(4,3) \right\} \cup
+    \left\{ \mathcal{O} \right\} 
+    .\] 
+    En effet, comme la courbe est symétrique, il nous suffit de vérifier que pour tous les
+    valeurs de $x$ dans $\mathbb{F}_{5}$, lesquelles sont un carré dans $\mathbb{F}_{5}$.
+
+    Par exemple, pour $x=0$, on a $y^2=0^3+0+1$ donc $y = \pm 1$, ce qui nous donne
+    les points d'abiscisse $x=0$ et d'ordonnées $y=\pm 1$ dans $\mathbb{F}_{5}$, par
+    conséquent les points $(0,1)$ et $(0,4)$ vérifient l'équation $f(x,y) = 0$ et sont
+    donc des points de la courbe.
+
+    Maintenant si $x=1$, l'équation de la courbe nous donne $y^2=1^3+1+1=3$ donc il faut
+    chercher si dans $\mathbb{F}_{5}$, s'il existe un carré modulo $5$ égal à 3. Ce qui n'est
+    pas le cas. En effet, dans $\mathbb{F}_{5}$ les éléments sont $\left\{
+    \overline{0},\overline{1},\overline{2},\overline{3},\overline{4} \right\} $ et on a
+    succecssivement dans $\mathbb{F}_{5}$
+    \begin{align*}
+        y^2 &=0^2=0 \\
+        y^2 &= 1^2 = \pm 1 \\
+        y^2 &= 2^2=4=-1 \\
+        y^2 &= 3^2=9=-1 \\
+        y^2 &= 4^2=16=1 \\
+    .\end{align*}
+    Ainsi, il n'existe pas $y \in \mathbb{F}_{5}$ qui vérifient l'équation de la
+    courbe. Donc la courbe $E$ ne possède pas de point de d'abscisse $x=1$.
+
+    À voir si je mets $\mathbb{F}_{25}$ je crois j'ai pigé faut que je vérifie ça ce midi
 \end{exemple}
