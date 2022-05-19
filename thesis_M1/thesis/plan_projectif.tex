@@ -9,7 +9,7 @@ besoin à savoir le plan, des points et des droites.
 Intuitivement, un espace projectif permet de rendre homogène un espace vectoriel. On entend
 par là, de raisonner indépendammenent des proportionalités pour ne plus considérer que les
 directions. L'idée nous vient de la formalisation mathématique de la perspective. 
-L'espace projectif nous permet d'identifier des droites à des points.
+% L'espace projectif nous permet d'identifier des droites à des points.
 
 \section{Le plan projectif et les courbes sur le plan projectif}
 
@@ -18,8 +18,8 @@ Dans un premier temps, voici la définition du plan projectif.
 \begin{definition}
     \label{def:planP2}
     
-    Le plan projectif sur $\overline{K}$, que l'on note $\mathbb{P}^2(\overline{K})$ ou
-    $\mathbb{P}^2$, est l'ensemble quotient
+    Le plan projectif sur $\overline{K}$, que l'on note $\mathbb{P}_{2}(\overline{K})$ ou
+    $\mathbb{P}_{2}$, est l'ensemble quotient
     \[
     \overline{K}^3 - \left\{ (0,0,0) \right\} / \sim
     \] 
@@ -49,25 +49,29 @@ y, \lambda z) = 0$ pour tout $\lambda$ non nul.
     F(\lambda X, \lambda Y, \lambda Z) = \lambda^{d}F(X,Y,Z)
     .\end{align}
     Ces polynôme sont une somme de monômes de la forme $\sum_{i+j+k=d} X^{i}Y^{j}Z^{k}$
-    et vérifie l'égalité \eqref{eq:PolyHomo}.
+    et vérifie l'égalité \eqref{eq:polyHomo}.
 \end{definition}
 
 On peut maintenant énoncé la définition d'une courbe sur le plan projectif.
 
 \begin{definition}
     \label{def:courbeP2}
-    Une courbe $E$ sur le plan projectif $\mathbb{P}^2$ est l'ensemble des solutions d'une
+    Une courbe $E$ sur le plan projectif $\mathbb{P}_{2}$ est l'ensemble des solutions d'une
     équation polynomiale 
     \[
     E : \quad F(X,Y,Z)=0
     ,\] 
     où $F$ est un polynôme homogène de degré supérieur ou égal à 1. Le degré de la courbe
-    est le degré de ce polynôme.
+    est le degré de ce polynôme. On a alors 
+    \[
+    E = \left\{ (x,y,z) \in \mathbb{P}_{2} \mid F(X,Y,Z)=0 \right\} 
+    .\] 
 \end{definition}
+
 
 Un point $P = [x,y,z] \in E$, s'il vérifie que $F(x,y,z)=0$ ne dépend que de sa classe
 d'équivalence. En effet si on choisit un autre
-représentant de classe de ce point dans le plan projectif $\mathbb{P}^2$, par exemple pour
+représentant de classe de ce point dans le plan projectif $\mathbb{P}_{2}$, par exemple pour
 $P'=\lambda P$, on a
 \[
 F(P')=F(\lambda x, \lambda y, \lambda z) = \lambda^{d}F(x,y,z) = 0
@@ -77,10 +81,10 @@ Tous les représentant de classe d'un point de la courbe sont des zéro du polyn
 \begin{definition}
     \label{def:cubique}
     
-    Une courbe $D \in \mathbb{P}^2$ définie par un polynôme homogène de degré 1 est appelée
+    Une courbe $D \in \mathbb{P}_{2}$ définie par un polynôme homogène de degré 1 est appelée
     une droite.
 
-    Une courbe $E \in \mathbb{P}^2$ définie par un polynôme homogène de degré $3$ est appelée
+    Une courbe $E \in \mathbb{P}_{2}$ définie par un polynôme homogène de degré $3$ est appelée
     une cubique.
 \end{definition}
 
@@ -98,7 +102,7 @@ E : F(X,Y,Z)=0
 
 Posons 
 \[
-U = \left\{ [x,y,z] \in \mathbb{P}^2(\overline{K}) \mid z \neq 0 \right\} 
+U = \left\{ [x,y,z] \in \mathbb{P}_{2}(\overline{K}) \mid z \neq 0 \right\} 
 .\] 
 
 On dispose de l'application $\phi : U \to \mathbb{A}_{2}(\overline{K})$ définie par
@@ -145,6 +149,12 @@ l'équation $f(x,y) = 0$, avec $f$ définie par
     \label{eq:bijectionP2}
     f(x,y) = F(x,y,1)
 .\end{align}
+
+
+On note $\mathbb{P}_{1} = \left\{ (x,y,0) \in \mathbb{P}_{2} \mid F(x,y,0) = 0 \right\} $
+l'ensemble des points à l'infini.
+
+Dans ce cas, on a :
 \[
 \mathbb{P}_{2} \approx \mathbb{A}_{2} \cap \mathbb{P}_{1}
 .\] 
@@ -152,7 +162,7 @@ l'équation $f(x,y) = 0$, avec $f$ définie par
 
 \begin{remarque}
     En ce qui concerne les courbes elliptique nous verrons que seul un point de la courbe
-    appartient à $\mathbb{P}_{1}$. Nous le noterons $\mathcal{O}$.
+    appartient à $\mathbb{P}_{1}$.
 \end{remarque}
 
 \section{Courbes irréductibles}
@@ -167,7 +177,7 @@ l'équation $f(x,y) = 0$, avec $f$ définie par
 
     Un polynôme est irréductible lorsqu'il n'est pas factorisable.
 
-    Un polynôme peut être factorisé en un produit de polynômes irréductibles. 
+    On peut factorisé un polynôme en un produit de polynômes irréductibles. 
 
     Si $F
     \in K[X,Y,Z]$ est un polynôme, il existe $P_1,\ldots,P_{n} \in K[X,Y,Z]$ des polynômes
@@ -221,7 +231,7 @@ composantes irréductibles sont distinctes.
     comme $F_1(X,Y,Z) = 0$, il vient 
     \begin{align*}
         F_2(X,Y,Z)F_3(X,Y,Z) = 0 & \iff \left( F_2(X,Y,Z)=0 \right)  \ou \left( F_3(X,Y,Z) = 0 \right)  \\
-                                 & \iff \exists P \in \mathbb{P}^2,\ P \in D \cup C = E 
+                                 & \iff \exists P \in \mathbb{P}_{2},\ P \in D \cup C = E 
     .\end{align*}
     Donc $D$ est contenu dans $E$. Comme il existe une infinité de droite, il existe une
     infinité de point intersection de la courbe et de la droite.
@@ -312,16 +322,16 @@ composantes irréductibles sont distinctes.
 %     La droite projective sur $\overline{K}$, que l'on note $\mathbb{P}^1(\overline{K})$ ou
 %     $\mathbb{P}^1$, est l'ensemble quotient
 %     \[
-%     \overline{K}^2 - \left\{ (0,0) \right\} / \sim
+%     \overline{K}_{2} - \left\{ (0,0) \right\} / \sim
 %     \] 
 %     où $\sim$ est la relation d'équivalence telle que pour tous $\left( x,y \right) $ et
-%     $\left( x',y'\right) $ non nuls de $\overline{K}^2$,
+%     $\left( x',y'\right) $ non nuls de $\overline{K}_{2}$,
 
 %     \[
 %     \left( x,y \right) \sim \left( x',y' \right) \iff \exists \lambda \in
 %     \overline{K}^{*} \quad \left( x',y' \right) = \lambda \left( x,y \right) 
 %     .\] 
-%     Pour tous $\left( x,y \right) $ non nuls dans $\overline{K}^2$, on note $\left[ x,y
+%     Pour tous $\left( x,y \right) $ non nuls dans $\overline{K}_{2}$, on note $\left[ x,y
 %     \right] $ sa classe d'équivalence appelée coordonnées homogènes.
 % \end{definition}
 
@@ -379,9 +389,9 @@ composantes irréductibles sont distinctes.
 
 % Pour se donner une idée des parties qui compose le plan projectif raisonnons avec les réels.
 
-% Pour $K=\R$, par définition le plan projectif $\mathbb{P}^2(\R)$, est l'ensemble quotient de
+% Pour $K=\R$, par définition le plan projectif $\mathbb{P}_{2}(\R)$, est l'ensemble quotient de
 % tous les vecteurs colinéaire de $\R^3$ privée de l'origine. Ainsi, pour tous vecteurs $(x,y,z)
-% \in \mathbb{P}^2$, un représentant de classe est de la forme $\left( \lambda x, \lambda y,
+% \in \mathbb{P}_{2}$, un représentant de classe est de la forme $\left( \lambda x, \lambda y,
 % \lambda z \right) $, et on note $\left[ x,y,z \right] $ sa classe d'équivalence. 
 
 
@@ -400,7 +410,7 @@ composantes irréductibles sont distinctes.
 
 % On a alors qu'un point du plan projectif de coordonées homogène $\left[ x,y,z \right] $ est sur
 % la droite projective si et seulement si $P(x,y,z) = 0$. Autrement dit, les zéros du polynôme
-% homogène sont les points du plan affine dans $\mathbb{P}^2$ et ceci indépendament du choix des
+% homogène sont les points du plan affine dans $\mathbb{P}_{2}$ et ceci indépendament du choix des
 % coordonnées homogènes. 
 
 % En effet, comme $\left[ x,y,z \right] = \left\{ (x,y,z) \in
@@ -419,7 +429,7 @@ composantes irréductibles sont distinctes.
 
 % Si l'on pose 
 % \[
-% U_0 = \left\{ [x,y,z] \in \mathbb{P}^2(\R) \mid z \neq 0 \right\} 
+% U_0 = \left\{ [x,y,z] \in \mathbb{P}_{2}(\R) \mid z \neq 0 \right\} 
 % ,\] 
 
 % on a l'application $\phi : U_0 \to \R^2$ définie par :

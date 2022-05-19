@@ -8,13 +8,15 @@ La définition générale d'une courbe est la suivante
     multiplicatif. Une courbe elliptique sur $K$ est une cubique, non singulière,
     définie comme l'ensemble des solutions du plan projectif $\mathbb{P}_{2}(\overline{K})$ de
     l'équation de Weierstrass homogène suivante:
-\[
+
+\begin{align}
 \label{eq:geneEll}
 E: Y^2Z+a_1XYZ+a_3YZ^2 = X^3 +a_2X^2Z+a_4XZ^2+a_6Z^3
-\] 
+,\end{align}
+
 avec $a_1,a_2,a_3,a_4$ et $a_6$ dans $K$.
 \end{definition}
-Le terme non singulière, signifie que la courbe est lisse. Ce qui signifie que si on écrit
+Le terme non singulière, signifie que la courbe est lisse. Ce qui veut dire que si on écrit
 l'équation précédente sous la forme d'une équation homogène $F(X,Y,Z)=0$, alors les dérivées
 partielles de $F$ ne doivent pas s'annuler simultanément en un point de la courbe.
 
@@ -29,7 +31,9 @@ F(x_0,y_0,z_0)=\frac{\partial{F}}{\partial{x}}(x_0,y_0,z_0) =
 \frac{\partial{F}}{\partial{y}}(x_0,y_0,z_0) =
 \frac{\partial{F}}{\partial{z}}(x_0,y_0,z_0) = 0
 .\] 
-En d'autre termes, on peut définir une unique tangente à la courbe au point $P$.
+% En d'autre termes, on peut définir une unique tangente à la courbe au point $P$.
+
+\textbf{METS LA PARTIE SUR LES POINTS RATIONNEL ICI RELIT LE LIVRE D'HIER SOIR}
 
 Dans une courbe elliptique la droite à l'infini ne contient qu'un seul élément, on le nomme
 point à l'infini et on le note $\mathcal{O}$.
@@ -49,10 +53,10 @@ vertical avec la courbe elliptique.
 Par la suite nous utiliserons la plupart du temps la représentation affine de
 l'équation de Weierstrass:
 
-\begin{align*}
+\begin{align}
     \label{eq:geneAff}
 E : y^2 + a_1xy + a_3 = x^3 +a_2x^2+a_4x+a_6
-,\end{align*}
+.\end{align}
 avec les $a_{i} \in K$. 
 
 Pour $Z \neq 0$, un point $[x,y,z] \in \mathbb{P}_{2}$ solution de l'équation
@@ -62,6 +66,14 @@ l'équation \eqref{eq:geneAff} avec $(x,y)=(\frac{X}{Z},\frac{Y}{Z})$.
 L'ensemble des solutions de l'équation \eqref{eq:geneEll} correspond à l'union entre les
 solutions de l'équation \eqref{eq:geneAff} et du point $\mathcal{O}$.
 
+Ce qui revient à écrire que
+
+\begin{align*}
+    E &= \left\{ (x,y,z) \in \overline{K}^2 \times \overline{K}^{*} \mid F(x,y,z) = 0 \right\}  \cup
+{\mathcal{O}} \\
+&= \left\{ (x,y) \in \overline{K}^2 \mid f(x,y) = 0 \right\} \cup {\mathcal{O}}
+.\end{align*}
+
 On peut, par un double changement linéaire de variable, obtenir l'équation courte de Weierstrass
 pour des corps de caractéristique différents de 2 et 3.
 
@@ -70,14 +82,14 @@ d'obtenir un polynôme de la forme
 \[
 E' :\quad Y^2 = X^3 + k_1X^2 + k_2X + k_3
 ,\] 
-où les $k_{i}$ sont des constantes divisé par des multiples de deux.
+où les $k_{i}$ sont des constantes divisés par un multiples de deux.
 
 Ensuite, en effectuant un changement de variable pour $x$, on se ramène au polynôme qui nous
 intéresse à savoir 
-\begin{align*}
+\begin{align}
     \label{eq:geneWei}
 E'' :\quad Y^2 = X^3 + k_1X + k_2
-.\end{align*}
+.\end{align}
 où les $k_{i}$ cette fois-ci sont divisés par des multiples de 2 et 3.
 
 On peut ainsi, démontrer que $K$ étant de caractéristique distincte de 2 et 3, une courbe
@@ -114,8 +126,8 @@ On dit que la courbe elliptique d'équation \ref{eq:ell} est définie sur $K$ po
 que $a$ et $b$ sont dans $K$. Ceci pour $a$ et $b$ vérifiant la condition
 \eqref{eq:delta}  
 
-Une courbe elliptique $E$ définie sur $K$ est donc une courbe du plan projectif d'équation
-\eqref{eq:ell}.
+% Une courbe elliptique $E$ définie sur $K$ est donc une courbe du plan projectif d'équation
+% \eqref{eq:ell}.
 
 On a donc le polynôme $F(X,Y,Z)$ dans l'anneau de polynôme $K[X,Y,Z]$ associé à la courbe et
 $E$ est défini par l'ensemble des solutions de l'équation 
@@ -126,6 +138,8 @@ E:\quad F(X,Y,Z) = Y^2Z-X^3+aXZ^3+bZ^2 = 0
 Les points du plan projectif qui satisfont cette équation sont appellé l'ensemble des zéros
 de $F$ dans $\overline{K}$, ou plus simplement zéro de $F$. Cet ensemble est ce que l'on
 entend par courbe projective plane d'équation \eqref{eq:ell}. 
+
+\textbf{METS LA PARTIE AFFINE ICI EN PRECISANT E COMME PLUS HAUT MAIS AVEC L'ÉQUATION}
 
 Comme on vient de le voir, il est possible de se ramener à l'étude
 des solution de l'équation
@@ -271,40 +285,40 @@ Supposons que $\Delta = 0$. On a alors :
 D'où le résultat.
 \end{demonstration}
 
-\section{Partie affine et point à l'infini}
+% \section{Partie affine et point à l'infini}
 
-Dans cette section nous définissons explicitement ce que nous avons pu décrire au préalable
-dans la section \ref{defGene} 
+% Dans cette section nous définissons explicitement ce que nous avons pu décrire au préalable
+% dans la section \ref{defGene} 
 
-Considérons des éléments $a$ et $b$ de $K$ tels que $4a^3+27b^2 \neq 0$. Soit $E$ la courbe
-elliptique d'équation homogène
-\[
-E :\quad y^2z=x^3+axz^2+bz^3
-.\] 
+% Considérons des éléments $a$ et $b$ de $K$ tels que $4a^3+27b^2 \neq 0$. Soit $E$ la courbe
+% elliptique d'équation homogène
+% \[
+% E :\quad y^2z=x^3+axz^2+bz^3
+% .\] 
 
-Soit $U = \left\{ [x,y,z] \in \mathbb{P}_{2} \mid z \neq 0 \right\} $. On a vu qu'a l'aide
-d'une application $\phi$, on obtient une bijection entre le plan affine et l'ensemble $U$.
+% Soit $U = \left\{ [x,y,z] \in \mathbb{P}_{2} \mid z \neq 0 \right\} $. On a vu qu'a l'aide
+% d'une application $\phi$, on obtient une bijection entre le plan affine et l'ensemble $U$.
 
-Par ailleurs, $E \cap U$ s'identifie via $\phi$ à l'ensemble des éléments $(x,y)$ de $\overline{K}^2$ vérifiant l'égalité
+% Par ailleurs, $E \cap U$ s'identifie via $\phi$ à l'ensemble des éléments $(x,y)$ de $\overline{K}^2$ vérifiant l'égalité
 
-\begin{align}
-    \label{eq:ell1}
-y^2 = x^3 + ax + b
-.\end{align}
+% \begin{align}
+%     \label{eq:ell1}
+% y^2 = x^3 + ax + b
+% .\end{align}
 
-On dira que $E \cap U$ est la partie affine de $E$ et que $O$ est le point à la l'infini de $E$.
+% On dira que $E \cap U$ est la partie affine de $E$ et que $O$ est le point à la l'infini de $E$.
 
-Dans toute la suite, on identifira $E \cap U$ et le sous-ensemble de $\overline{K}^2$ formé des éléments $(x,y)$ vérifiant \eqref{eq:ell1}. Avec cette identification, on a 
-\[
-E = \left\{ (x,y) \in \overline{K} \times \overline{K} \mid y^2=x^3+ax+b \right\} \cup \left\{ O \right\} 
-.\] 
+% Dans toute la suite, on identifira $E \cap U$ et le sous-ensemble de $\overline{K}^2$ formé des éléments $(x,y)$ vérifiant \eqref{eq:ell1}. Avec cette identification, on a 
+% \[
+% E = \left\{ (x,y) \in \overline{K} \times \overline{K} \mid y^2=x^3+ax+b \right\} \cup \left\{ O \right\} 
+% .\] 
 
-Ainsi, $E$ est la courbe affine d'équation \eqref{eq:ell1} à laquelle on adjoint le point à l'infini $O$. C'est pourquoi on définira souvent une courbe elliptique par sa partie affine, sans préciser le point $O$.
+% Ainsi, $E$ est la courbe affine d'équation \eqref{eq:ell1} à laquelle on adjoint le point à l'infini $O$. C'est pourquoi on définira souvent une courbe elliptique par sa partie affine, sans préciser le point $O$.
 
-\begin{remarque}
-    On retiendra qu'une courbe affine d'équation de la forme \eqref{eq:ell1} est une courbe
-    elliptique si et seulement si, par définition, la condition \eqref{eq:delta} est satisfaite.
-\end{remarque}
+% \begin{remarque}
+%     On retiendra qu'une courbe affine d'équation de la forme \eqref{eq:ell1} est une courbe
+%     elliptique si et seulement si, par définition, la condition \eqref{eq:delta} est satisfaite.
+% \end{remarque}
 
 
 
@@ -339,12 +353,11 @@ Ainsi, $E$ est la courbe affine d'équation \eqref{eq:ell1} à laquelle on adjoi
 
 
 
-\begin{remarque}
-\end{remarque}
+% \begin{remarque}
+% \end{remarque}
 
 
 \section{Points rationnels d'une courbe elliptique}
-\textbf{pas encore bien clair}
 
 Soit $L$ une extension de $K$ dans $\overline{K}$.
 
@@ -353,7 +366,7 @@ Soit $L$ une extension de $K$ dans $\overline{K}$.
 
 \end{definition}
 
-D'aprés la définition, un point non nul $P$ est dans $\mathbb{P}_{2}(L)$, si sa classe est dans $L$. Autrement
+D'aprés la définition ci-dessus, un point non nul $P$ est dans $\mathbb{P}_{2}(L)$, si sa classe est dans $L$. Autrement
 dit, 
 \[
 \mathbb{P}_{2}(L)=\left\{ P \in \overline{K}^{3} \mid \exists \lambda \in \overline{K}^{*}, P =
