@@ -67,6 +67,25 @@
 %         Ainsi Alice et Bob on pu se construire de façon public une clé secret commun qui est l'entier $g^{ab}$.
 % \end{description}
 
+
+\subsection{Protocol Diffie-Hellman}
+
+Alice et Bob souhaite s'échanger publiquement une clé secrète commune. Pour cela ils se mettent d'accord pour la construire selon le procédé suivant:
+
+\begin{description}
+    \item[1)] Ils choisissent un corps fini $K$ et une courbe elliptique $E$ définie sur $K$, pour que le problème du logaritme discret soit difficile à résoudre dans le groupe $E(K)$. Ils choisissent un point $P \in E(K)$. Ils rendent alors publique le triplet $(K,E,P)$.
+
+    \item[2)] Alice choisit un entier naturel secret non nun $a$ et calcul le point $P_a=aP$, qu'elle transmet publiquement à Bob.
+
+    \item[3)] Bob procède de la même façon en choisissant un entier naturel secret, non nul, $b$, et il calcul de son côté le point $P_b=bP$, qu'il transmet publiquement à Alice.
+
+    \item[4)] Alice calcul le point $aP_b=a(bP)$.
+
+    \item[5)] Bob calcul le point $bP_a=b(aP)$.
+\end{description}
+
+Ils ont ainsi construit leur clé secret commun qui est le point $abP$.
+
 \subsection{Algorithme d'El Gamal}
 
 Alice souhaite envoyer un message chiffré à Bob. Pour se faire elle choisit un corps fini $K$, une courbe elliptique $E$ définie sur $K$ de sorte que le problème du logarithme discret soit difficile à résoudre dans le groupe $E(K)$. Elle choisit ensuite un point $P \in E(K)$. Enfin elle choisit sont entier naturel secret, non nul, $s$ et calcul et calcul le point $A=sP$.
@@ -93,20 +112,3 @@ Ce qui lui permet grâce au calcul suivant de retrouver $M$:
 M_2-sM_1=M+kA-s(kP)=M+k(sP)-s(kP)=M+skP-skP=M
 .\] 
 
-\subsection{Protocol Diffie-Hellman}
-
-Alice et Bob souhaite s'échanger publiquement une clé secrète commune. Pour cela ils se mettent d'accord pour la construire selon le procédé suivant:
-
-\begin{description}
-    \item[1)] Ils choisissent un corps fini $K$ et une courbe elliptique $E$ définie sur $K$, pour que le problème du logaritme discret soit difficile à résoudre dans le groupe $E(K)$. Ils choisissent un point $P \in E(K)$. Ils rendent alors publique le triplet $(K,E,P)$.
-
-    \item[2)] Alice choisit un entier naturel secret non nun $a$ et calcul le point $P_a=aP$, qu'elle transmet publiquement à Bob.
-
-    \item[3)] Bob procède de la même façon en choisissant un entier naturel secret, non nul, $b$, et il calcul de son côté le point $P_b=bP$, qu'il transmet publiquement à Alice.
-
-    \item[4)] Alice calcul le point $aP_b=a(bP)$.
-
-    \item[5)] Bob calcul le point $bP_a=b(aP)$.
-\end{description}
-
-Ils ont ainsi construit leur clé secret commun qui est le point $abP$.

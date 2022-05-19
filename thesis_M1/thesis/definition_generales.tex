@@ -1,11 +1,12 @@
 \chapter{Définitions générales sur les courbes elliptiques}
 
-\section{Définition}
+\section{Définition générale}
 
 La définition générale d'une courbe est la suivante
 \begin{definition}
-    Soit un corps $K$. Une courbe elliptique sur $K$ est une cubique, non singulière,
-    définie comme l'ensemble des solutions du plan projectif $\mathbb{P}_{2}(K)$ de
+    Soient $K$ un corps, $\overline{K}$ sa cloture algébrique, et $K^{*}$ son groupe
+    multiplicatif. Une courbe elliptique sur $K$ est une cubique, non singulière,
+    définie comme l'ensemble des solutions du plan projectif $\mathbb{P}_{2}(\overline{K})$ de
     l'équation de Weierstrass homogène suivante:
 \[
 \label{eq:geneEll}
@@ -24,19 +25,76 @@ F(x,y,z) = y^2z+a_1xyz+a_3yz^2 - x^3-a_2x^2z-a_4xz^2-a_6Z^3
 ,\] 
 on ait
 \[
-F(x,y,z)=\frac{\partial{F}}{\partial{x}} = \frac{\partial{F}}{\partial{y}} =
-\frac{\partial{F}}{\partial{z}} = 0
+F(x_0,y_0,z_0)=\frac{\partial{F}}{\partial{x}}(x_0,y_0,z_0) =
+\frac{\partial{F}}{\partial{y}}(x_0,y_0,z_0) =
+\frac{\partial{F}}{\partial{z}}(x_0,y_0,z_0) = 0
 .\] 
 En d'autre termes, on peut définir une unique tangente à la courbe au point $P$.
 
-On peut par changement linéaire de variable lorsque $\car(K) \neq 2,3$ se ramener à la forme
-simplifié de l'équation de Weierstrass que l'on utilise dans la définition suivante.
+Dans une courbe elliptique la droite à l'infini ne contient qu'un seul élément, on le nomme
+point à l'infini et on le note $\mathcal{O}$.
+
+En effet, on constate
+que si $z = 0$ et $y \neq 0$, en considérant un point $P=[x,y,0]$, tous ses représentant de
+classe sont de la forme $P'=[\frac{x}{y},1,0]$, sans rentrer dans les détails, quand $y$ tend
+vers l'infini on obtient le point $[0,1,0]$ qui n'est autre que l'intersection des droites du
+plan affine et la droite à l'infini. Par exemple dans le plan projectif réels la droite à
+l'infini est un cercle. Dans notre cas, on peut faire l'analogie avec la technique de
+la perspective en dessin, où on à un point à l'horizon, où tous les droites fuyante ce rejoignent. Ainsi,
+dans notre cas les droites fuyantes sont les droites verticales (i.e. parallèle à l'ordonnée) et le
+point à l'horizon notre point à l'infini. Ainsi, l'élément neutre de notre groupe sera le point
+$\mathcal{O} = [0,1,0]$ qui n'est autre que le point d'intersection des droites
+vertical avec la courbe elliptique.
+
+Par la suite nous utiliserons la plupart du temps la représentation affine de
+l'équation de Weierstrass:
+
+\begin{align*}
+    \label{eq:geneAff}
+E : y^2 + a_1xy + a_3 = x^3 +a_2x^2+a_4x+a_6
+,\end{align*}
+avec les $a_{i} \in K$. 
+
+Pour $Z \neq 0$, un point $[x,y,z] \in \mathbb{P}_{2}$ solution de l'équation
+\eqref{eq:geneEll} correspond à un point $(x,y) \in \overline{K}^2$ solution de
+l'équation \eqref{eq:geneAff} avec $(x,y)=(\frac{X}{Z},\frac{Y}{Z})$.
+
+L'ensemble des solutions de l'équation \eqref{eq:geneEll} correspond à l'union entre les
+solutions de l'équation \eqref{eq:geneAff} et du point $\mathcal{O}$.
+
+On peut, par un double changement linéaire de variable, obtenir l'équation courte de Weierstrass
+pour des corps de caractéristique différents de 2 et 3.
+
+En effet, l'idée est d'effectuer un changement pour la variable $y$ qui nous permet
+d'obtenir un polynôme de la forme
+\[
+E' :\quad Y^2 = X^3 + k_1X^2 + k_2X + k_3
+,\] 
+où les $k_{i}$ sont des constantes divisé par des multiples de deux.
+
+Ensuite, en effectuant un changement de variable pour $x$, on se ramène au polynôme qui nous
+intéresse à savoir 
+\begin{align*}
+    \label{eq:geneWei}
+E'' :\quad Y^2 = X^3 + k_1X + k_2
+.\end{align*}
+où les $k_{i}$ cette fois-ci sont divisés par des multiples de 2 et 3.
+
+On peut ainsi, démontrer que $K$ étant de caractéristique distincte de 2 et 3, une courbe
+lisse d'équation \eqref{eq:geneEll} est "isomorphe sur $K$" à une courbe de la forme
+\eqref{eq:geneWei} pour laquelle le discriminant du polynôme homogène
+associé soit non nul. 
+
+\section{Définition appliqué à la cryptographie}
 
 C'est pourquoi, dans la totalité de ce qui suit la lettre $K$ désignera un corps de caractéristique $0$ ou un
 corps fini de caractéristique distincte de $2$ et $3$. Autrement dit, on peut voir $K$
 comme étant l'un des corps commutatif suivant $\Q,\ \R,\ \C$ ou $\mathbb{F}_{q}$.
 
-On désignera la clôture algébrique de $K$, choisi implicitement, par la notation $\overline{K}$.
+% On désignera la clôture algébrique de $K$, choisi implicitement, par la notation $\overline{K}$.
+
+On va plutôt se servir de la définition suivante qui est celle qui nous intéresse en
+vue de construire le groupe des courbes elliptiques appliqué à la cryptographie.
 
 \begin{definition}
     \label{def:ell}
@@ -52,42 +110,40 @@ On désignera la clôture algébrique de $K$, choisi implicitement, par la notat
     .\end{align}
 \end{definition}
 
-Comme par définition, c'est une courbe sur le plan projectif, on dispose du polynôme homogène
-de degré $3$, $F(X,Y,Z)$ dans l'anneau de polynôme $K[X,Y,Z]$. Étant données $ a,b \in K$. 
+On dit que la courbe elliptique d'équation \ref{eq:ell} est définie sur $K$ pour préciser
+que $a$ et $b$ sont dans $K$. Ceci pour $a$ et $b$ vérifiant la condition
+\eqref{eq:delta}  
 
-Posons 
+Une courbe elliptique $E$ définie sur $K$ est donc une courbe du plan projectif d'équation
+\eqref{eq:ell}.
+
+On a donc le polynôme $F(X,Y,Z)$ dans l'anneau de polynôme $K[X,Y,Z]$ associé à la courbe et
+$E$ est défini par l'ensemble des solutions de l'équation 
 \[
-F=Y^2Z-\left( X^3+aXZ^2+bZ^3 \right) 
+E:\quad F(X,Y,Z) = Y^2Z-X^3+aXZ^3+bZ^2 = 0
 .\] 
 
-Comme $F$ est homogène de degré $3$. Par la définition \eqref{def:courbe}, on a donc
-$E$ la courbe sur le plan projectif $\mathbb{P}_{2}$ qui est l'ensemble des solutions de l'équation
-polynômiale
+Les points du plan projectif qui satisfont cette équation sont appellé l'ensemble des zéros
+de $F$ dans $\overline{K}$, ou plus simplement zéro de $F$. Cet ensemble est ce que l'on
+entend par courbe projective plane d'équation \eqref{eq:ell}. 
+
+Comme on vient de le voir, il est possible de se ramener à l'étude
+des solution de l'équation
+polynômial $f(x,y) = 0$ dans le plan affine. Ainsi la condition \eqref{eq:delta}
+signifie que les racines dans $\overline{K}$ du polynôme
 \[
-E: \quad F(X,Y,Z) = 0
+f(x,y) = Y^2 - X^3 + aX + b
 ,\] 
-Si $\left( x,y,z \right) $ est un éléments non nul de $\overline{K}^3$, cette condition
-ne dépend que de sa classe dans $\mathbb{P}_{2}(\overline{K})$.
-
-Soit $P = \left[ x,y,z \right] $ un point de $\mathbb{P}^2(\overline{K})$. On
-dit que $P$ est un zéro de $F$ dans $\overline{K}$, ou plus simplement un zéro de $F$, si
-l'on a $F(x,y,z)=0$. On signifie par, courbe projective plane d'équation \eqref{eq:ell},
-l'ensemble des zéros de $F$ dans $\overline{K}$.
-
-Quant à la condition \eqref{eq:delta}, elle signifie que les racines dans $\overline{K}$ du
-polynôme
-\[
-f = X^3 + aX + b
-\] 
 sont simples.
 
-Le lemme suivant nous garanti que la courbe est lisse.
+et le lemme suivant nous fourni un critère simple pour obtenir une courbe lisse
+
 \begin{lemme}
     \label{lem:lemme1}
     Le discriminant de $f$ est $\Delta = -(4a^3 + 27b^2)$. En particulier, les racines de $f$ sont simples, si et seulement si $\Delta \neq 0$.
 \end{lemme}
 
-Pour demontrer ce lemme, on utilise la proposition suivante:
+Pour demontrer ce lemme, on utilise la proposition que nous admettrons, qui est la suivante:
 \begin{proposition}
     \label{prop:discriminant}
     Soit $g$ un polynôme unitaire à coefficients dans $K$ de degré $n \ge 1$. Soient
@@ -99,7 +155,7 @@ Pour demontrer ce lemme, on utilise la proposition suivante:
     C'est un élément de $K$.
 \end{proposition}
 
-\begin{demonstration}
+\begin{demonstration}[Lemme]
     Montrons tout d'abord que le discriminant de $f$ est $\Delta= -(4a^3 + 27b^2)$.
 
     Soit $\Delta$ le discriminant de $f$. Soient $\alpha, \beta, \gamma $ les racines de $f$ dans $\overline{K}$ et $f'$ le polynôme dérivé de $f$.
@@ -215,47 +271,19 @@ Supposons que $\Delta = 0$. On a alors :
 D'où le résultat.
 \end{demonstration}
 
-    On dit que la courbe elliptique d'équation \ref{eq:ell} est définie sur $K$ pour préciser
-    que $a$ et $b$ sont dans $K$. Ceci pour $a$ et $b$ vérifiant la condition
-    \eqref{eq:delta}  
-
-\begin{remarque}
-\end{remarque}
-
 \section{Partie affine et point à l'infini}
 
-\textbf{parle de $\mathbb{P}^2(\R)$}
+Dans cette section nous définissons explicitement ce que nous avons pu décrire au préalable
+dans la section \ref{defGene} 
 
-Posons 
+Considérons des éléments $a$ et $b$ de $K$ tels que $4a^3+27b^2 \neq 0$. Soit $E$ la courbe
+elliptique d'équation homogène
 \[
-U = \left\{ [x,y,z] \in \mathbb{P}^2(\overline{K}) \mid z \neq 0 \right\} 
+E :\quad y^2z=x^3+axz^2+bz^3
 .\] 
 
-On dispose de l'application $\phi : U \to \overline{K}^2$ définie par
-\[
-\phi([x,y,z])=\left( \frac{x}{z},\frac{y}{z} \right) 
-.\] 
-
-C'est une bijection, dont l'application réciproque est donnée par la formule
-\[
-\phi^{-1}(x,y)=\left[ x,y,1 \right] 
-.\] 
-
-Considérons des éléments $a$ et $b$ de $K$ tels que $4a^3+27b^2 \neq 0$. Soit $E$ la courbe elliptique définie sur $K$ d'équation 
-\[
-y^2z=x^3+axz^2+bz^3
-.\] 
-
-L'ensemble des points $[x,y,z] \in E$ tels que $z=0$ est réduit au singleton $\left\{ O \right\} $ où
-\[
-O = [0,1,0]
-.\] 
-
-En effet, dans l'équation \eqref{eq:ell}, il vient
-\[
-y^2\times 0 = x^3 + ax \times 0^2 + b \times 0^3
-,\] 
-donc $x=0$, ainsi on peut prendre pour représentant de classe de cet élément la classe de $O$.
+Soit $U = \left\{ [x,y,z] \in \mathbb{P}_{2} \mid z \neq 0 \right\} $. On a vu qu'a l'aide
+d'une application $\phi$, on obtient une bijection entre le plan affine et l'ensemble $U$.
 
 Par ailleurs, $E \cap U$ s'identifie via $\phi$ à l'ensemble des éléments $(x,y)$ de $\overline{K}^2$ vérifiant l'égalité
 
@@ -270,7 +298,6 @@ Dans toute la suite, on identifira $E \cap U$ et le sous-ensemble de $\overline{
 \[
 E = \left\{ (x,y) \in \overline{K} \times \overline{K} \mid y^2=x^3+ax+b \right\} \cup \left\{ O \right\} 
 .\] 
-\textbf{les objets qui compose $\mathbb{P}^2(E)$}
 
 Ainsi, $E$ est la courbe affine d'équation \eqref{eq:ell1} à laquelle on adjoint le point à l'infini $O$. C'est pourquoi on définira souvent une courbe elliptique par sa partie affine, sans préciser le point $O$.
 
@@ -278,6 +305,43 @@ Ainsi, $E$ est la courbe affine d'équation \eqref{eq:ell1} à laquelle on adjoi
     On retiendra qu'une courbe affine d'équation de la forme \eqref{eq:ell1} est une courbe
     elliptique si et seulement si, par définition, la condition \eqref{eq:delta} est satisfaite.
 \end{remarque}
+
+
+
+% Comme par définition, c'est une courbe sur le plan projectif, on dispose du polynôme homogène
+% de degré $3$, $F(X,Y,Z)$ dans l'anneau de polynôme $K[X,Y,Z]$. Étant données $ a,b \in K$. 
+
+% Posons 
+% \[
+% F=Y^2Z-\left( X^3+aXZ^2+bZ^3 \right) 
+% .\] 
+
+% Comme $F$ est homogène de degré $3$. Par la définition \eqref{def:courbe}, on a donc
+% $E$ la courbe sur le plan projectif $\mathbb{P}_{2}$ qui est l'ensemble des solutions de l'équation
+% polynômiale
+% \[
+% E: \quad F(X,Y,Z) = 0
+% ,\] 
+% Si $\left( x,y,z \right) $ est un éléments non nul de $\overline{K}^3$, cette condition
+% ne dépend que de sa classe dans $\mathbb{P}_{2}(\overline{K})$.
+
+% Soit $P = \left[ x,y,z \right] $ un point de $\mathbb{P}^2(\overline{K})$. On
+% dit que $P$ est un zéro de $F$ dans $\overline{K}$, ou plus simplement un zéro de $F$, si
+% l'on a $F(x,y,z)=0$. On signifie par, courbe projective plane d'équation \eqref{eq:ell},
+% l'ensemble des zéros de $F$ dans $\overline{K}$.
+
+% Quant à la condition \eqref{eq:delta}, elle signifie que les racines dans $\overline{K}$ du
+% polynôme
+% \[
+% f = X^3 + aX + b
+% \] 
+% sont simples.
+
+
+
+\begin{remarque}
+\end{remarque}
+
 
 \section{Points rationnels d'une courbe elliptique}
 \textbf{pas encore bien clair}
@@ -312,7 +376,6 @@ Soit $E$ une courbe elliptique définie sur $K$ d'équation \eqref{eq:ell}.
 \begin{definition}
     Un point de $E$ est dit rationnel sur $L$ s'il appartient à $E \cap \mathbb{P}^2(L)$. On note $E(L)$ l'ensemble des points de $E$ rationnels sur $L$.
 \end{definition}
-
 
 
 Par définition, on a donc

@@ -24,8 +24,8 @@ Soit $E$ une courbe elliptique définie sur $K$. Pour toute extension $L$ de $K$
    \[
    q(X,Y)=F(X,Y,- \frac{aX + bY}{c})
    ,\] 
-   et soient $P=(x_{P},y_{P},z_{P})$ et $Q=(x_{Q},y_{Q},z_{Q})$ deux point, non nécéssairement
-   disctinct, à l'intersection
+   et soient $P=(x_{P},y_{P},z_{P})$ et $Q=(x_{Q},y_{Q},z_{Q})$ deux point, non nécessairement
+   distinct, à l'intersection
    entre $E$ et $D$. Comme $q(x_{P},y_{P}) = q(x_{Q},y_{Q})=0$, on peut écrire : 
    \[
    q(X,Y)=v(X,Y)(y_{P}X-x_{P}Y)(y_{Q}X-x_{Q}Y)
@@ -56,7 +56,7 @@ En fait toute droite passant par le point $O$ a une équation de la forme $ux+wz
 
 Comme on l'a vu avec le lien
 % On parle alors de la droite d'équation $ux+vy+wz=0$. Une droite d'équation $x=\lambda z$, où $\lambda$ est dans $\overline{K}$, est dite verticale. Une telle droite passe par le point $O = [0,1,0]$. En fait, toute droite passant par $O$ a une équation de la forme $ux+wz=0$. On dit souvent que la droite d'équation $z=0$ est la droite à l'infini. En identifiant la partie de $\mathbb{P}^2$ formée des points $[x,y,z]$ tels que $z \neq 0$ avec $\overline{K}^2$, le plan projectif s'interprète
-% comme la reunion de $\overline{K}^2$ avec la droite à l'infini.
+% comme la réunion de $\overline{K}^2$ avec la droite à l'infini.
 
 La première question que l'on se pose alors est de savoir s'il existe une droite qui passe
 par deux points du plan projectif et si elle existe est-elle unique ?
@@ -74,7 +74,7 @@ La réponse à cette question est donné par le lemme suivant:
 
     % Énoncé originel : 
 
-    Soient $P = \left[ a_1, a_2, a_3 \right]$ et $Q = \left[ b_1, b_2, b_3 \right]$ deux points distincs de $\mathbb{P}^2$. Il existe une unique droite de $\mathbb{P}^2$ passant par $P$ et $Q$. C'est l'ensemble des points $\left[ x, y, z \right] \in \mathbb{P}^2$ tels que le déterminant de la matrice
+    Soient $P = \left[ a_1, a_2, a_3 \right]$ et $Q = \left[ b_1, b_2, b_3 \right]$ deux points distinct de $\mathbb{P}^2$. Il existe une unique droite de $\mathbb{P}^2$ passant par $P$ et $Q$. C'est l'ensemble des points $\left[ x, y, z \right] \in \mathbb{P}^2$ tels que le déterminant de la matrice
     \[
         M = 
     \begin{pmatrix}
@@ -146,7 +146,7 @@ tout point de la courbe il existe une tangente à la courbe $E$.
 \end{lemme}
 
 \begin{demonstration}
-   Supposons par l'absurde, qu'il existe un tel point $P \in E$. Remarquons que $F_{Z}(O) = 1 \neq 0 = F_{Z}(P)$ donc par hypothèse $P$ est disctinct de $O$.
+   Supposons par l'absurde, qu'il existe un tel point $P \in E$. Remarquons que $F_{Z}(O) = 1 \neq 0 = F_{Z}(P)$ donc par hypothèse $P$ est distinct de $O$.
 
    Pour fixer les idées posons $P = [x,y,1]$.
 
@@ -239,19 +239,34 @@ tangente est vertical, soit elle intersecte la courbe en un nouveau point.
 
 \section{Loi de composition des cordes-tangentes}
 
-La proposition \ref{prop:secTangeo} nous permet de définir la loi de composition des
+% \subsection{Point de vue géométrique}
+
+
+La proposition \ref{prop:secTanGeo} nous permet de définir la loi de composition des
 cordes-tangentes :
 
 \begin{enumerate}
     \item Si $P,Q \in E$, distinct, nous pouvons définir la droite $D = (PQ)$ la corde
         à la courbe passant par $P$ et $Q$. Grâce à la proposition \ref{prop:secTanGeo} on sait
-        que cette corde prolongé à une droite intersect la courbe $E$ en un unique troisième
+        que cette corde prolongé à une droite intersecte la courbe $E$ en un unique troisième
         point qui appartient à $E \cap D$. Nous noterons ce troisième point $f(P,Q)$.
     \item Si $P \in E$, et que $Q=P$, on peut définir la tangente $D = (PP)$ à $E$ au point
-        $P$. De nouveau, la proposition \ref{prop:secTangeo} nous garantie l'existence d'un
+        $P$. De nouveau, la proposition \ref{prop:secTanGeo} nous garantie l'existence d'un
         troisième point unique en comptant les multiplicités qui appartient à $E \cap D$. On
         notera ce dernier $f(P,P)$.
 \end{enumerate}
+
+On peut remarquer que sur la Figure , une droite verticale coupant la courbe $E$ ne semble
+pas la couper en un troisième point. Ceci est lié à la difficulté de représenter le plan
+projectif $\mathbb{P}_{2}$ sur un plan. Ce troisième point existe, et appartient à la droite infini
+$\mathbb{P}_{1}$. Pour une courbe elliptique il correspond au $\mathcal{O}$.
+
+\begin{remarque}
+    Le meilleur moyen de considérer $\mathbb{P}_{1}$ est de se représenter ses éléments comme
+    l'ensemble des directions possibles des droites du plan affine. Dans le cas particulier
+    des courbes elliptiques, on a vu que $P_{1}$ se limite à un seul élément, que l'on a noté
+    $\mathcal{O}$, qui correspond à la direction des droites verticales.
+\end{remarque}
 
 \begin{proposition}
     Pour tous points $P_1,P_2,Q_1$ et $Q_2$ de $E(K)$, on a :
@@ -261,7 +276,8 @@ cordes-tangentes :
 
     Pour une démonstration de ce résultat, voir 
 \end{proposition}
-\[
+
+% \subsection{Point de vue algébrique}
 \begin{proposition}
     \label{prop:secTanGeo}
     
@@ -499,6 +515,75 @@ dans la proposition \ref{prop:secTanGeo}
 
 \section{Loi de groupe}
 
+% \subsection{Point de vue géométrique}
+
+\begin{theoreme}
+    Soit un corps $K$. Soit $E$ une courbe elliptique définie sur $K$. Soient $P$ et $Q$ deux
+    points de cette courbe. Alors, 
+
+    \[
+    P + Q = f(f(P,Q),\mathcal{O})
+    ,\] 
+    définit une structure de groupe commutatif ayant $\mathcal{O}$ pour élément neutre
+    de la loi.
+\end{theoreme}
+
+\begin{demonstration}
+    \begin{enumerate}
+        \item La loi $+$ est bien interne puisque $P + Q$ est l'intersection entre la courbe et
+            une droite, c'est à dire un point de la courbe.
+
+        \item La loi $+$ est associative (voir Figure). En effet, si $P,Q$ et $R$ sont trois
+            point de la courbe, on a
+
+            \begin{align*}
+            f(P,f(Q+R)) &= f(P,f(f(Q,R),\mathcal{O})) \\
+            &= f(f(f(P,Q),Q),f(f(Q,R),\mathcal{O})) \text{ car } P = f(f(P,Q),Q) \\
+            &= f(f(f(P,Q),\mathcal{O}),f(f(Q,R),Q)) \text{ voir la proposition \ref{prop:} } \\
+            &= f(f(f(P,Q),\mathcal{O}),R) \text{ voir la Figure \ref{} } \\
+            &= f(f(P+Q),R)
+            .\end{align*}
+
+            En appliquant $\mathcal{O}$ sur les deux membres de l'égalité, on trouve
+
+            \[
+            P + (Q+R) = (P+Q) + R
+            .\] 
+
+        \item L'élément $\mathcal{O}$ est l'élément neutre de la loi additive (voir Figure
+            \ref{}). 
+
+            En effet,
+
+            \[
+            P + \mathcal{O} = f(f(P,O)O) = P \quad \text{et} \quad \mathcal{O}+P =
+            f(f(\mathcal{O},P),\mathcal{O}) = P
+            .\] 
+
+        \item Tout point $P$ possède un inverse pour la loi $+$. En effet, il faut vérifier que
+            le point $-P= f(f(\mathcal{O},\mathcal{O}),P)$ est bien l'inverse de $P$ 
+
+            \begin{align*}
+                P + (-P) &= f(f(P,-P),\mathcal{O}) \\
+                &= f(f(f(P,f(f(\mathcal{O},\mathcal{O}),P),\mathcal{O}))) =
+                f(f(\mathcal{O},\mathcal{O}),\mathcal{O}) =
+                \mathcal{O}+\mathcal{O}=\mathcal{O}  \\
+                (-P) + P &= f(f(-P,P),\mathcal{O}) \\
+                &= f(f(f(f(\mathcal{O},\mathcal{O}),P),P),\mathcal{O}) =
+                f(\mathcal{O},f(\mathcal{O},\mathcal{O})) + \mathcal{O}+\mathcal{O}=
+                \mathcal{O} \\
+            .\end{align*}
+
+        \item Enfin la loi $+$ est commutative. C'est à dire que si $P$ et $Q$ sont deux
+            points de la courbe, on a
+
+            \[
+            P + Q = f(f(P,Q),\mathcal{O}) = f(f(Q,P),\mathcal{O}) = Q + P
+            .\] 
+    \end{enumerate}    
+\end{demonstration}
+
+
 Considérons comme précédemment $a$ et $b$ des éléments de $K$ tels que $4a^3+27b^2\neq 0$ et $E$ la courbe elliptique définie sur $K$ d'équation
 \[
 y^2=x^3+ax+b
@@ -574,29 +659,8 @@ droite $(PQ)$ à la courbe, par symétrie par rapport à l'axe des abscisses. Ce
 
 \begin{remarque}
     Pour ce qui est de l'associativité de la loi de groupe, il faudrait traiter chaque cas et
-    montrer que les formules sont bien associative. Ce qui long et fastidieux. Cependant,
-    l'avantage de notre loi étant qu'elle a une interpretation géométrique on
-    peut donner une preuve géométrique que notre loi de composition est bien une loi de
-    groupe sur $E$.
+    montrer que les formules sont bien associative. Ce qui long et fastidieux. 
 \end{remarque}
-
-\begin{demonstration}[géométrique du théorème \ref{th:theoreme1}]
-    \begin{description}
-        \item[1)] La loi $+$ défini par $P+Q = f(f(P,Q),O)$ est bien interne. 
-
-            En effet, c'est
-   l'intersection d'une droite et la courbe, c'est à dire un point de la courbe.
-   \item[2)] La loi $+$ est associative (cite Fig).
-
-       En effet, si $P,Q$ et $R$ sont trois points de la courbe, on a:
-
-       \begin{align*}
-           f(P,(Q+R) &= f(P,f(f(Q,R),O)) \\
-           &= f(f(f(P,Q),Q),f(f(Q,R),O)) \text{ car } P = f(f(P,Q),Q)  \\
-           &= f(f(f(P,Q),O),f(f(Q,R),O)) \\
-       .\end{align*}
-    \end{description}
-\end{demonstration}
 
 \begin{exemple}
     mettre exemple de calcul de $2P$ pour la suite

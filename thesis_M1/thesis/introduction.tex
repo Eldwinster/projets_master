@@ -1,22 +1,4 @@
 \chapter{Introduction}
-% le cryptosystème RSA, inventé par Ronald \textbf{R}ivet, Adi
-% \textbf{S}hamir et Leonard \textbf{A}dleman en 1977
-
-% \textbf{plan}
-% \begin{itemize}
-%     \item De quoi je veux parler ?
-
-%         Du groupe des courbes elliptique et application, plan?,
-%     \item Pourquoi je veux en parler ?
-
-%         intéret, Ordi quantique, algo, enjeux.
-%     \item intro crypto
-
-%         sym/asym. RSA, El, DH
-%     \item histoire elliptique? (très bref)
-%     \item retire context dans la partie crypto
-%     \item
-% \end{itemize}
 
 Dans ce mémoire, je vais m'intéresser au groupe des courbes elliptiques et son application dans le
 domaine de la cryptographie.
@@ -37,7 +19,7 @@ la guerre.
 d'étymologie d'origine grec. On peut le traduire par le fait de cacher ce qui est écrit.
 
 On peut donc en conclure que c'est l'intention de transmettre un message de façon secret.
-Autrement dit, on souhaiterai transmettre par écrit un message dont seul le déstinataire
+Autrement dit, on souhaiterai transmettre par écrit un message dont seul le destinataire
 et l'expéditeur connaisse la signification du dit "message secret". 
 
 On comprend donc tout l'importance de la cryptographie et son rôle important avec la
@@ -47,7 +29,7 @@ Un première exemple bien connu de cryptographie est appelé le chiffrement de C
 \textbf{date et attribution}
 
 Cette méthode consiste à
-prendre les lettres de l'aphabet et d'éffectuer une transposition $n \in \N$, on peut
+prendre les lettres de l'alphabet et d'effectuer une transposition $n \in \N$, on peut
 ainsi définir sur $\Z / 26\Z$ une bijection entre les lettres de l'alphabet et ce groupe.
 L'entier $n$ est alors ce que l'on appelle la clé secrète, qui va permettre à la fois de
 chiffrer et de déchiffrer un éventuel message.
@@ -62,9 +44,9 @@ notre $n$ cette fois ci varie dans $\Z / 26\Z$ selon les lettres qui compose not
 
 C'est deux exemples ne sont plus sûr. En effet, bien que le chiffrement de Vigenère essaye de
 contourner le problème de l'analyse de fréquence d'apparition des lettres, qui permet de rendre
-innéficace les chiffrement du type chiffrement de César avec un seul alphabet. Il aura tout de
+inefficace les chiffrement du type chiffrement de César avec un seul alphabet. Il aura tout de
 même fallu III
-siècle aprés son apparition, pour qu'en 1863 le major prussien Friedrich Kasiski publie une
+siècle après son apparition, pour qu'en 1863 le major prussien Friedrich Kasiski publie une
 méthode pour percé le chiffrement de Vigenère.
 
 Cependant encore récemment, la machine enigma utilisé par les Allemands lors de la seconde
@@ -81,7 +63,7 @@ un art mais une vrai science avec tout le formalise que l'on est en droit d'atte
 
 On appelle ce principe, le principe de Kerckhoffs, énoncé par Augustus Kerckhoffs en 1883 dans
 un article en deux parties, "La cryptographie millitaire". Ce principe nous dit que la sécurité
-ne dépend pas de la méthode de chiffrement mais sur le secret de la clé. Autrement dit, d'aprés
+ne dépend pas de la méthode de chiffrement mais sur le secret de la clé. Autrement dit, d'après
 Kerckhoffs, une bonne méthode de chiffrement, ne doit pas se reposer sur le secret de sa
 méthode mais sur le fait que même si elle est connue tant que l'on ne peut pas à partir de
 celle-ci en déduire une méthode efficace pour retrouver la clé. Notre système
@@ -92,36 +74,36 @@ C'est ainsi, qu'en 1976 W.Diffie et M.Hellman, lors de la National Computer Conf
 cependant en fournir un exemple d'application.
 \textbf{à vérifier}
 
-Cette nouvelle méthode est la pierre fondadrice de la cryptographie moderne basé sur le
-principe de clé publique et clé secret, qui sont deux clés disctinctes. On parle alors de cryptographie asymétrique ou
+Cette nouvelle méthode est la pierre fondatrice de la cryptographie moderne basé sur le
+principe de clé publique et clé secret, qui sont deux clés distinctes. On parle alors de cryptographie asymétrique ou
 cryptographie à clé publique.
 L'asymétrie, ici est une asymétrie de l'information entre les clé ou l'une est publique, donc
 connue, et l'autre non publique donc inconnue. De plus, chaque clé à sa propre fonction,
-c'est à dire que la clé publique sert au chiffrement et la clé secrete au déchiffrement.
+c'est à dire que la clé publique sert au chiffrement et la clé secrète au déchiffrement.
 
-On peut se représenter le principe, en considérant deux personnes, traditionnelement
+On peut se représenter le principe, en considérant deux personnes, traditionnellement
 nommées
 Alice, Bob.
 
 Soit $\mathcal{M}$ un ensemble de chiffrements. On prend souvent pour $\mathcal{M}$
 l'ensemble $\Z / n \Z$ ou bien un corps fini comme $\mathbb{F}_{q}$. Alice souhaite pouvoir se faire envoyer des
 messages chiffrés de $\mathcal{M}$ de façon privée. Elle choisit une bijection $f_{A}\ :\
-\mathcal{M}\to \mathcal{M}$ qui sera rendu publique, et elle seul en connaît la reciproque
+\mathcal{M}\to \mathcal{M}$ qui sera rendu publique, et elle seul en connaît la réciproque
 $f_{A}^{-1}$. Le principe repose sur la grande difficulté de trouver $f_{A}^{-1}$ à partir de
 $f_{A}$. 
 
 Dans la situation où Bob envoie un message $x \in \mathcal{M}$. Il lui suffit
 d'envoyer à Alice en clair l'élément $y = f_{A}(x)$. Pour déchiffrer le message Alice
 calcul donc $f_{A}^{-1}(y)$, et retrouve le message $x$ de Bob. On appel ce genre de
-fonction des fonctions à sens unique, car leurs reciproques sont difficiles à expliciter.
+fonction des fonctions à sens unique, car leurs réciproques sont difficiles à expliciter.
 
-L'enjeux de la cryptographie à clé publique est donc de trouver ce type de fonction.
+L'enjeu de la cryptographie à clé publique est donc de trouver ce type de fonction.
 C'est à dire des opérations faciles à calculer mais dont le cheminement inverses est le plus
 difficiles possible.
 
 La cryptographie d'aujourd'hui est basée sur une hypothèse mathématiques éprouvé et sur deux
 problèmes issu de la théorie des nombres. On a d'un côté l'hypothèse qu'il existe des
-fonctions à sens unique, c'est à dire dont la récirpoque est inexistente. Et de l'autre, on a
+fonctions à sens unique, c'est à dire dont la réciproque est inexistante. Et de l'autre, on a
 le problème de la factorisation d'un entier et celui du logarithme discret.
 
 Le problème de la factorisation est basé sur le fait qu'il est facile de multiplier des
@@ -141,11 +123,11 @@ l'algorithme d'El-Gamal.
 \section{Les courbes elliptiques}
 
 En parallèle de l'histoire de la cryptographie. Se déroulait deux histoires tout aussi
-anciennes liées à deux problèmes qui trouve leurs sources dans l'Antiquité.
+anciennes liées à deux problèmes qui trouve leurs sources dans l'antiquité grec.
 
 \subsection{Cercles et courbes elliptiques}
 La première histoire est celle du cercle. En effet, depuis l'antiquité grecque, l'homme
-s'est fortemment intéressé à l'étude du cercle. Trés vite, il s'est posé la question de
+s'est fortement intéressé à l'étude du cercle. Très vite, il s'est posé la question de
 connaître la longueur du rayon d'un cercle et plus généralement la longueur d'un arc
 de cercle. 
 
@@ -153,14 +135,14 @@ Cette idée fut réintroduite, mais cette fois ci dans un contexte encore plus g
 avec celui du calcul de la longueur d'un arc d'ellipse. En
 effet, entre le XVIIème et XVIIIème siècle les mathématiciens Abel () et Jacobi
 (), pour ne citer qu'eux, se sont mis à l'étude 
-Et par la suite Weierstrass introduisi ce qu'on appelle aujourd'hui, les équations
+Et par la suite Weierstrass introduisis ce qu'on appelle aujourd'hui, les équations
 normales de Weierstrass. 
 \textbf{explique eq W}
 
 En étudiant ce problème dans le corps des nombres complexes, on arrive à dégager une
 structure de groupes sur les points rationnels de la courbe.
 
-En 1985, indépendament l'un de l'autre N.Koblitz et , on fournit un exemple d'application
+En 1985, indépendamment l'un de l'autre N.Koblitz et , on fournit un exemple d'application
 possible du groupes des courbes elliptiques dans un corps fini à la cryptographie. C'est ce
 groupes qui va nous intéresser.
 
@@ -175,11 +157,11 @@ Par exemple, une des équation diophantienne les plus simples à résoudre est l
 les coefficients $a,b,c \in \Z$ et les inconnues $x,y \in \Z$ également. Sa résolution s'appuie
 sur l'algorithme d'Euclide, le théorème de Bachet-Bézout et le lemme de Gauss.
 
-Cependant, certaines équation diophantiennes ont nécéssité les efforts conjugués de nombreux
-mathématiciens sur plusieurs siècles pour les résoudres.
+Cependant, certaines équation diophantiennes ont nécessité les efforts conjugués de nombreux
+mathématiciens sur plusieurs siècles pour les résoudre.
 
 Ainsi, comme on peut s'en douter elle joue un rôle prépondérant dans la
-cryptographie moderne qu'il s'aggise des plus connues comme l'équation présenté si dessus, ou
+cryptographie moderne qu'il s'agisse des plus connues comme l'équation présenté si dessus, ou
 des plus sophistiquées, comme celles étudiées par L.Mordell du type $y^2 = x^3 + ax+b$ qui va
 nous intéresser.
 

@@ -63,42 +63,42 @@ sans pour autant le calculer explicitement. En particulier, la courbe $E$ ne doi
 supersingulière. Si $E$ est une courbe supersingulière, on peut montrer que son degré MOV est
 $\le 6$ donc vulnérable.
 
-\begin{exemple}
-    Considérons l'exemple de $E$ définie par $y^2 = x^3 + 33x + 69$ dans le corps
-    $\mathbb{F}_{p} = \mathbb{F}_{1000033}$. On a 
-    \begin{itemize}
-        \item  $\ell = 1001041$ qui est du même ordre de grandeur que $p$.
-        \item $t = -1007$, la courbe n'est ni anormale, ni supersingulière.
-        \item Le degré MOV de la courbe vaut $10320$.
+% \begin{exemple}
+%     Considérons l'exemple de $E$ définie par $y^2 = x^3 + 33x + 69$ dans le corps
+%     $\mathbb{F}_{p} = \mathbb{F}_{1000033}$. On a 
+%     \begin{itemize}
+%         \item  $\ell = 1001041$ qui est du même ordre de grandeur que $p$.
+%         \item $t = -1007$, la courbe n'est ni anormale, ni supersingulière.
+%         \item Le degré MOV de la courbe vaut $10320$.
 
-    \end{itemize}
+%     \end{itemize}
 
-Calculer le degré MOV d'une courbe elliptique revient en fait à trouver $v$ tel que
-$q^{v} \congru 1 (\mod |E(\mathbb{F}_{q})|)$. C'est donc trouver l'ordre de $q$
-dans $\left( \Z / |E(\mathbb{F}_{q})|\Z \right) ^{*}$.
+% Calculer le degré MOV d'une courbe elliptique revient en fait à trouver $v$ tel que
+% $q^{v} \congru 1 (\mod |E(\mathbb{F}_{q})|)$. C'est donc trouver l'ordre de $q$
+% dans $\left( \Z / |E(\mathbb{F}_{q})|\Z \right) ^{*}$.
 
-Une bonne stratégie pour générer des courbes satisfaisante est de les construires
-au hasard et de s'assurer qu'elles semblent raisonnables en vue de nos critères.
-\end{exemple}
+% Une bonne stratégie pour générer des courbes satisfaisante est de les construires
+% au hasard et de s'assurer qu'elles semblent raisonnables en vue de nos critères.
+% \end{exemple}
 
-\begin{algo}
-    \cdot Entrée : corps fini $K$.
+% \begin{algo}
+%     \cdot Entrée : corps fini $K$.
 
-    \cdot Sortie : une courbe elliptique $E(K)$, un point $G \in E$ ayant un grand ordre.
+%     \cdot Sortie : une courbe elliptique $E(K)$, un point $G \in E$ ayant un grand ordre.
 
-    \quad Étape 1 : Choisir au hasard une courbe elliptique $E$ définie sur $K$.
+%     \quad Étape 1 : Choisir au hasard une courbe elliptique $E$ définie sur $K$.
     
-    \quad Étape 2 : Calculer $\card(E(K))$ et vérifier que la courbe n'est pas anormale et que
-    son degré MOV est grand (sinon retour à l'étape 1).
+%     \quad Étape 2 : Calculer $\card(E(K))$ et vérifier que la courbe n'est pas anormale et que
+%     son degré MOV est grand (sinon retour à l'étape 1).
 
-    \quad Étape 3 : Factoriser $\card(E(K))$. Si cela prend trop de temps aller à l'étape 1. Si
-    $\card(E(k))$ n'est pas de la forme $s\ell$ avec $s$ petit et $\ell$ premier grand, aller à
-    l'étape 1.
+%     \quad Étape 3 : Factoriser $\card(E(K))$. Si cela prend trop de temps aller à l'étape 1. Si
+%     $\card(E(k))$ n'est pas de la forme $s\ell$ avec $s$ petit et $\ell$ premier grand, aller à
+%     l'étape 1.
 
-    \quad Étape 4 : Chercher un point au hasard $P \in E$, si $sP = \mathcal{O}$, aller à
-    l'étape 4 ou aller à l'étape 1 si la recherche d'un point convenable a échoué). Sinon,
-    retourner $E$ et $G = sP$.
-\end{algo}
+%     \quad Étape 4 : Chercher un point au hasard $P \in E$, si $sP = \mathcal{O}$, aller à
+%     l'étape 4 ou aller à l'étape 1 si la recherche d'un point convenable a échoué). Sinon,
+%     retourner $E$ et $G = sP$.
+% \end{algo}
 
 \subsection{ECDSA}
 
@@ -146,7 +146,10 @@ respective.
 
     \quad
 
-\section{Protocole d'échange de clé}
+\section{Protocole d'échange de clés}
+
+\subsection{Protocole Diffie-Hellman}
+
 
 % En effet, pendant la majorité de notre histoire il a fallut s'échanger au préalable et ceci
 % en trouvant un moyen physique, pour procéder à un échange de clé secrète.
