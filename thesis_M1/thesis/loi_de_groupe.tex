@@ -47,21 +47,9 @@ manipuler tout on l'on du processus est la droite projective.
     où $u$, $v$ et $w$ sont des éléments non tous nuls de $\overline{K}$.
 \end{definition}
 
-\textbf{reformule moi ça avec tes propres mots}
-On parle alors de la droite d'équation $D$. Une droite d'équation $x = \lambda z$, où
-$\lambda \in \overline{K}^*$, est dite vertical. Une telle droite passe par le point $O =
-\left[ 0,1,0 \right] $.
+On parle alors de la droite d'équation $ux+vy+wz=0$. Une droite d'équation $x=\lambda z$, où $\lambda$ est dans $\overline{K}$, est dite verticale. Une telle droite passe par le point $O = [0,1,0]$. En fait, toute droite passant par $O$ a une équation de la forme $ux+wz=0$. On dit souvent que la droite d'équation $z=0$ est la droite à l'infini. En identifiant la partie de $\mathbb{P}^2$ formée des points $[x,y,z]$ tels que $z \neq 0$ avec $\overline{K}^2$, le plan projectif s'interprète
+comme la réunion de $\overline{K}^2$ avec la droite à l'infini.
 
-En fait toute droite passant par le point $O$ a une équation de la forme $ux+wz=0$. 
-
-Comme on l'a vu avec le lien
-% On parle alors de la droite d'équation $ux+vy+wz=0$. Une droite d'équation $x=\lambda z$, où $\lambda$ est dans $\overline{K}$, est dite verticale. Une telle droite passe par le point $O = [0,1,0]$. En fait, toute droite passant par $O$ a une équation de la forme $ux+wz=0$. On dit souvent que la droite d'équation $z=0$ est la droite à l'infini. En identifiant la partie de $\mathbb{P}^2$ formée des points $[x,y,z]$ tels que $z \neq 0$ avec $\overline{K}^2$, le plan projectif s'interprète
-% comme la réunion de $\overline{K}^2$ avec la droite à l'infini.
-
-La première question que l'on se pose alors est de savoir s'il existe une droite qui passe
-par deux points du plan projectif et si elle existe est-elle unique ?
-
-La réponse à cette question est donné par le lemme suivant:
 \begin{lemme}
     \label{lem:lemme2}
     
@@ -90,25 +78,35 @@ La réponse à cette question est donné par le lemme suivant:
 \end{lemme}
 
 \begin{demonstration}
-    \textbf{A TERMINER} 
 
     Montrons qu'il existe une droite $D$ passant par $P$ et $Q$.
 
     Les éléments $u, \ v$ et $w$ ne sont pas tous nuls car $P$ et $Q$ sont distincts.
+    L'équation $ux+vy+wz =0$ est donc celle d'une droite qui par définition contient $P$ et
+    $Q$.
 
-    En effet, si $P = Q$ alors $a_1 = b_1, \ a_2 = b_2 $ et $a_3 = b_3$ donc $u = v = w =0$ or $P \neq Q$ donc il existe $x \in \left\{ u, v, w \right\}$ tel que $x \neq 0$.
-    
+    Montrons que cette droite est unique.
+
+    Soit une droite de $\mathbb{P}_{2}$ passant par $P$ et $Q$ d'équation
+    \[
+    u'x+v'y+w'z = 0 
+    .\] 
+
+    Soient $f$ et $g$ les formes linéaires $\overline{K}^3 \to \overline{K}$ définies par 
+    \[
+    f(x,y,z) = ux + vy + wz \quad \text{et} \quad g(x,y,z) = u'x+v'y+w'z
+    .\] 
+
+    Le noyau de $f$ et $g$ est le plan de $\overline{K}^3$ engendré par $\left( a_1,a_2,a_3
+    \right) $ et $\left( b_1,b_2,b_3 \right) $. En particulier, $f$ et $g$ ont le
+    même noyau. Dans le dual de $\overline{K}^3$, l'orthogonal du noyau de $f$ 
+    (resp. g) est la droite engendrée par $f$ (resp g). Il existe $\lambda \in
+    \overline{K}$ non nul tel que $f = \lambda g$, d'où l'unicité.
 \end{demonstration}
 
 \section{Tangente à $E$ en un point}
 
 Le deuxième objet, dont l'on est amené à utilisé est la tangente.
-
-En effet, il est naturel de se demander se qu'il se passe lorsque deux points du plan
-projectif ne sont pas distinct.
-
-Ceci, nous permet de traité les cas où un point de la courbe possède une tangente à la courbe
-$E$, qui intersecte la courbe en un deuxième point ou qui est vertical à la courbe.
 
 Soit 
 \[
@@ -129,12 +127,6 @@ c'est-à-dire,
 \[
 F_{X} = - \left( 3X^2 + aZ^2 \right),\quad F_{Y} = 2YZ,\quad F_{Z} = Y^2 - \left( 2aXZ + 3bZ^2 \right)
 .\] 
-
-La première question que l'on doit se poser est de savoir si en tout point de la courbe il
-existe une tangente à la courbe en ce point.
-
-Comme vu dans la définition \ref{def:geneEll}, la courbe doit être lisse et par conséquent en
-tout point de la courbe il existe une tangente à la courbe $E$. 
 
 \begin{lemme}
     \label{lem:lemme3}
@@ -175,19 +167,17 @@ tout point de la courbe il existe une tangente à la courbe $E$.
     - \left( 3 (- \frac{3b}{2a})^2 + a \right) &= 0 \\
     - \left( 27b^2 + 4a^3 \right) &= 0
 .\end{align*}
-Ce qui est absurde car $F$ est elliptique. D'après le lemme \ref{lem:lemme1}
+Ce qui est absurde car $E$ est elliptique. D'après le lemme \ref{lem:lemme1}
         \item Supposons que $a = 0$, alors
             \[
                 (3b = 0) \underbrace{\implies}_{\car(K) \neq 3} (b = 0)
             .\] 
 
-            Donc on $a = b = 0$ donc $-\left( 27b^2 + 4a^3 \right) = 0$ absurde car $F$ est elliptique. (lem \ref{lem:lemme1})
+            Donc on $a = b = 0$ donc $-\left( 27b^2 + 4a^3 \right) = 0$ absurde car $E$ est elliptique. (lem \ref{lem:lemme1})
 
             D'où le résultat.
    \end{itemize}
 \end{demonstration}
-
-Voici l'équation de la tangente en un point de la courbe.
 
 \begin{definition}
     Pour tout $P \in E$, la tangente à $E$ en $P$ est la droite d'équation
@@ -195,11 +185,6 @@ Voici l'équation de la tangente en un point de la courbe.
     F_{X}(P)x+F_{Y}(P)y+F_{Z}(P)z=0
     .\] 
 \end{definition}
-
-Maintenant que l'on sait qu'en tout point de la courbe il existe une tangente en ce point,
-et que l'on connait l'équation de cette dernière. On est amener à étudier le comportement
-de la tangente à un point de la courbe dans le plan projectif. Ainsi, soit la
-tangente est vertical, soit elle intersecte la courbe en un nouveau point.
 
 \begin{lemme}
     \label{lem:lemme4}
@@ -240,7 +225,7 @@ tangente est vertical, soit elle intersecte la courbe en un nouveau point.
 \section{Loi de composition des cordes-tangentes}
 
 La proposition \ref{prop:secTanGeo} nous permet de définir la loi de composition des
-cordes-tangentes :
+cordes-tangentes qui satisfait :
 
 \begin{enumerate}
     \item Si $P,Q \in E$, distinct, nous pouvons définir la droite $D = (PQ)$ la corde
@@ -284,7 +269,7 @@ $\mathbb{P}_{1}$. Pour une courbe elliptique il correspond au $\mathcal{O}$.
 
 % \subsection{Point de vue algébrique}
 \begin{proposition}
-    \label{prop:secTanGeo}
+    \label{prop:secTanAlg}
     
     Soient $P$ et $Q$ des points de $E$. Soit $D$ la droite de $\mathbb{P}^2$ passant par $P$ et $Q$ si $P \neq Q$, ou bien la tangente à $E$ en $P$ si $P = Q$. On a
     \[
@@ -332,7 +317,8 @@ f(P,P) = \left[ \lambda^2 - 2 x_{P}, \lambda\left( \lambda^2 - 2x_{P} \right) + 
 \begin{demonstration}
     \begin{description}
         Soient $P = \left[ x_{P}, y_{P}, 1 \right]$ et $Q = \left[ x_{Q}, y_{Q}, 1 \right]$ des points de $E$ tels qu'ils sont distincts. Alors il existe une droite $D \in \mathbb{P} ^2$ qui passe par $P$ et $Q$.
-        \item[1)] Supposons $P \neq Q$, $P \neq O$ et $Q \neq O$. Donc comme $D$ existe, il existe un point $M \in D \cap E$ et on cherche donc à connaitre son comportement dans le plan $E$.
+        \item[1)] Supposons $P \neq Q$, $P \neq O$ et $Q \neq O$. Donc comme $D$ existe, il
+            existe un point $M \in D \cap E$ et on cherche donc à trouver ses coordonnées.
             \begin{description}
         \item[i)] Supposons $x_{P} \neq x_{Q}$. 
             Comme $P,Q \neq O$, le point à l'infini n'appartient pas à $D$. Comme $M \in D$, il est de la même forme que $P$ et $Q$.
@@ -605,17 +591,23 @@ Les propiétés de la loi de groupe sur une courbe elliptique sont représentée
     \label{fig:P-O}
 \end{figure}
 
-Considérons comme précédemment $a$ et $b$ des éléments de $K$ tels que $4a^3+27b^2\neq 0$ et $E$ la courbe elliptique définie sur $K$ d'équation
-\[
-y^2=x^3+ax+b
-.\] 
-Notons $+$ la loi de composition interne sur $E$, définie pour tous $P$ et $Q$ dans $E$ par l'égalité
-\begin{align}
-    \label{eq:groupe}
-    P+Q=f(f(P,Q),O)
-.\end{align}
-Géométriquement, $P+Q$ s'obtient à partir de $f(P,Q)$, qui est le point d'intersection de la
-droite $(PQ)$ à la courbe, par symétrie par rapport à l'axe des abscisses. Cette loi de composition est une loi de groupe sur  $E$.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{loiGroupe}
+    \caption{La loi de groupe + sur l'ensemble des points rationnels d'une courbe
+    elliptique}
+    \label{fig:loiGroupe}
+\end{figure}
+
+% Considérons comme précédemment $a$ et $b$ des éléments de $K$ tels que $4a^3+27b^2\neq 0$ et $E$ la courbe elliptique définie sur $K$ d'équation
+% \[
+% y^2=x^3+ax+b
+% .\] 
+% Notons $+$ la loi de composition interne sur $E$, définie pour tous $P$ et $Q$ dans $E$ par l'égalité
+% \begin{align}
+%     \label{eq:groupe}
+%     P+Q=f(f(P,Q),O)
+% .\end{align}
 
 \begin{theoreme}
     \label{th:theoreme1}

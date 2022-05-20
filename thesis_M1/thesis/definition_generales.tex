@@ -31,9 +31,21 @@ F(x_0,y_0,z_0)=\frac{\partial{F}}{\partial{x}}(x_0,y_0,z_0) =
 \frac{\partial{F}}{\partial{y}}(x_0,y_0,z_0) =
 \frac{\partial{F}}{\partial{z}}(x_0,y_0,z_0) = 0
 .\] 
+
+\begin{exemples}
+    Courbes lisses cours delaunay
+\end{exemples}
 % En d'autre termes, on peut définir une unique tangente à la courbe au point $P$.
 
-\textbf{METS LA PARTIE SUR LES POINTS RATIONNEL ICI RELIT LE LIVRE D'HIER SOIR}
+% \begin{definition}
+%     Soit $L$ un corps satisfaisant $K \subset L \subset \overline{K}$. On dit qu'un point
+%     $(x,y,z)$ de la courbe est $L$-rationnel, si on a $(x,y,z) = \lambda (x',y',z')$ pour
+%     $\lambda \in \overline{K}$ et $(x',y',z') \in \mathbb{P}_{2}(L)$, c'est à dire,
+%     à une équivalence projective prés, les coordonnées du point sont dans $L$. 
+
+%     L'ensemble des points rationnel de $E$, noté $E(K)$ est :
+% \end{definition}
+
 
 Dans une courbe elliptique la droite à l'infini ne contient qu'un seul élément, on le nomme
 point à l'infini et on le note $\mathcal{O}$.
@@ -69,7 +81,7 @@ solutions de l'équation \eqref{eq:geneAff} et du point $\mathcal{O}$.
 Ce qui revient à écrire que
 
 \begin{align*}
-    E &= \left\{ (x,y,z) \in \overline{K}^2 \times \overline{K}^{*} \mid F(x,y,z) = 0 \right\}  \cup
+    E &= \left\{ (X,Y,Z) \in \overline{K}^2 \times \overline{K}^{*} \mid F(X,Y,Z) = 0 \right\}  \cup
 {\mathcal{O}} \\
 &= \left\{ (x,y) \in \overline{K}^2 \mid f(x,y) = 0 \right\} \cup {\mathcal{O}}
 .\end{align*}
@@ -122,9 +134,11 @@ vue de construire le groupe des courbes elliptiques appliqué à la cryptographi
     .\end{align}
 \end{definition}
 
+\begin{remarque}
 On dit que la courbe elliptique d'équation \ref{eq:ell} est définie sur $K$ pour préciser
-que $a$ et $b$ sont dans $K$. Ceci pour $a$ et $b$ vérifiant la condition
-\eqref{eq:delta}  
+que $a$ et $b$ sont dans $K$. Ceci pour $a$ et $b$ vérifiant la condition \eqref{eq:delta} 
+\end{remarque}
+
 
 % Une courbe elliptique $E$ définie sur $K$ est donc une courbe du plan projectif d'équation
 % \eqref{eq:ell}.
@@ -135,10 +149,22 @@ $E$ est défini par l'ensemble des solutions de l'équation
 E:\quad F(X,Y,Z) = Y^2Z-X^3+aXZ^3+bZ^2 = 0
 .\] 
 
+\begin{remarque}
+    \begin{enumerate}
+        \item 
 Les points du plan projectif qui satisfont cette équation sont appellé l'ensemble des zéros
 de $F$ dans $\overline{K}$, ou plus simplement zéro de $F$. Cet ensemble est ce que l'on
 entend par courbe projective plane d'équation \eqref{eq:ell}. 
-
+        \item Si le discriminant $\Delta$ de $F(X,Y,Z)$ est strictement négatif, alors il
+            admet une racine réel et deux racines complexes et on obtient des courbe de la
+            forme suivante
+        \item Si $\Delta > 0$, on a trois racines réels distinctes et donc des courbes
+            elliptique de la forme suivante
+        \item Si $\Delta = 0$ alors la courbe n'est pas elliptique et on obtient des
+            courbes avec points de multiplicité double, ou triple. Ce qui nous donne des
+            courbes comme le lemniscate
+    \end{enumerate}
+\end{remarque}
 \textbf{METS LA PARTIE AFFINE ICI EN PRECISANT E COMME PLUS HAUT MAIS AVEC L'ÉQUATION}
 
 Comme on vient de le voir, il est possible de se ramener à l'étude
@@ -146,18 +172,17 @@ des solution de l'équation
 polynômial $f(x,y) = 0$ dans le plan affine. Ainsi la condition \eqref{eq:delta}
 signifie que les racines dans $\overline{K}$ du polynôme
 \[
-f(x,y) = Y^2 - X^3 + aX + b
+f(x,y) = y^2 - x^3 + ax + b
 ,\] 
-sont simples.
-
-et le lemme suivant nous fourni un critère simple pour obtenir une courbe lisse
+sont simples et le lemme suivant nous fourni un critère simple pour obtenir une courbe
+lisse.
 
 \begin{lemme}
     \label{lem:lemme1}
     Le discriminant de $f$ est $\Delta = -(4a^3 + 27b^2)$. En particulier, les racines de $f$ sont simples, si et seulement si $\Delta \neq 0$.
 \end{lemme}
 
-Pour demontrer ce lemme, on utilise la proposition que nous admettrons, qui est la suivante:
+Pour démontrer ce lemme, on utilise la proposition que nous admettrons, qui est la suivante:
 \begin{proposition}
     \label{prop:discriminant}
     Soit $g$ un polynôme unitaire à coefficients dans $K$ de degré $n \ge 1$. Soient
@@ -387,19 +412,46 @@ Cela justifie la notation $\mathbb{P}^2 = \mathbb{P}^2(\overline{K})$.
 Soit $E$ une courbe elliptique définie sur $K$ d'équation \eqref{eq:ell}.
 
 \begin{definition}
-    Un point de $E$ est dit rationnel sur $L$ s'il appartient à $E \cap \mathbb{P}^2(L)$. On note $E(L)$ l'ensemble des points de $E$ rationnels sur $L$.
+    Un point de $E$ est dit rationnel sur $L$, ou encore $L$-rationnel, s'il appartient à $E \cap \mathbb{P}^2(L)$. On note $E(L)$ l'ensemble des points de $E$ rationnels sur $L$.
 \end{definition}
-
 
 Par définition, on a donc
 \[
 E = E(\overline{K})
 .\] 
 
-Le point $O = [0,1,0]$ appartient à $E(K)$. Soit $(x,y) \in \overline{K}^2$ un point de la partie affine de $E$. Par définition, il est rationnel sur $L$ si et seulement si $x$ et $y$ sont dans $L$. Il en résulte que l'on a 
-\[
-E = \left\{ (x,y) \in L \times L \mid y^2 = x^3+ax+b \right\} \cup \left\{ O \right\} 
-.\] 
+% Le point $O = [0,1,0]$ appartient à $E(K)$. Soit $(x,y) \in \overline{K}^2$ un point de la partie affine de $E$. Par définition, il est rationnel sur $L$ si et seulement si $x$ et $y$ sont dans $L$. Il en résulte que l'on a 
+% \[
+% E = \left\{ (x,y) \in L \times L \mid y^2 = x^3+ax+b \right\} \cup \left\{ O \right\} 
+% .\] 
+
+
+\begin{remarque}
+    \begin{enumerate}
+        \item 
+    Lorsque le contexte ne permet pas de confusion, le corps de définition de la courbe, K, on
+    dira qu'un point $K$-rationnel est un point rationnel.
+        \item Le point $\mathcal{O}$ est défini sur $K$ et par définition sur toute
+            extension de $K$. Ainsi, si $L / K$ est une extension du corps $K$, $E$
+            peut-être considérée comme une courbe elliptique définie sur $K$ et $\mathcal{O}$
+            est encore le point à l'infini de $E / L$.
+
+            On a,
+
+            \[
+            E(L) = \left\{ (x,y) \in L^2 \mid y^2 = x^3 + ax + b \right\} \cup {\mathbb{O}}
+            \] 
+
+            de même,
+            \[
+            E(\overline{K}) = \left\{ (x,y) \in \overline{K}^2 \mid y^2 = x^3 +
+            ax + b \right\} \cup {\mathbb{O}}
+            .\] 
+
+            Ce qui revient à dire que, si $K \subset L \subset \overline{K}$ alors $E(K)
+            \subset E(L) \subset E(\overline{K})$.
+    \end{enumerate}
+\end{remarque}
 
 \begin{exemple}
     Soit la courbe $E$ définie sur $\mathbb{F}_{5}$ d'équation
@@ -416,28 +468,30 @@ E = \left\{ (x,y) \in L \times L \mid y^2 = x^3+ax+b \right\} \cup \left\{ O \ri
     E(\mathbb{F}_{5})= \left\{ (0,1),(0,4),(2,1),(2,4),(3,1),(3,4),(4,2),(4,3) \right\} \cup
     \left\{ \mathcal{O} \right\} 
     .\] 
-    En effet, comme la courbe est symétrique, il nous suffit de vérifier que pour tous les
-    valeurs de $x$ dans $\mathbb{F}_{5}$, lesquelles sont un carré dans $\mathbb{F}_{5}$.
 
-    Par exemple, pour $x=0$, on a $y^2=0^3+0+1$ donc $y = \pm 1$, ce qui nous donne
-    les points d'abiscisse $x=0$ et d'ordonnées $y=\pm 1$ dans $\mathbb{F}_{5}$, par
-    conséquent les points $(0,1)$ et $(0,4)$ vérifient l'équation $f(x,y) = 0$ et sont
-    donc des points de la courbe.
+    \textbf{exemple klaus F25}
+    % En effet, comme la courbe est symétrique, il nous suffit de vérifier que pour tous les
+    % valeurs de $x$ dans $\mathbb{F}_{5}$, lesquelles sont un carré dans $\mathbb{F}_{5}$.
 
-    Maintenant si $x=1$, l'équation de la courbe nous donne $y^2=1^3+1+1=3$ donc il faut
-    chercher si dans $\mathbb{F}_{5}$, s'il existe un carré modulo $5$ égal à 3. Ce qui n'est
-    pas le cas. En effet, dans $\mathbb{F}_{5}$ les éléments sont $\left\{
-    \overline{0},\overline{1},\overline{2},\overline{3},\overline{4} \right\} $ et on a
-    succecssivement dans $\mathbb{F}_{5}$
-    \begin{align*}
-        y^2 &=0^2=0 \\
-        y^2 &= 1^2 = \pm 1 \\
-        y^2 &= 2^2=4=-1 \\
-        y^2 &= 3^2=9=-1 \\
-        y^2 &= 4^2=16=1 \\
-    .\end{align*}
-    Ainsi, il n'existe pas $y \in \mathbb{F}_{5}$ qui vérifient l'équation de la
-    courbe. Donc la courbe $E$ ne possède pas de point de d'abscisse $x=1$.
+    % Par exemple, pour $x=0$, on a $y^2=0^3+0+1$ donc $y = \pm 1$, ce qui nous donne
+    % les points d'abiscisse $x=0$ et d'ordonnées $y=\pm 1$ dans $\mathbb{F}_{5}$, par
+    % conséquent les points $(0,1)$ et $(0,4)$ vérifient l'équation $f(x,y) = 0$ et sont
+    % donc des points de la courbe.
 
-    À voir si je mets $\mathbb{F}_{25}$ je crois j'ai pigé faut que je vérifie ça ce midi
+    % Maintenant si $x=1$, l'équation de la courbe nous donne $y^2=1^3+1+1=3$ donc il faut
+    % chercher si dans $\mathbb{F}_{5}$, s'il existe un carré modulo $5$ égal à 3. Ce qui n'est
+    % pas le cas. En effet, dans $\mathbb{F}_{5}$ les éléments sont $\left\{
+    % \overline{0},\overline{1},\overline{2},\overline{3},\overline{4} \right\} $ et on a
+    % succecssivement dans $\mathbb{F}_{5}$
+    % \begin{align*}
+    %     y^2 &=0^2=0 \\
+    %     y^2 &= 1^2 = \pm 1 \\
+    %     y^2 &= 2^2=4=-1 \\
+    %     y^2 &= 3^2=9=-1 \\
+    %     y^2 &= 4^2=16=1 \\
+    % .\end{align*}
+    % Ainsi, il n'existe pas $y \in \mathbb{F}_{5}$ qui vérifient l'équation de la
+    % courbe. Donc la courbe $E$ ne possède pas de point de d'abscisse $x=1$.
+
+    % À voir si je mets $\mathbb{F}_{25}$ je crois j'ai pigé faut que je vérifie ça ce midi
 \end{exemple}
