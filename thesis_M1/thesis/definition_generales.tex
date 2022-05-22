@@ -1,8 +1,15 @@
 \chapter{Définitions générales sur les courbes elliptiques}
+\begin{center}
+    Dans ce chapitre, on donne d'abord la définition générale d'une courbe elliptique. On fais
+    le lien entre cette définition et la définition qui utilise une forme simplifié de
+    l'équation général. On propose également un lemme qui permet de caractériser simplement les courbes
+    non-lisses. Finalement, on donne la définition d'un points rationnels d'une courbe
+    elliptique.
+\end{center}
 
 \section{Définition générale}
 
-La définition générale d'une courbe est la suivante
+La définition générale d'une courbe elliptique est la suivante
 \begin{definition}
     Soient $K$ un corps, $\overline{K}$ sa cloture algébrique, et $K^{*}$ son groupe
     multiplicatif. Une courbe elliptique sur $K$ est une cubique, non singulière,
@@ -32,35 +39,20 @@ F(x_0,y_0,z_0)=\frac{\partial{F}}{\partial{x}}(x_0,y_0,z_0) =
 \frac{\partial{F}}{\partial{z}}(x_0,y_0,z_0) = 0
 .\] 
 
-\begin{exemples}
-    Courbes lisses cours delaunay
-\end{exemples}
-% En d'autre termes, on peut définir une unique tangente à la courbe au point $P$.
-
-% \begin{definition}
-%     Soit $L$ un corps satisfaisant $K \subset L \subset \overline{K}$. On dit qu'un point
-%     $(x,y,z)$ de la courbe est $L$-rationnel, si on a $(x,y,z) = \lambda (x',y',z')$ pour
-%     $\lambda \in \overline{K}$ et $(x',y',z') \in \mathbb{P}_{2}(L)$, c'est à dire,
-%     à une équivalence projective prés, les coordonnées du point sont dans $L$. 
-
-%     L'ensemble des points rationnel de $E$, noté $E(K)$ est :
-% \end{definition}
-
-
 Dans une courbe elliptique la droite à l'infini ne contient qu'un seul élément, on le nomme
-point à l'infini et on le note $\mathcal{O}$.
+point à l'infini et on le note $\mathcal{O} = [0,1,0]$.
 
-En effet, on constate
-que si $z = 0$ et $y \neq 0$, en considérant un point $P=[x,y,0]$, tous ses représentant de
-classe sont de la forme $P'=[\frac{x}{y},1,0]$, sans rentrer dans les détails, quand $y$ tend
-vers l'infini on obtient le point $[0,1,0]$ qui n'est autre que l'intersection des droites du
-plan affine et la droite à l'infini. Par exemple dans le plan projectif réels la droite à
-l'infini est un cercle. Dans notre cas, on peut faire l'analogie avec la technique de
-la perspective en dessin, où on à un point à l'horizon, où tous les droites fuyante ce rejoignent. Ainsi,
-dans notre cas les droites fuyantes sont les droites verticales (i.e. parallèle à l'ordonnée) et le
-point à l'horizon notre point à l'infini. Ainsi, l'élément neutre de notre groupe sera le point
-$\mathcal{O} = [0,1,0]$ qui n'est autre que le point d'intersection des droites
-vertical avec la courbe elliptique.
+% En effet, on constate
+% que si $z = 0$ et $y \neq 0$, en considérant un point $P=[x,y,0]$, tous ses représentant de
+% classe sont de la forme $P'=[\frac{x}{y},1,0]$, sans rentrer dans les détails, quand $y$ tend
+% vers l'infini on obtient le point $[0,1,0]$ qui n'est autre que l'intersection des droites du
+% plan affine et la droite à l'infini. Par exemple dans le plan projectif réels la droite à
+% l'infini est un cercle. Dans notre cas, on peut faire l'analogie avec la technique de
+% la perspective en dessin, où on à un point à l'horizon, où tous les droites fuyante ce rejoignent. Ainsi,
+% dans notre cas les droites fuyantes sont les droites verticales (i.e. parallèle à l'ordonnée) et le
+% point à l'horizon notre point à l'infini. Ainsi, l'élément neutre de notre groupe sera le point
+% $\mathcal{O} = [0,1,0]$ qui n'est autre que le point d'intersection des droites
+% vertical avec la courbe elliptique.
 
 Par la suite nous utiliserons la plupart du temps la représentation affine de
 l'équation de Weierstrass:
@@ -107,9 +99,9 @@ où les $k_{i}$ cette fois-ci sont divisés par des multiples de 2 et 3.
 On peut ainsi, démontrer que $K$ étant de caractéristique distincte de 2 et 3, une courbe
 lisse d'équation \eqref{eq:geneEll} est "isomorphe sur $K$" à une courbe de la forme
 \eqref{eq:geneWei} pour laquelle le discriminant du polynôme homogène
-associé soit non nul. 
+associé soit non nul.  La définition que l'on va utiliser n'est donc pas restrictive.
 
-\section{Définition appliqué à la cryptographie}
+% \section{Définition appliqué à la cryptographie}
 
 C'est pourquoi, dans la totalité de ce qui suit la lettre $K$ désignera un corps de caractéristique $0$ ou un
 corps fini de caractéristique distincte de $2$ et $3$. Autrement dit, on peut voir $K$
@@ -152,20 +144,37 @@ E:\quad F(X,Y,Z) = Y^2Z-X^3+aXZ^3+bZ^2 = 0
 \begin{remarque}
     \begin{enumerate}
         \item 
-Les points du plan projectif qui satisfont cette équation sont appellé l'ensemble des zéros
+Les points du plan projectif qui satisfont cette équation sont appelé l'ensemble des zéros
 de $F$ dans $\overline{K}$, ou plus simplement zéro de $F$. Cet ensemble est ce que l'on
 entend par courbe projective plane d'équation \eqref{eq:ell}. 
-        \item Si le discriminant $\Delta$ de $F(X,Y,Z)$ est strictement négatif, alors il
+        \item Si $\Delta<0$, alors il
             admet une racine réel et deux racines complexes et on obtient des courbe de la
             forme suivante
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.4\textwidth]{deltaNeg}
+                \caption{Courbe elliptique d'équation $y^2 = x^3 - x + 1$}
+                \label{fig:deltaNeg}
+            \end{figure}
         \item Si $\Delta > 0$, on a trois racines réels distinctes et donc des courbes
             elliptique de la forme suivante
-        \item Si $\Delta = 0$ alors la courbe n'est pas elliptique et on obtient des
-            courbes avec points de multiplicité double, ou triple. Ce qui nous donne des
-            courbes comme le lemniscate
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.4\textwidth]{deltaPos}
+                \caption{Courbe elliptique d'équation $y^2 = x^3 - x$.}
+                \label{fig:deltaPos}
+            \end{figure}
+
+        \item Si $\Delta = 0$ alors la courbe n'est pas elliptique et on obtient un point
+            singulier.
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.4\textwidth]{deltaNul}
+                \caption{Courbe elliptique d'équation $y^2 = x^3$.}
+                \label{fig:deltaNul}
+            \end{figure}
     \end{enumerate}
 \end{remarque}
-\textbf{METS LA PARTIE AFFINE ICI EN PRECISANT E COMME PLUS HAUT MAIS AVEC L'ÉQUATION}
 
 Comme on vient de le voir, il est possible de se ramener à l'étude
 des solution de l'équation
@@ -175,7 +184,14 @@ signifie que les racines dans $\overline{K}$ du polynôme
 f(x,y) = y^2 - x^3 + ax + b
 ,\] 
 sont simples et le lemme suivant nous fourni un critère simple pour obtenir une courbe
-lisse.
+lisse. Ce qui nous permet d'éviter les courbes avec un point de multiplicité double qui nous
+fait perdre l'unicité de la tangente.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{courbeSing}
+    \caption{Courbes d'équation $y^2 = x^3 + x^2$ admettant un point double.}
+    \label{fig:courbeSing}
+\end{figure}
 
 \begin{lemme}
     \label{lem:lemme1}
@@ -199,7 +215,7 @@ Pour démontrer ce lemme, on utilise la proposition que nous admettrons, qui est
 
     Soit $\Delta$ le discriminant de $f$. Soient $\alpha, \beta, \gamma $ les racines de $f$ dans $\overline{K}$ et $f'$ le polynôme dérivé de $f$.
 
-    À l'aide de la proposition \ref{prop:discriminant},on veut montrer que le discriminant est de la forme
+    À l'aide de la proposition \ref{prop:discriminant}, on veut montrer que le discriminant est de la forme
     suivante: 
     \begin{align*}
         \Delta &= (-1) ( \alpha - \beta )^2 ( \alpha - \gamma )^2 ( \beta - \gamma )^2 \\
@@ -428,9 +444,8 @@ E = E(\overline{K})
 
 \begin{remarque}
     \begin{enumerate}
-        \item 
-    Lorsque le contexte ne permet pas de confusion, le corps de définition de la courbe, K, on
-    dira qu'un point $K$-rationnel est un point rationnel.
+        \item  Lorsque le contexte est clair on parlera de point rationnel de la courbe pour
+            parler des points $L$-rationnels.
         \item Le point $\mathcal{O}$ est défini sur $K$ et par définition sur toute
             extension de $K$. Ainsi, si $L / K$ est une extension du corps $K$, $E$
             peut-être considérée comme une courbe elliptique définie sur $K$ et $\mathcal{O}$
@@ -440,9 +455,9 @@ E = E(\overline{K})
 
             \[
             E(L) = \left\{ (x,y) \in L^2 \mid y^2 = x^3 + ax + b \right\} \cup {\mathbb{O}}
-            \] 
+            .\] 
 
-            de même,
+            De même,
             \[
             E(\overline{K}) = \left\{ (x,y) \in \overline{K}^2 \mid y^2 = x^3 +
             ax + b \right\} \cup {\mathbb{O}}

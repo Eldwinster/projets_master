@@ -1,4 +1,16 @@
 \chapter{Géométrie projective}
+\begin{center}
+    Dans ce chapitre, je défini et donne quelques propositions qui m'ont permis de
+    mieux comprendre l'intéret de l'étude des courbes elliptiques dans le plan
+    projectif. Ainsi que d'introduire les propositions qui me permettent de faire le parallèle
+    entre la partie algébrique du raisonnement et l'interprétation géométrique
+    associé. Notamment, j'introduis une proposition qui me permet de donner une la
+    démonstration géométrique de l'associativité de la loi du groupe des points rationnels
+    d'une courbe elliptique.
+
+\end{center}
+
+\section{Le plan projectif et les courbes sur le plan projectif}
 
 La définition que nous allons utilisé pour les courbes elliptiques étant dans le plan
 projectif.
@@ -8,10 +20,8 @@ besoin à savoir le plan, des points et des droites.
 
 Intuitivement, un espace projectif permet de rendre homogène un espace vectoriel. On entend
 par là, de raisonner indépendammenent des proportionalités pour ne plus considérer que les
-directions. L'idée nous vient de la formalisation mathématique de la perspective. 
+directions (i.e. les droites de l'espace). L'idée nous vient de la formalisation mathématique de la perspective. 
 % L'espace projectif nous permet d'identifier des droites à des points.
-
-\section{Le plan projectif et les courbes sur le plan projectif}
 
 Dans un premier temps, voici la définition du plan projectif.
 
@@ -76,7 +86,8 @@ $P'=\lambda P$, on a
 \[
 F(P')=F(\lambda x, \lambda y, \lambda z) = \lambda^{d}F(x,y,z) = 0
 .\] 
-Tous les représentant de classe d'un point de la courbe sont des zéro du polynôme $F$.
+Tous les représentant de classe d'un point de la courbe sont des zéro du polynôme $F$ donc un
+point de la courbe.
 
 \begin{definition}
     \label{def:cubique}
@@ -90,10 +101,10 @@ Tous les représentant de classe d'un point de la courbe sont des zéro du polyn
 
 \section{Lien avec la représentation affine}
 On peut faire le lien entre une courbe du plan projectif telle qu'on vient de la définir
-et une courbe du plan affine habituel, notons le $\mathbb{A}_{2}$ ou
+et une courbe du plan affine habituel, que l'on note $\mathbb{A}_{2}$ ou
 $\mathbb{A}_{2}(\overline{K})$. 
 
-Soit une courbe $E$ de $\mathbb{P}_{2}$, donnée par un
+Soit une courbe $E$ de $\mathbb{P}_{2}(\overline{K})$, donnée par un
 polynôme homogène $F$ de degré $d$ tel que 
 
 \[
@@ -212,11 +223,15 @@ composantes irréductibles sont distinctes.
     seulement si, ces deux courbes n'ont pas de composante irréductible en commun.
 \end{proposition}
 
+Autrement dit, cela revient à montrer l'ensemble $E \cap D$ est fini, si et seulement si, les
+polynômes associés à $E$ et $D$ sont irréductibles. 
+
 \begin{demonstration}
     \begin{itemize}
         \item 
     Dans un premier temps, on montre que si $E$ et $D$ ont une composante commune alors $E
-    \cap D$ est infini. Ce qui nous permettra de conclure par contraposée.
+    \cap D$ est infini. Autrement dit, comme ils ont une composante commune, cela revient à
+    dire que l'un est produit de l'autre. Ce qui nous permettra de conclure par contraposée.
 
     Soient $E$ l'ensemble des solutions de $F_1(X,Y,Z) = 0$ et $D$ l'ensemble des solutions de
     $F_2(X,Y,Z) = 0$. 
@@ -246,8 +261,10 @@ composantes irréductibles sont distinctes.
     Autrement dit, par contraposée, si $E$ et $D$ se coupent en un nombre fini de points, elles n'ont pas
     de composante commune.
 
-    \item Dans un second temps, supposons que $E$ et $D$ n'ont pas de composante commune et montrons
-    que $D \cap E$ est fini.
+    \item Dans un second temps, supposons que $E$ et $D$ n'ont pas de composante commune, ce
+        qui revient à dire que les polynômes $F_1$ et $F_2$ sont irréductibes. Donc à montrer
+        que $F_1$ est irréductible ce qui permettra de conclure grâce au nombre fini de racine
+        de $F_1$.
 
     La droite $D$ est défini par un polynôme homogène de degré 1
     \[
@@ -255,54 +272,53 @@ composantes irréductibles sont distinctes.
     .\] 
     Soit $P=[x,y,z]$ un point de l'intersection entre $E$ et $D$.
 
-    % \begin{itemize}
-    %     \item Si $z \neq 0$,
+    \begin{itemize}
+        \item Si $z \neq 0$,
 
-    %         Les coordonnées affines du point $P$ vérifient alors l'équation d'aprés la
-    %         formule \eqref{eq:bijectionP2} 
-    %         \[
-    %         f_2(x,y) = ax+by+c = 0
-    %         .\] 
+            Les coordonnées affines du point $P$ vérifient alors l'équation 
+            \[
+            f_2(x,y) = ax+by+c = 0
+            .\] 
 
-    %         On peut supposer, par symétrie, que $b \neq 0$. Dans ce cas, on a
+            On peut supposer, par symétrie, que $b \neq 0$. Dans ce cas, on a
 
-    %         \[
-    %         y = - \frac{ax + c}{b}
-    %         .\] 
+            \[
+            y = - \frac{ax + c}{b}
+            .\] 
 
-    %         L'équation suivante doit alors être vérifié
+            L'équation suivante doit alors être vérifié
 
-    %         \[
-    %         f_1(x, - \frac{ax+c}{b} = 0
-    %         .\] 
+            \[
+            f_1(x, - \frac{ax+c}{b}) = 0
+            .\] 
 
-    %         C'est un polynôme en $x$ non nul car $E$ et $D$ n'ont pas de composante commune.
-    %         Il admet donc un nombre fini de racines.
+            C'est un polynôme en $x$ non nul car $E$ et $D$ n'ont pas de composante commune.
+            Il admet donc un nombre fini de racines.
 
-    %     \item Si $z = 0$ alors,
+        \item Si $z = 0$ alors,
 
-    %         les coordonnées homogène de $P$ vérifient alors le système d'équation suivante
+            les coordonnées homogène de $P$ vérifient alors le système d'équation suivante
 
-    %         \[
-    %             \begin{cases}
-    %                 AX + bY &= 0 \\
-    %                 F_1(X,Y,0) &= 0
-    %             \end{cases}
-    %         .\] 
+            \[
+                \begin{cases}
+                    AX + bY &= 0 \\
+                    F_1(X,Y,0) &= 0
+                \end{cases}
+            .\] 
 
-    %         En supposant par symétrie, que $b \neq 0$, on voit que les coordonnées
-    %         homogènes de $P$ doivent vérifier
+            En supposant par symétrie, que $b \neq 0$, on voit que les coordonnées
+            homogènes de $P$ doivent vérifier
 
-    %         \[
-    %         F_1(X,- \frac{a}{b}X,0)=0
-    %         .\] 
+            \[
+            F_1(X,- \frac{a}{b}X,0)=0
+            .\] 
 
-    %         Cette équation est un polynôme en $x$ non nul puisque $E$ et $D$ n'ont pas de
-    %         composante commune. il admet donc un nombre fini de racines.
+            Cette équation est un polynôme en $X$ non nul puisque $E$ et $D$ n'ont pas de
+            composante commune. il admet donc un nombre fini de racines.
 
-    %         Ainsi, si $E$ et $D$ n'ont pas de composante commune. elles se coupent en un
-    %         nombre fini de points.
-    % \end{itemize}
+            Ainsi, si $E$ et $D$ n'ont pas de composante commune. elles se coupent en un
+            nombre fini de points.
+    \end{itemize}
     \end{itemize}
 \end{demonstration}
 

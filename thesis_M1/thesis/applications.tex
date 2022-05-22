@@ -12,209 +12,71 @@ Enfin, on les retrouve aussi en cryptologie, dans le problème de la factorisati
 Dans ce mémoire, on s'intéresse à leur application en cryptographie. Où elles ont
 permit notamment la réduction de la taile des clés cryptographique.
 
+\section{Cryptosystèmes elliptiques}
+
 Aujourd'hui, le groupe $E$ des points rationnels d'une courbe elliptique intervient notamment pour l'échange de clé
 et les signatures numériques.
 
-% La révolution qui à permit à la cryptographie de passer du domaine de l'art au domaine des
-% sciences est l'invention du concept d'échange de clé public. 
-\section{Cryptosystèmes elliptiques}
+Nous allons, nous intéressé à deux cryptosystème asymétrique, à savoir le protocol d'échange de
+clés Diffie-Hellman, ainsi que l'algorithme d'El-Gamal, basé sur le principe du protocol de
+Diffie-Hellman, qui permet d'échanger des messages messages chiffré à l'aide d'une clé
+publique et de déchiffrer les messages avec la clé secrète de chaque utilisateur.
 
+La force des cryptosytèmes asymétrique réside dans la difficulté, voir l'impossibilité actuel dans le cas elliptique, de résoudre le problème du logarithme discret que nous énoncerons par la suite.
 
-% \section{Protocole de signature}
+Dans le cas des cryptosystèmes à clé publique classique, on s'appuie sur le groupe multiplicatif d'un corps fini et de son groupe des inversibles. Ce qui réduit grandement notre choix comparé aux versions elliptique des algorithmes équivalent.
 
-% Un protocole de signature est un protocole d'authentification. On peut faire le parallèle avec
-% la signature manuscrit que l'on utilise pour signer des documents officiel. Le principe est le
-% même mais avec des chiffres. Dans notre cas il se repose sur le logarithme discret sur une
-% courbe elliptique. Cependant, dans ce cadre comme pour celui du $(\Z / p\Z)^*$, il faut éviter
-% certaines situation qui sont faibles du point de vue de la sécurité.
+En effet, dans le cas elliptique, on remplace le groupe multiplicatif sur un corps fini par le groupe des points rationnels d'une courbe elliptique. L'avantage de cette méthode est que pour un corps fini  $K$ donné, on dispose généralement de nombreux choix de courbes elliptiques $E$ sur $K$. Autrement dit, on a de nombreux groupes $E(K)$, pour utiliser efficacement un cryptosystème asymétrique élliptique contrairement aux versions classique comme énoncé plus haut où
+l'on ne dispose que du groupe des inversible $K^{*}$.
 
-% \subsection{Choix du corps de définition}
-% Avant tout chose comme la courbe elliptique est défini sur un corps, il faut choisir ce dernier
-% pour éviter certaines attaques avant même d'avoir commencé le chiffrement.
+Dans ce qui suit Alice et Bob sont deux personnes qui souhaite s'échanger soit un message, soit une clef secrète. Cependant, il faut bien comprendre qu'il peuvent également représenter deux entité qui souhaitent communiqué via des messages chiffrés ou bien s'échanger une clef secréte via cannaux publique. Par entité, j'entends soit des banques, des entreprises ou tout ce qui serait suceptible de vouloir communiqué secretement entre eux.
 
-% Il est donc préférable de choisir:
-% \begin{itemize}
-%     \item Soit un corps premier $\mathbb{F}_{p}$, où $p$ est un grand nombre premier. De
-%         l'ordre de 256 bit, c'est à dire, un nombre composé de plus de 77 chiffres.
-%         \textbf{VÉRIFIE QUAND MÊME CE QUE TU RACONTES.}
-%     \item Soit un corps $\mathbb{F}_{p^r}$ de caractéristique $p$ petite (en général $p = 2$),
-%         où $r$ est un nombre premier tel que l'ordre de $2$ dans $\mathbb{F}_{r}^*$ est grand
-%         (en particulier, il faut éviter les nombres premiers de Fermat et Mesrenne).
-% \end{itemize}
+De plus le choix des clés secret s'effectue de façon aléatoire dans le respect des conditions de chaque cas.
 
-% \subsection{Choix de la courbe elliptique}
-% Le corps $k = \mathbb{F}_{q}$ étant choisi, on note $p$ sa caractéristique. Soit $E$ la courbe
-% elliptique considérée, $t$ la trace du Frobenius, $G \in E(\mathbb{F}_{q})$ le point de base et
-% $\ell$ son ordre dans $E(\mathbb{F}_{q})$.
+\subsection{Protocol Diffie-Hellman}
 
-% Pour éviter de nouveau certaines attaque, il est à noté que :
-% \begin{itemize}
-%     \item Si $\ell$ n'est pas premier, il est possible de simplifier le calcul du logarithme
-%         discret. (réduction de Pohlig-Helman)
-%     \item Si $t=1$, on dit que la courbe $E$ est anormale, bien que ce soit un cas rare. De
-%         plus, si $q = p$ est premier, le problème du logarithme discret sur $E$ peut être
-%         résolu en un temps linéaire. (attaque de Smart)
-%     \item Si $v$ est le plus petit entier tel que $\ell \mid q^{v}-1$, alors on peut ramener le
-%         problème de logarithme discret sur le corps fini $\mathbb{F}_{q^{v}}$ grâce au pairing
-%         de Weil. (attaque de Menezes-Okamoto-Vanstone).
-% \end{itemize}
+Alice et Bob souhaite s'échanger publiquement une clé secrète commune. Pour cela ils se mettent d'accord pour la construire selon le procédé suivant:
 
-% Le degré MOV est défini comme le plus petit entier $v$ pour lequel on a
-% $\card(E(\mathbb{F}_{q})) \mid q^{v} - 1$. On doit donc s'assurer que $v$ ne soit pas petit
-% sans pour autant le calculer explicitement. En particulier, la courbe $E$ ne doit pas être
-% supersingulière. Si $E$ est une courbe supersingulière, on peut montrer que son degré MOV est
-% $\le 6$ donc vulnérable.
+\begin{description}
+    \item[1)] Ils choisissent un corps fini $K$ et une courbe elliptique $E$ définie sur $K$, pour que le problème du logaritme discret soit difficile à résoudre dans le groupe $E(K)$. Ils choisissent un point $P \in E(K)$. Ils rendent alors publique le triplet $(K,E,P)$.
 
-% % \begin{exemple}
-% %     Considérons l'exemple de $E$ définie par $y^2 = x^3 + 33x + 69$ dans le corps
-% %     $\mathbb{F}_{p} = \mathbb{F}_{1000033}$. On a 
-% %     \begin{itemize}
-% %         \item  $\ell = 1001041$ qui est du même ordre de grandeur que $p$.
-% %         \item $t = -1007$, la courbe n'est ni anormale, ni supersingulière.
-% %         \item Le degré MOV de la courbe vaut $10320$.
-% %     \end{itemize}
+    \item[2)] Alice choisit un entier naturel secret non nun $a$ et calcul le point $P_a=aP$, qu'elle transmet publiquement à Bob.
 
-% % Calculer le degré MOV d'une courbe elliptique revient en fait à trouver $v$ tel que
-% % $q^{v} \congru 1 (\mod |E(\mathbb{F}_{q})|)$. C'est donc trouver l'ordre de $q$
-% % dans $\left( \Z / |E(\mathbb{F}_{q})|\Z \right) ^{*}$.
+    \item[3)] Bob procède de la même façon en choisissant un entier naturel secret, non nul, $b$, et il calcul de son côté le point $P_b=bP$, qu'il transmet publiquement à Alice.
 
-% % Une bonne stratégie pour générer des courbes satisfaisante est de les construires
-% % au hasard et de s'assurer qu'elles semblent raisonnables en vue de nos critères.
-% % \end{exemple}
+    \item[4)] Alice calcul le point $aP_b=a(bP)$.
 
-% % \begin{algo}
-% %     \cdot Entrée : corps fini $K$.
+    \item[5)] Bob calcul le point $bP_a=b(aP)$.
+\end{description}
 
-% %     \cdot Sortie : une courbe elliptique $E(K)$, un point $G \in E$ ayant un grand ordre.
+Ils ont ainsi construit leur clé secret commun qui est le point $abP$.
 
-% %     \quad Étape 1 : Choisir au hasard une courbe elliptique $E$ définie sur $K$.
+\begin{probleme}[Diffie-Hellman]
     
-% %     \quad Étape 2 : Calculer $\card(E(K))$ et vérifier que la courbe n'est pas anormale et que
-% %     son degré MOV est grand (sinon retour à l'étape 1).
+\end{probleme}
 
-% %     \quad Étape 3 : Factoriser $\card(E(K))$. Si cela prend trop de temps aller à l'étape 1. Si
-% %     $\card(E(k))$ n'est pas de la forme $s\ell$ avec $s$ petit et $\ell$ premier grand, aller à
-% %     l'étape 1.
+\subsection{Algorithme d'El Gamal}
 
-% %     \quad Étape 4 : Chercher un point au hasard $P \in E$, si $sP = \mathcal{O}$, aller à
-% %     l'étape 4 ou aller à l'étape 1 si la recherche d'un point convenable a échoué). Sinon,
-% %     retourner $E$ et $G = sP$.
-% % \end{algo}
+Alice souhaite envoyer un message chiffré à Bob. Pour se faire elle choisit un corps fini $K$, une courbe elliptique $E$ définie sur $K$ de sorte que le problème du logarithme discret soit difficile à résoudre dans le groupe $E(K)$. Elle choisit ensuite un point $P \in E(K)$. Enfin elle choisit sont entier naturel secret, non nul, $s$ et calcul et calcul le point $A=sP$.
 
-% \subsection{ECDSA}
-
-% Le protocole "Elliptic Curve Digital Signature Algorithm" repose sur le problème du logarithme
-% discret. 
-
-% Pour simplifierm supposons que les courbes sont définies sur un corps $K = \mathbb{F}_{p}$, où
-% $p$ est un grand nombre premier. Soit $E$ une courbe elliptique définie sur $K$ et $G \in E$
-% d'ordre premier $\ell$. 
-
-% Supposons qu'Alice et Bob communiquent et qu'ils veulent pouvoir authentifier les messages de
-% chacun.
-
-% Alice et Bob choisissent aléatoirement un nombre $1 < n_{A}, n_{B} < l-1$ et calcul
-% respectivement $P_{A} = n_{A}G$ pour Alice et $P_{B} = n_{B}G$ pour Bob. C'est deux nouveau
-% point sont alors leurs clé publique et les entiers $n_{A}$ et $n_{B}$ leur clé secrète
-% respective.
-
-
-%     Entrée : un message $m$ 
-
-%     Sortie : La signature du message $m$ par Alice.
-
-%     \quad Étape 1 : Choisir un nombre aléatoire $1 < k < l-1$ et calculer $kG = (x,y) \in
-%     E(K)$. On peut toujours supposer que $x$ est dans l'intervalle $[0,p-1]$ et c'est ce que
-%     l'on fait.
-
-%     \quad Étape 2 : Calculer $r$ tel que $r = x (\mod \ell)$. Si $r = 0$ retourner à l'étape
-%     $1$.
-
-%     \quad Étape 3 : Calculer $s = k^{-1} ( H(m) + n_{A}r) (mod \ell)$ où $H$ est une fonction
-%     de hachage. Si $s= 0$ retourner à l'étape 1.
-
-%     \quad Étape 4 : Retourner la signature $(r,s)$.
-
-%     \quad
-
-%     \quad
-
-%     \quad
-
-%     \quad
-
-%     \quad
-
-%     \quad
-
-% \section{Protocole Diffie-Hellman}
-
-
-% \begin{description}
-%     \item[1)] Ils choisissent un corps fini $K$ et une courbe elliptique $E$ définie sur $K$, pour que le problème du logaritme discret soit difficile à résoudre dans le groupe $E(K)$. Ils choisissent un point $P \in E(K)$. Ils rendent alors publique le triplet $(K,E,P)$.
-
-%     \item[2)] Alice choisit un entier naturel secret non nun $a$ et calcul le point $P_a=aP$, qu'elle transmet publiquement à Bob.
-
-%     \item[3)] Bob procède de la même façon en choisissant un entier naturel secret, non nul, $b$, et il calcul de son côté le point $P_b=bP$, qu'il transmet publiquement à Alice.
-
-%     \item[4)] Alice calcul le point $aP_b=a(bP)$.
-
-%     \item[5)] Bob calcul le point $bP_a=b(aP)$.
-% \end{description}
-
-% Ils ont ainsi construit leur clé secret commun qui est le point $abP$.
-
-% \section{Algorithme El-Gamal}
-
-
-% Alice souhaite envoyer un message chiffré à Bob. Pour se faire elle choisit un corps fini $K$, une courbe elliptique $E$ définie sur $K$ de sorte que le problème du logarithme discret soit difficile à résoudre dans le groupe $E(K)$. Elle choisit ensuite un point $P \in E(K)$. Enfin elle choisit sont entier naturel secret, non nul, $s$ et calcul et calcul le point $A=sP$.
-
-% Elle rend ainsi public le quadruplet 
-% \[
-%     (K,E,P,A)
-% .\] 
-
-% C'est la base de ce qui va permettre à Alice et Bob de pouvoir communiquer de façon confidentiel entre eux.
-
-% Ainsi, pour que Bob puisse envoyer un message chiffré $M \in E(K)$ à Alice, il choisit secrétement un entier non nul $k$ et calcules les points
-% \[
-% M_1=kP \quad \text{et} \quad M_2=M+kA
-% .\] 
-% Il transmet alors publiquement à Alice le couple $(M_1,M_2)$. C'est donc la phase d'encryptage du message $M$.
-
-% Pour qu'Alice puisse déchiffrer le message $M$, elle doit calculer le point
-% \[
-% M_2-sM_1
-% .\] 
-% Ce qui lui permet grâce au calcul suivant de retrouver $M$:
-% \[
-% M_2-sM_1=M+kA-s(kP)=M+k(sP)-s(kP)=M+skP-skP=M
+Elle rend ainsi public le quadruplet 
+\[
+    (K,E,P,A)
 .\] 
 
+C'est la base de ce qui va permettre à Alice et Bob de pouvoir communiquer de façon confidentiel entre eux.
 
-% En effet, pendant la majorité de notre histoire il a fallut s'échanger au préalable et ceci
-% en trouvant un moyen physique, pour procéder à un échange de clé secrète.
+Ainsi, pour que Bob puisse envoyer un message chiffré $M \in E(K)$ à Alice, il choisit secrétement un entier non nul $k$ et calcules les points
+\[
+M_1=kP \quad \text{et} \quad M_2=M+kA
+.\] 
+Il transmet alors publiquement à Alice le couple $(M_1,M_2)$. C'est donc la phase d'encryptage du message $M$.
 
-% Le concept d'échange de clé publique, introduit en 1976, est attribué à
-% Whitfield Diffie, Martin Hellman et Ralph Merkle. Bien qu'il est été nommé protocol
-% Diffie-Hellman. Ce protocol comme dit précédemment est un protocol d'échange de clé chiffré
-% sur un canal pubique. 
-
-% En effet, comme dit précédemment avant pour que deux personnes puisse communiquer
-% secretement l'une avec l'autre. Elle devait se connaître au préable, pour pouvoir organiser
-% un échange d'une clé secret, qui est donc connue par ces deux personnes. Le protocol
-% Diffie-Hellman répond cet problématique de l'échange de clé. 
-
-% Ce protocol présente l'avantage de pouvoir profiter de la rapidité de calcul des
-% cryptosytème symétrique, tout en bénéficiant de l'éfficacité en terme de sécurité de la
-% cryptographie asymétrique.
-
-% Ainsi, il est opportun entre deux personnes de se mettre d'accord sur une clé secrete
-% commune, à partir d'une clé publique. Ce qui permet par la suite d'utiliser cette clé pour
-% chiffré ses données à la d'un cryptosystème symétrique. La difficulté pour trouver cette clé
-% secrete, est alors analogue à celle pour déchiffrer un message dans l'utilisation d'un
-% cryptosystème à la clé publique. Son inconvénient est qu'il ne permet pas d'authentifier la
-% provenance de la clé. On veux dire par là, que si Eve intercepte les clés secrètes
-% d'Alice et Bob. Elle peut alors renvoyer une clé secrete à Alice différente de celle de Bob,
-% et de la même façon avec Bob. Ainsi, Eve peut intercepter, modifier ou partager les données
-% échangé entre Alice et Bob. Ceci est appellé une attaque de l'homme du milieu. 
+Pour qu'Alice puisse déchiffrer le message $M$, elle doit calculer le point
+\[
+M_2-sM_1
+.\] 
+Ce qui lui permet grâce au calcul suivant de retrouver $M$:
+\[
+M_2-sM_1=M+kA-s(kP)=M+kA-kA=M
+.\] 

@@ -1,23 +1,33 @@
 \chapter{Loi de groupe}
+\begin{center}
+    Dans ce chapitre, on présente le point de vue géométrique de la construction de la loi de
+    groupe, et en parallèle on introduit algébriquement les différents outils nécessaire à
+    l'élaboration de la loi de groupe. On commence par montrer qu'il y exactement trois point
+    d'intersection entre une droite et la courbe. Puis, nous montrerons l'existence et
+    l'unicité de la droite qui intersecte deux points de la courbe, ainsi que de la tangente en
+    un point de la courbe. Muni de ses deux outils nous nous consacreront à la construction de
+    la loi des cordes-tangentes. Ce qui nous permettra de conclure avec le théorème qui régit
+    la loi du groupe des points rationnels d'une courbe elliptique.
+\end{center}
 % \section{Loi de groupe}
 
-Soit $E$ une courbe elliptique définie sur $K$. Pour toute extension $L$ de $K$ dans $\overline{K}$, on va munir $E(L)$ d'une structure naturelle de groupe abélien, d'élément neutre le point à l'infini.
 
 \section{Point de vue géométrique}
 
 \begin{proposition}
     \label{prop:secTanGeo}
     
-    Soient une cubique irréductible non singulière $E$ et une droite $L$ définies sur
+    Soient une courbe elliptique $E$ et une droite $D$ définies sur
     $K$. Si la cubique $E$ a au moins deux points d'intersection (comptés avec leur
-    multiplicité) avec la droite $L$, alors le nombre de points d'intersection (comptés avec
-    leur multiplicité) entre $E$ et $L$ est exactement $3$.
+    multiplicité) avec la droite $D$, alors le nombre de points d'intersection (comptés avec
+    leur multiplicité) entre $E$ et $D$ est exactement $3$.
 \end{proposition}
 
 \begin{demonstration}
-   En effet, comme $E$ est irréductible, nous savons grâce à la proposition \textbf{ref} que le
+   En effet, comme $E$ est irréductible, nous savons grâce à la proposition
+   \ref{prop:intersectionED}  que le
    nombre de points à l'intersection de $E$ et $D$ est fini. Soit la droite $D : aX + bY + cZ =
-   0$ où nous supposons $c \neq 0$. Les points $P = (X,Y,Z)$ sont racines du polynôme $F(X,Y,-
+   0$ où nous supposons $c \neq 0$. Les points $P = [X,Y,Z]$ sont racines du polynôme $F(X,Y,-
    \frac{aX+bY}{c})$ où $F$ est le polynôme homogène de degré 3 qui définit $E$. 
 
    Notons :
@@ -36,6 +46,8 @@ Soit $E$ une courbe elliptique définie sur $K$. Pour toute extension $L$ de $K$
 \end{demonstration}
 
 \section{Droites de $\mathbb{P}^2$}
+Soit $E$ une courbe elliptique définie sur $K$. Pour toute extension $L$ de $K$ dans $\overline{K}$, on va munir $E(L)$ d'une structure naturelle de groupe abélien, d'élément neutre le point à l'infini.
+
 Le première objet dont l'on a besoin pour construire notre groupe et que le l'on va
 manipuler tout on l'on du processus est la droite projective.
 
@@ -47,8 +59,10 @@ manipuler tout on l'on du processus est la droite projective.
     où $u$, $v$ et $w$ sont des éléments non tous nuls de $\overline{K}$.
 \end{definition}
 
-On parle alors de la droite d'équation $ux+vy+wz=0$. Une droite d'équation $x=\lambda z$, où $\lambda$ est dans $\overline{K}$, est dite verticale. Une telle droite passe par le point $O = [0,1,0]$. En fait, toute droite passant par $O$ a une équation de la forme $ux+wz=0$. On dit souvent que la droite d'équation $z=0$ est la droite à l'infini. En identifiant la partie de $\mathbb{P}^2$ formée des points $[x,y,z]$ tels que $z \neq 0$ avec $\overline{K}^2$, le plan projectif s'interprète
-comme la réunion de $\overline{K}^2$ avec la droite à l'infini.
+On parle alors de la droite d'équation $ux+vy+wz=0$. Une droite d'équation $x=\lambda z$, où $\lambda$ est dans $\overline{K}$, est dite verticale. Une telle droite passe par le point $O = [0,1,0]$. En fait, toute droite passant par $O$ a une équation de la forme $ux+wz=0$.
+
+% On dit souvent que la droite d'équation $z=0$ est la droite à l'infini. En identifiant la partie de $\mathbb{P}^2$ formée des points $[x,y,z]$ tels que $z \neq 0$ avec $\overline{K}^2$, le plan projectif s'interprète
+% comme la réunion de $\overline{K}^2$ avec la droite à l'infini.
 
 \begin{lemme}
     \label{lem:lemme2}
@@ -259,6 +273,8 @@ $\mathbb{P}_{1}$. Pour une courbe elliptique il correspond au $\mathcal{O}$.
 \end{remarque}
 
 \begin{proposition}
+    \label{prop:propasso}
+    
     Pour tous points $P_1,P_2,Q_1$ et $Q_2$ de $E(K)$, on a :
     \[
     f(f(P_1,P_2),f(Q_1,Q_2)) = f(f(P_1,Q_1),f(P_2,Q_2))
@@ -435,7 +451,7 @@ f(P,P) = \left[ \lambda^2 - 2 x_{P}, \lambda\left( \lambda^2 - 2x_{P} \right) + 
 
                 Ainsi à partir de l'équation de la tangente $D$ on a
                 \begin{align*}
-                    F_{X}(P)\left( x - x_Pz \right) = 0 &\implies \left( F_{X}(P) \right) = 0 \ou \left( x - x_Pz \right) = 0 \\
+                    F_{X}(P)\left( x - x_Pz \right) = 0 &\implies \left( F_{X}(P) = 0\right) \ou \left( x - x_Pz = 0 \right) \\
                                                         &\implies x - x_Pz = 0
                 .\end{align*}
                 Donc pour $D$ on a 
@@ -526,19 +542,27 @@ dans la proposition \ref{prop:secTanGeo}
     \label{fig:associativiteGeo}
 \end{figure}
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{P+O}
+    \caption{L'élément neutre de la loi de groupe}
+    \label{fig:P-O}
+\end{figure}
+
 \begin{demonstration}
     \begin{enumerate}
         \item La loi $+$ est bien interne puisque $P + Q$ est l'intersection entre la courbe et
             une droite, c'est à dire un point de la courbe.
 
-        \item La loi $+$ est associative (voir Figure). En effet, si $P,Q$ et $R$ sont trois
+        \item La loi $+$ est associative (voir Figure \ref{fig:associativiteGeo}). En effet, si $P,Q$ et $R$ sont trois
             point de la courbe, on a
 
             \begin{align*}
             f(P,f(Q+R)) &= f(P,f(f(Q,R),\mathcal{O})) \\
             &= f(f(f(P,Q),Q),f(f(Q,R),\mathcal{O})) \text{ car } P = f(f(P,Q),Q) \\
-            &= f(f(f(P,Q),\mathcal{O}),f(f(Q,R),Q)) \text{ voir la proposition \ref{prop:} } \\
-            &= f(f(f(P,Q),\mathcal{O}),R) \text{ voir la Figure \ref{} } \\
+            &= f(f(f(P,Q),\mathcal{O}),f(f(Q,R),Q)) \text{ voir la proposition
+            \ref{prop:propasso} } \\
+            &= f(f(f(P,Q),\mathcal{O}),R) \text{ voir la Figure \ref{fig:associativiteGeo}} \\
             &= f(f(P+Q),R)
             .\end{align*}
 
@@ -549,7 +573,7 @@ dans la proposition \ref{prop:secTanGeo}
             .\] 
 
         \item L'élément $\mathcal{O}$ est l'élément neutre de la loi additive (voir Figure
-            \ref{}). 
+            \ref{fig:P-O}). 
 
             En effet,
 
@@ -582,16 +606,9 @@ dans la proposition \ref{prop:secTanGeo}
 \end{demonstration}
 
 Les propiétés de la loi de groupe sur une courbe elliptique sont représentées sur la Figure
-\ref{}.
+\ref{fig:loiGroupe}.
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.8\textwidth]{P+O}
-    \caption{L'élément neutre de la loi de groupe}
-    \label{fig:P-O}
-\end{figure}
-
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{loiGroupe}
     \caption{La loi de groupe + sur l'ensemble des points rationnels d'une courbe
@@ -599,15 +616,15 @@ Les propiétés de la loi de groupe sur une courbe elliptique sont représentée
     \label{fig:loiGroupe}
 \end{figure}
 
-% Considérons comme précédemment $a$ et $b$ des éléments de $K$ tels que $4a^3+27b^2\neq 0$ et $E$ la courbe elliptique définie sur $K$ d'équation
-% \[
-% y^2=x^3+ax+b
-% .\] 
-% Notons $+$ la loi de composition interne sur $E$, définie pour tous $P$ et $Q$ dans $E$ par l'égalité
-% \begin{align}
-%     \label{eq:groupe}
-%     P+Q=f(f(P,Q),O)
-% .\end{align}
+Considérons comme précédemment $a$ et $b$ des éléments de $K$ tels que $4a^3+27b^2\neq 0$ et $E$ la courbe elliptique définie sur $K$ d'équation
+\[
+y^2=x^3+ax+b
+.\] 
+Notons $+$ la loi de composition interne sur $E$, définie pour tous $P$ et $Q$ dans $E$ par l'égalité
+\begin{align}
+    \label{eq:groupe}
+    P+Q=f(f(P,Q),O)
+.\end{align}
 
 \begin{theoreme}
     \label{th:theoreme1}
@@ -669,11 +686,6 @@ Les propiétés de la loi de groupe sur une courbe elliptique sont représentée
         \item[5)] Pour l'opposer on cherche un point $M \in E$ tel que $P\neq M$ et $P,Q\neq O$ d'après le théorème énoncé assertion 2) on a donc $x_P = x_M$ et donc nécessairement $y_M=-y_P$ donc le point recherché est $M=\left( x_M,y_M \right) = \left( x_P,-y_P \right) =-P$. 
     \end{description}
 \end{demonstration}
-
-\begin{remarque}
-    Pour ce qui est de l'associativité de la loi de groupe, il faudrait traiter chaque cas et
-    montrer que les formules sont bien associative. Ce qui long et fastidieux. 
-\end{remarque}
 
 \begin{exemple}
     mettre exemple de calcul de $2P$ pour la suite
