@@ -311,3 +311,48 @@ M_2-sM_1=M+kA-s(kP)=M+k(sP)-s(kP)=M+skP-skP=M
 % d'Alice et Bob. Elle peut alors renvoyer une clé secrete à Alice différente de celle de Bob,
 % et de la même façon avec Bob. Ainsi, Eve peut intercepter, modifier ou partager les données
 % échangé entre Alice et Bob. Ceci est appellé une attaque de l'homme du milieu. 
+
+
+    % Soit $\mathbb{F}_{25}$ le sous-corps de $\overline{\mathbb{F}}_{5}$ à 25
+    % éléments. On a
+    % \[
+    % \mathbb{F}_{25} = \mathbb{F}_{5}(\alpha) = \left\{ x + y\alpha \mid (x,y) \in
+    % \mathbb{F}_{5} \right\} 
+    % ,\] 
+    % où $\alpha \in \overline{\mathbb{F}}_{25}$ vérifie $\alpha^2 + \alpha + 1 = 0$.
+
+    % On constate que l'on a
+
+    % \begin{align*}
+    %         E(\mathbb{F}_{25}) = \left\{ \left( 0 , \pm 1 \right) , \left( 2,\pm 1 \right) , \left( 3,\pm 1 \right)
+    % , \left( 4,\pm 2 \right), \left( 1+\alpha,\pm 2\alpha \right) , \left( 2+2\alpha, \pm
+% \left( 4 + \alpha \right)  \right) , \\
+% \left( 2+3\alpha,\pm 2 \right) , \left( 4+2\alpha,\pm 2
+% \right), \left( 3\alpha, \pm \left( 2+\alpha \right)  \right) , \left( 1, \pm \left(
+% 3+\alpha \right)  \right) , \\ 
+    % \left( 1 + 3 \alpha, \pm \left( 3+\alpha \right) \right) ,  \left( 3+2\alpha, \pm \left( 3+\alpha \right)  \right)  \right\} \cup {\mathcal{O}}
+    % .\end{align*}
+
+    % En effet, comme la courbe est symétrique, il nous suffit de vérifier que pour tous les % valeurs de $x$ dans $\mathbb{F}_{5}$, lesquelles sont un carré dans $\mathbb{F}_{5}$.
+
+    % Par exemple, pour $x=0$, on a $y^2=0^3+0+1$ donc $y = \pm 1$, ce qui nous donne
+    % les points d'abiscisse $x=0$ et d'ordonnées $y=\pm 1$ dans $\mathbb{F}_{5}$, par
+    % conséquent les points $(0,1)$ et $(0,4)$ vérifient l'équation $f(x,y) = 0$ et sont
+    % donc des points de la courbe.
+
+    % Maintenant si $x=1$, l'équation de la courbe nous donne $y^2=1^3+1+1=3$ donc il faut
+    % chercher si dans $\mathbb{F}_{5}$, s'il existe un carré modulo $5$ égal à 3. Ce qui n'est
+    % pas le cas. En effet, dans $\mathbb{F}_{5}$ les éléments sont $\left\{
+    % \overline{0},\overline{1},\overline{2},\overline{3},\overline{4} \right\} $ et on a
+    % succecssivement dans $\mathbb{F}_{5}$
+    % \begin{align*}
+    %     y^2 &=0^2=0 \\
+    %     y^2 &= 1^2 = \pm 1 \\
+    %     y^2 &= 2^2=4=-1 \\
+    %     y^2 &= 3^2=9=-1 \\
+    %     y^2 &= 4^2=16=1 \\
+    % .\end{align*}
+    % Ainsi, il n'existe pas $y \in \mathbb{F}_{5}$ qui vérifient l'équation de la
+    % courbe. Donc la courbe $E$ ne possède pas de point de d'abscisse $x=1$.
+
+    % À voir si je mets $\mathbb{F}_{25}$ je crois j'ai pigé faut que je vérifie ça ce midi

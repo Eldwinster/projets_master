@@ -1,10 +1,10 @@
 \chapter{Géométrie projective}
 \begin{center}
-    Dans ce chapitre, je défini et donne quelques propositions qui m'ont permis de
+    Dans ce chapitre, je définis et donne quelques propositions qui m'ont permis de
     mieux comprendre l'intéret de l'étude des courbes elliptiques dans le plan
     projectif. Ainsi que d'introduire les propositions qui me permettent de faire le parallèle
     entre la partie algébrique du raisonnement et l'interprétation géométrique
-    associé. Notamment, j'introduis une proposition qui me permet de donner une la
+    associée. Notamment, j'introduis une proposition qui me permet de donner la
     démonstration géométrique de l'associativité de la loi du groupe des points rationnels
     d'une courbe elliptique.
 
@@ -12,7 +12,7 @@
 
 \section{Le plan projectif et les courbes sur le plan projectif}
 
-La définition que nous allons utilisé pour les courbes elliptiques étant dans le plan
+La définition que nous allons utiliser pour les courbes elliptiques étant dans le plan
 projectif.
 
 Introduisons brièvement, ce qu'est un espace projectif, ainsi que les objets dont nous aurons
@@ -47,7 +47,7 @@ Dans un premier temps, voici la définition du plan projectif.
 Pour définir la notion de courbe sur le plan projectif, on utilise pour cela des polynômes à
 trois variables. La définition du plan projectif, nous dit qu'un point peut être représenté par
 plusieurs triplets différents mais équivalents. Il semble alors naturel de ne considérer
-que des polynôme $F(X,Y,Z)$ dans l'anneau de polynômes $K[X,Y,Z]$ tels que si $F(x,y,z) = 0$ alors $F(\lambda x, \lambda
+que des polynômes $F(X,Y,Z)$ dans l'anneau de polynômes $K[X,Y,Z]$ tels que si $F(x,y,z) = 0$ alors $F(\lambda x, \lambda
 y, \lambda z) = 0$ pour tout $\lambda$ non nul.
 
 \begin{definition}
@@ -58,11 +58,11 @@ y, \lambda z) = 0$ pour tout $\lambda$ non nul.
         \label{eq:polyHomo}
     F(\lambda X, \lambda Y, \lambda Z) = \lambda^{d}F(X,Y,Z)
     .\end{align}
-    Ces polynôme sont une somme de monômes de la forme $\sum_{i+j+k=d} X^{i}Y^{j}Z^{k}$
-    et vérifie l'égalité \eqref{eq:polyHomo}.
+    Ces polynômes sont une somme de monômes de la forme $\sum_{i+j+k=d} X^{i}Y^{j}Z^{k}$
+    et vérifient l'égalité \eqref{eq:polyHomo}.
 \end{definition}
 
-On peut maintenant énoncé la définition d'une courbe sur le plan projectif.
+On peut maintenant énoncer la définition d'une courbe sur le plan projectif.
 
 \begin{definition}
     \label{def:courbeP2}
@@ -86,7 +86,7 @@ $P'=\lambda P$, on a
 \[
 F(P')=F(\lambda x, \lambda y, \lambda z) = \lambda^{d}F(x,y,z) = 0
 .\] 
-Tous les représentant de classe d'un point de la courbe sont des zéro du polynôme $F$ donc un
+Tous les représentants de classe d'un point de la courbe sont des zéros du polynôme $F$ donc un
 point de la courbe.
 
 \begin{definition}
@@ -142,7 +142,7 @@ $\phi(P) = (\frac{x}{z},\frac{y}{z})$ du plan affine $K$.
 
 Il y a donc une correspondance entre les points du plan projectif et ceux du plan affine.
 On peut également remarquer comme il a été dit plutôt que deux représentants de classes
-distincts d'un même point $P$ dans $\mathbb{P}_{2}$ donne lieu à un unique point dans
+distincts d'un même point $P$ dans $\mathbb{P}_{2}$ donnent lieu à un unique point dans
 $\mathbb{A}_{2}$.
 
 Par ailleurs, si on a $F$ un polynôme homogène de degré $d$ et que $F(x,y,z) = 0$ alors 
@@ -175,7 +175,7 @@ Dans ce cas, on a :
 
 
 \begin{remarque}
-    En ce qui concerne les courbes elliptique nous verrons que seul un point de la courbe
+    En ce qui concerne les courbes elliptiques nous verrons que seul un point de la courbe
     appartient à $\mathbb{P}_{1}$.
 \end{remarque}
 
@@ -201,7 +201,7 @@ Dans ce cas, on a :
     F(X,Y,Z)= P_1(X,Y,Z)\ldots P_{n}(X,Y,Z)
     .\] 
 
-    Les $P_{i}$ sont appelées les composantes irréductibles du polymôme $F$.
+    Les $P_{i}$ sont appelés les composantes irréductibles du polymôme $F$.
 \end{definition}
 
 \begin{definition}
@@ -220,7 +220,7 @@ composantes irréductibles sont distinctes.
     \label{prop:intersectionED}
     
     L'ensemble des points à l'intersection d'une cubique $E$ et d'une droite $D$ est fini si, et
-    seulement si, ces deux courbes n'ont pas de composante irréductible en commun.
+    seulement si, ces deux courbes n'ont pas de composante commune.
 \end{proposition}
 
 Autrement dit, cela revient à montrer l'ensemble $E \cap D$ est fini, si et seulement si, les
@@ -251,8 +251,8 @@ polynômes associés à $E$ et $D$ sont irréductibles.
         F_2(X,Y,Z)F_3(X,Y,Z) = 0 & \iff \left( F_2(X,Y,Z)=0 \right)  \ou \left( F_3(X,Y,Z) = 0 \right)  \\
                                  & \iff \exists P \in \mathbb{P}_{2},\ P \in D \cup C = E 
     .\end{align*}
-    Donc $D$ est contenu dans $E$. Comme il existe une infinité de droite, il existe une
-    infinité de point intersection de la courbe et de la droite.
+    Donc $D$ est contenu dans $E$. Comme il existe une infinité de droites, il existe une
+    infinité de points intersections de la courbe et de la droite.
 
     Ainsi, on a montré que  si la courbe $E$ et la droite $D$ ont une composante irréductible
     commune alors il existe une infinité de points dans l'ensemble $D \cup C = E$, et
@@ -263,10 +263,11 @@ polynômes associés à $E$ et $D$ sont irréductibles.
 
     \item Dans un second temps, supposons que $E$ et $D$ n'ont pas de composante commune, ce
         qui revient à dire que les polynômes $F_1$ et $F_2$ sont irréductibes. Donc à montrer
-        que $F_1$ est irréductible ce qui permettra de conclure grâce au nombre fini de racine
+        que $F_1$ est irréductible ce qui permettra de conclure grâce au nombre fini de
+        racines
         de $F_1$.
 
-    La droite $D$ est défini par un polynôme homogène de degré 1
+    La droite $D$ est définie par un polynôme homogène de degré 1
     \[
     D : F_2(X,Y,Z) = aX + bY + cZ
     .\] 
@@ -286,7 +287,7 @@ polynômes associés à $E$ et $D$ sont irréductibles.
             y = - \frac{ax + c}{b}
             .\] 
 
-            L'équation suivante doit alors être vérifié
+            L'équation suivante doit alors être vérifiée
 
             \[
             f_1(x, - \frac{ax+c}{b}) = 0
@@ -297,7 +298,7 @@ polynômes associés à $E$ et $D$ sont irréductibles.
 
         \item Si $z = 0$ alors,
 
-            les coordonnées homogène de $P$ vérifient alors le système d'équation suivante
+            les coordonnées homogènes de $P$ vérifient alors le système d'équation suivante
 
             \[
                 \begin{cases}
@@ -369,12 +370,12 @@ polynômes associés à $E$ et $D$ sont irréductibles.
 % droites s'intersectent au point $[1,0]$.
 
 % Intuivement, la droite projective sur $K$ est une droite affine sur $K$ complétée par un
-% point, appelé point à l'infini que l'on note $\mathcal{O}$. Ainsi dans l'espace projectif deux droites parallèles s'intersectent en
+% point, appelé point à l'infini que l'on note $O$. Ainsi dans l'espace projectif deux droites parallèles s'intersectent en
 % un point à l'infini. Quand on parle de droite à l'infini, on désigne par cette droite
 % l'ensemble des points à l'infini.
 
 % Le point à l'infini étant l'intersection des droites paralléles.
-% % On obtient donc l'ensemble $\mathbb{P}^1 = K \cup \mathcal{O}$, avec $\mathcal{O} = \left[ 1,0 \right] $, le point à
+% % On obtient donc l'ensemble $\mathbb{P}^1 = K \cup O$, avec $O = \left[ 1,0 \right] $, le point à
 % % l'infini. 
 
 

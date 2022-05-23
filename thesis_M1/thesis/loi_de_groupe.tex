@@ -1,16 +1,14 @@
 \chapter{Loi de groupe}
 \begin{center}
     Dans ce chapitre, on présente le point de vue géométrique de la construction de la loi de
-    groupe, et en parallèle on introduit algébriquement les différents outils nécessaire à
+    groupe, et en parallèle on introduit algébriquement les différents outils nécessaires à
     l'élaboration de la loi de groupe. On commence par montrer qu'il y exactement trois point
     d'intersection entre une droite et la courbe. Puis, nous montrerons l'existence et
     l'unicité de la droite qui intersecte deux points de la courbe, ainsi que de la tangente en
-    un point de la courbe. Muni de ses deux outils nous nous consacreront à la construction de
+    un point de la courbe. Muni de ces deux outils nous nous consacreront à la construction de
     la loi des cordes-tangentes. Ce qui nous permettra de conclure avec le théorème qui régit
     la loi du groupe des points rationnels d'une courbe elliptique.
 \end{center}
-% \section{Loi de groupe}
-
 
 \section{Point de vue géométrique}
 
@@ -34,22 +32,22 @@
    \[
    q(X,Y)=F(X,Y,- \frac{aX + bY}{c})
    ,\] 
-   et soient $P=(x_{P},y_{P},z_{P})$ et $Q=(x_{Q},y_{Q},z_{Q})$ deux point, non nécessairement
-   distinct, à l'intersection
+   et soient $P=(x_{P},y_{P},z_{P})$ et $Q=(x_{Q},y_{Q},z_{Q})$ deux points, non nécessairement
+   distincts, à l'intersection
    entre $E$ et $D$. Comme $q(x_{P},y_{P}) = q(x_{Q},y_{Q})=0$, on peut écrire : 
    \[
    q(X,Y)=v(X,Y)(y_{P}X-x_{P}Y)(y_{Q}X-x_{Q}Y)
    ,\] 
    où $v$ est un polynôme homogène de degré 1. Il n'a donc qu'une racine que nous noterons
-   $(x_{R},y_{R})$. Le point $R=(x_{R},y_{R},- \frac{ax_{R}+by_{Q}}{c})$ est alors le troisième
+   $(x_{R},y_{R})$. Le point $R=(x_{R},y_{R},- \frac{ax_{R}+by_{R}}{c})$ est alors le troisième
    point de l'intersection entre $E$ et $D$.
 \end{demonstration}
 
 \section{Droites de $\mathbb{P}^2$}
 Soit $E$ une courbe elliptique définie sur $K$. Pour toute extension $L$ de $K$ dans $\overline{K}$, on va munir $E(L)$ d'une structure naturelle de groupe abélien, d'élément neutre le point à l'infini.
 
-Le première objet dont l'on a besoin pour construire notre groupe et que le l'on va
-manipuler tout on l'on du processus est la droite projective.
+Le première objet dont on va avoir besoin pour construire notre groupe et qu'on va
+manipuler tout au long du processus est la droite projective.
 
 \begin{definition}
     Une droite de $\mathbb{P}^2$ est une partie de $\mathbb{P}^2$ formée des points $[x,y,z]$ tels que 
@@ -61,22 +59,11 @@ manipuler tout on l'on du processus est la droite projective.
 
 On parle alors de la droite d'équation $ux+vy+wz=0$. Une droite d'équation $x=\lambda z$, où $\lambda$ est dans $\overline{K}$, est dite verticale. Une telle droite passe par le point $O = [0,1,0]$. En fait, toute droite passant par $O$ a une équation de la forme $ux+wz=0$.
 
-% On dit souvent que la droite d'équation $z=0$ est la droite à l'infini. En identifiant la partie de $\mathbb{P}^2$ formée des points $[x,y,z]$ tels que $z \neq 0$ avec $\overline{K}^2$, le plan projectif s'interprète
-% comme la réunion de $\overline{K}^2$ avec la droite à l'infini.
-
 \begin{lemme}
     \label{lem:lemme2}
-    
-    % Soient $P = \left[ a_1, a_2, a_3 \right]$ et $Q = \left[ b_1, b_2, b_3 \right]$ deux points distincts de $\mathbb{P}^2$.
 
-    % Il existe une unique droite de $\mathbb{P}^2$ passant par $P$ et $Q$. C'est la droite $D$ d'équation $ux + vy + wz = 0$ avec $\left[ x, y, z \right] \in \mathbb{P}^2$ et 
-    % \[
-    % u = a_2 b_3 - a_3 b_2, \ v = a_3 b_1 - a_1 b_3, \ w = a_1 b_2 - a_2 b_2 
-    % .\] 
-
-    % Énoncé originel : 
-
-    Soient $P = \left[ a_1, a_2, a_3 \right]$ et $Q = \left[ b_1, b_2, b_3 \right]$ deux points distinct de $\mathbb{P}^2$. Il existe une unique droite de $\mathbb{P}^2$ passant par $P$ et $Q$. C'est l'ensemble des points $\left[ x, y, z \right] \in \mathbb{P}^2$ tels que le déterminant de la matrice
+    Soient $P = \left[ a_1, a_2, a_3 \right]$ et $Q = \left[ b_1, b_2, b_3 \right]$ deux points
+    distincts de $\mathbb{P}^2$. Il existe une unique droite de $\mathbb{P}^2$ passant par $P$ et $Q$. C'est l'ensemble des points $\left[ x, y, z \right] \in \mathbb{P}^2$ tels que le déterminant de la matrice
     \[
         M = 
     \begin{pmatrix}
@@ -120,7 +107,7 @@ On parle alors de la droite d'équation $ux+vy+wz=0$. Une droite d'équation $x=
 
 \section{Tangente à $E$ en un point}
 
-Le deuxième objet, dont l'on est amené à utilisé est la tangente.
+Le deuxième objet, dont on est amené à utiliser est la tangente.
 
 Soit 
 \[
@@ -133,7 +120,7 @@ Notons
 ,\] 
 
 \[
-F_{X} = \frac{\partial F}{\partial X},\quad F_{Y} = \frac{\partial F}{\partial Y},\quad F_{Z} = \frac{\partial F}{\partial Z}
+F_{X} = \frac{\partial F}{\partial X}(X,Y,Z),\quad F_{Y} = \frac{\partial F}{\partial Y}(X,Y,Z),\quad F_{Z} = \frac{\partial F}{\partial Z}(X,Y,Z)
 ,\] 
 
 c'est-à-dire, 
@@ -206,9 +193,10 @@ Ce qui est absurde car $E$ est elliptique. D'après le lemme \ref{lem:lemme1}
     \begin{description}
         \item[1)] L'équation de la tangente à $E$ au point $O$ est z = 0.
         \item[2)] Soit $P = \left[ x_0, y_0, 1 \right]$ un point de $E$ distinct de $O$. L'équation de la tangente à $E$ en $P$ est
-            \[
+            \begin{align*}
+            \label{eq:tangente}
             F_{X}(P)\left( x - x_0z \right) + F_{Y}(P)\left( y - y_0z \right) = 0
-            .\] 
+            .\end{align*}
     \end{description}
 \end{lemme}
 
@@ -220,7 +208,7 @@ Ce qui est absurde car $E$ est elliptique. D'après le lemme \ref{lem:lemme1}
             .\] 
             Ainsi on retrouve bien $z = 0$.
 
-        \item[2)] Soit $P$ un tel point, d'après l'équation (cite? set up snippet -nommé + cité) de la tangente et de l'égalité $y_0^2 = x_0^3 + ax_0 + b$ on a,
+        \item[2)] Soit $P$ un tel point, d'après l'équation \eqref{eq:tangente} de la tangente et de l'égalité $y_0^2 = x_0^3 + ax_0 + b$ on a,
             \begin{align*}
                 F_{X}(P)x + F_{Y}(P)y + F_{Z}(P)z &= 0 \\
                 - \left( 3x_0^2 + a \right)x + \left( 2y_0 \right)y + \left( y_0^2 - \left( 2ax_0 + 3b \right) \right)z &= 0 \\
@@ -228,7 +216,7 @@ Ce qui est absurde car $E$ est elliptique. D'après le lemme \ref{lem:lemme1}
                 - 3x_0^2x - ax + 2y_0y + y_0^2z - 2ax_0z - 3z\left( y_0^2 - x_0^3 - ax_0 \right) &= 0 \left( \text{i.e } b = y_0^2 - \left( x_0^3 + ax_0 \right) \right) \\
                 - 3x_0^2x -ax + 2y_0y + y_0^2z - 2ax_0z - 3y_0^2z + 3x_0^3z + 3ax_0z &= 0 \\
                 - \left( 3x_0^2 + a \right)x + 2y_0y - 2y_0^2z + \left( 3x_0^2 + a \right)x_0z &= 0\\
-                - \left( 3x_0^2 + a \right)\left( x - x_0 \right) + 2y_0\left( y - y_0z \right) &= 0
+                - \left( 3x_0^2 + a \right)\left( x - x_0z \right) + 2y_0\left( y - y_0z \right) &= 0
             .\end{align*}
             D'où le résultat.
     \end{description}
@@ -244,11 +232,11 @@ cordes-tangentes qui satisfait :
 \begin{enumerate}
     \item Si $P,Q \in E$, distinct, nous pouvons définir la droite $D = (PQ)$ la corde
         à la courbe passant par $P$ et $Q$. Grâce à la proposition \ref{prop:secTanGeo} on sait
-        que cette corde prolongé à une droite intersecte la courbe $E$ en un unique troisième
+        que cette corde prolongée à une droite intersecte la courbe $E$ en un unique troisième
         point qui appartient à $E \cap D$. Nous noterons ce troisième point $f(P,Q)$.
     \item Si $P \in E$, et que $Q=P$, on peut définir la tangente $D = (PP)$ à $E$ au point
-        $P$. De nouveau, la proposition \ref{prop:secTanGeo} nous garantie l'existence d'un
-        troisième point unique en comptant les multiplicités qui appartient à $E \cap D$. On
+        $P$. De nouveau, la proposition \ref{prop:secTanGeo} nous garantit l'existence d'un
+        troisième point unique, en comptant les multiplicités, qui appartient à $E \cap D$. On
         notera ce dernier $f(P,P)$.
 \end{enumerate}
 
@@ -260,28 +248,17 @@ cordes-tangentes qui satisfait :
 \end{figure}
 
 On peut remarquer que sur la Figure \ref{fig:cordesTangentes}, une droite verticale
-àla courbe $E$ ne semble
+à la courbe $E$ ne semble
 pas la couper en un troisième point. Ceci est lié à la difficulté de représenter le plan
 projectif $\mathbb{P}_{2}$ sur un plan. Ce troisième point existe, et appartient à la droite infini
-$\mathbb{P}_{1}$. Pour une courbe elliptique il correspond au $\mathcal{O}$.
+$\mathbb{P}_{1}$. Pour une courbe elliptique il correspond au $O$.
 
 \begin{remarque}
     Le meilleur moyen de considérer $\mathbb{P}_{1}$ est de se représenter ses éléments comme
     l'ensemble des directions possibles des droites du plan affine. Dans le cas particulier
     des courbes elliptiques, on a vu que $P_{1}$ se limite à un seul élément, que l'on a noté
-    $\mathcal{O}$, qui correspond à la direction des droites verticales.
+    $O$, qui correspond à la direction des droites verticales.
 \end{remarque}
-
-\begin{proposition}
-    \label{prop:propasso}
-    
-    Pour tous points $P_1,P_2,Q_1$ et $Q_2$ de $E(K)$, on a :
-    \[
-    f(f(P_1,P_2),f(Q_1,Q_2)) = f(f(P_1,Q_1),f(P_2,Q_2))
-    .\] 
-
-    Pour une démonstration de ce résultat, voir 
-\end{proposition}
 
 % \subsection{Point de vue algébrique}
 \begin{proposition}
@@ -370,7 +347,7 @@ f(P,P) = \left[ \lambda^2 - 2 x_{P}, \lambda\left( \lambda^2 - 2x_{P} \right) + 
            \[
            y_0 = \lambda x_0 + \nu
            .\] 
-           En remplacent dans \eqref{eq:droite}, il vient
+           En remplaçant dans \eqref{eq:droite}, il vient
            \begin{align*}
                \left( \lambda x_0 + \nu  \right)^2 = x_0^3 + ax_0 + b \\
                \lambda^2 x_0^2 + 2\lambda \nu x_0 + \nu^2 = x_0^3 + ax_0 + b \\
@@ -395,11 +372,12 @@ f(P,P) = \left[ \lambda^2 - 2 x_{P}, \lambda\left( \lambda^2 - 2x_{P} \right) + 
            \begin{align*}
                f(P,Q) &= \left[ x_0, y_0, 1 \right] \\
                       &= \left[ \lambda^2 - x_P - x_Q, \lambda x_0 + \nu, 1 \right] \\
-                      &= \left[ \lambda^2 - x_P - x_Q, \lambda\left( \lambda^2 - x_P - x_Q \right), 1\right]
+                      &= \left[ \lambda^2 - x_P - x_Q, \lambda\left( \lambda^2 - x_P - x_Q
+                      \right) \nu, 1\right]
            .\end{align*}
            D'où l'assertion.
        \item[ii)] Supposons $x_P = x_Q$. Comme $P$ et $Q$ sont distinct, on a alors $y_P = - y_Q$.
-               D'après le lemme \ref{lem:lemme2} , la matrice suivante
+               D'après le lemme \ref{lem:lemme2}, on a la matrice suivante
                \[
                    \begin{pmatrix} x_P & x_Q & x \\
                    y_P & - y_Q & y \\
@@ -471,7 +449,9 @@ f(P,P) = \left[ \lambda^2 - 2 x_{P}, \lambda\left( \lambda^2 - 2x_{P} \right) + 
                 \[
                 y = \lambda x + \nu z
                 .\] 
-                Le point $O$ n'est donc pas sur $D$. Soit $M = \left[ x_0, y_0, 1 \right]$ un point de $E \cap D$. On a par le même raisonnement que dans le cas (1-i) (utilise ref?) les deux équations suivantes
+                Le point $O$ n'est donc pas sur $D$. Soit $M = \left[ x_0, y_0, 1 \right]$ un
+                point de $E \cap D$. On a par le même raisonnement que dans le cas (1-i)
+                les deux équations suivantes
                 \[
                 y_0^2 = x_0^3 + ax_0 + b \quad \text{et} \quad y_0 = \lambda x_0 + \nu
                 .\] 
@@ -494,44 +474,43 @@ f(P,P) = \left[ \lambda^2 - 2 x_{P}, \lambda\left( \lambda^2 - 2x_{P} \right) + 
                 \begin{align*}
                     G(x_P) &=x_P^3-\lambda^2x_P^2+\left( a-2\lambda\left( y_p-\lambda x_P \right)  \right) x_P + y_P^2-x_P^3-ax_P-\left( y_P -\lambda x_P \right) ^2\\
                     &= x_P^3-\lambda^2 x_P^2+ax_P-2\lambda x_Py_P+2\lambda^2x_P^2+y_P^2-x_P^3-ax_P-y_P^2+2\lambda x_Py_P -\lambda^2x_P^2 \\
-                    &= 2\lambda^2x_p^2 
+                    &= 0 
                 .\end{align*}
-                Par suite,
-                \begin{align*}
-                    G'(x_P)=0 &\iff 3x_P^2-G(x_P)+a-2\lambda\nu =0 \\
-                              & \iff G(x_P) = 3x_P^2+a-2\lambda\nu \\
-                              & \iff G(x_P)=0 \\
-                              & \iff x_P \text{ racine de G}
-                .\end{align*}
-Ainsi, $x_P$ est une racine d'ordre au moins $2$ de $G$. Les racines de $G$ sont donc 
+                Donc $G'(x_{P}$, et ainsi $x_P$ est une racine d'ordre au moins $2$ de $G$. Les racines de $G$ sont donc 
 \[
 x_P \quad \text{et} \quad \lambda^2-2x_P
 .\] 
-On obtient donc par le même raisonnement que (1-i) la formule annoncé.
+On obtient donc par le même raisonnement que (1-i) la formule annoncée.
         \end{description}
     \end{description}
 \end{demonstration}
 
 On obtient alors une loi de composition interne sur $E$, appelée loi de composition des
 cordes-tangentes, $f\ :\ E\times E \to E$ qui à tout couple de point $(P,Q)$ de la courbe
-associe le point d'intersection de la corde ou tangente associé $f(P,Q) \in E$ défini
+associe le point d'intersection de la corde ou tangente associée $f(P,Q) \in E$ défini
 dans la proposition \ref{prop:secTanGeo} 
-
-\begin{exemple}
-\end{exemple}
 
 \section{Loi de groupe}
 
 % \subsection{Point de vue géométrique}
+
+\begin{proposition}[admis]
+    \label{prop:propasso}
+    
+    Pour tous points $P_1,P_2,Q_1$ et $Q_2$ de $E(K)$, on a :
+    \[
+    f(f(P_1,P_2),f(Q_1,Q_2)) = f(f(P_1,Q_1),f(P_2,Q_2))
+    .\] 
+\end{proposition}
 
 \begin{theoreme}
     Soit un corps $K$. Soit $E$ une courbe elliptique définie sur $K$. Soient $P$ et $Q$ deux
     points de cette courbe. Alors, 
 
     \[
-    P + Q = f(f(P,Q),\mathcal{O})
+    P + Q = f(f(P,Q),O)
     ,\] 
-    définit une structure de groupe commutatif ayant $\mathcal{O}$ pour élément neutre
+    définit une structure de groupe commutatif ayant $O$ pour élément neutre
     de la loi.
 \end{theoreme}
 
@@ -555,57 +534,57 @@ dans la proposition \ref{prop:secTanGeo}
             une droite, c'est à dire un point de la courbe.
 
         \item La loi $+$ est associative (voir Figure \ref{fig:associativiteGeo}). En effet, si $P,Q$ et $R$ sont trois
-            point de la courbe, on a
+            points de la courbe, on a
 
             \begin{align*}
-            f(P,f(Q+R)) &= f(P,f(f(Q,R),\mathcal{O})) \\
-            &= f(f(f(P,Q),Q),f(f(Q,R),\mathcal{O})) \text{ car } P = f(f(P,Q),Q) \\
-            &= f(f(f(P,Q),\mathcal{O}),f(f(Q,R),Q)) \text{ voir la proposition
+            f(P,f(Q+R)) &= f(P,f(f(Q,R),O)) \\
+            &= f(f(f(P,Q),Q),f(f(Q,R),O)) \text{ car } P = f(f(P,Q),Q) \\
+            &= f(f(f(P,Q),O),f(f(Q,R),Q)) \text{ voir la proposition
             \ref{prop:propasso} } \\
-            &= f(f(f(P,Q),\mathcal{O}),R) \text{ voir la Figure \ref{fig:associativiteGeo}} \\
+            &= f(f(f(P,Q),O),R) \text{ voir la Figure \ref{fig:associativiteGeo}} \\
             &= f(f(P+Q),R)
             .\end{align*}
 
-            En appliquant $\mathcal{O}$ sur les deux membres de l'égalité, on trouve
+            En appliquant $O$ sur les deux membres de l'égalité, on trouve
 
             \[
             P + (Q+R) = (P+Q) + R
             .\] 
 
-        \item L'élément $\mathcal{O}$ est l'élément neutre de la loi additive (voir Figure
+        \item L'élément $O$ est l'élément neutre de la loi additive (voir Figure
             \ref{fig:P-O}). 
 
             En effet,
 
             \[
-            P + \mathcal{O} = f(f(P,O)O) = P \quad \text{et} \quad \mathcal{O}+P =
-            f(f(\mathcal{O},P),\mathcal{O}) = P
+            P + O = f(f(P,O)O) = P \quad \text{et} \quad O+P =
+            f(f(O,P),O) = P
             .\] 
 
         \item Tout point $P$ possède un inverse pour la loi $+$. En effet, il faut vérifier que
-            le point $-P= f(f(\mathcal{O},\mathcal{O}),P)$ est bien l'inverse de $P$ 
+            le point $-P= f(f(O,O),P)$ est bien l'inverse de $P$ 
 
             \begin{align*}
-                P + (-P) &= f(f(P,-P),\mathcal{O}) \\
-                &= f(f(f(P,f(f(\mathcal{O},\mathcal{O}),P),\mathcal{O}))) =
-                f(f(\mathcal{O},\mathcal{O}),\mathcal{O}) =
-                \mathcal{O}+\mathcal{O}=\mathcal{O}  \\
-                (-P) + P &= f(f(-P,P),\mathcal{O}) \\
-                &= f(f(f(f(\mathcal{O},\mathcal{O}),P),P),\mathcal{O}) =
-                f(\mathcal{O},f(\mathcal{O},\mathcal{O})) + \mathcal{O}+\mathcal{O}=
-                \mathcal{O} \\
+                P + (-P) &= f(f(P,-P),O) \\
+                &= f(f(P,f(f(O,O),P)),O) =
+                f(f(O,O),O) =
+                O+O=O  \\
+                (-P) + P &= f(f(-P,P),O) \\
+                &= f(f(f(f(O,O),P),P),O) =
+                f(O,f(O,O)) + O+O=
+                O \\
             .\end{align*}
 
         \item Enfin la loi $+$ est commutative. C'est à dire que si $P$ et $Q$ sont deux
             points de la courbe, on a
 
             \[
-            P + Q = f(f(P,Q),\mathcal{O}) = f(f(Q,P),\mathcal{O}) = Q + P
+            P + Q = f(f(P,Q),O) = f(f(Q,P),O) = Q + P
             .\] 
     \end{enumerate}    
 \end{demonstration}
 
-Les propiétés de la loi de groupe sur une courbe elliptique sont représentées sur la Figure
+Les propriétés de la loi de groupe sur une courbe elliptique sont représentées sur la Figure
 \ref{fig:loiGroupe}.
 
 \begin{figure}[H]
@@ -650,7 +629,7 @@ Notons $+$ la loi de composition interne sur $E$, définie pour tous $P$ et $Q$ 
                 On a 
                 \begin{align}
                     \label{eq:add2}
-                2P=\left( \lambda^2-2x_P,\lambda\left( -\lambda^2-2x_P \right) -\nu \right) 
+                2P=\left( \lambda^2-2x_P,-\lambda\left( \lambda^2-2x_P \right) -\nu \right) 
                 .\end{align}
         \item[4)] Si $P=Q$ et $y_P=0$, on a $2P=O$.
         \item[5)] L'opposé de $P$ est le point
@@ -663,7 +642,7 @@ Notons $+$ la loi de composition interne sur $E$, définie pour tous $P$ et $Q$ 
 
 \begin{demonstration}
     \begin{description}
-        \item[1)] Supposons $x_P\neqx_Q$, compte tenu de \eqref{eq:groupe}, \eqref{eq:interne1} et \eqref{eq:interne2} on a
+        \item[1)] Supposons $x_P\neq x_Q$, compte tenu de \eqref{eq:groupe}, \eqref{eq:interne1} et \eqref{eq:interne2} on a
             \[
             \begin{cases}
                 \eqref{eq:interne1} \iff f(\left[ \lambda^2-x_P-x_Q,\lambda\left( \lambda^2-x_P-x_Q \right) +\nu,1 \right] , \left[ 0,1,0 \right] ) \\
@@ -673,7 +652,8 @@ Notons $+$ la loi de composition interne sur $E$, définie pour tous $P$ et $Q$ 
             On retrouve bien la formule \eqref{eq:add1}.
         \item[2)] Supposons $x_P=x_Q$ et $P\neq Q$ c'est à dire $y_P\neq y_Q$.
 
-            D'après la proposition \ref{prop:secTanGeo}  (1-i), on a $f(P,Q)=O$ donc $f(f(P,Q),O)=f(O,O)=O$. D'où la formule énoncé.
+            D'après la proposition \ref{prop:secTanGeo}  (1-i), on a $f(P,Q)=O$ donc
+            $f(f(P,Q),O)=f(O,O)=O$. D'où la formule énoncée.
         \item[3)] Supposons $P=Q$ et $y_P\neq 0$, en prenant compte \eqref{eq:groupe} , \eqref{eq:interne2} et \eqref{eq:interne3} on obtient
             \[
             \begin{cases}
@@ -683,11 +663,33 @@ Notons $+$ la loi de composition interne sur $E$, définie pour tous $P$ et $Q$ 
             .\] 
             Ce qui permet de retrouver la formule \eqref{eq:add2}. 
         \item[4)] Supposons $P=Q$ et $y_P=0$, d'après l'assertion (4-i) de la proposition \ref{prop:secTanGeo} , on a $f(P,P)=O$ d'où $2P=f(f(P,P),O)=f(O,O)=O$. 
-        \item[5)] Pour l'opposer on cherche un point $M \in E$ tel que $P\neq M$ et $P,Q\neq O$ d'après le théorème énoncé assertion 2) on a donc $x_P = x_M$ et donc nécessairement $y_M=-y_P$ donc le point recherché est $M=\left( x_M,y_M \right) = \left( x_P,-y_P \right) =-P$. 
+        \item[5)] Pour l'opposé on cherche un point $M \in E$ tel que $P\neq M$ et $P,Q\neq O$ d'après le théorème énoncé assertion 2) on a donc $x_P = x_M$ et donc nécessairement $y_M=-y_P$ donc le point recherché est $M=\left( x_M,y_M \right) = \left( x_P,-y_P \right) =-P$. 
     \end{description}
 \end{demonstration}
 
 \begin{exemple}
-    mettre exemple de calcul de $2P$ pour la suite
-\end{exemple} 
+    \label{ex:2PdansQ}
+    
+    Soit la courbe elliptique $E$ définie sur $\Q$ d'équation
+    \[
+    y^2 = x^3 + x + 3
+    .\] 
+
+    Le point $P = (-1,1)$ appartient à $E(\Q)$ et on vérifie que l'on a
+    \[
+    2P = \left( 6,-15 \right) ,\quad 3P = \left( \frac{11}{49},\frac{617}{343} \right)
+    ,\quad 4P = \left( \frac{1081}{900},-\frac{65771}{27000} \right) 
+    ,\] 
+    \[
+    5P = \left( \frac{179051}{80089},\frac{91814227}{22665187} \right)
+    , \quad 6P = \left( -\frac{6465234}{18653761},-\frac{130201827155}{80565593759}
+    \right), \ldots
+    .\] 
+    En fait, $P$ est un point d'ordre infini et on a
+    \[
+    E(\Q) = \left\{ nP \mid n \in \Z \right\} 
+    ,\] 
+    ainsi $E(\Q)$ est isomorphe à $\Z$. Ce n'est pas un résultat simple, il faut
+    développer la théorie des courbes elliptiques sur $\Q$ pour l'établir.
+\end{exemple}
 

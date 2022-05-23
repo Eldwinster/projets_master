@@ -1,72 +1,199 @@
 \chapter{Applications}
-Le groupe abélien $(E,+)$ des points rationnels d'une courbes elliptiques et même les courbes elliptiques en générale,
+Le groupe abélien $(E,+)$ des points rationnels d'une courbe elliptique et même les courbes elliptiques en général,
 ont de nombreuses applications que ce soit dans le domaine pratique, ou bien dans le domaine
 théorique.
 
-En effet, on peut notamment citer leurs utilisation dans la mécanique classique dans la
+En effet, on peut notamment citer leurs utilisations dans la mécanique classique dans la
 description du mouvement des toupies. Elles interviennent également en théorie des nombres, dans la démonstration
 du dernier théorème de Fermat.
 
 Enfin, on les retrouve aussi en cryptologie, dans le problème de la factorisation des entiers.
 
 Dans ce mémoire, on s'intéresse à leur application en cryptographie. Où elles ont
-permit notamment la réduction de la taile des clés cryptographique.
+permis notamment la réduction de la taille des clés cryptographiques.
 
 \section{Cryptosystèmes elliptiques}
 
 Aujourd'hui, le groupe $E$ des points rationnels d'une courbe elliptique intervient notamment pour l'échange de clé
 et les signatures numériques.
 
-Nous allons, nous intéressé à deux cryptosystème asymétrique, à savoir le protocol d'échange de
-clés Diffie-Hellman, ainsi que l'algorithme d'El-Gamal, basé sur le principe du protocol de
-Diffie-Hellman, qui permet d'échanger des messages messages chiffré à l'aide d'une clé
+Nous allons nous intéresser à deux cryptosystèmes asymétriques, à savoir le protocole d'échange de
+clés Diffie-Hellman, ainsi que l'algorithme d'El-Gamal, basé sur le principe du protocole de
+Diffie-Hellman, qui permet d'échanger des messages chiffrés à l'aide d'une clé
 publique et de déchiffrer les messages avec la clé secrète de chaque utilisateur.
 
-La force des cryptosytèmes asymétrique réside dans la difficulté, voir l'impossibilité actuel dans le cas elliptique, de résoudre le problème du logarithme discret que nous énoncerons par la suite.
+La force des cryptosytèmes asymétriques réside dans la difficulté, voir l'impossibilité
+actuelle dans le cas elliptique, de résoudre le problème du logarithme discret de façon
+générale.
 
 Dans le cas des cryptosystèmes à clé publique classique, on s'appuie sur le groupe multiplicatif d'un corps fini et de son groupe des inversibles. Ce qui réduit grandement notre choix comparé aux versions elliptique des algorithmes équivalent.
 
-En effet, dans le cas elliptique, on remplace le groupe multiplicatif sur un corps fini par le groupe des points rationnels d'une courbe elliptique. L'avantage de cette méthode est que pour un corps fini  $K$ donné, on dispose généralement de nombreux choix de courbes elliptiques $E$ sur $K$. Autrement dit, on a de nombreux groupes $E(K)$, pour utiliser efficacement un cryptosystème asymétrique élliptique contrairement aux versions classique comme énoncé plus haut où
-l'on ne dispose que du groupe des inversible $K^{*}$.
+En effet, dans le cas elliptique, on remplace le groupe multiplicatif sur un corps fini par le
+groupe des points rationnels d'une courbe elliptique. L'avantage de cette méthode est que pour
+un corps fini  $K$ donné, on dispose généralement de nombreux choix de courbes elliptiques $E$
+sur $K$. Autrement dit, on a de nombreux groupes $E(K)$, pour utiliser efficacement un
+cryptosystème asymétrique elliptique contrairement aux versions classiques comme énoncé plus
+haut, où
+l'on ne dispose que du groupe des inversibles $K^{*}$.
 
-Dans ce qui suit Alice et Bob sont deux personnes qui souhaite s'échanger soit un message, soit une clef secrète. Cependant, il faut bien comprendre qu'il peuvent également représenter deux entité qui souhaitent communiqué via des messages chiffrés ou bien s'échanger une clef secréte via cannaux publique. Par entité, j'entends soit des banques, des entreprises ou tout ce qui serait suceptible de vouloir communiqué secretement entre eux.
+\subsection{Problème du logarithme discret elliptique}
 
-De plus le choix des clés secret s'effectue de façon aléatoire dans le respect des conditions de chaque cas.
+Le problème du logarithme discret pour les courbes elliptiques est analogue à celui
+des corps fini, dont on peut trouver un énoncé dans ce cours \cite[p18]{KrausCf}.
 
-\subsection{Protocol Diffie-Hellman}
+Soit $K$ un corps et $E$ une courbe elliptique définie sur $K$. Les points $K$-rationnels
+formant un groupe abélien, donne un cadre pour le problème du logarithme discret.
 
-Alice et Bob souhaite s'échanger publiquement une clé secrète commune. Pour cela ils se mettent d'accord pour la construire selon le procédé suivant:
+\begin{definition}
+    Soit $E$ une courbe elliptique définie sur $K$ et $Q \in E(K)$. Connaissant le point $P
+    \in E(K)$, le problème du logarithme discret consiste à trouver $n \in \N$, s'il existe.
+    tel que $P = nQ$.
+\end{definition}
+
+Un tel entier $n$ n'existe pas toujours. De plus $E(K)$ n'est pas nécessairement cyclique. Afin
+d'essayer de résoudre ce problème, on peut utiliser l'algorithme de Silver, Pohlig et
+Hellman \cite[p20]{KrausCF} ou l'algorithme Baby step - Giant step \cite[p38]{KrausCE}.
+
+\begin{remarque}
+    Le problème du logarithme discret est généralement beaucoup plus difficile à
+    résoudre dans le groupe des points rationnels d'une courbe elliptique $E$ sur un
+    corps fini $K$, que celui dans $K^*$. 
+\end{remarque}
+
+Cela est dû au fait que, les algorithmes de résolution du problème du logarithme discret
+pour le groupe multiplicatif d'un corps fini, sont de plus en plus efficaces pour résoudre le
+problème comme on peut le voir dans cet article \cite{Lipton2013}. Ainsi, il est
+de plus en plus clair que la taille des clés, requises pour maintenir un haut niveau de
+sécurité pour le protocole RSA, se doivent d'être de plus en plus grande (i.e. 4096-bit).
+Alors que les courbes elliptiques s'en sortent avec des clés beaucoup plus petite de l'ordre
+de 256-bit. La raison est essentiellement mathématique, c'est-à-dire, que l'addition des points
+rationnels d'une courbe elliptique est moins bien comprise que la multiplication pour les
+entiers. Ainsi, la complexité apparente du groupe rend le problème intrinsèquement plus
+difficile. C'est pourquoi tant qu'il n'y a pas de méthode générale efficace pour résoudre
+le problème dans le contexte des courbes elliptiques. On peut avoir une sécurité aussi efficace
+que RSA pour des clés beaucoup plus petites. 
+
+Bien que l'on ne connaisse pas tous les paramètres qui rendent ou non une courbe
+mathématiquement sûre. On connaît tout de même un certain nombres d'attaques contre certains
+paramètres bien spécifiques.
+Ainsi, il est recommander :
+\begin{itemize}
+    \item D'être sûr que l'ordre du point choisi ait une factorisation courte (i.e. $2p,3p$ ou
+        $4p$, pour $p$ premier). Autrement on est vulnérable à une attaque basé sur le théorème
+        des restes chinois, la plus importante étant celle de Pohlig-Hellman.
+    \item D'être sûr que la courbe choisie ne soit pas supersingulière. Sinon on peut réduire
+        le problème du logarithme discret à un problème différent dans un groupe plus simple.
+    \item Si la courbe $E$ est définie sur $\Z / p \Z$, avec $p$ premier, on doit vérifier que
+        le nombre de points de la courbe ne soit pas égale à $p$. Ce type de courbe est dite
+        "anormale" et on peut réduire le problème du logarithme à la version additive sur les
+        entiers.
+    \item Ne pas choisir $\mathbb{F}_{2^{m}}$ avec $m$ petit. On peut utiliser l'algorithme de
+        rho Pollard qui est très efficace contre ce genre de corps fini.
+    \item Si on utilise le corps fini $\mathbb{F}_{2^{m}}$ alors il est plus sûr de choisir
+        $m$ premier.
+\end{itemize}
+
+On peut retrouver dans ce cours \cite[p17-18]{Delaunay} des exemples d'algorithmes pour 
+choisir convenablement des points rationnels ou choisir de bonnes courbes. Il y a également,
+d'autres recommandation sur le choix de $E$.
+
+Ainsi, comme on peut s'y attendre quant à l'énoncé du problème du logarithme discret les points
+qui vont nous intéresser sont les multiples d'un point. On peut retrouver un algorithme pour le
+calcul de ce point dans ce cours \cite[p10]{Delaunay}. Il est basé sur la décomposition de $n$
+dans la base $2$. Ainsi, on amener à effectuer peu d'opération pour obtenir un multiple d'un
+point rationnels de la courbe. On à la formule suivante pour le calcul de $nP$ 
+\[
+nP = \sum_{i= 0}^{n} a_{i}2^{i}P
+,\] 
+avec les $a_{i}$ dans ${0,1}$.
+
+Autrement dit, pour calculer $19P$, il vient $19 = 1 \times 2^{0} + 1 \times 2^{1} + 0 \times
+2^{2} + 0 \times 2^{3} + 1 \times 2^{4} $ et ainsi $19P = P + 2P + 16P$ et on calcul 9
+doublements et 3 additions.
+
+Ainsi, quand on effectue le rapport entre le nombre d'opération nécessaire pour calculer le
+multiple d'un point et celui pour calculer sont logarithme. On est amener à effectuer beaucoup
+plus d'opération pour le logarithme et ceci est la base de la sécurité des protocole suivant.
+
+
+\subsection{Protocole Diffie-Hellman}
+
+Dans ce tout ce qui suit Alice et Bob sont deux personnes qui souhaite s'échanger soit un message, soit
+une clé secrète. Cependant, il faut bien comprendre qu'il peuvent également représenter deux
+entités qui souhaitent communiquer via des messages chiffrés ou bien s'échanger une clef
+secréte via des cannaux publics. Par entité, j'entends soit des banques, des entreprises ou
+tout ce qui serait suceptible de vouloir communiquer secrètement entre eux.
+
+Alice et Bob souhaitent s'échanger publiquement une clé secrète commune. Pour cela ils se mettent d'accord pour la construire selon le procédé suivant:
 
 \begin{description}
     \item[1)] Ils choisissent un corps fini $K$ et une courbe elliptique $E$ définie sur $K$, pour que le problème du logaritme discret soit difficile à résoudre dans le groupe $E(K)$. Ils choisissent un point $P \in E(K)$. Ils rendent alors publique le triplet $(K,E,P)$.
 
-    \item[2)] Alice choisit un entier naturel secret non nun $a$ et calcul le point $P_a=aP$, qu'elle transmet publiquement à Bob.
+    \item[2)] Alice choisit un entier naturel secret non nul $a$ et calcule le point $P_a=aP$, qu'elle transmet publiquement à Bob.
 
-    \item[3)] Bob procède de la même façon en choisissant un entier naturel secret, non nul, $b$, et il calcul de son côté le point $P_b=bP$, qu'il transmet publiquement à Alice.
+    \item[3)] Bob procède de la même façon en choisissant un entier naturel secret, non nul,
+        $b$, et il calcule de son côté le point $P_b=bP$, qu'il transmet publiquement à Alice.
 
-    \item[4)] Alice calcul le point $aP_b=a(bP)$.
+    \item[4)] Alice calcule le point $aP_b=a(bP)$.
 
-    \item[5)] Bob calcul le point $bP_a=b(aP)$.
+    \item[5)] Bob calcule le point $bP_a=b(aP)$.
 \end{description}
 
-Ils ont ainsi construit leur clé secret commun qui est le point $abP$.
+Ils ont ainsi construit leur clé secrète commune qui est le point $abP$.
 
 \begin{probleme}[Diffie-Hellman]
-    
+   Connaissant $P$, $aP$ et $bP$ dans $E(K)$, comment déterminer $abP$ ? 
 \end{probleme}
+
+On ne sait pas à ce jour résoudre ce problème sans calculer $a$ ou $b$, autrement dit, sans
+savoir résoudre le problème du logarithme discret dans $E(K)$. Cela étant, on n'a pas la preuve
+qu'il n'existe pas d'autres moyens pour y parvenir. Ainsi le problème de Diffie-Hellman est une
+hypothèse plus forte que le problème du logarithme discret car elle en dépend mais elle dépend
+aussi du fait qu'on ne sache pas s'il existe un autre moyen pour résoudre ce problème.
+
+\begin{exemple}
+    Soit la courbe définit par 
+    \[
+    E : y^2 = x^3 + 324x + 1287
+    ,\] 
+    sur le corps $\mathbb{F}_{p}$, avec $p=3851$ qui est premier. 
+
+    Soit le point $P \in E(\mathbb{F}_{p})$, avec $P = (920;303)$.
+
+    La courbe et le point sont publiques.
+
+    Alice choisit l'entier secret $a=1194$ et calcule $aP=1194P=(2067,2178) \in
+    E(\mathbb{F}_{3851})$ et l'envoie à Bob.
+
+    Bob choisit l'entier secret $b = 1759$ et calcul $bP = 1759P = (3684,3125) \in
+    E(\mathbb{F}_{p})$.
+
+    Finalement,
+
+    Alice calcule $a(bP)=1194.(3684,3125)=(3347,1242) \in E(\mathbb{F}_{p})$ et
+
+    Bob calcule $b(aP) = 1759.(2067,2178) = (3347,1242) \in E(\mathbb{F}_{p})$.
+
+    Ils peuvent alors déduire du point échangé à l'aide de la coordonnée $x=3347$ une clé
+    secrète pour la cryptographie symétrique.
+\end{exemple}
 
 \subsection{Algorithme d'El Gamal}
 
-Alice souhaite envoyer un message chiffré à Bob. Pour se faire elle choisit un corps fini $K$, une courbe elliptique $E$ définie sur $K$ de sorte que le problème du logarithme discret soit difficile à résoudre dans le groupe $E(K)$. Elle choisit ensuite un point $P \in E(K)$. Enfin elle choisit sont entier naturel secret, non nul, $s$ et calcul et calcul le point $A=sP$.
+Alice souhaite envoyer un message chiffré à Bob. Pour se faire elle choisit un corps fini $K$,
+une courbe elliptique $E$ définie sur $K$ de sorte que le problème du logarithme discret soit
+difficile à résoudre dans le groupe $E(K)$. Elle choisit ensuite un point $P \in E(K)$. Enfin
+elle choisit son entier naturel secret, non nul, $s$ et calcule le point $A=sP$.
 
 Elle rend ainsi public le quadruplet 
 \[
     (K,E,P,A)
 .\] 
 
-C'est la base de ce qui va permettre à Alice et Bob de pouvoir communiquer de façon confidentiel entre eux.
+C'est la base de ce qui va permettre à Alice et Bob de pouvoir communiquer de façon
+confidentielle entre eux.
 
-Ainsi, pour que Bob puisse envoyer un message chiffré $M \in E(K)$ à Alice, il choisit secrétement un entier non nul $k$ et calcules les points
+Ainsi, pour que Bob puisse envoyer un message chiffré $M \in E(K)$ à Alice, il choisit secrétement un entier non nul $k$ et calcule les points
 \[
 M_1=kP \quad \text{et} \quad M_2=M+kA
 .\] 

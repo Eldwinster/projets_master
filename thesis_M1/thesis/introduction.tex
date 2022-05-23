@@ -1,27 +1,27 @@
 \chapter{Introduction}
 
 Dans ce mémoire, je vais m'intéresser au groupe des points rationnels d'une courbe elliptique
-et donné des applications dans le
+et donner des applications dans le
 domaine de la cryptographie.
 
-L'application première de notre construction étant la cryptographie, il me semble nécessaire de
-poser d'en poser les bases. Ceci nous permettra d'avoir une idée clair
-des différents concepts et enjeux qui la compose.
+L'application première de notre construction étant la cryptographie, il me semble nécessaire
+d'en poser les bases. Ceci nous permettra d'avoir une idée claire
+des différents concepts et enjeux qui la composent.
 
 \section{Cryptographie}
 
 La cryptographie trouve ses origines avec l'invention de l'écriture, en effet on en
 retrouve des traces dés l'époque des Égyptiens vers 2000 a.v. J.C.
 
-Elle a longtemps été considéré comme un art. Un art bien souvent en relation avec l'art de
+Elle a longtemps été considérée comme un art. Un art bien souvent en relation avec l'art de
 la guerre.
 
-À ce stade, on est en droit de ce demander ce que signifie la cryptographie. C'est un mot
+À ce stade, on est en droit de se demander ce que signifie la cryptographie. C'est un mot
 d'étymologie d'origine grec. On peut le traduire par le fait de cacher ce qui est écrit.
 
-On peut donc en conclure que c'est l'intention de transmettre un message de façon secret.
-Autrement dit, on souhaiterai transmettre par écrit un message dont seul le destinataire
-et l'expéditeur connaisse la signification du dit "message secret". 
+On peut donc en conclure que c'est l'intention de transmettre un message de façon secrète.
+Autrement dit, on souhaiterai transmettre par écrit un message dont seuls le destinataire
+et l'expéditeur connaissent la signification du dit "message secret". 
 
 On comprend donc tout l'importance de la cryptographie et son rôle important avec la
 guerre.
@@ -30,92 +30,94 @@ Un première exemple bien connu de cryptographie est appelé le chiffrement de C
 Jules César pour chiffrer ses correspondances secrètes.
 
 Cette méthode consiste à
-prendre les lettres de l'alphabet et d'effectuer une transposition $n \in \N$ ce
+prendre les lettres de l'alphabet et d'effectuer une transposition $n \in \N$ sur ce
 dernier. On peut
 ainsi définir sur $\Z / 26\Z$ une bijection entre les lettres de l'alphabet et ce groupe.
 L'entier $n$ est alors ce que l'on appelle la clé secrète, qui va permettre à la fois de
 chiffrer et de déchiffrer un éventuel message.
 
-il a d'autres exemples, comme le chiffrement de Vigenère, inventé par Blaise de Vigenère en
+Il y a d'autres exemples, comme le chiffrement de Vigenère, inventé par Blaise de Vigenère en
 1586 dans le traité des chiffres. Cette méthode de chiffrement appelé chiffrement de Vigenère repose sur le même principe que
-le chiffrement de César. À ceci prés que que la transposition $n$ est remplacé explicitement
-par une clé secret que l'on peut noter $k$, qui est un mot secret ou bien une suite de lettre.
+le chiffrement de César. À ceci prés que que la transposition $n$ est remplacée explicitement
+par une clé secrète que l'on peut noter $k$, qui est un mot secret ou bien une suite de
+lettres.
 Ainsi on effectue la même opération que pour le chiffrement de César à la différence prés que
-notre $n$ cette fois ci varie dans $\Z / 26\Z$ selon les lettres qui compose notre clé secrète $k$.
+notre $n$ cette fois ci varie dans $\Z / 26\Z$ selon les lettres qui composent notre clé secrète $k$.
 
-C'est deux exemples ne sont plus sûr. En effet, bien que le chiffrement de Vigenère essaye de
+Ces deux exemples ne sont plus sûrs. En effet, bien que le chiffrement de Vigenère essaye de
 contourner le problème de l'analyse de fréquence d'apparition des lettres, qui permet de rendre
-inefficace les chiffrement monoalphabétique. Il aura tout de
-même fallu III
-siècle après son apparition, pour qu'en 1863 le major prussien Friedrich Kasiski publie une
-méthode pour percé le chiffrement de Vigenère.
+inefficace les chiffrement monoalphabétiques. Il aura tout de
+même fallu trois
+siècles après son apparition, pour qu'en 1863 le major prussien Friedrich Kasiski publie une
+méthode pour percer le chiffrement de Vigenère.
 
-Cependant encore récemment, la machine enigma utilisé par les Allemands lors de la seconde
-guerre mondial utilisé encore le principe liés au chiffrement Vigenère que l'on nomme chiffrement
+Cependant encore récemment, la machine enigma utilisée par les Allemands lors de la seconde
+guerre mondiale utilisait encore le principe lié au chiffrement Vigenère que l'on nomme chiffrement
 par substitution polyalphabétique.
 
-On retiendra que ces méthodes n'ont pas résisté à l'analyse de leurs
-fonctionnement.
+On retiendra que ces méthodes n'ont pas résistées à l'analyse de leurs
+fonctionnements.
 
-Ceci m'amène donc à parler d'un principes fondateur sur lequel est basé la cryptographie
-moderne, qui repose essentiellement sur l'avènement de l'informatique qui à permit à la
-cryptographie un renouveau historique. En effet, aujourd'hui elle n'est plus considérer comme
-un art mais une vrai science avec tout le formalise que l'on est en droit d'attendre.
+Ceci m'amène donc à parler d'un principe fondateur sur lequel est basé la cryptographie
+moderne, qui repose essentiellement sur l'avènement de l'informatique qui à permis à la
+cryptographie un renouveau historique. En effet, aujourd'hui elle n'est plus considérée comme
+un art mais une vrai science avec tout le formalisme que l'on est en droit d'attendre.
 
 On appelle ce principe, le principe de Kerckhoffs, énoncé par Augustus Kerckhoffs en 1883 dans
 un article en deux parties, "La cryptographie millitaire". Ce principe nous dit que la sécurité
 ne dépend pas de la méthode de chiffrement mais sur le secret de la clé. Autrement dit, d'après
-Kerckhoffs, une bonne méthode de chiffrement, ne doit pas se reposer sur le secret de sa
-méthode mais sur le fait que même si elle est connue tant que l'on ne peut pas à partir de
+Kerckhoffs, une bonne méthode de chiffrement ne doit pas se reposer sur le secret de sa
+méthode mais sur le fait que même si elle est connue, tant que l'on ne peut pas à partir de
 celle-ci en déduire une méthode efficace pour retrouver la clé. Notre système
-cryptographique est considérer comme sûr. 
+cryptographique est considéré comme sûr. 
 
 C'est ainsi, qu'en 1976 W.Diffie et M.Hellman, lors de la National Computer Conference,
-énonce une nouvelle méthode basé sur le principe de Kerckhoffs. 
+énonces une nouvelle méthode basée sur le principe de Kerckhoffs. 
 
-Cette nouvelle méthode appelé protocole de Diffie-Hellman est la pierre fondatrice de la cryptographie moderne basé sur le
-principe de clé publique et clé secret, qui sont deux clés distinctes. On parle alors de cryptographie asymétrique ou
+Cette nouvelle méthode appelée protocole de Diffie-Hellman est la pierre fondatrice de la
+cryptographie moderne basée sur le
+principe de clé publique et clé secrète, qui sont deux clés distinctes. On parle alors de cryptographie asymétrique ou
 cryptographie à clé publique.
-L'asymétrie, ici est une asymétrie de l'information entre les clé ou l'une est publique, donc
-connue, et l'autre non publique donc inconnue. De plus, chaque clé à sa propre fonction,
+L'asymétrie, ici est une asymétrie de l'information entre les clés où l'une est publique, donc
+connue, et l'autre non publique donc inconnue. De plus, chaque clé a sa propre fonction,
 c'est à dire que la clé publique sert au chiffrement et la clé secrète au déchiffrement.
 
 On peut se représenter le principe, en considérant deux personnes, traditionnellement
 nommées
-Alice, Bob.
+Alice et Bob.
 
 Soit $\mathcal{M}$ un ensemble de chiffrements. On prend souvent pour $\mathcal{M}$
 l'ensemble $\Z / n \Z$ ou bien un corps fini comme $\mathbb{F}_{p}$, où $p$ est
 premier. Alice souhaite pouvoir se faire envoyer des
 messages chiffrés de $\mathcal{M}$ de façon privée. Elle choisit une bijection $f_{A}\ :\
-\mathcal{M}\to \mathcal{M}$ qui sera rendu publique, et elle seul en connaît la réciproque
+\mathcal{M}\to \mathcal{M}$ qui sera rendue publique, et elle seule en connaît la réciproque
 $f_{A}^{-1}$. Le principe repose sur la grande difficulté de trouver $f_{A}^{-1}$ à partir de
 $f_{A}$. 
 
 Dans la situation où Bob envoie un message $x \in \mathcal{M}$. Il lui suffit
 d'envoyer à Alice en clair l'élément $y = f_{A}(x)$. Pour déchiffrer le message Alice
-calcul donc $f_{A}^{-1}(y)$, et retrouve le message $x$ de Bob. On appel ces fonction des fonctions à sens unique, car leurs réciproques sont difficiles à expliciter.
+calcule donc $f_{A}^{-1}(y)$, et retrouve le message $x$ de Bob. On appelle ces fonction des fonctions à sens unique, car leurs réciproques sont difficiles à expliciter.
 
 L'enjeu de la cryptographie à clé publique est donc de trouver ce type de fonction.
-C'est à dire des opérations faciles à calculer mais dont le cheminement inverses est le plus
-difficiles possible.
+C'est à dire des opérations faciles à calculer mais dont le cheminement inverse est le plus
+difficile possible.
 
-La cryptographie d'aujourd'hui est basée sur une hypothèse mathématiques éprouvé et sur deux
-problèmes issu de la théorie des nombres. On a d'un côté l'hypothèse qu'il existe des
+La cryptographie d'aujourd'hui est basée sur une hypothèse mathématique éprouvée et sur deux
+problèmes issus de la théorie des nombres. On a d'un côté l'hypothèse qu'il existe des
 fonctions à sens unique, c'est à dire dont la réciproque est inexistante ou très difficile à
 expliciter. Et de l'autre, on a
 le problème de la factorisation d'un entier et celui du logarithme discret.
 
-C'est sur problème de la factorisation d'un entier, qu'est basé le système cryptographique RSA, inventé en 1977 par Rivest,
+C'est sur ce problème de la factorisation d'un entier, qu'est basé le système cryptographique RSA, inventé en 1977 par Rivest,
 Shamir et Adleman. Son efficacité repose sur le fait que connaissant un entier $n$, qui
-est produit de deux entier premiers $p$ et $q$. Il est difficile de déterminer $p$ et
+est produit de deux entiers premiers $p$ et $q$. Il est difficile de déterminer $p$ et
 $q$. Cependant, les algorithmes de factorisation ayant énormément évolué, la taille des
-clé de chiffrement obtenue par RSA doivent être de plus en plus grande. Ainsi, pour des
-tailles de clé plus petite, disons 256-bit, le groupe des points rationnels offre une sécurité équivalente à
-des clé obtenue à l'aide du groupe $\Z / n\Z$ de taille 2048-bit. Ainsi, plus l'environnement
-est contraignant et plus l'avantage des courbes elliptique se fait ressentir.
+clés de chiffrement obtenue par RSA doit être de plus en plus grande. Ainsi, pour des
+tailles de clé plus petites, disons 256-bit, le groupe des points rationnels offre une sécurité équivalente à
+des clés obtenue à l'aide du groupe $\Z / n\Z$ de taille 4096-bit. Ainsi, plus l'environnement
+est contraignant et plus l'avantage des courbes elliptiques se fait ressentir.
 
-L'efficacité du groupes des points rationnel d'une courbe elliptique est basé sur le
+L'efficacité du groupe des points rationnels d'une courbe elliptique est basée sur le
 problème du logarithme discret. 
 
 Le problème du logarithme discret est le suivant: 
@@ -125,13 +127,13 @@ $g^{n}$, trouver $n$.
 
 \section{Les courbes elliptiques}
 
-En parallèle de l'histoire de la cryptographie. Se déroulait deux histoires tout aussi
-anciennes liées à deux problèmes qui trouve leurs sources dans l'antiquité grec.
+En parallèle de l'histoire de la cryptographie, se déroulaient deux histoires tout aussi
+anciennes liées à deux problèmes qui trouvent leurs sources dans l'antiquité grecque.
 
 \subsection{Origine des courbes elliptiques}
 La première histoire est celle du cercle. En effet, depuis l'antiquité grecque, l'homme
-s'est fortement intéressé à l'étude du cercle. Ce qui de nos jours, revient à étudié la courbe
-algébrique d'équation $x^2 + y^2 = 1$. Un problème qui a irrigué les commencement des
+s'est fortement intéressé à l'étude du cercle. Ce qui de nos jours, revient à étudier la courbe
+algébrique d'équation $x^2 + y^2 = 1$. Un problème qui a irrigué les commencements des
 mathématique est de déterminer la longueur d'un arc de cercle. Ceci revient à calculer
 l'intégrale
 \[
@@ -139,20 +141,20 @@ l'intégrale
 .\] 
 
 Ce qui nous permet d'obtenir la fonction $\arcsin(x)$ et par la méthode de Jacobi d'obtenir la
-fonction réciproque $\sin(x)$. Cette recherche de la réciproque de l'intégral obtenue
-à partir de l'équation d'un cercle, amène naturellement à la même question mais plus général
+fonction réciproque $\sin(x)$. Cette recherche de la réciproque de l'intégrale obtenue
+à partir de l'équation d'un cercle, amène naturellement à la même question mais plus générale,
 sur les ellipses. Ainsi, en étudiant la courbe algébrique d'équation $ \frac{x^2}{a^2} +
-\frac{y^2}{b^2} = 1$, les mathématiciens du XVIIème et XVIIIème siècle on pu déterminer
+\frac{y^2}{b^2} = 1$, les mathématiciens du XVIIème et XVIIIème siècle ont pu déterminer
 à l'aide d'une série convergente l'intégrale obtenue à partir de l'équation algébrique de
-l'ellipse. Toujours à cette époque, ils ont cherché à savoir si cette intégral pouvait être
-exprimé en termes de fonctions élémentaires. Liouville en 1837 prouva que cela n'est pas
+l'ellipse. Toujours à cette époque, ils ont cherché à savoir si cette intégrale pouvait être
+exprimée en termes de fonctions élémentaires. Liouville en 1837 prouva que cela n'est pas
 possible.
 
-Ainsi, ils leur a fallu considérer cet intégral comme une fonction à part entière,
+Ainsi, ils leur a fallu considérer cette intégrale comme une fonction à part entière,
 cependant comme pour le cercle la fonction la plus naturelle est sa réciproque. 
 
-C'est ainsi qu'Abel en 1827 et indépendamment Jacobi en 1829 étudie la question de cette
-intégrale associé à une ellipse du point de vue des fonctions complexes, en considérant la
+C'est ainsi qu'Abel en 1827 et indépendamment Jacobi en 1829 étudient la question de cette
+intégrale associée à une ellipse du point de vue des fonctions complexes, en considérant la
 réciproque. 
 
 Ce qui amène l'étude de l'intégrale elliptique de la forme
@@ -166,12 +168,12 @@ et l'introduction de la fonction elliptique $\rho$ solution de l'équation
 où $\rho$ est la réciproque de l'intégrale elliptique.
 
 Ce qui en étudiant cette nouvelle équation est celle d'une courbe elliptique. Son étude dans
-le plan complexes permet la construction du groupe abélien des points rationnels d'une
+le plan complexe permet la construction du groupe abélien des points rationnels d'une
 courbe elliptique.
 
-Ainsi en 1985, indépendamment l'un de l'autre N.Koblitz \ref{article} et V.Miller, on fournit un exemple
-d'application à la cryptographie, celui du groupes des points rationnels d'une courbe elliptique dans un corps fini. C'est ce
-groupes qui va nous intéresser.
+Ainsi en 1985, indépendamment l'un de l'autre N.Koblitz \ref{article} et V.Miller, ont fourni un exemple
+d'application à la cryptographie, celui du groupe des points rationnels d'une courbe elliptique dans un corps fini. C'est ce
+groupe qui va nous intéresser.
 
 \subsection{Diophante}
 
@@ -187,29 +189,26 @@ c$, avec
 les coefficients $a,b,c$ des entiers relatifs et les indéterminées $x,y \in \Z$ également. Sa résolution s'appuie
 sur l'algorithme d'Euclide, le théorème de Bachet-Bézout et le lemme de Gauss.
 
-Cependant, certaines équation diophantiennes ont nécessité les efforts conjugués de nombreux
+Cependant, certaines équations diophantiennes ont nécessité les efforts conjugués de nombreux
 mathématiciens sur plusieurs siècles pour les résoudre.
 
-Ainsi, comme on peut s'en douter elle joue un rôle prépondérant dans la
-cryptographie moderne qu'il s'agisse des plus connues comme l'équation présenté ci-dessus, ou
+Ainsi, comme on peut s'en douter elles jouent un rôle prépondérant dans la
+cryptographie moderne qu'il s'agisse des plus connues comme l'équation présentée ci-dessus, ou
 des plus sophistiquées, comme celles étudiées par L.Mordell du type $y^2 = x^3 + ax+b$ qui va
 nous intéresser.
 
- % Ceci fait largement partie de la géométrie algébrique, et les mathématiciens
-% possèdent quelques un des outils les plus sophistiqués et abstraits disponible pour
-% s'attaquer à ce genre de problème.
-
 Les courbes elliptiques sont à la fois un problème facile à décrire, c'est "l'ensemble des
-solutions d'une cubique" et pourtant bien qu'elles semblent simple à première vue, de profond théorème régit
-leur comportement, et beaucoup de question naturel à propos des courbes elliptiques sont encore
+solutions d'une cubique" et pourtant bien qu'elles semblent simples à première vue, de profond
+théorèmes régissent
+leur comportement, et beaucoup de questions naturelles à propos des courbes elliptiques sont encore
 ouvertes.
 
-Par exemple pour compter le nombre de sphère nécessaire pour formé une
-pyramide. On est amener à calculer la somme suivante
+Par exemple pour compter le nombre de sphères nécessaire pour former une
+pyramide. On est amené à calculer la somme suivante
 \[
 1 + 4 + 9 + 16 + \ldots + n^2 = \frac{n\left( n+1 \right) \left( 2n+1 \right) }{6}
 ,\] 
-pour une pyramide de $4$ étages ont à besoin de 30 sphère 
+pour une pyramide de $4$ étages ont à besoin de 30 sphères 
 \[
 1 + 4 + 9 + 16 = \frac{4\left( 4 + 1 \right) \left( 2 \times 4 + 1 \right) }{6} = 30
 .\] 
@@ -221,8 +220,8 @@ y^2 = \frac{x\left( x+1 \right) \left( 2x+1 \right) }{6}
 cela revient à calculer les
 points rationnels de la courbe elliptique associée. 
 
-Mis à part, les points $(0,0)$ et $(1,1)$, quelles sont les autres solutions entière que l'on
-peut trouver l'idée et de partir de la droite qui intersectent les deux point à
+Mis à part, les points $(0,0)$ et $(1,1)$, quelles sont les autres solutions entières que l'on
+peut trouver ? L'idée est de partir de la droite qui intersecte les deux points à
 savoir $y=x$ et de résoudre le système d'équation que l'on obtient, c'est à dire
 \[
 \begin{cases}
@@ -235,7 +234,7 @@ On obtient alors le polynôme
 \[
 x^3 - \frac{3x^2}{2}+\frac{x}{2} = 0
 ,\] 
-et l'on cherche alors sa troisième racines à l'aide des relations de Viète, on sait que
+et l'on cherche alors sa troisième racine à l'aide des relations de Viète, on sait que
 la somme des racines vaut 
 \[
 r + 0 + 1 = \frac{3}{2}
@@ -244,181 +243,49 @@ r + 0 + 1 = \frac{3}{2}
 Ainsi, on obtient le point $(\frac{1}{2},\frac{1}{2})$ et par symétrie de la courbe par rapport à l'axe des
 abscisse le point
 $(\frac{1}{2},-\frac{1}{2})$. Bien que ce dernier ne soit pas une solution entière. On peut en
-répétant le même procéder en prenant les points $\left( \frac{1}{2},-\frac{1}{2} \right)
-$ et $\left( 1,1 \right) $. Cependant, l'intérêt de cet exemples n'est pas le calcul en
-lui même mais la méthode en elles-mêmes. J'entends par là, le fait de prendre deux points de la
-courbe et de tracer la droite entre ces deux. C'est cette action qui va nous intéresser et
+répétant le même procédé en prenant les points $\left( \frac{1}{2},-\frac{1}{2} \right)
+$ et $\left( 1,1 \right) $ on trouve d'autres solutions entières à savoir le point (24,70) qui
+est donc solution de l'équation de la courbe. Cependant, l'intérêt de cet exemple n'est pas le calcul en
+lui-même mais la méthode en elle-même. J'entends par là, le fait de prendre deux points de la
+courbe et de tracer la droite entre ces deux points. C'est cette action qui va nous intéresser et
 qui amène la question suivante.
 
-Si l'on prend deux point d'une courbe elliptique, et que l'on trace la droite entre ces deux,
+Si l'on prend deux points d'une courbe elliptique, et que l'on trace la droite entre ces deux
+points,
 cette droite intersecte elle toujours la courbe en un 3ème point ?
 
-À première vue, la réponse à cet question est non. En effet, une tangente vertical à la
+À première vue, la réponse à cette question est non. En effet, une tangente verticale à la
 courbe, c'est à dire parallèle à l'ordonnée n'intersecte pas la courbe elliptique. Cependant, à l'aide de la géométrie
 projective, on peut rendre cela possible. Ce qui rend possible la création du groupe
 des points rationnels d'une courbe elliptique.
 
 Ce qui aujourd'hui, nous permet d'utiliser les courbes elliptiques pour construire des
-protocole de chiffrement robuste et largement répandue.
+protocoles de chiffrement robustes et largement répandus.
 
 Le groupe des points rationnels d'une courbe elliptique est le fruit de la rencontre entre ces trois
-histoires que sont la cryptographie, le cercle et les équations diophantienne.
+histoires que sont la cryptographie, le cercle et les équations diophantiennes.
 
 \begin{center}
-    \textbf{Références détaillées}
-    Une bibliographie complète est présente à la fin de ce mémoire. La liste détaillées des
-    références principales pour chaque chapitre est la suivante :
+    \textbf{Références}
+    La liste complète est présente à la fin de ce mémoire. Les références principales
+    dont je me suis servit pour écrire ce mémoire sont les suivantes :
     \begin{itemize}
-        \item \textit{Chapitre 1 :}
-        \item \textit{Chapitre 2 :}
-        \item \textit{Chapitre 3 :}
-        \item \textit{Chapitre 4 :}
-        \item \textit{Chapitre 5 :}
+        \item \cite[]{KrausCF}, \cite[]{KrausCP} et \cite[]{KrausCE}. 
+        \item \cite[]{Delaunay} 
+        \item \cite[]{Baigneres2003} 
+        \item \cite{Deglise2013} 
     \end{itemize}
+
 \end{center}
 
 \begin{center}
     Merci à Mme Abdelatif pour avoir supervisé ce mémoire.
 \end{center}
 
-% \begin{center}
-%     \textbf{Calculs numérique}
-% \end{center}
+\begin{center}
+    \textbf{Calculs numérique}
 
+    Les calculs disponibles dans les différents exemples, ont été réaliser à l'aide des
+    différents script disponible sur cet artcile de vulgarisation sur le sujet \cite[]{Kun2014}.
+\end{center}
 
-% \[
-% u = \int_{0}^{t} \frac{\dx}{\sqrt{1-x^2} }, \quad t \in ]-1,1[
-% .\] 
-
-% Qui n'est autre que la fonction $u = \arcsin(x)$. Or c'est plutôt la fonction inverse
-% $\sin(x)$ qui est intéressante.
-
-% Via la méthode de Jacobi, on peut montrer que la fonction
-% \[
-% t \to u = \int_{0}^{t} \frac{\dx}{\sqrt{1-x^2} }
-% ,\] 
-% admet une fonction réciproque $t(u)=\sin(u)$ définie sur tout le plan complexe, périodique de
-% période $2\pi$, solution de l'équation différentielle :
-% \[
-% \left( \frac{\dt}{\du} \right) ^2 = 1 - u^2
-% .\] 
-
-% Au XVIIème et XVIIIème siècles, les mathématiciens se sont attaqué à la généralisation du
-% problème précédent. En effet, ils ont cherché à déterminer la longueur d'un arc d'ellipse,
-% d'équation
-% \[
-% \frac{x^2}{a^2}+\frac{y^2}{b^2}= 1
-% .\] 
-
-% Ce qui revient à calculer l'intégral, en posant $e = \sqrt{1 - \left( \frac{b}{a} \right)
-% ^2} $, l'exentricité de l'ellipse :
-% \[
-% u = \int_{0}^{t} \frac{\sqrt{1-e^2x^2}}{\sqrt{1-x^2} } \dx, \quad t \in ]-1,1[
-% .\] 
-
-% La solution qui s'imposa fut de considérer cette intégrale comme une fonction à
-% part entière.
-
-% image
-
-% , c'est à dire, où l'abscisse peut prendre plusieurs valeurs en ordonné. Ce
-% qui ouvre l'étude à de nouvelle courbe comme le lemniscate de Benouilli. 
-
-% Ainsi, Abel en 1827 et Jacobi en 1829 on indépendament attaqué la question de cette
-% intégrale associée à une ellipse du point de vue des fonctions complexes, en
-% considérant sa réciproque.
-
-
-% Si Alice souhaite envoyer un message à Bob, elle chiffre sont message avec la clé publique de
-% Bob, et ce dernier avec sa clé secrète, qu'il est le seul à connaître, peut déchiffrer le
-% message d'Alice. Alice et Bob peuvent donc s'échanger des messages chiffré, via un canal
-% non sécurisé, et ceux ci sans posséder de secret commun. Dans l'hypothèse qu'Eve interceptent
-% les communications sur le canal non sécurisé, il lui est impossible un en temps
-% raisonnable de déterminer la clé secrète à partir de la clé publique.
-
-% Quand on parle
-% de temps raisonnable ou d'efficacité, ceci est lié à la façon dont nos ordinateurs calcul. En effet, chaque
-% opération arithmétique possède un certain coût en temps de calcul. Quand on parle de
-% compléxité en temps, on calcul dans le pire des cas possible combien d'opération, il est
-% nécessaire d'effectuer dans un algorithme. C'est pourquoi, un algorithme efficace est un
-% algorithme qui coût peu cher en temps de calcul.
-
-
-% Il n'aurat pas fallut longtemps pour trouver un exemple basé sur le principe énoncé par Diffie
-% et Helman. En effet, dès 1977, Ronald \textbf{R}ivet, Adi \textbf{S}hamir et Leonard
-% \textbf{A}dleman invente le cryptosystème asymétrique RSA.
-
-% Il est basé sur le problème de la factorisation d'entier. En effet, pour trouver la clé
-% secrète il faut être capable de résoudre ce problème de façon efficace. 
-
-
-% À l'époque et encore jusqu'à récemment (source?) le problème de la factorisation des entiers
-% était diffile à résoudre mais ceci est de moins en moins vrai avec les années. (source)
-
-
-
-% En parallèle de l'histoire de la cryptographie. Une autre histoire fit son chemin de
-% l'antiquité à nos jours. C'est celle du problème de la longueur du cercle et en particulier la longueur d'un arc
-% de cercle.
-
-% problème facto
-% d-h log
-% Alice bob eve
-% fonction unique
-
-% cercle diophante
-% point ligne addition
-% internet
-% plan projectif
-
-% En effet, dans un monde en constant évolution, notamment technique \cite{Kachigar2018}. Il est crucial de pouvoir
-% améliorer, réinventer, ou même changer, des principes qui ont révolutionner à leur époque.
-% C'est pourquoi,Koblitz \cite{Koblitz1987}, à présenter une façon concrète d'utiliser les courbes
-% elliptiques dans le cadre de la cryptographie. Ceci a permit d'apporter une nouvelle façon
-% de faire de la cryptographie, tout en conservant des concepts eprouvé basé sur le problème
-% du logarithme discret \cite{Chabanol2021} et même le problème de la factorisation de entiers
-% \cite{bibfacent}. Cette nouvelle cryptographie est basé sur le groupe abéliens des courbes
-% elliptiques. Elle apporte bien évidemment ses lots d'avantages et d'inconvénients par rapport à
-% la méthode, plus classique, qui elle est basé sur le groupe multiplicatif $(\Z /n\Z^{*})$, où $n$ est un entier.
-
-% Tout d'abord, définition de ce qu'est la cryptographie. 
-
-% D'après l'étymologie, qui est d'origine grec, c'est le fait de cacher ce qui à été écrit.
-
-% On en déduit, ici que l'idée est de transmettre un éventuel message secret à une ou des
-% personnes et l'on veut qu'elles soient les seuls à pouvoir comprendre le message.
-
-% La première trace de la cryptographie dans l'histoire apparait déjà à l'époque des
-% Égyptiens vers 2000 av. J.-C. en effet, on retrouver un
-
-% Le premier exemple connue de cryptographie est appelé le chiffrement de César. Cette méthode consiste à
-% prendre les lettres de l'aphabet et d'éffectuer une transposition $n \in \N$, on peut
-% ainsi définir sur $\Z / 26\Z$ une bijection entre les lettres de l'alphabet et ce groupe.
-% L'entier $n$ est alors ce que l'on appelle la clé secrète, qui va permettre à la fois de
-% chiffrer et de déchiffrer un éventuel message. Quand la clé secrète a cette double utilité,
-% on parle alors de cryptographie symétrique.
-
-% La cryptographie symétrique à dominée une grande partie de notre histoire. En effet, il a fallu
-% attendre la National Computer Conference de 1976, pour que W.Diffie et M.Hellman présente le
-% concept de ce que l'on nomme aujourd'hui la cryptographie asymétrique. L'asymétrie ici
-% décrit le décalage entre les informations. En effet, ici il y a deux clé qui entre en jeu. La
-% clé publique et la clé secrete.
-
-% La cryptographie moderne repose sur le principe de Kerckhoffs, énoncé en 1883 par Augustus
-% Kerckhoffs
-
-% De nos jours, traditionnelement nous désignons ces deux personnes par Alice et Bob. Mais
-% il faut comprendre que Alice et Bob, sont comme deux variables dans l'ensemble de tous
-% les entitées suceptible de communiquer entre elles. Autrement dit, elles peuvent représenter
-% deux banques, une banque et un client, un ordinateur et un site internet, deux personnes qui
-% souhaite communiquer entre-elles. Les exemples sont légion mais un premier problème va trés vite
-% se poser et il faudra attendre les années 1970 avant que ce que l'on nomme aujourd'hui la
-% cryptographie moderne apparaisent. 
-
-% À notre epoque, on parle de cryptographie post-quantique qui comme on le verra va apporter
-% sont lots de changement.
-
-
-% Un des premiers problèmes que l'on rencontre est la transmission de la clé secrète
-% entre Alice et Bob. En effet, non seulement la clé sert à chiffrer et déchiffrer mais elle
-% doit être transmisse physiquement

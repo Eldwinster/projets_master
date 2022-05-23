@@ -3,17 +3,31 @@
 \addbibresource{../library.bib}
 % \title{Mémoire}
 \begin{document}
-    \input{resume.tex}
     \tableofcontents
+    \newpage
+    \begin{center}
+        \textbf{Résumé}
+
+        Dans ce mémoire, je m'intéresse essentiellement à la construction du groupe des points
+        rationnels d'une courbe elliptique en vue d'en donner deux applications. 
+
+        Je commence
+        par introduire historiquement le sujet, puis je donne le contexte mathématique autour des
+        courbes elliptiques. Ensuite, j'introduis les différentes définitions qui vont
+        m'être utiles pour construire le groupe des points rationnels d'une courbe
+        elliptique. Ces différentes définitions me permettent
+        ainsi d'effectuer la construction géométrique et algébrique de la loi de groupe. Finalement, je donne deux
+        systèmes cryptographiques appliqué au groupe que l'on a construit.
+    \end{center}
     % start lectures
     \input{introduction.tex}
     \input{plan_projectif.tex}
     \input{definition_generales.tex}
     \input{loi_de_groupe.tex}
     \input{applications.tex}
-    % \input{cryptosystemes.tex}
-    % \input{pistes.tex}
     \input{perspectives.tex}
     \printbibliography[heading=bibintoc,title={Références}]
+    % \input{cryptosystemes.tex}
+    % \input{pistes.tex}
     % end lectures
 \end{document}
