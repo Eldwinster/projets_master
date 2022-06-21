@@ -1,0 +1,231 @@
+\chapter{Définitions générales}
+
+\begin{definition}
+    \label{def:ell}
+    Une courbe elliptique définie sur $K$ est une courbe projective plane d'équation
+    \begin{align}
+        \label{eq:ell}
+    y^2z=x^3+axz^3+bz^2
+    .\end{align}
+    où $a$ et $b$ sont des éléments de $K$ vérifiant la condition
+    \begin{align}
+        \label{eq:delta}
+    4a^3+27b^2\neq 0
+    .\end{align}
+\end{definition}
+
+\begin{lemme}
+    \label{lem:lemme1}
+    Soit $\Delta= -(4a^3 + 27b^2)$ le discriminant $f = x^3 + ax + b$. 
+    Les racines de $f$ sont simples, si et seulement si $\Delta \neq 0$.
+\end{lemme}
+
+\begin{demonstration}
+    Montrons tout d'abord que le discriminant de $f$ est $\Delta= -(4a^3 + 27b^2)$.
+
+    Soit $\Delta$ le discriminant de $f$. Soient $\alpha, \beta, \gamma $ les racines de $f$ dans $\overline{K}$ et $f'$ le polynôme dérivé de $f$.
+
+    Tout d'abord montrons que :
+    \begin{align*}
+        \Delta &= (-1) ( \alpha - \beta )^2 ( \alpha - \gamma )^2 ( \beta - \gamma )^2 \\
+          &= - f(\alpha)'f(\beta )'f(\gamma)'
+    .\end{align*}
+    D'après le théorème de d'Alembert on peut écrire $f$ sous la forme :
+    \[
+        f = \left( X - \alpha \right) \left( X - \beta \right) \left( X - \gamma \right) 
+    .\] 
+    En dérivant $f$ sous cette forme on obtient :
+    \begin{align*}
+        f &= ( X - \alpha ) \left( ( X - \beta ) ( X - \gamma ) \right)'  + ( X - \beta ) ( X - \gamma )\\
+          &= ( X - \alpha ) \left( ( X - \beta ) + ( X - \gamma ) \right) + ( X - \beta ) ( X - \gamma ) 
+    .\end{align*}
+
+    Donc  
+\[
+f' = ( X - \alpha ) ( X - \beta ) + ( X - \alpha ) ( X - \gamma ) + ( X - \beta ) ( X - \gamma )
+.\] 
+
+On a alors successivement : 
+\[
+    f(\alpha)' = ( \alpha - \beta) ( \alpha - \gamma )
+,\] 
+\[
+f(\beta )' = ( \beta - \alpha) ( \beta - \gamma)
+,\] 
+et
+\[
+f(\gamma)' = ( \gamma - \alpha) ( \gamma - \beta)
+.\] 
+
+En multipliant ces trois expressions, on obtient :
+\begin{align*}
+    f(\alpha)' f(\beta )' f(\gamma)' &= ( \alpha - \beta ) ( \alpha - \gamma ) ( \beta - \alpha ) ( \beta - \gamma) ( \gamma - \alpha ) ( \gamma - \beta ) \\
+&= \left( X - \alpha \right) \left( \alpha - \gamma \right) \left( -1 \right) \left( \alpha - \beta  \right) \left( \beta - \gamma \right) \left( -1 \right) \left( \alpha - \gamma \right) \left( -1 \right) \left( \beta - \gamma \right) \\
+&= \left( -1 \right) ^3 \left( \alpha - \beta  \right) ^2 \left( \alpha - \gamma  \right) ^2 \left( \beta - \gamma \right) ^2\\
+ &= - \Delta
+.\end{align*}
+
+Et donc 
+
+\[
+\Delta = - f'(\alpha) f'(\beta ) f'(\gamma)
+.\] 
+
+En partant de la forme $f : x^3 + ax + b$, on remarque que $f' : 3x^2 + a$. Par suite on obtient,
+\begin{align*}
+    \Delta &= - f'(\alpha) f'(\beta ) f'(\gamma) \\
+      &= - \left( 3 \alpha^2 + a \right) \left( 3 \beta^2 + a \right) \left( 3 \gamma^2 + a \right) 
+.\end{align*}
+Ce qui donne :
+\begin{align*}
+    \Delta  &= - \left( ( 9 \alpha^2 \beta^2 + 3a ( \alpha^2 + \beta^2 ) + a^2 ) ( 3 \gamma^2 + a ) \right)  \\
+       &= - \left( 27 \left( \alpha \beta \gamma \right)^2  + 9a \left( \alpha^2 \beta^2 + \alpha^2 \gamma^2 + \beta^2 \gamma^2 \right) + 3a^2 \left( \alpha^2 + \beta^2 + \gamma^2 \right) + a^3 \right) 
+.\end{align*}
+On peut écrire
+\[
+\alpha^2 + \beta^2 + \gamma^2 = \left( \alpha + \beta + \gamma \right)^2 - 2 \left( \alpha \beta + \alpha \gamma + \beta \gamma \right)
+,\] 
+\[
+\alpha^2 \beta^2 + \alpha^2 \gamma^2 + \beta^2 \gamma^2 = \left( \alpha \beta + \alpha \gamma + \beta \gamma \right)^2 - 2\alpha \beta \gamma \left( \alpha + \beta + \gamma \right)
+.\] 
+Donc d'après les relations entre coefficients et racine (i.e relation de Viète), pour un polynôme de la forme $ax^3 + bx^2 + cx + d$, on a :
+\[
+\alpha + \beta + \gamma = - \frac{b}{a}
+,\] 
+\[
+\alpha \beta + \alpha \gamma + \beta \gamma = \frac{c}{a}
+,\] 
+\[
+\alpha \beta \gamma = - \frac{d}{a}
+.\] 
+Donc pour $f$ on a $a = 1$, $b = 0$, $c = a$ et $d = b$.
+
+D'où,
+\[
+\alpha + \beta + \gamma = 0 \text{, } \alpha \beta + \alpha \gamma + \beta \gamma = a \text{ et } \alpha \beta \gamma = - b
+.\] 
+Ce qui donne : 
+\begin{align*}
+    \alpha^2 + \beta^2 + \gamma^2 &= 0^2 - 2a = -2a \\
+    \alpha^2 \beta^2 + \alpha^2 \gamma^2 + \beta^2 \gamma^2 &= a^2 + 2b \times 0
+.\end{align*}
+
+Donc le discriminant vaut :
+\begin{align*}
+    \Delta &= - \left( 27b^2 + 9a^3 - 6a^3 + a^3  \right) \\
+        &= - \left( 4a^3 + 27b^2  \right)
+.\end{align*}
+
+Maintenant, supposons que $\Delta = 0$. On a alors :
+ \begin{align*}
+     - \left( 4a^3 + 27^2 \right) = 0 &\iff - f(\alpha)' f(\beta )' f(\gamma)' = 0 \\
+                                      & \iff \left( f(\alpha)' = 0 \right) \ou \left( f(\beta )' = 0 \right) \ou \left( f(\gamma)' = 0 \right) \\
+                                      &\iff \alpha \text{ ou } \beta \text{ ou } \gamma \text{ est une racine multiple}
+.\end{align*}
+
+D'où le résultat.
+\end{demonstration}
+
+\section{Partie affine et point à l'infini}
+
+Si $(X,Y,Z)$ un point de $\overline{K}$ avec $Z\neq 0$ vérifie $F(X,Y,Z)=0$ alors de façon équivalente $(x,y)$ un point de $\overline{K}$ vérifie $f(x,y)=0$.
+
+En effet, il suffit dans l'équation $y^2=x^3+ax+b$ de remplacer $x$ par $\frac{X}{Z}$ et $y$ par $\frac{Y}{Z}$ et de multiplier par la puissance de $Z$ qu'il faut pour obtenir l'équation polynômiale en terme de $(X,Y,Z)$.
+
+Formalisons ce qu'est le point à l'infini, ainsi que ce qui vient d'être dit.
+
+Posons 
+\[
+U = \left\{ [x,y,z] \in \mathbb{P}^2(\overline{K}) \mid z \neq 0 \right\} 
+.\] 
+
+On dispose de l'application $\phi : U \to \overline{K}^2$ définie par
+\[
+\phi([x,y,z])=\left( \frac{x}{z},\frac{y}{z} \right) 
+.\] 
+
+C'est une bijection, dont l'application réciproque est donnée par la formule
+\[
+\phi^{-1}(x,y)=\left[ x,y,1 \right] 
+.\] 
+
+Considérons des éléments $a$ et $b$ de $K$ tels que $4a^3+27b^2 \neq 0$. Soit $E$ la courbe elliptique définie sur $K$ d'équation 
+\[
+y^2z=x^3+axz^2+bz^3
+.\] 
+
+L'ensemble des points $[x,y,z] \in E$ tels que $z=0$ est réduit au singleton $\left\{ O \right\} $ où
+\[
+O = [0,1,0]
+.\] 
+
+En effet, dans l'équation \eqref{eq:ell}, il vient
+\[
+y^2\times 0 = x^3 + ax \times 0^2 + b \times 0^3
+,\] 
+donc $x=0$, ainsi on peut prendre pour représentant de classe de cet élément la classe de $O$.
+
+Par ailleurs, $E \cap U$ s'identifie via $\phi$ à l'ensemble des éléments $(x,y)$ de $\overline{K}^2$ vérifiant l'égalité
+
+\begin{align}
+    \label{eq:ell1}
+y^2 = x^3 + ax + b
+.\end{align}
+
+On dira que $E \cap U$ est la partie affine de $E$ et que $O$ est le point à la l'infini de $E$.
+
+Dans toute la suite, on identifira $E \cap U$ et le sous-ensemble de $\overline{K}^2$ formé des éléments $(x,y)$ vérifiant \eqref{eq:ell1}. Avec cette identification, on a 
+\[
+E = \left\{ (x,y) \in \overline{K} \times \overline{K} \mid y^2=x^3+ax+b \right\} \cup \left\{ O \right\} 
+.\] 
+
+Ainsi, $E$ est la courbe affine d'équation \eqref{eq:ell1} à laquelle on adjoint le point à l'infini $O$. C'est pourquoi on définira souvent une courbe elliptique par sa partie affine, sans préciser le point $O$. Cela étant, il ne faudra pas perdre de vue l'importance du point à l'infini, comme on s'en rendra compte notamment dans la définition de la loi de groupe sur $E$ que l'on verra plus loin.
+
+\begin{remarque}
+    On retiendra qu'une courbe affine d'équation de la forme \eqref{eq:ell1} est une courbe
+    elliptique si et seulement si, par définition, la condition \eqref{eq:delta} est satisfaite.
+\end{remarque}
+
+\section{Points rationnels d'une courbe elliptique}
+Comme on va le voir par la suite par la construction d'une loi de composition interne sur l'ensemble des
+courbes elliptique, dans un premier temps, et par la construction de la loi de groupe
+sur les courbes elliptique, dans un second temps.
+
+Les points construits à l'aide de ces deux
+loi bien qu'au départ peuvent être des entiers deviennent, par construction trés vite des
+rationnels. C'est pourquoi, il est important de définir que ces points sont toujours des
+points de la courbe.
+
+\textbf{(détail un peu la suite en reprennant les explications de Mme Abdelatif)}
+
+Soit $L$ une extension de $K$ dans $\overline{K}$.
+
+\begin{definition}
+    Soit $P=\left[ x,y,z \right] $ un point de $\mathbb{P}^2$. On dit que $P$ est rationnel sur $L$ s'il existe $\lambda \in \overline{K}^{*}$ tel que $\lambda x$, $\lambda y$ et $\lambda z$ soient dans $L$. On note $\mathbb{P}^2(L)$ l'ensemble des points de $\mathbb{P}^2$ rationnels sur $L$.
+
+    Cela justifie la notation $\mathbb{P}^2 = \mathbb{P}^2(\overline{K})$.
+\end{definition}
+
+\begin{remarque}
+    Étant donné un point $[x_1,x_2,x_3] \in \mathbb{P}^2$, le fait qu'il soit rationnel sur $L$ n'implique pas que les $x_{i}$ soient dans $L$. Cela signifie qu'il existe $i$ tel que $x_{i}$ soit non nul, et que chaque $\frac{x_{j}}{x_{i}}$ appartienne à $L$.
+\end{remarque}
+
+Soit $E$ une courbe elliptique définie sur $K$ d'équation \eqref{eq:ell}.
+
+\begin{definition}
+    Un point de $E$ est dit rationnel sur $L$ s'il appartient à $E \cap \mathbb{P}^2(L)$. On note $E(L)$ l'ensemble des points de $E$ rationnels sur $L$.
+
+    Par définition, on a donc
+    \[
+    E = E(\overline{K})
+    .\] 
+\end{definition}
+
+Le point $O = [0,1,0]$ appartient à $E(K)$. Soit $(x,y) \in \overline{K}^2$ un point de la partie affine de $E$. Par définition, il est rationnel sur $L$ si et seulement si $x$ et $y$ sont dans $L$. Il en résulte que l'on a 
+\[
+E = \left\{ (x,y) \in L \times L \mid y^2 = x^3+ax+b \right\} \cup \left\{ O \right\} 
+.\] 
+
+\begin{exemple}
+    mettre l'exemple avec la courbe et le corps fini pour les exemples des cryptosystèmes
+\end{exemple}

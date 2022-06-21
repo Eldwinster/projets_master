@@ -1,0 +1,80 @@
+\headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\headcommand {\beamer@framepages {1}{1}}
+\headcommand {\beamer@sectionpages {1}{1}}
+\headcommand {\beamer@subsectionpages {1}{1}}
+\headcommand {\sectionentry {1}{Introduction}{2}{Introduction}{0}}
+\headcommand {\slideentry {1}{0}{1}{2/2}{}{0}}
+\headcommand {\beamer@framepages {2}{2}}
+\headcommand {\beamer@subsectionpages {2}{2}}
+\headcommand {\beamer@subsectionentry {0}{1}{1}{3}{Research papers}}
+\headcommand {\slideentry {1}{1}{1}{3/3}{Research papers}{0}}
+\headcommand {\beamer@framepages {3}{3}}
+\headcommand {\beamer@subsectionpages {3}{4}}
+\headcommand {\beamer@subsectionentry {0}{1}{2}{5}{Tools}}
+\headcommand {\slideentry {1}{2}{1}{5/5}{Tools}{0}}
+\headcommand {\beamer@framepages {5}{5}}
+\headcommand {\beamer@sectionpages {2}{5}}
+\headcommand {\beamer@subsectionpages {5}{5}}
+\headcommand {\sectionentry {2}{Projective Geometry}{6}{Projective Geometry}{0}}
+\headcommand {\beamer@subsectionpages {6}{5}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{6}{Projective plane}}
+\headcommand {\slideentry {2}{1}{1}{6/6}{Projective plane}{0}}
+\headcommand {\beamer@framepages {6}{6}}
+\headcommand {\beamer@subsectionpages {6}{6}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{7}{Affine slice}}
+\headcommand {\slideentry {2}{2}{1}{7/7}{Affine slice}{0}}
+\headcommand {\beamer@framepages {7}{7}}
+\headcommand {\beamer@subsectionpages {7}{7}}
+\headcommand {\beamer@subsectionentry {0}{2}{3}{8}{Projective plane and infinity point}}
+\headcommand {\slideentry {2}{3}{1}{8/8}{Projective plane and infinity point}{0}}
+\headcommand {\beamer@framepages {8}{8}}
+\headcommand {\beamer@sectionpages {6}{8}}
+\headcommand {\beamer@subsectionpages {8}{8}}
+\headcommand {\sectionentry {3}{Elliptic curves}{9}{Elliptic curves}{0}}
+\headcommand {\beamer@subsectionpages {9}{8}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{9}{Elliptic curves' definition}}
+\headcommand {\slideentry {3}{1}{1}{9/9}{Elliptic curves' definition}{0}}
+\headcommand {\beamer@framepages {9}{9}}
+\headcommand {\beamer@subsectionpages {9}{9}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{10}{Rationals points}}
+\headcommand {\slideentry {3}{2}{1}{10/10}{Rationals points}{0}}
+\headcommand {\beamer@framepages {10}{10}}
+\headcommand {\beamer@sectionpages {9}{10}}
+\headcommand {\beamer@subsectionpages {10}{10}}
+\headcommand {\sectionentry {4}{(E,+) group}{11}{(E,+) group}{0}}
+\headcommand {\beamer@subsectionpages {11}{10}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{11}{Non associative binary operation}}
+\headcommand {\slideentry {4}{1}{1}{11/11}{Non associative binary operation}{0}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\beamer@subsectionpages {11}{11}}
+\headcommand {\beamer@subsectionentry {0}{4}{2}{12}{(E,+) abelian binary operation}}
+\headcommand {\slideentry {4}{2}{1}{12/12}{(E,+) abelian binary operation}{0}}
+\headcommand {\beamer@framepages {12}{12}}
+\headcommand {\beamer@sectionpages {11}{12}}
+\headcommand {\beamer@subsectionpages {12}{12}}
+\headcommand {\sectionentry {5}{Application}{13}{Application}{0}}
+\headcommand {\beamer@subsectionpages {13}{12}}
+\headcommand {\beamer@subsectionentry {0}{5}{1}{13}{The discrete logarithm problem}}
+\headcommand {\slideentry {5}{1}{1}{13/13}{The discrete logarithm problem}{0}}
+\headcommand {\beamer@framepages {13}{13}}
+\headcommand {\beamer@subsectionpages {13}{13}}
+\headcommand {\beamer@subsectionentry {0}{5}{2}{14}{Public key-sharing protocol}}
+\headcommand {\slideentry {5}{2}{1}{14/14}{Public key-sharing protocol}{0}}
+\headcommand {\beamer@framepages {14}{14}}
+\headcommand {\beamer@subsectionpages {14}{14}}
+\headcommand {\beamer@subsectionentry {0}{5}{3}{15}{Elliptic curves' pros and cons}}
+\headcommand {\slideentry {5}{3}{1}{15/15}{Elliptic curves' pros and cons}{0}}
+\headcommand {\beamer@framepages {15}{15}}
+\headcommand {\beamer@sectionpages {13}{15}}
+\headcommand {\beamer@subsectionpages {15}{15}}
+\headcommand {\sectionentry {6}{References}{16}{References}{0}}
+\headcommand {\slideentry {6}{0}{1}{16/16}{}{0}}
+\headcommand {\beamer@framepages {16}{16}}
+\headcommand {\beamer@sectionpages {16}{16}}
+\headcommand {\beamer@subsectionpages {16}{16}}
+\headcommand {\sectionentry {7}{References}{17}{References}{0}}
+\headcommand {\beamer@partpages {1}{18}}
+\headcommand {\beamer@subsectionpages {16}{18}}
+\headcommand {\beamer@sectionpages {16}{18}}
+\headcommand {\beamer@documentpages {18}}
+\headcommand {\gdef \inserttotalframenumber {15}}

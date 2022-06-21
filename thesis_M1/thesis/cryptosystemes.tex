@@ -356,3 +356,240 @@ M_2-sM_1=M+kA-s(kP)=M+k(sP)-s(kP)=M+skP-skP=M
     % courbe. Donc la courbe $E$ ne possède pas de point de d'abscisse $x=1$.
 
     % À voir si je mets $\mathbb{F}_{25}$ je crois j'ai pigé faut que je vérifie ça ce midi
+
+% En effet, on constate
+% que si $z = 0$ et $y \neq 0$, en considérant un point $P=[x,y,0]$, tous ses représentant de
+% classe sont de la forme $P'=[\frac{x}{y},1,0]$, sans rentrer dans les détails, quand $y$ tend
+% vers l'infini on obtient le point $[0,1,0]$ qui n'est autre que l'intersection des droites du
+% plan affine et la droite à l'infini. Par exemple dans le plan projectif réels la droite à
+% l'infini est un cercle. Dans notre cas, on peut faire l'analogie avec la technique de
+% la perspective en dessin, où on à un point à l'horizon, où tous les droites fuyante ce rejoignent. Ainsi,
+% dans notre cas les droites fuyantes sont les droites verticales (i.e. parallèle à l'ordonnée) et le
+% point à l'horizon notre point à l'infini. Ainsi, l'élément neutre de notre groupe sera le point
+% $O = [0,1,0]$ qui n'est autre que le point d'intersection des droites
+% vertical avec la courbe elliptique.
+
+% On désignera la clôture algébrique de $K$, choisi implicitement, par la notation $\overline{K}$.
+
+% Une courbe elliptique $E$ définie sur $K$ est donc une courbe du plan projectif d'équation
+% \eqref{eq:ell}.
+
+
+% \section{Partie affine et point à l'infini}
+
+% Dans cette section nous définissons explicitement ce que nous avons pu décrire au préalable
+% dans la section \ref{defGene} 
+
+% Considérons des éléments $a$ et $b$ de $K$ tels que $4a^3+27b^2 \neq 0$. Soit $E$ la courbe
+% elliptique d'équation homogène
+% \[
+% E :\quad y^2z=x^3+axz^2+bz^3
+% .\] 
+
+% Soit $U = \left\{ [x,y,z] \in \mathbb{P}_{2} \mid z \neq 0 \right\} $. On a vu qu'a l'aide
+% d'une application $\phi$, on obtient une bijection entre le plan affine et l'ensemble $U$.
+
+% Par ailleurs, $E \cap U$ s'identifie via $\phi$ à l'ensemble des éléments $(x,y)$ de $\overline{K}^2$ vérifiant l'égalité
+
+% \begin{align}
+%     \label{eq:ell1}
+% y^2 = x^3 + ax + b
+% .\end{align}
+
+% On dira que $E \cap U$ est la partie affine de $E$ et que $O$ est le point à la l'infini de $E$.
+
+% Dans toute la suite, on identifira $E \cap U$ et le sous-ensemble de $\overline{K}^2$ formé des éléments $(x,y)$ vérifiant \eqref{eq:ell1}. Avec cette identification, on a 
+% \[
+% E = \left\{ (x,y) \in \overline{K} \times \overline{K} \mid y^2=x^3+ax+b \right\} \cup \left\{ O \right\} 
+% .\] 
+
+% Ainsi, $E$ est la courbe affine d'équation \eqref{eq:ell1} à laquelle on adjoint le point à l'infini $O$. C'est pourquoi on définira souvent une courbe elliptique par sa partie affine, sans préciser le point $O$.
+
+% \begin{remarque}
+%     On retiendra qu'une courbe affine d'équation de la forme \eqref{eq:ell1} est une courbe
+%     elliptique si et seulement si, par définition, la condition \eqref{eq:delta} est satisfaite.
+% \end{remarque}
+
+
+
+% Comme par définition, c'est une courbe sur le plan projectif, on dispose du polynôme homogène
+% de degré $3$, $F(X,Y,Z)$ dans l'anneau de polynôme $K[X,Y,Z]$. Étant données $ a,b \in K$. 
+
+% Posons 
+% \[
+% F=Y^2Z-\left( X^3+aXZ^2+bZ^3 \right) 
+% .\] 
+
+% Comme $F$ est homogène de degré $3$. Par la définition \eqref{def:courbe}, on a donc
+% $E$ la courbe sur le plan projectif $\mathbb{P}_{2}$ qui est l'ensemble des solutions de l'équation
+% polynômiale
+% \[
+% E: \quad F(X,Y,Z) = 0
+% ,\] 
+% Si $\left( x,y,z \right) $ est un éléments non nul de $\overline{K}^3$, cette condition
+% ne dépend que de sa classe dans $\mathbb{P}_{2}(\overline{K})$.
+
+% Soit $P = \left[ x,y,z \right] $ un point de $\mathbb{P}^2(\overline{K})$. On
+% dit que $P$ est un zéro de $F$ dans $\overline{K}$, ou plus simplement un zéro de $F$, si
+% l'on a $F(x,y,z)=0$. On signifie par, courbe projective plane d'équation \eqref{eq:ell},
+% l'ensemble des zéros de $F$ dans $\overline{K}$.
+
+% Quant à la condition \eqref{eq:delta}, elle signifie que les racines dans $\overline{K}$ du
+% polynôme
+% \[
+% f = X^3 + aX + b
+% \] 
+% sont simples.
+
+
+
+% \begin{remarque}
+% \end{remarque}
+
+
+
+% Le point $O = [0,1,0]$ appartient à $E(K)$. Soit $(x,y) \in \overline{K}^2$ un point de la partie affine de $E$. Par définition, il est rationnel sur $L$ si et seulement si $x$ et $y$ sont dans $L$. Il en résulte que l'on a 
+% \[
+% E = \left\{ (x,y) \in L \times L \mid y^2 = x^3+ax+b \right\} \cup \left\{ O \right\} 
+% .\] 
+
+ % Ceci fait largement partie de la géométrie algébrique, et les mathématiciens
+% possèdent quelques un des outils les plus sophistiqués et abstraits disponible pour
+% s'attaquer à ce genre de problème.
+
+% \[
+% u = \int_{0}^{t} \frac{\dx}{\sqrt{1-x^2} }, \quad t \in ]-1,1[
+% .\] 
+
+% Qui n'est autre que la fonction $u = \arcsin(x)$. Or c'est plutôt la fonction inverse
+% $\sin(x)$ qui est intéressante.
+
+% Via la méthode de Jacobi, on peut montrer que la fonction
+% \[
+% t \to u = \int_{0}^{t} \frac{\dx}{\sqrt{1-x^2} }
+% ,\] 
+% admet une fonction réciproque $t(u)=\sin(u)$ définie sur tout le plan complexe, périodique de
+% période $2\pi$, solution de l'équation différentielle :
+% \[
+% \left( \frac{\dt}{\du} \right) ^2 = 1 - u^2
+% .\] 
+
+% Au XVIIème et XVIIIème siècles, les mathématiciens se sont attaqué à la généralisation du
+% problème précédent. En effet, ils ont cherché à déterminer la longueur d'un arc d'ellipse,
+% d'équation
+% \[
+% \frac{x^2}{a^2}+\frac{y^2}{b^2}= 1
+% .\] 
+
+% Ce qui revient à calculer l'intégral, en posant $e = \sqrt{1 - \left( \frac{b}{a} \right)
+% ^2} $, l'exentricité de l'ellipse :
+% \[
+% u = \int_{0}^{t} \frac{\sqrt{1-e^2x^2}}{\sqrt{1-x^2} } \dx, \quad t \in ]-1,1[
+% .\] 
+
+% La solution qui s'imposa fut de considérer cette intégrale comme une fonction à
+% part entière.
+
+% image
+
+% , c'est à dire, où l'abscisse peut prendre plusieurs valeurs en ordonné. Ce
+% qui ouvre l'étude à de nouvelle courbe comme le lemniscate de Benouilli. 
+
+% Ainsi, Abel en 1827 et Jacobi en 1829 on indépendament attaqué la question de cette
+% intégrale associée à une ellipse du point de vue des fonctions complexes, en
+% considérant sa réciproque.
+
+
+% Si Alice souhaite envoyer un message à Bob, elle chiffre sont message avec la clé publique de
+% Bob, et ce dernier avec sa clé secrète, qu'il est le seul à connaître, peut déchiffrer le
+% message d'Alice. Alice et Bob peuvent donc s'échanger des messages chiffré, via un canal
+% non sécurisé, et ceux ci sans posséder de secret commun. Dans l'hypothèse qu'Eve interceptent
+% les communications sur le canal non sécurisé, il lui est impossible un en temps
+% raisonnable de déterminer la clé secrète à partir de la clé publique.
+
+% Quand on parle
+% de temps raisonnable ou d'efficacité, ceci est lié à la façon dont nos ordinateurs calcul. En effet, chaque
+% opération arithmétique possède un certain coût en temps de calcul. Quand on parle de
+% compléxité en temps, on calcul dans le pire des cas possible combien d'opération, il est
+% nécessaire d'effectuer dans un algorithme. C'est pourquoi, un algorithme efficace est un
+% algorithme qui coût peu cher en temps de calcul.
+
+
+% Il n'aurat pas fallut longtemps pour trouver un exemple basé sur le principe énoncé par Diffie
+% et Helman. En effet, dès 1977, Ronald \textbf{R}ivet, Adi \textbf{S}hamir et Leonard
+% \textbf{A}dleman invente le cryptosystème asymétrique RSA.
+
+% Il est basé sur le problème de la factorisation d'entier. En effet, pour trouver la clé
+% secrète il faut être capable de résoudre ce problème de façon efficace. 
+
+
+% À l'époque et encore jusqu'à récemment (source?) le problème de la factorisation des entiers
+% était diffile à résoudre mais ceci est de moins en moins vrai avec les années. (source)
+
+
+
+% En parallèle de l'histoire de la cryptographie. Une autre histoire fit son chemin de
+% l'antiquité à nos jours. C'est celle du problème de la longueur du cercle et en particulier la longueur d'un arc
+% de cercle.
+
+% problème facto
+% d-h log
+% Alice bob eve
+% fonction unique
+
+% cercle diophante
+% point ligne addition
+% internet
+% plan projectif
+
+% En effet, dans un monde en constant évolution, notamment technique \cite{Kachigar2018}. Il est crucial de pouvoir
+% améliorer, réinventer, ou même changer, des principes qui ont révolutionner à leur époque.
+% C'est pourquoi,Koblitz \cite{Koblitz1987}, à présenter une façon concrète d'utiliser les courbes
+% elliptiques dans le cadre de la cryptographie. Ceci a permit d'apporter une nouvelle façon
+% de faire de la cryptographie, tout en conservant des concepts eprouvé basé sur le problème
+% du logarithme discret \cite{Chabanol2021} et même le problème de la factorisation de entiers
+% \cite{bibfacent}. Cette nouvelle cryptographie est basé sur le groupe abéliens des courbes
+% elliptiques. Elle apporte bien évidemment ses lots d'avantages et d'inconvénients par rapport à
+% la méthode, plus classique, qui elle est basé sur le groupe multiplicatif $(\Z /n\Z^{*})$, où $n$ est un entier.
+
+% Tout d'abord, définition de ce qu'est la cryptographie. 
+
+% D'après l'étymologie, qui est d'origine grec, c'est le fait de cacher ce qui à été écrit.
+
+% On en déduit, ici que l'idée est de transmettre un éventuel message secret à une ou des
+% personnes et l'on veut qu'elles soient les seuls à pouvoir comprendre le message.
+
+% La première trace de la cryptographie dans l'histoire apparait déjà à l'époque des
+% Égyptiens vers 2000 av. J.-C. en effet, on retrouver un
+
+% Le premier exemple connue de cryptographie est appelé le chiffrement de César. Cette méthode consiste à
+% prendre les lettres de l'aphabet et d'éffectuer une transposition $n \in \N$, on peut
+% ainsi définir sur $\Z / 26\Z$ une bijection entre les lettres de l'alphabet et ce groupe.
+% L'entier $n$ est alors ce que l'on appelle la clé secrète, qui va permettre à la fois de
+% chiffrer et de déchiffrer un éventuel message. Quand la clé secrète a cette double utilité,
+% on parle alors de cryptographie symétrique.
+
+% La cryptographie symétrique à dominée une grande partie de notre histoire. En effet, il a fallu
+% attendre la National Computer Conference de 1976, pour que W.Diffie et M.Hellman présente le
+% concept de ce que l'on nomme aujourd'hui la cryptographie asymétrique. L'asymétrie ici
+% décrit le décalage entre les informations. En effet, ici il y a deux clé qui entre en jeu. La
+% clé publique et la clé secrete.
+
+% La cryptographie moderne repose sur le principe de Kerckhoffs, énoncé en 1883 par Augustus
+% Kerckhoffs
+
+% De nos jours, traditionnelement nous désignons ces deux personnes par Alice et Bob. Mais
+% il faut comprendre que Alice et Bob, sont comme deux variables dans l'ensemble de tous
+% les entitées suceptible de communiquer entre elles. Autrement dit, elles peuvent représenter
+% deux banques, une banque et un client, un ordinateur et un site internet, deux personnes qui
+% souhaite communiquer entre-elles. Les exemples sont légion mais un premier problème va trés vite
+% se poser et il faudra attendre les années 1970 avant que ce que l'on nomme aujourd'hui la
+% cryptographie moderne apparaisent. 
+
+% À notre epoque, on parle de cryptographie post-quantique qui comme on le verra va apporter
+% sont lots de changement.
+
+
+% Un des premiers problèmes que l'on rencontre est la transmission de la clé secrète
+% entre Alice et Bob. En effet, non seulement la clé sert à chiffrer et déchiffrer mais elle
+% doit être transmisse physiquement

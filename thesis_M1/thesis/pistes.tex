@@ -1,0 +1,412 @@
+\section{sources}
+
+Cours Delaunay: 
+\begin{itemize}
+    \item def 1: lisse
+    \item prop 1: raison pour lem 7.1
+    \item equation réduite raison de pourquoi $k$ diff de $3$ et $2$
+    \item exemple des eq pour  $\car(k)=2$ ou $3$
+    \item def 3: ensembles des points $k$-rationnels
+    \item def 4: log
+    \item th 5,6 et def 5: point rationnels et courbe supersingulière
+    \item rq: pour parler de courbe singulière il faut introduire le morphisme de frobenius
+    \item recherche des points rationnels différent algo
+    \item protocol signature :
+        \begin{itemize}
+            \item algo choix de courbe
+
+                cherche c'est quoi $l$, $t$ et $MOV$
+            \item algo ecdsa (signature et vérification)
+        \end{itemize}
+    \item factorisation exemple d'algo info etc peut-être en parler brièvement tout en invitant
+        à aller consulter pour cela il est peut-être bon d'en faire un résumer trés bref des
+        différents lien.
+
+        Je compte parler de l'algo de lenka et peut-être ce qu'il y a dans ce cours
+\end{itemize}
+
+Crypto asy et ce (chabanol)
+\begin{itemize}
+    \item el gammal basé sur $\left( \Z / p\Z \right) ^{*}$ muni de la multiplication
+        constitue un groupe abélien
+    \item enigma mm machine assortiede la clé (reglage de la machine) permet de dé/chiffrer
+    \item désavantage de sym partage de la clé
+    \item avantage de asy partage de la clé
+    \item exemple concret paiement en ligne
+    \item problème log discret version vulgarisé (oral)
+    \item exponentiation rapide exemple rapport avec l'addition de $E$
+    \item principe asym fonction à sens unique
+    \item gros moyen mis en oeuvre pour dvp des algo de facto
+    \item on ne sait pas prouver qu'une fonction est difficile à inverser
+    \item plus sur que RSA
+    \item histoire ec
+    \item symétrie par rapport à $x$ 
+    \item solution de $f$ sont les abscisses des points d'intersection de cette courbe
+        avec l'axe $x$
+    \item $\delta = 0$
+    \item  $\delta > 0$ 
+    \item $\delta < 0$
+    \item example associativité
+    \item remarque rationnels à partir d'un point $P$ au coordonnées rationnel on obtient
+        que des multiple à coordonnées rationnel
+    \item question ouverte cardinal
+    \item désavantage face à RSA (donne les raisons voir delaunay)
+    \item étude de l'allure de ces courbes
+\end{itemize}
+
+bib
+\begin{itemize}
+    \item courbe ell
+        \begin{itemize}
+            \item coordonnées selon équation de droites vérifie que c'est bien la même chose que ce
+        que tu as et si c'est pas le cas pourquoi
+            \item structure et ordre difficile à connaitre
+            \item analogue plus compliqué que $\left( \Z / p\Z \right)^*$
+        \end{itemize}
+    \item chiffré à l'aide des c-e
+        \begin{itemize}
+            \item point de vue de eve
+            \item difficulté de transmission de texte voir livre
+            \item avantage inconvénients
+                \begin{itemize}
+                    \item log plus compliqué
+                    \item taille des clé réduite
+                    \item carte à puce peu de puissance, influence de la clé sur
+                        performances
+                    \item récent 
+                    \item bcp de brevet donc potentiellement plus couteux
+                \end{itemize}
+        \end{itemize}
+    \item factorisation c-e
+        \begin{itemize}
+            \item méthode $p-1$ de pollard
+            \item facto via courbe elliptiques (Lenstra)
+                \begin{itemize}
+                    \item algo
+                    \item pourquoi ca marche
+                \end{itemize}
+        \end{itemize}
+    \item facto entier
+        \begin{itemize}
+            \item crucial par rapport à RSA
+            \item différent algo possible
+            \item principe derrière la facto
+        \end{itemize}
+\end{itemize}
+
+Crypto et ordi quantique (Kachigar)
+\begin{itemize}
+    \item intro
+        \begin{itemize}
+            \item intro crypto
+            \item antiquité romaine
+            \item crypto moderne = crypto à clé publique
+            \item hyp fonction à sens unique
+            \item algo shor facto
+            \item algo simon 1990
+            \item casser les cryptosys
+            \item discussion comment resister aux ordi quantique
+            \item exemple sur impact sur la crypto à clé secrète
+        \end{itemize}
+    \item crypto état des lieux
+        \begin{itemize}
+            \item césar
+            \item la vrai diff entre sym et asym c'est la difficulté de trouver $f^{-1}$
+            \item def crypto systeme
+            \item fonction à sens unique pas de preuve existence
+            \item exemple détaillé RSA
+            \item nombre de clé nécessaires
+            \item rapidité sym $>$ asym
+            \item exemple pratique d'hybride en footnote
+        \end{itemize}
+    \item asym vs quantique
+        \begin{itemize}
+            \item type d'attaque
+            \item algo shor attaque de type math
+            \item tps de calcul rsa rapport entre sec et facto
+            \item explication compléxité rsa
+            \item explication entre temps de calcul pour dé/chiffrer
+            \item problème de recherche de période
+            \item simon 1994 inspire shor ordi quantique efficaces problème de recherche
+                de période
+            \item shor permet de ramener le probleme de facto à un probleme de période grace a
+                des propritété d'arithmétique
+            \item exploite le fait que le problème soit doté d'une structure
+            \item au contraire d'une simple recherche d'éléments
+            \item raison calcul quantique capable de tel calcul
+            \item resumé sur $P=NP$ liens avec quantique et crypto
+        \end{itemize}
+    \item sym vs quantique
+        \begin{itemize}
+            \item résultat de claude shanon longueur du texte et de la clé égale pour une
+                sécurité parfaite
+            \item parle un peu du principe moderne de sym
+            \item présente le shéma d'enven-mansour (preuve de concept) de comment ramener
+                les problèmes lier à la crypto sym à des problème de période
+        \end{itemize}
+\end{itemize}
+
+wiki
+\begin{itemize}
+    \item el gamal
+        \begin{itemize}
+            \item GNUpg
+            \item info
+        \end{itemize}
+    \item crypto hybride
+        \begin{itemize}
+            \item GnuPG
+            \item PGP
+            \item TLS
+        \end{itemize}
+    \item log
+        \begin{itemize}
+            \item pas d'algo pour reciproque mais addition nb de multi log en taille de l'arg
+            \item dans certain groupe log difficile alors que expo facile algo expo rapide
+            \item exemple d'algo pour resoudre log
+        \end{itemize}
+    \item crypto sur c-e
+        \begin{itemize}
+            \item intro quelques info utile peut-être
+            \item histoire et motivation
+                \begin{itemize}
+                    \item algo ss-expo pour log (crible gene du corps de nb)
+                    \item travail dans corps assez large implique cout implementation,
+                        transmission et tps de calcul augment
+                    \item tout par du groupes points rationnels de $E$ 
+                    \item variétés algébrique collection de points satisfaisant une équation
+                        à plusieurs indéterminées
+                    \item groupe d'ordre premier donc cyclique cad qu'il existe $P$ qui
+                        engendre le groupe. conséquence on peut passer des versions
+                        classique aux version ell sur les algo type el et dh
+                    \item seuls les algo générique comme l'algo de shanks pouvaient
+                        résoudre le log discret dans $E$
+                    \item cela rendait l'attaque bcp plus diff sur $E$ que sur un corps de
+                        nombre
+                    \item conséquence niveau de sec satisfaisant, diminution de la
+                        taille des données manipulées
+                    \item gain de vitesse reduction des couts d'implé et transmi
+                    \item attaque MOV c-e supersingulière exemple d'attaque
+                \end{itemize}
+        \end{itemize}
+    \item probleme dh
+        \begin{itemize}
+            \item def
+            \item relation avec log
+        \end{itemize}
+    \item plongement de veil
+        \begin{itemize}
+            \item degré de plongement attaque mov
+        \end{itemize}
+    \item echange cle dh
+        \begin{itemize}
+            \item 2015 prix turing
+            \item fondement math
+        \end{itemize}
+    \item calculateur quantique
+        \begin{itemize}
+            \item partie sur la crypto
+        \end{itemize}
+    \item crypto sur c-e
+        \begin{itemize}
+            \item liste d'algo
+            \item liste de courbe
+            \item liste de primaire cryptographique
+        \end{itemize}
+    \item echange de clé
+        \begin{itemize}
+            \item TLS le plus utilisé
+            \item prix turing 2016 pour dh
+            \item avant clé publique
+            \item info protocole dh
+            \item info signature
+        \end{itemize}
+    \item signature
+    \item TLS
+    \item fonction de hachage
+    \item EC multiplication
+    \item curve25519
+    \item théoreme de bézout geo algé (en et fr)
+    \item expo by squaring
+    \item one-way function
+    \item diophante 
+    \item eq diophantienne
+    \item time complexity
+    \item asymptotic analysis
+    \item chiffrement par substitution
+    \item droite à l'infini
+    \item plan pro réel
+    \item plan pro
+    \item espace pro
+    \item droite pro
+    \item géo pro
+\end{itemize}
+
+miximum sur algo courbe elliptique avec un exemple sur les signature
+
+handbook sur les c-e presentation général du sujet notamment sur le plan projectif et
+l'intersection des axe $x,y,z$ au point $\mathcal{O}$
+ 
+une page sur stack exchange avec le meme principe qu'au dessus et une autre encore peut etre
+encore plus simple à comprendre
+
+image pour les transformation projective (perspective)
+
+j'ai l'article de kerckhoff en lien
+
+
+\section{Plan}
+
+\begin{itemize}
+    \item introduction
+        \begin{itemize}
+            \item crypto
+                \begin{itemize}
+                    \item origine grecs
+                    \item considération historique
+                    \item étymologie, signification porté historique (guerre)
+                    \item crypto sym
+                        \begin{itemize}
+                            \item césar
+                            \item vigenere
+                            \item cryptanalise
+                            \item enigma
+                            \item ce qui amène kerckhoff
+                        \end{itemize}
+                    \item principe de kerckhoff
+                    \item crypto asym
+                        \begin{itemize}
+                            \item intro principe kerckhoff
+                            \item cryptosys
+                            \item D-H 1976
+                            \item intro asym
+                            \item principe termes mathématiques
+                            \item enjeux asym
+                        \end{itemize}
+                    \item prob fac et log
+                \end{itemize}
+        \end{itemize}
+    \item courbes elliptiques
+        \begin{itemize}
+            \item parallèle historique dans le sens en même temps
+        \end{itemize}
+    \item plan projectif
+        \begin{itemize}
+            \item espace pro
+            \item droite projective
+                \begin{itemize}
+                    \item def
+                    \item classe d'équivalence (explicite ce que signifie les coordonnées pro
+                        non ?)
+                    \item point de la droite
+                    \item division en deux type
+                        \begin{itemize}
+                            \item $[x,1]$ droite affine
+                            \item $[x,0]$ point à l'infini
+                        \end{itemize}
+                    \item plan projectif
+                        \begin{itemize}
+                            \item def (à changer pour être dans la continuité de la def
+                                précédente.
+                        \end{itemize}
+                \end{itemize}
+        \end{itemize}
+    \item def g
+        \begin{itemize}
+            \item def de la courbe
+            \item poly homogène $F$
+            \item conséquence def : zero de $F$ et $f$ racine simples
+            \item lemme sur delta
+            \item demo lemme complète
+            \item partie fine et point à l'infini
+            \item $U,\phi,\mathcal{O},E$
+            \item def point rationnel sur L
+            \item remarque pas trop compris
+            \item rationnel sur E
+            \item exemples pas encore mis à choisir
+        \end{itemize}
+    \item loi de groupe
+        \begin{itemize}
+            \item def droite dans $\mathbb{P}^2$
+            \item lemme unicité et existence de la droite
+            \item démo pas fini!
+            \item tangente rajoute des info si possible
+            \item lemme je crois c'est par rapport à l'existence d'une unique tangente
+            \item demo complète
+            \item def equation tangente
+            \item lemme des cas tangente
+            \item demo complète
+            \item prop cordes-tangentes
+            \item demo complète
+            \item th loi de groupe
+            \item demo complète
+            \item exemple et remarque à choisir
+        \end{itemize}
+    \item applications
+        \begin{itemize}
+            \item application domaine pratique et th
+            \item exemples
+            \item ce qui m'intéresse
+            \item application crypto
+            \item DH
+            \item el-gammal
+            \item ecsda
+        \end{itemize}
+\end{itemize}
+
+% pistes:
+% \begin{itemize}
+%     \item Factorisation (algo $\N$ et $E$)
+%     \item
+% \end{itemize}
+
+
+
+% Dans ce mémoire, nous allons nous intéresser aux courbes elliptiques et plus particulièrement
+% au groupe abélien des courbes elliptiques. Ce qui va nous permettre d'utiliser ce groupe en
+% cryptographie et présenter une façon plus efficace d'utiliser l'algorithme d'El-Gamal (EG.) (date) et le
+% protocol de Diffie-Hellman (D-H.) (date).
+
+% Dans un monde en constant évolution, notamment technique. Il est crucial de pouvoir
+% améliorer, réinventer, ou même changer, des principes qui ont révolutionner à leur époque.
+% C'est pourquoi, en (date) Klobnitz, à présenter une façon concrète d'utiliser les courbes
+% elliptiques dans le cadre de la cryptographie. Ceci a permit d'apporter une nouvelle façon
+% de faire de la cryptographie, tout en conservant des concepts eprouvé basé sur le problème
+% du logarithme discret. Cette nouvelle approche, que l'on nommera
+% version elliptique, contrairement à la version dite classique de chiffrement, qui est basé
+% sur le groupe multiplicatif $\left( \Z /p\Z \right) ^{*}$ et sa commutativité, celle ci
+% présente une diversité et complexité non négligeable. 
+
+% En effet, que ce soit l'algorithme d'El Gamal ou le protocol de Diffie-Hellman, leur version
+% classique est basé sur le générateur du groupe $\left( \Z / p\Z \right) ^{*}$, alors que
+% leur version elliptique est basé sur les courbes elliptiques qui comme on le verra sont en grand
+% nombre pour leur part. De plus, par construction du groupe des courbes elliptiques, plus
+% abstrait, la résolution du logarithme discret est quasiment impossible sans l'aide d'ordinateur
+% quantique extremement puissant (ref article Mme Abdelatif).
+
+% \section{plan ?}
+
+% \begin{itemize}
+%     \item explication cryptographie
+%         \begin{itemize}
+%             \item sym et asym
+%             \item rsa
+%             \item El Gamal et D-H
+%         \end{itemize}
+%     \item histoire des fonctions elliptiques 
+% \end{itemize}
+
+% \section{La cryptographie}
+% L'application première de notre construction étant la cryptographie, il me semble nécessaire de
+% poser les bases de cette branche des mathématiques. Ceci nous permettra d'avoir une idée clair
+% des différents concepts et enjeux qui la compose.
+
+% Tout d'abord, définition ce qu'est la cryptographie. Métaphysiquement, c'est le fait de vouloir
+% communiquer des messages, entre diverses entités et ceci de façon à ce que seul ces dernières
+% n'aient connaissances du contenue du message.
+
+% Cette définition personnel et trivial est basé sur comment dans l'histoire la cryptographie est
+% apparu.
+
+% De nos jours, le concept c'est énormément diversifié. La transmission de message reste un élément
+% majeur de ce qu'est la cryptographie mais 

@@ -1,0 +1,72 @@
+% Remove navigation symbols
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{caption}[numbered]
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{wrapfig}
+\usepackage[export]{adjustbox}
+\usepackage{hyperref}
+
+% References stuff
+\usepackage[
+backend=biber,
+]{biblatex}
+% style=alphabetic,
+% sorting=nyt
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+    citecolor=magenta
+}
+
+% Math stuff
+\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb, wasysym}
+% Fancy script capitals
+\usepackage{mathrsfs}
+\usepackage{cancel}
+% Bold math
+\usepackage{bm}
+
+% Some shortcuts
+\newcommand\N{\ensuremath{\mathbb{N}}}
+\newcommand\R{\ensuremath{\mathbb{R}}}
+\newcommand\Z{\ensuremath{\mathbb{Z}}}
+\renewcommand\O{\ensuremath{\emptyset}}
+\newcommand\Q{\ensuremath{\mathbb{Q}}}
+\newcommand\C{\ensuremath{\mathbb{C}}}
+\newcommand\K{\ensuremath{\mathbb{K}}}
+
+% Some new math command french made
+\newcommand\congru{\ensuremath{\equiv}}
+\newcommand\et{\ensuremath{\wedge}}
+\newcommand\ou{\ensuremath{\vee}}
+
+% https://latex-beamer.com/tutorials/beamer-themes/
+% default Darmstadt   Malmoe
+% AnnArbor    Dresden Marburg
+% Antibes Frankfurt   Montpellier
+% Bergen  Goettingen  PaloAlto
+% Berkeley    Hannover    Pittsburgh
+% Berlin  Ilmenau Rochester
+% Boadilla    JuanLesPins Singapore
+% CambridgeUS Luebeck Szeged
+% Copenhagen  Madrid  Warsaw
+\usetheme{Madrid}
+
+% \graphicspath{ {./path/to/folders1}{./path/to/folders2} }
+\graphicspath{ {./figures}}
+
+\title[Elliptics curves]{Elliptic curves cryptography}
+
+\author{Yann-Arby Bebba}
+\institute[UPJV]{Université Picardie Jules Verne \\
+\medskip
+\textit{yann-arby.bebba@etud.u-picardie.fr}}
+\date{\today}
