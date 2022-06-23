@@ -1,168 +1,246 @@
 \begin{center}
-    \textbf{Elliptic curves cryptography}
+    \textbf{el\textbf{lip}tic \textbf{cur}ves cry\textbf{tog}raphy}
 \end{center}
 \begin{itemize}
-    \item \textbf{Slide 1}: Hello everyone, let me introduce myself quickly. I'm
-        Yann-Arby, I'm studying a master degree in mathematics at the University of Picardie Jules
-        Verne. Today, I'll speak about elliptic curves and their
-        application in cryptography. It's a 10 min presentation so please bear with
-        me until the end to ask any question you might have during my speech. So let's just
+    \item \textbf{Slide 1}: Hel\textbf{lo} \textbf{ev}eryone, let me \textbf{in}troduce
+        my\textbf{self} \textbf{quick}ly. I'm
+        Yann-Arby, I'm \textbf{stud}ying a \textbf{mas}ter de\textbf{gree} in
+        ma\textbf{the}matics at the Uni\textbf{ver}sity of Picardie Jules
+        Verne. To\textbf{day}, I'll speak about \hlred{el\textbf{lip}tic
+        \textbf{cur}ves} and their
+        appli\textbf{ca}tion in \textcolor{red}{cryp\textbf{tog}raphy}. It's a 10 min \textbf{pres}entation
+        \textcolor{teal}{so} please bear with
+        me until the end to ask any \textbf{ques}tion you might have during my speech. So let's just
         dive into it.
-    \item \textbf{Slide 2}: Through this beamer my motivation is to answer the
-        following questions.
+    \item \textbf{Slide 2}: Through this beamer I'd like to \textbf{an}swer the
+        \textbf{fol}lowing \textbf{ques}tions.
 
-        They are about today's topic which is about the group of rationals points of
-            an elliptic curve defined over a field $K$. 
+        They are about to\textbf{day}'s topic \textcolor{teal}{which} is about the \textcolor{red}{group} of
+        \textcolor{red}{\textbf{rat}ionals points} of
+            an \textcolor{red}{el\textbf{lip}tic \textbf{cur}ves} defined over a \textcolor{red}{field} $K$. 
 
-            In fact, Elliptic curves are today's
-            trend in cryptography. It's broadly use in signature authentication and key
-            sharing protocol. 
+            In fact, \textcolor{red}{el\textbf{lip}tic \textbf{cur}ves} are to\textbf{day}'s
+            trend in \textcolor{red}{cry\textbf{tog}raphy}. They are \textcolor{green}{broadly} use in
+            \textcolor{red}{\textbf{sig}nature au\textbf{then}tification} and \textcolor{red}{key
+            sharing \textbf{pro}tocol}. 
 
-            Therefore, I'd like to show you the underlying
-            mechanism of its construction in order to give an example of one of the most use key
-            sharing protocol which is know as the Diffie-Hellman protocol. 
+            \textcolor{brown}{Therefore}, I'd like to show you the underlying
+            mechanism of its con\textbf{struc}tion \textcolor{teal}{in \textbf{or}der to} give an ex\textbf{am}ple of one
+            \textcolor{green}{of the most} used
+            \textcolor{red}{key
+            sharing \textbf{pro}tocol} \textcolor{teal}{which} \textcolor{violet}{is known} as the \textcolor{red}{Diffie-Hellman
+                \textbf{pro}tocol}. 
         \item \textbf{Slide 3}:
-            In this presentation
+            In this \textbf{pres}entation
             \begin{itemize}
-                \item I'll answer the first question in
+                \item I'll \textbf{an}swer the first \textbf{ques}tion in
                     section 2 and 3.
-                \item Then I'll describe the construction of the group in section 4.
-                \item After that I'll explain why it works and give an application in section 5 and 6.
-                \item Finally I'll give the cons and pros of the model in section 7.
+                \item \textcolor{brown}{Then} I'll de\textbf{scribe} the con\textbf{struc}tion of the \textcolor{red}{group} in section 4.
+                \item \textcolor{brown}{Finally} in section 5, I'll ex\textbf{plain} why it
+                    works, \textcolor{brown}{then} give an
+                    ap\textbf{pli}cation \textcolor{teal}{and} con\textbf{clude} by giving the \textbf{up}sides and \textbf{down}sides of the
+                    \textbf{the}ory.
+                % \item \textcolor{brown}{finally} I'll give the cons and pros of the model in section 7.
             \end{itemize}
-        \item \textbf{Slide 3}: The study of the group of rationals points of an
-            elliptic curve, aimed towards its application in cryptography, was made in
-            parallel between N. Koblitz and Victor S. Miller in 1985.
-        \item \textbf{Slide 4}: To lay the foundation of the group we'd like to
+        \item \textbf{Slide 3}: So first thing first, the study of the  \textcolor{red}{group} of
+            \textcolor{red}{\textbf{rat}ionals points} of an
+            el\textbf{lip}tic \textbf{cur}ves, aimed towards its ap\textbf{pli}cation in cry\textbf{tog}raphy, \textcolor{violet}{was
+                made} in
+            parallel be\textbf{tween} N. Koblitz and Victor S. Miller and \textcolor{violet}{was
+                published} in 1985.
+        \item \textbf{Slide 4}: To lay the foun\textbf{da}tion of the \textcolor{red}{group} we'd like to
             build. We need a couple of tools.
             Such as:
             \begin{itemize}
-                \item The projective plane
-
-                    Indeed as we'll see by definitions elliptic curves are projective
-                    geometry's objects.
-                \item The projective lines
-                    
-                    To understand projective plane we need to understand projective lines as
-                    they are what generates the projective plane.
-                \item Straight and tangent lines
-
-                    That's the two lines that we will need to understand in order to treat
-                    each case we would stumble upon studying the binary operation of the group
-                    $\left( E,+ \right) $.
-                \item The rationals points
-
-                    They will be the elements of our group. Thanks to them we can compute
-                    additions and doubles. Which is the heart of our construction.
+                \item The \textcolor{red}{pro\textbf{jec}tive plane},
+                    indeed as we'll see by \textbf{def}initions \textcolor{red}{el\textbf{lip}tic \textbf{cur}ves} are
+                    \textcolor{red}{pro\textbf{jec}tive
+                    geometry}'s objects.
+                \item \textcolor{brown}{Then} we need to under\textbf{stand} \textcolor{red}{pro\textbf{jec}tive lines}
+                    \textcolor{teal}{in \textbf{or}der to} under\textbf{stand} the \textcolor{red}{pro\textbf{jec}tive
+                    plane} \textcolor{teal}{because}
+                    they are what \textbf{gen}erate the \textcolor{red}{pro\textbf{jec}tive plane}.
+                \item The next tools we need are \textcolor{red}{straight} and
+                    \textcolor{red}{tangent} lines.
+                    They are  the two \textcolor{red}{lines} \textcolor{teal}{that} we need to under\textbf{stand}
+                    \textcolor{teal}{in \textbf{or}der to} treat
+                    each case we would \textbf{stum}ble up\textbf{on} \textbf{stud}ying the \textcolor{red}{\textbf{a}belian \textbf{bi}nary
+                        \textbf{op}eration} of the \textcolor{red}{group}.
+                \item \textcolor{brown}{Finally} the last tool is the \textcolor{red}{\textbf{rat}ionals
+                    points}.
+                    They will be the \textcolor{red}{\textbf{el}ements} of our
+                    \textcolor{red}{group} \textcolor{teal}{thanks to} them we can com\textbf{pute}
+                    \textcolor{red}{ad\textbf{di}tions} and \textcolor{red}{doubles}
+                    \textcolor{teal}{which} is the heart of our con\textbf{struc}tion.
             \end{itemize}
-        \item \textbf{Slide 5}: The projective plane is a quotient-set define over a
-            vector space without its origin, and define by an equivalence relation which let
-            two vectors be the same if there are on the same line.
+        \item \textbf{Slide 5}: The \textcolor{red}{pro\textbf{jec}tive plane} is a
+            \textcolor{red}{quotient-set} defined over a
+            \textcolor{red}{\textbf{vec}tor space} without its \textcolor{red}{origin},
+            \textcolor{teal}{and} by an
+            \textcolor{red}{e\textbf{quiv}alence re\textbf{la}tion} \textcolor{teal}{which} let
+            two \textcolor{red}{\textbf{vec}tors} be the same if there are on the same
+            \textcolor{red}{line}.
 
-            More precisely the projective plane is the reunion between the affine plane
-            and the infinity line.
+            More precisely the \textcolor{red}{pro\textbf{jec}tive plane} is the reunion be\textbf{tween} the
+            \textcolor{red}{af\textbf{fine} plane}
+            and the \textcolor{red}{in\textbf{fin}ity line}.
 
-            The affine plane is generated by the projective line. We can see an example of a
-            projective line on the figure 2. 
+            The \textcolor{red}{af\textbf{fine} plane} \textcolor{violet}{is \textbf{gen}erated by} the \textcolor{red}{pro\textbf{jec}tive
+                line}. We can see an ex\textbf{am}ple of a
+            \textcolor{red}{pro\textbf{jec}tive line} on the figure 2. 
 
-            The red line is the projective line which is generated by the intersection between
-            each vectors lines
-            of the vector space and in this case the line $y=1$.
-        \item \textbf{Slide 6}: Over the vector space $\R^3$ we can see the
-            projective line as the line that generates the affine plane. As we can see in
-            the following figure 3. 
+            The \textcolor{blue}{red line} is the \textcolor{red}{pro\textbf{jec}tive line} \textcolor{teal}{which} \textcolor{violet}{is
+                \textbf{gen}erated by} the in\textbf{ter}section be\textbf{tween}
+            each \textcolor{blue}{\textbf{vec}tor lines}
+            of the \textcolor{red}{\textbf{vec}tor space} and in this case the \textcolor{blue}{line} $y=1$.
+        % \item \textbf{Slide 6}: Over the \textcolor{red}{\textbf{vec}tor space} $\R^3$ we can see the
+        %     \textcolor{red}{pro\textbf{jec}tive line} as the \textcolor{red}{line} that \textbf{gen}erates the
+        %     \textcolor{red}{af\textbf{fine} plane}. As we can see in
+        %     the \textbf{fol}lowing figure 3. 
 
-            Here the red plane is the projective line which is
-            generated by the intersection between every vectors of the vector space and
-            the plane of equation $z=1$.
-        \item \textbf{Slide 7}: So to resume what I've said since the beginning, the
-            projective plane is a sphere where we cut a slice, in general at $z=1$ and
-            the plane we get is our affine slice which is a circle. Therefore thanks to the
-            equivalence relation and limits, we have that the infinity
-            point $\mathcal{O}$ is the intersection of every vertical line of the
-            affine slice and the $y$-intercept. Henceforth $\mathcal{O}$ is the neutral
-            element of the group.
-        \item \textbf{Slide 8}: Here is the definition of elliptic curves.
+        %     Here the \textcolor{blue}{red plane} is the \textcolor{red}{pro\textbf{jec}tive line}
+        %     \textcolor{teal}{which}
+        %     \textcolor{violet}{is
+        %     \textbf{gen}erated by} the in\textbf{ter}section be\textbf{tween} \textbf{ev}ery \textcolor{blue}{\textbf{vec}tor lines} of the
+        %     \textcolor{red}{\textbf{vec}tor space} and
+        %     the \textcolor{blue}{plane} of equation $z=1$.
+        \item \textbf{Slide 6}: So to re\textbf{sume} what I've said since the be\textbf{gin}ning, the
+            \textcolor{red}{pro\textbf{jec}tive plane} is a \textcolor{blue}{sphere} of radius
+            1 where we cut a
+            \textcolor{red}{slice} of the \textbf{vec}tor space on top of it, in general at $z=1$.
+            \textcolor{brown}{Therefore} the projection of the \textcolor{blue}{sphere} on this plane gives us the
+            \textcolor{red}{af\textbf{fine} slice}
+            \textcolor{teal}{which} is a \textcolor{blue}{circle}.
+             \textcolor{brown}{Moreover} thanks to the
+            \textcolor{red}{e\textbf{quiv}alence re\textbf{la}tion} and \textcolor{red}{\textbf{lim}its}, we have that the
+            \textcolor{red}{in\textbf{fin}ity
+            point} $\mathcal{O}$ is the in\textbf{ter}section of \textbf{ev}ery \textcolor{red}{\textbf{ver}tical line} of the
+            \textcolor{red}{af\textbf{fine} slice} and the \textcolor{blue}{$y$-inter\textbf{cept}}
+            \textcolor{teal}{which} is the perimeter of the \textcolor{blue}{circle}. \textcolor{brown}{Henceforth}
+            the \textcolor{red}{in\textbf{fin}ity point} is the \textcolor{red}{\textbf{neu}tral
+            \textbf{el}ement} of the \textcolor{red}{group}.
+        \item \textbf{Slide 7}: Here is the \textbf{def}inition of \textcolor{red}{el\textbf{lip}tic \textbf{cur}ves}.
 
-            The condition 2 guaranty us that our curve is smooth which simply means that
-            there is only one tangent per point.
+            The condition 2 guaranty us that our \textcolor{red}{\textbf{cur}ve} is
+            \textcolor{red}{smooth} \textcolor{teal}{which} simply means that
+            there is only one \textcolor{red}{tangent} per \textcolor{red}{point}.
 
-            On the figure 5 we can see a representation of an elliptic curve on the affine
-            slice where the discriminant is negative hence there is only one roots.
-        \item \textbf{Slide 9}: The Weierstrass normal equation give use elliptic
-            curves that are symmetric around the $x$-intercept.
+            On the figure 5 we can see a re\textbf{pres}entation of an \textcolor{blue}{el\textbf{lip}tic \textbf{cur}ves}
+            on the \textcolor{blue}{af\textbf{fine}
+            slice} \textcolor{teal}{where} the \textcolor{red}{discriminant} is negative \textcolor{teal}{hence} there is only one
+            \textcolor{blue}{root}.
+        \item \textbf{Slide 8}: The \textcolor{red}{Weierstrass normal
+                equation} give use \textcolor{red}{el\textbf{lip}tic
+            \textbf{cur}ves} \textcolor{teal}{that} are \textcolor{red}{sym\textbf{met}ric} around the
+            \textcolor{blue}{$x$-inter\textbf{cept}}.
 
-            By definition rationals points of an elliptic curves are the projective points
-            that are solutions of the Weierstrass normal equation.
+            By \textbf{def}inition \textcolor{red}{\textbf{rat}ionals points} of an \textcolor{red}{el\textbf{lip}tic
+                \textbf{cur}ves} are the \textcolor{red}{pro\textbf{jec}tive points}
+            \textcolor{teal}{that} are \textcolor{red}{so\textbf{lu}tions} of the \textcolor{red}{Weierstrass normal
+                equation}.
 
-            Here is the coordinates of the infinity point $\mathcal{O}$.
-        \item \textbf{Slide 10}: To build our abelian binary operation, which we'll call
-            addition henceforth.
+            Here is the \textcolor{red}{coordinates} of the \textcolor{red}{in\textbf{fin}ity point} $\mathcal{O}$.
+        \item \textbf{Slide 9}: \textcolor{brown}{So} to build our \textcolor{red}{\textbf{a}belian \textbf{bi}nary
+                \textbf{op}eration}, \textcolor{teal}{which} we'll call
+            \textcolor{red}{ad\textbf{di}tion} \textcolor{brown}{henceforth}.
 
-            First thing first we need to
-            look what will happen when you take the chords between to points of the curve or
-            the tangent of a point ? While asking ourselves are these lines always give us a third
-            point on the curve. The answer is yes thanks to the projective plane and the
-            infinity point.
+            We first need to
+            look \textcolor{magenta}{what will happen} \textcolor{teal}{when} we take the \textcolor{red}{chords} be\textbf{tween}
+            two
+            \textcolor{red}{points} of the \textcolor{red}{\textbf{cur}ve} or
+            the \textcolor{red}{tangent} of a \textcolor{red}{point} ?
+            \textcolor{brown}{While} asking ourselves
+            \textcolor{magenta}{are these lines} always giving us a third
+            \textcolor{red}{point} on the \textcolor{red}{\textbf{cur}ve} ? The \textbf{an}swer is yes thanks to
+            the \textcolor{red}{pro\textbf{jec}tive plane} and the
+            \textcolor{red}{in\textbf{fin}ity point}.
 
-            Therefore thanks to this non associative binary operation we have the foundation
-            to build the addition that we're looking for.
-        \item \textbf{Slide 11}: Here is the addition that we obtain
-            thanks to a smart symmetry. Indeed if we take the opposite of the point we've
+            \textcolor{brown}{Therefore} this \textcolor{red}{non as\textbf{so}ciative \textbf{bi}nary \textbf{op}eration}
+            give use the foun\textbf{da}tion
+            to build the \textcolor{red}{ad\textbf{di}tion} \textcolor{teal}{that} we're looking for.
+        \item \textbf{Slide 10}: Here is the \textcolor{red}{ad\textbf{di}tion} that we obtain
+            thanks to a smart \textcolor{red}{sym\textbf{met}ry}. Indeed if we take the
+            \textcolor{red}{opposite} of the \textcolor{red}{point} we've
             obtained
-            through our non associative binary operation. We obtain the result of the addition between two
-            points of the group.
-        \item \textbf{Slide 12}: Modern cryptography's foundation are
-            build upon a tested hypothesis and others assumptions which are still
-            holding today.
+            through our \textcolor{red}{non as\textbf{so}ciative \textbf{bi}nary \textbf{op}eration}. We obtain the result
+            of the \textcolor{red}{ad\textbf{di}tion} be\textbf{tween} two
+            \textcolor{red}{points} of the \textcolor{red}{group}.
+        \item \textbf{Slide 11}: \textcolor{red}{Modern cry\textbf{tog}raphy}'s foun\textbf{da}tion are
+            build up\textbf{on} a tested \textcolor{red}{hy\textbf{poth}esis} and others as\textbf{sump}tions
+            \textcolor{teal}{which} are still
+            holding to\textbf{day}.
             
-            In our case their is the following assumptions that are important:
+            In our case their is the \textbf{fol}lowing as\textbf{sump}tions \textcolor{teal}{that} are important:
             \begin{itemize}
-                \item One-way functions exist and the addition, we've built, is one of them.
-                \item The discrete logarithm problem is unsolvable in a polynomial time.
-                \item There is no other way to solve Diffie-Hellman's problem without solving
-                    the discrete logarithm problem.
+                \item \textcolor{red}{One-way functions} exist and the
+                    \textcolor{red}{ad\textbf{di}tion}, we've built, is one of them.
+                \item The \textcolor{red}{discrete logarithm} problem is unsolvable in a
+                    \textcolor{red}{polynomial time}.
+                \item There is no other way to solve \textcolor{red}{Diffie-Hellman's
+                        problem} without solving
+                    the \textcolor{red}{discrete logarithm problem}.
             \end{itemize}
-        \item \textbf{Slide 13}: Here is the Diffie-Hellman protocol which is the
-            basis of today's online transaction.
+        \item \textbf{Slide 12}: Here is the \textcolor{red}{Diffie-Hellman
+                \textbf{pro}tocol} \textcolor{teal}{which} is the
+            basis of to\textbf{day}'s online transaction.
 
-            Two person Alice and Bob would like to share a secret key publicly. Hence they
+            Two person Alice and Bob would like to share a \textcolor{red}{\textbf{se}cret key
+                publicly}. \textcolor{brown}{Hence} they
             proceed as followed:
             \begin{itemize}
-                \item They choose a finite field $K$, an elliptic curve $E$ and a base
-                    point $P$ and publish this triplet.
-                \item Then they both chose a secret integer and compute this integer times
-                    the base point. Then they respectively send their result to the other.
-                \item Lastly they compute again their secret integer times what they've
-                    received. Which give them their secret key.
+                \item They choose a \textcolor{red}{finite field} $K$, an
+                    \textcolor{red}{el\textbf{lip}tic \textbf{cur}ves} $E$, a base
+                    \textcolor{red}{point} $P$ and publish this \textcolor{red}{triplet}.
+                \item \textcolor{brown}{Then} they both chose a \textcolor{red}{\textbf{se}cret \textbf{in}teger} and
+                    \textcolor{red}{com\textbf{pute}} this \textcolor{red}{\textbf{in}teger} times
+                    the \textcolor{red}{base point}. \textcolor{brown}{Then} they respectively send their
+                    result to the other.
+                \item \textcolor{brown}{Lastly} they com\textbf{pute} again their \textcolor{red}{\textbf{se}cret
+                    \textbf{in}teger} times \textcolor{teal}{what} \textcolor{violet}{they've
+                    received}. Which give them their shared \textcolor{red}{\textbf{se}cret key}.
             \end{itemize}
 
-            Hence the Diffie-Hellman protocol is a secure way to share a key publicly.
+            \textcolor{brown}{Hence} the \textcolor{red}{Diffie-Hellman \textbf{pro}tocol} is a se\textbf{cure} way to share a
+            \textcolor{red}{key} publicly.
 
-        \item \textbf{Slide 14}: The group of rationals point of an elliptic
-            curve have many benefits compared to the multiplicative group of the
-            invertible of a finite field $K$. Among them there is:
+        \item \textbf{Slide 13}: The \textcolor{red}{group} of \textcolor{red}{\textbf{rat}ionals
+                point} of an \textcolor{red}{el\textbf{lip}tic
+            \textbf{cur}ve} have \textcolor{olive}{many} benefits
+            \textcolor{green}{\textbf{com}pared to} the \textcolor{red}{\textbf{mul}tiplicative
+                group} of the
+            \textcolor{red}{invertible} of a \textcolor{red}{finite field} $K$. Among them there is:
             \begin{itemize}
-                \item The structure is more abstract.
-                \item The keys' length is way shorter for equivalent security.
-                \item It can be use on low resources systems.
-                \item It can be implemented in an hybrid cryptosystem which is the
-                    combination between a symmetric cryptosystem to encrypt data and
-                    an asymmetric cryptosystem to share secret key.
+                \item The \textcolor{red}{structure} that is more \textcolor{red}{abstract}.
+                \item The \textcolor{red}{keys}' length is way shorter for
+                    \textcolor{olive}{e\textbf{quiv}alent}
+                    \textcolor{red}{se\textbf{cu}rity} \textcolor{green}{\textbf{com}pared to} \textcolor{red}{RSA}.
+                \item It can be use on \textcolor{red}{low resources systems}.
+                \item It can be implemented in an \textcolor{red}{hybrid
+                        cry\textbf{pto}system} \textcolor{teal}{which} is the
+                    combination be\textbf{tween} a \textcolor{red}{sym\textbf{met}ric
+                        cry\textbf{pto}system} to \textcolor{red}{encrypt data}
+                        \textcolor{teal}{and}
+                    an \textcolor{red}{asym\textbf{met}ric cry\textbf{pto}system} to share
+                    \textcolor{red}{\textbf{se}cret key}.
             \end{itemize}
 
-            However, as anything else there is restriction. For example:
+            \textcolor{brown}{However}, as anything else there is always \textbf{down}sides. For ex\textbf{am}ple:
             \begin{itemize}
-                \item There is already a lot of patent rights own by companies.
-                \item There is always hazard and in our case if the triplet we use is not
-                    properly, efficiently and randomly selected there is the risk or
-                    back door as the alleged claim of NSA using such a method.
+                \item There \textcolor{violet}{is} already a \textcolor{olive}{lot} of \textbf{cur}ves
+                    \textcolor{violet}{patented} by companies.
+                \item There is \textbf{al}ways hazards \textcolor{teal}{and} in our case \textcolor{teal}{if} the \textcolor{red}{triplet}
+                    we're
+                    using isn't 
+                    \textbf{prop}erly, ef\textbf{fi}ciently and \textbf{ran}domly selected there \textcolor{teal}{will
+                        always be} the
+                    risks of premeditated 
+                    use of a \textcolor{red}{back door}. 
             \end{itemize}
 \end{itemize}
 
-Which let's me conclude with the following statement ...
+Which let's me con\textbf{clude} with the \textbf{fol}lowing statement ...
 
-Thank you everyone for your attention. My presentation is done and now is question time.
+Thank you \textbf{ev}eryone for your at\textbf{ten}tion. My \textbf{pres}entation \textcolor{violet}{is done} and now is \textbf{ques}tion time's.
 
 \setlength{\arrayrulewidth}{0.5mm}
 % \setlength{\tabcolsep}{2pt}
