@@ -20,7 +20,7 @@
     \begin{itemize}
         \item One-way functions exist.
         % \item The discrete logarithm problem is unsolvable in a raisonable time.
-        \item Unsolvability of the logarithm problem.
+        \item Unsolvability of the discrete logarithm problem.
         % \item There is no other way to solve Diffie-Hellman's problem without solving
             % the discrete logarithm problem.
         \item No other way to solve the Diffie-Hellman's problem.
@@ -32,7 +32,7 @@
 \begin{frame}[t]
     \frametitle{Public key-sharing protocol}
     \begin{exampleblock}{Diffie-Hellman protocol}
-        Alice and Bob would like to share a secret key (i.e. know only by them) over a non-secure channel.
+        Alice and Bob would like to share a secret key (i.e. know only by themselves) over a non-secure channel.
 
         To do this they proceed the following way:
         \begin{description}
@@ -42,25 +42,25 @@
                 % They choose a point $P \in E$. 
                 They choose and publish the triplet $\left( K,E,P \right) $.
 
-            \item[2)] Alice choose $a>0$ and compute $P_{a} =
+            \item[2)] Alice chooses $a>0$ and compute $P_{a} =
                 aP$, which she sends to Bob.
 
             % \item[3)] Bob choose a non zero secret integer $b$ and compute the point $P_{b} =
             %     bP$, which she sends to Bob.
-            \item[3)] Bob $b>0$ and compute $P_{b} =
-                bP$, which she sends to Bob.
+            \item[3)] Bob chooses $b>0$ and compute $P_{b} =
+                bP$, which he sends to Alice.
             % \item[4)] Alice (resp. Bob) compute $aP_{b}$ (resp. $bP_{a}$) where both
                 % computation's results is $P_{ab}$ which is the secret key only know by Alice
                 % and Bob.
-                \item[4)] Alice and Bob compute $aP_{b}$ and $bP_{a}$ which give $P_{ab}$.
+                \item[4)] Alice and Bob compute $aP_{b}$ and $bP_{a}$ which gives $P_{ab}$.
         \end{description}
     \end{exampleblock}
 \end{frame}
 
-\subsection{Elliptic curves' pros and cons}
+\subsection{The pros and cons of elliptic curves}
 
 \begin{frame}[t]
-    \frametitle{Pros and cons}
+    \frametitle{Conclusion: pros and cons}
     % The group of rationals points of an elliptic curve have many benefits compared to the
     % multiplicative group of the inversible of a finite field $K$. Among them there is:
     Pros
@@ -71,7 +71,7 @@
         % \item Could be use in an hybrid cryptosystem (i.e. symetric cryptosystem to encrypt
         %     data and asymetric cryptosystem to share secret key)
         \item Abstract structure.
-        \item Shorter secret key lengh.
+        \item Shorter secret key length.
         \item Low ressources usage.
         \item Hybrid cryptosystem compatibility.
     \end{itemize}
@@ -93,5 +93,19 @@
     \begin{quote}
        "It is possible to write endlessly on elliptic curves. (This is not a threat)"
     \end{quote}
+    \end{center}
+\end{frame}
+
+\begin{frame}[t]
+    \frametitle{Thank you}
+    \begin{center}
+    {\huge\bfseries Thank you for your attentention.}
+
+    \textsc{\Large email: yann-arby.bebba@etud.u-picardie.fr}
+    \includegraphics[scale=0.2]{maxfractal}
+
+    \textsc{\Large Link to this presentation's pdf:}
+    \textsc{\Large
+        \url{https://github.com/Eldwinster/projets_master/blob/master/presentation_anglais/beamer/master.pdf}}
     \end{center}
 \end{frame}
